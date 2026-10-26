@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this implementation in research, please cite it using this metadata."
+type: software
+title: "Thermal ML: small physics-inspired corrections"
+authors:
+  - family-names: "Domenikos"
+    given-names: "George-Rafael"
+license: MIT
+abstract: "Supporting implementation for CPU-temperature forecasting with compact physics-inspired residual corrections, evaluated on Jetson and Intel telemetry."

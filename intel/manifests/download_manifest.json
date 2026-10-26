@@ -1,0 +1,415 @@
+[
+  {
+    "recording_id": "R00",
+    "path": "sources/recording_00.csv",
+    "url": "https://raw.githubusercontent.com/Ahmed-Elsayed95/High-resolution-AI-Data-Center-Training-Workloads-Dataset/f7f8d62e806ce2b64e93c58fce2bb18604f067ad/Single_Machine_Dataset/Feature%20Forecasting/Batch_size/Single_machine_NumLayer6_SeqLength96_LayerSize500_batchsize100.CSV",
+    "git_blob_sha1": "ebb1075fde88365f4dd4d47aa0834bfaa7a501dd",
+    "bytes": 17382445,
+    "aliases": [
+      "Single_Machine_Dataset/Feature Forecasting/Batch_size/Single_machine_NumLayer6_SeqLength96_LayerSize500_batchsize100.CSV",
+      "Single_Machine_Dataset/Feature Forecasting/Input secaunce Length/Single_machine_NumLayer6_SeqLength96_LayerSize500_batchsize100.CSV",
+      "Single_Machine_Dataset/Feature Forecasting/Model Size/Single_machine_NumLayer6_SeqLength96_LayerSize500_batchsize100.CSV",
+      "Single_Machine_Dataset/Feature Forecasting/Number of Layers/Single_machine_NumLayer6_SeqLength96_LayerSize500_batchsize100.CSV"
+    ]
+  },
+  {
+    "recording_id": "R01",
+    "path": "sources/recording_01.csv",
+    "url": "https://raw.githubusercontent.com/Ahmed-Elsayed95/High-resolution-AI-Data-Center-Training-Workloads-Dataset/f7f8d62e806ce2b64e93c58fce2bb18604f067ad/Single_Machine_Dataset/Feature%20Forecasting/Batch_size/Single_machine_NumLayer6_SeqLength96_LayerSize500_batchsize150.CSV",
+    "git_blob_sha1": "ecdd6e004d5cec123eafe2d6db211b62fde2af39",
+    "bytes": 17239317,
+    "aliases": [
+      "Single_Machine_Dataset/Feature Forecasting/Batch_size/Single_machine_NumLayer6_SeqLength96_LayerSize500_batchsize150.CSV"
+    ]
+  },
+  {
+    "recording_id": "R02",
+    "path": "sources/recording_02.csv",
+    "url": "https://raw.githubusercontent.com/Ahmed-Elsayed95/High-resolution-AI-Data-Center-Training-Workloads-Dataset/f7f8d62e806ce2b64e93c58fce2bb18604f067ad/Single_Machine_Dataset/Feature%20Forecasting/Batch_size/Single_machine_NumLayer6_SeqLength96_LayerSize500_batchsize50.CSV",
+    "git_blob_sha1": "7ce29fcc4206ed2fd88def573d334d9de766c444",
+    "bytes": 17168131,
+    "aliases": [
+      "Single_Machine_Dataset/Feature Forecasting/Batch_size/Single_machine_NumLayer6_SeqLength96_LayerSize500_batchsize50.CSV"
+    ]
+  },
+  {
+    "recording_id": "R03",
+    "path": "sources/recording_03.csv",
+    "url": "https://raw.githubusercontent.com/Ahmed-Elsayed95/High-resolution-AI-Data-Center-Training-Workloads-Dataset/f7f8d62e806ce2b64e93c58fce2bb18604f067ad/Single_Machine_Dataset/Feature%20Forecasting/Input%20secaunce%20Length/Single_machine_NumLayer6_SeqLength192_LayerSize500_batchsize100.CSV",
+    "git_blob_sha1": "473e11f227e1fd2d99158d2a7c2dc296b99a1d41",
+    "bytes": 16957845,
+    "aliases": [
+      "Single_Machine_Dataset/Feature Forecasting/Input secaunce Length/Single_machine_NumLayer6_SeqLength192_LayerSize500_batchsize100.CSV"
+    ]
+  },
+  {
+    "recording_id": "R04",
+    "path": "sources/recording_04.csv",
+    "url": "https://raw.githubusercontent.com/Ahmed-Elsayed95/High-resolution-AI-Data-Center-Training-Workloads-Dataset/f7f8d62e806ce2b64e93c58fce2bb18604f067ad/Single_Machine_Dataset/Feature%20Forecasting/Input%20secaunce%20Length/Single_machine_NumLayer6_SeqLength672_LayerSize500_batchsize100.CSV",
+    "git_blob_sha1": "f872ef3f0c030c091283b28ebf8038ed96fb8a9f",
+    "bytes": 17330866,
+    "aliases": [
+      "Single_Machine_Dataset/Feature Forecasting/Input secaunce Length/Single_machine_NumLayer6_SeqLength672_LayerSize500_batchsize100.CSV"
+    ]
+  },
+  {
+    "recording_id": "R05",
+    "path": "sources/recording_05.csv",
+    "url": "https://raw.githubusercontent.com/Ahmed-Elsayed95/High-resolution-AI-Data-Center-Training-Workloads-Dataset/f7f8d62e806ce2b64e93c58fce2bb18604f067ad/Single_Machine_Dataset/Feature%20Forecasting/Model%20Size/Single_machine_NumLayer6_SeqLength96_LayerSize1000_batchsize100.CSV",
+    "git_blob_sha1": "3c9ac419ddfb285095eb913516a053d35580fe2e",
+    "bytes": 17200644,
+    "aliases": [
+      "Single_Machine_Dataset/Feature Forecasting/Model Size/Single_machine_NumLayer6_SeqLength96_LayerSize1000_batchsize100.CSV"
+    ]
+  },
+  {
+    "recording_id": "R06",
+    "path": "sources/recording_06.csv",
+    "url": "https://raw.githubusercontent.com/Ahmed-Elsayed95/High-resolution-AI-Data-Center-Training-Workloads-Dataset/f7f8d62e806ce2b64e93c58fce2bb18604f067ad/Single_Machine_Dataset/Feature%20Forecasting/Model%20Size/Single_machine_NumLayer6_SeqLength96_LayerSize1500_batchsize100.CSV",
+    "git_blob_sha1": "7f22a1ff371d0018ade3df6d3a08b7f71d605b41",
+    "bytes": 17346519,
+    "aliases": [
+      "Single_Machine_Dataset/Feature Forecasting/Model Size/Single_machine_NumLayer6_SeqLength96_LayerSize1500_batchsize100.CSV"
+    ]
+  },
+  {
+    "recording_id": "R07",
+    "path": "sources/recording_07.csv",
+    "url": "https://raw.githubusercontent.com/Ahmed-Elsayed95/High-resolution-AI-Data-Center-Training-Workloads-Dataset/f7f8d62e806ce2b64e93c58fce2bb18604f067ad/Single_Machine_Dataset/Feature%20Forecasting/Number%20of%20Layers/Single_machine_NumLayer10_SeqLength96_LayerSize500_batchsize100.CSV",
+    "git_blob_sha1": "84949363dee42df905f1ea22017268b0d3fba42e",
+    "bytes": 17260503,
+    "aliases": [
+      "Single_Machine_Dataset/Feature Forecasting/Number of Layers/Single_machine_NumLayer10_SeqLength96_LayerSize500_batchsize100.CSV"
+    ]
+  },
+  {
+    "recording_id": "R08",
+    "path": "sources/recording_08.csv",
+    "url": "https://raw.githubusercontent.com/Ahmed-Elsayed95/High-resolution-AI-Data-Center-Training-Workloads-Dataset/f7f8d62e806ce2b64e93c58fce2bb18604f067ad/Single_Machine_Dataset/Feature%20Forecasting/Number%20of%20Layers/Single_machine_NumLayer8_SeqLength96_LayerSize500_batchsize100.CSV",
+    "git_blob_sha1": "02d866826e719ad40f9773e075c10abe9c1f9522",
+    "bytes": 17325956,
+    "aliases": [
+      "Single_Machine_Dataset/Feature Forecasting/Number of Layers/Single_machine_NumLayer8_SeqLength96_LayerSize500_batchsize100.CSV"
+    ]
+  },
+  {
+    "recording_id": "R09",
+    "path": "sources/recording_09.csv",
+    "url": "https://raw.githubusercontent.com/Ahmed-Elsayed95/High-resolution-AI-Data-Center-Training-Workloads-Dataset/f7f8d62e806ce2b64e93c58fce2bb18604f067ad/Single_Machine_Dataset/Image%20Captioning/BatchSize/Single_machine_EmbedDim256_HiddenUnit512_batchsize1024.CSV",
+    "git_blob_sha1": "098d239a211f2e22ca1091c4275583425113f0e0",
+    "bytes": 17343927,
+    "aliases": [
+      "Single_Machine_Dataset/Image Captioning/BatchSize/Single_machine_EmbedDim256_HiddenUnit512_batchsize1024.CSV"
+    ]
+  },
+  {
+    "recording_id": "R10",
+    "path": "sources/recording_10.csv",
+    "url": "https://raw.githubusercontent.com/Ahmed-Elsayed95/High-resolution-AI-Data-Center-Training-Workloads-Dataset/f7f8d62e806ce2b64e93c58fce2bb18604f067ad/Single_Machine_Dataset/Image%20Captioning/BatchSize/Single_machine_EmbedDim256_HiddenUnit512_batchsize128.CSV",
+    "git_blob_sha1": "b4591c5231a26dd860fec19a63743c32fc17864f",
+    "bytes": 17222240,
+    "aliases": [
+      "Single_Machine_Dataset/Image Captioning/BatchSize/Single_machine_EmbedDim256_HiddenUnit512_batchsize128.CSV"
+    ]
+  },
+  {
+    "recording_id": "R11",
+    "path": "sources/recording_11.csv",
+    "url": "https://raw.githubusercontent.com/Ahmed-Elsayed95/High-resolution-AI-Data-Center-Training-Workloads-Dataset/f7f8d62e806ce2b64e93c58fce2bb18604f067ad/Single_Machine_Dataset/Image%20Captioning/BatchSize/Single_machine_EmbedDim256_HiddenUnit512_batchsize256.CSV",
+    "git_blob_sha1": "0b0556f4c926d02c9e4a5d791e03134a2235cf61",
+    "bytes": 17290255,
+    "aliases": [
+      "Single_Machine_Dataset/Image Captioning/BatchSize/Single_machine_EmbedDim256_HiddenUnit512_batchsize256.CSV",
+      "Single_Machine_Dataset/Image Captioning/Embedding Dim/Single_machine_EmbedDim256_HiddenUnit512_batchsize256.CSV",
+      "Single_Machine_Dataset/Image Captioning/numHiddenUnits Size/Single_machine_EmbedDim256_HiddenUnit512_batchsize256.CSV"
+    ]
+  },
+  {
+    "recording_id": "R12",
+    "path": "sources/recording_12.csv",
+    "url": "https://raw.githubusercontent.com/Ahmed-Elsayed95/High-resolution-AI-Data-Center-Training-Workloads-Dataset/f7f8d62e806ce2b64e93c58fce2bb18604f067ad/Single_Machine_Dataset/Image%20Captioning/Embedding%20Dim/Single_machine_EmbedDim1024_HiddenUnit512_batchsize256.CSV",
+    "git_blob_sha1": "460674e9b16e96815bb55359ae40ec7e8b368206",
+    "bytes": 17154060,
+    "aliases": [
+      "Single_Machine_Dataset/Image Captioning/Embedding Dim/Single_machine_EmbedDim1024_HiddenUnit512_batchsize256.CSV"
+    ]
+  },
+  {
+    "recording_id": "R13",
+    "path": "sources/recording_13.csv",
+    "url": "https://raw.githubusercontent.com/Ahmed-Elsayed95/High-resolution-AI-Data-Center-Training-Workloads-Dataset/f7f8d62e806ce2b64e93c58fce2bb18604f067ad/Single_Machine_Dataset/Image%20Captioning/Embedding%20Dim/Single_machine_EmbedDim512_HiddenUnit512_batchsize256.CSV",
+    "git_blob_sha1": "70bef834f65c91463ab889c3ca2abeffc6632859",
+    "bytes": 17247595,
+    "aliases": [
+      "Single_Machine_Dataset/Image Captioning/Embedding Dim/Single_machine_EmbedDim512_HiddenUnit512_batchsize256.CSV"
+    ]
+  },
+  {
+    "recording_id": "R14",
+    "path": "sources/recording_14.csv",
+    "url": "https://raw.githubusercontent.com/Ahmed-Elsayed95/High-resolution-AI-Data-Center-Training-Workloads-Dataset/f7f8d62e806ce2b64e93c58fce2bb18604f067ad/Single_Machine_Dataset/Image%20Captioning/numHiddenUnits%20Size/Single_machine_EmbedDim256_HiddenUnit1024_batchsize256.CSV",
+    "git_blob_sha1": "1a9eb7271bdb8a3777629c5de8bb4c55ecf0b651",
+    "bytes": 17226057,
+    "aliases": [
+      "Single_Machine_Dataset/Image Captioning/numHiddenUnits Size/Single_machine_EmbedDim256_HiddenUnit1024_batchsize256.CSV"
+    ]
+  },
+  {
+    "recording_id": "R15",
+    "path": "sources/recording_15.csv",
+    "url": "https://raw.githubusercontent.com/Ahmed-Elsayed95/High-resolution-AI-Data-Center-Training-Workloads-Dataset/f7f8d62e806ce2b64e93c58fce2bb18604f067ad/Single_Machine_Dataset/Image%20Captioning/numHiddenUnits%20Size/Single_machine_EmbedDim256_HiddenUnit2048_batchsize256.CSV",
+    "git_blob_sha1": "1ce441fda4bc85ceb04782312ffd069f4a9bdb99",
+    "bytes": 17336032,
+    "aliases": [
+      "Single_Machine_Dataset/Image Captioning/numHiddenUnits Size/Single_machine_EmbedDim256_HiddenUnit2048_batchsize256.CSV"
+    ]
+  },
+  {
+    "recording_id": "R16",
+    "path": "sources/recording_16.csv",
+    "url": "https://raw.githubusercontent.com/Ahmed-Elsayed95/High-resolution-AI-Data-Center-Training-Workloads-Dataset/f7f8d62e806ce2b64e93c58fce2bb18604f067ad/Single_Machine_Dataset/Image%20Classifications/Batch%20Size/Single_machine_OptimizerAdam_NumFilter8_ImageSize112_batchsize1500.CSV",
+    "git_blob_sha1": "054a7d88319b2b77cbfc1501d27385da986f18ce",
+    "bytes": 17323617,
+    "aliases": [
+      "Single_Machine_Dataset/Image Classifications/Batch Size/Single_machine_OptimizerAdam_NumFilter8_ImageSize112_batchsize1500.CSV",
+      "Single_Machine_Dataset/Image Classifications/Image Size/Single_machine_OptimizerAdam_NumFilter8_ImageSize112_batchsize1500.CSV",
+      "Single_Machine_Dataset/Image Classifications/Number of Filters/Single_machine_OptimizerAdam_NumFilter8_ImageSize112_batchsize1500.CSV",
+      "Single_Machine_Dataset/Image Classifications/optimizer type/Single_machine_OptimizerAdam_NumFilter8_ImageSize112_batchsize1500.CSV"
+    ]
+  },
+  {
+    "recording_id": "R17",
+    "path": "sources/recording_17.csv",
+    "url": "https://raw.githubusercontent.com/Ahmed-Elsayed95/High-resolution-AI-Data-Center-Training-Workloads-Dataset/f7f8d62e806ce2b64e93c58fce2bb18604f067ad/Single_Machine_Dataset/Image%20Classifications/Batch%20Size/Single_machine_OptimizerAdam_NumFilter8_ImageSize112_batchsize2250.CSV",
+    "git_blob_sha1": "8955cbb7a4426df2dbd0b243e42f5500b97c035f",
+    "bytes": 17306449,
+    "aliases": [
+      "Single_Machine_Dataset/Image Classifications/Batch Size/Single_machine_OptimizerAdam_NumFilter8_ImageSize112_batchsize2250.CSV"
+    ]
+  },
+  {
+    "recording_id": "R18",
+    "path": "sources/recording_18.csv",
+    "url": "https://raw.githubusercontent.com/Ahmed-Elsayed95/High-resolution-AI-Data-Center-Training-Workloads-Dataset/f7f8d62e806ce2b64e93c58fce2bb18604f067ad/Single_Machine_Dataset/Image%20Classifications/Batch%20Size/Single_machine_OptimizerAdam_NumFilter8_ImageSize112_batchsize750.CSV",
+    "git_blob_sha1": "f8226b60af0d7ddb3127fd5a8b955c802aad10c5",
+    "bytes": 17298238,
+    "aliases": [
+      "Single_Machine_Dataset/Image Classifications/Batch Size/Single_machine_OptimizerAdam_NumFilter8_ImageSize112_batchsize750.CSV"
+    ]
+  },
+  {
+    "recording_id": "R19",
+    "path": "sources/recording_19.csv",
+    "url": "https://raw.githubusercontent.com/Ahmed-Elsayed95/High-resolution-AI-Data-Center-Training-Workloads-Dataset/f7f8d62e806ce2b64e93c58fce2bb18604f067ad/Single_Machine_Dataset/Image%20Classifications/Image%20Size/Single_machine_OptimizerAdam_NumFilter8_ImageSize224_batchsize1500.CSV",
+    "git_blob_sha1": "a941a5edaaaf1f45041e25af9c281ed64fb773bc",
+    "bytes": 14521866,
+    "aliases": [
+      "Single_Machine_Dataset/Image Classifications/Image Size/Single_machine_OptimizerAdam_NumFilter8_ImageSize224_batchsize1500.CSV"
+    ]
+  },
+  {
+    "recording_id": "R20",
+    "path": "sources/recording_20.csv",
+    "url": "https://raw.githubusercontent.com/Ahmed-Elsayed95/High-resolution-AI-Data-Center-Training-Workloads-Dataset/f7f8d62e806ce2b64e93c58fce2bb18604f067ad/Single_Machine_Dataset/Image%20Classifications/Image%20Size/Single_machine_OptimizerAdam_NumFilter8_ImageSize280_batchsize1500.CSV",
+    "git_blob_sha1": "179efec9fc9b945c75764659c6d5e8226239b4b7",
+    "bytes": 17342525,
+    "aliases": [
+      "Single_Machine_Dataset/Image Classifications/Image Size/Single_machine_OptimizerAdam_NumFilter8_ImageSize280_batchsize1500.CSV"
+    ]
+  },
+  {
+    "recording_id": "R21",
+    "path": "sources/recording_21.csv",
+    "url": "https://raw.githubusercontent.com/Ahmed-Elsayed95/High-resolution-AI-Data-Center-Training-Workloads-Dataset/f7f8d62e806ce2b64e93c58fce2bb18604f067ad/Single_Machine_Dataset/Image%20Classifications/Number%20of%20Filters/Single_machine_OptimizerAdam_NumFilter16_ImageSize112_batchsize1500.CSV",
+    "git_blob_sha1": "c21e9722cc632b00bba1b269ff3eee0c6c605edc",
+    "bytes": 14611935,
+    "aliases": [
+      "Single_Machine_Dataset/Image Classifications/Number of Filters/Single_machine_OptimizerAdam_NumFilter16_ImageSize112_batchsize1500.CSV"
+    ]
+  },
+  {
+    "recording_id": "R22",
+    "path": "sources/recording_22.csv",
+    "url": "https://raw.githubusercontent.com/Ahmed-Elsayed95/High-resolution-AI-Data-Center-Training-Workloads-Dataset/f7f8d62e806ce2b64e93c58fce2bb18604f067ad/Single_Machine_Dataset/Image%20Classifications/Number%20of%20Filters/Single_machine_OptimizerAdam_NumFilter32_ImageSize112_batchsize1500.CSV",
+    "git_blob_sha1": "1fc484536a11f705ffc6568bd7217f31e4df5ba2",
+    "bytes": 17233523,
+    "aliases": [
+      "Single_Machine_Dataset/Image Classifications/Number of Filters/Single_machine_OptimizerAdam_NumFilter32_ImageSize112_batchsize1500.CSV"
+    ]
+  },
+  {
+    "recording_id": "R23",
+    "path": "sources/recording_23.csv",
+    "url": "https://raw.githubusercontent.com/Ahmed-Elsayed95/High-resolution-AI-Data-Center-Training-Workloads-Dataset/f7f8d62e806ce2b64e93c58fce2bb18604f067ad/Single_Machine_Dataset/Image%20Classifications/optimizer%20type/Single_machine_OptimizerRMSprop_NumFilter8_ImageSize112_batchsize1500.CSV",
+    "git_blob_sha1": "ab7131ca0fbb034808d0257aacc44cfe82b5153c",
+    "bytes": 17203592,
+    "aliases": [
+      "Single_Machine_Dataset/Image Classifications/optimizer type/Single_machine_OptimizerRMSprop_NumFilter8_ImageSize112_batchsize1500.CSV"
+    ]
+  },
+  {
+    "recording_id": "R24",
+    "path": "sources/recording_24.csv",
+    "url": "https://raw.githubusercontent.com/Ahmed-Elsayed95/High-resolution-AI-Data-Center-Training-Workloads-Dataset/f7f8d62e806ce2b64e93c58fce2bb18604f067ad/Single_Machine_Dataset/Image%20Classifications/optimizer%20type/Single_machine_OptimizerSGD_NumFilter8_ImageSize112_batchsize1500.CSV",
+    "git_blob_sha1": "8ab5eda44075d0890e40550185befef8972eb4c8",
+    "bytes": 17280647,
+    "aliases": [
+      "Single_Machine_Dataset/Image Classifications/optimizer type/Single_machine_OptimizerSGD_NumFilter8_ImageSize112_batchsize1500.CSV"
+    ]
+  },
+  {
+    "recording_id": "R25",
+    "path": "sources/recording_25.csv",
+    "url": "https://raw.githubusercontent.com/Ahmed-Elsayed95/High-resolution-AI-Data-Center-Training-Workloads-Dataset/f7f8d62e806ce2b64e93c58fce2bb18604f067ad/Single_Machine_Dataset/Reinforcment%20Learning/Batch_size/Single_machine_InputTypeSequance_Sequancelength250_LayerSize256_batchsize150.CSV",
+    "git_blob_sha1": "fcadf453afb351449c53698207f330c7b4160c79",
+    "bytes": 17047146,
+    "aliases": [
+      "Single_Machine_Dataset/Reinforcment Learning/Batch_size/Single_machine_InputTypeSequance_Sequancelength250_LayerSize256_batchsize150.CSV",
+      "Single_Machine_Dataset/Reinforcment Learning/InputLayer Type/Single_machine_InputTypeSequance_Sequancelength250_LayerSize256_batchsize150.CSV",
+      "Single_Machine_Dataset/Reinforcment Learning/LayerSize/Single_machine_InputTypeSequance_Sequancelength250_LayerSize256_batchsize150.CSV",
+      "Single_Machine_Dataset/Reinforcment Learning/Sequance Length/Single_machine_InputTypeSequance_Sequancelength250_LayerSize256_batchsize150.CSV"
+    ]
+  },
+  {
+    "recording_id": "R26",
+    "path": "sources/recording_26.csv",
+    "url": "https://raw.githubusercontent.com/Ahmed-Elsayed95/High-resolution-AI-Data-Center-Training-Workloads-Dataset/f7f8d62e806ce2b64e93c58fce2bb18604f067ad/Single_Machine_Dataset/Reinforcment%20Learning/Batch_size/Single_machine_InputTypeSequance_Sequancelength250_LayerSize256_batchsize250.CSV",
+    "git_blob_sha1": "13f3e40ef873ccf28adf83c91efe439286b0c670",
+    "bytes": 14365270,
+    "aliases": [
+      "Single_Machine_Dataset/Reinforcment Learning/Batch_size/Single_machine_InputTypeSequance_Sequancelength250_LayerSize256_batchsize250.CSV"
+    ]
+  },
+  {
+    "recording_id": "R27",
+    "path": "sources/recording_27.csv",
+    "url": "https://raw.githubusercontent.com/Ahmed-Elsayed95/High-resolution-AI-Data-Center-Training-Workloads-Dataset/f7f8d62e806ce2b64e93c58fce2bb18604f067ad/Single_Machine_Dataset/Reinforcment%20Learning/Batch_size/Single_machine_InputTypeSequance_Sequancelength250_LayerSize256_batchsize350.CSV",
+    "git_blob_sha1": "3619fcbe88de76da90c076a7ee7150a8bd68b276",
+    "bytes": 17014790,
+    "aliases": [
+      "Single_Machine_Dataset/Reinforcment Learning/Batch_size/Single_machine_InputTypeSequance_Sequancelength250_LayerSize256_batchsize350.CSV"
+    ]
+  },
+  {
+    "recording_id": "R28",
+    "path": "sources/recording_28.csv",
+    "url": "https://raw.githubusercontent.com/Ahmed-Elsayed95/High-resolution-AI-Data-Center-Training-Workloads-Dataset/f7f8d62e806ce2b64e93c58fce2bb18604f067ad/Single_Machine_Dataset/Reinforcment%20Learning/InputLayer%20Type/Single_machine_InputFeature_Sequancelength1_LayerSize256_batchsize150.CSV",
+    "git_blob_sha1": "3c15a3ded99b377ef705a043bba800c8ff6138a4",
+    "bytes": 16770666,
+    "aliases": [
+      "Single_Machine_Dataset/Reinforcment Learning/InputLayer Type/Single_machine_InputFeature_Sequancelength1_LayerSize256_batchsize150.CSV"
+    ]
+  },
+  {
+    "recording_id": "R29",
+    "path": "sources/recording_29.csv",
+    "url": "https://raw.githubusercontent.com/Ahmed-Elsayed95/High-resolution-AI-Data-Center-Training-Workloads-Dataset/f7f8d62e806ce2b64e93c58fce2bb18604f067ad/Single_Machine_Dataset/Reinforcment%20Learning/LayerSize/Single_machine_InputTypeSequance_Sequancelength250_LayerSize1024_batchsize150.CSV",
+    "git_blob_sha1": "8cbee02fbec8634406dadb91f1bfbf8cebd4b573",
+    "bytes": 16898742,
+    "aliases": [
+      "Single_Machine_Dataset/Reinforcment Learning/LayerSize/Single_machine_InputTypeSequance_Sequancelength250_LayerSize1024_batchsize150.CSV"
+    ]
+  },
+  {
+    "recording_id": "R30",
+    "path": "sources/recording_30.csv",
+    "url": "https://raw.githubusercontent.com/Ahmed-Elsayed95/High-resolution-AI-Data-Center-Training-Workloads-Dataset/f7f8d62e806ce2b64e93c58fce2bb18604f067ad/Single_Machine_Dataset/Reinforcment%20Learning/LayerSize/Single_machine_InputTypeSequance_Sequancelength250_LayerSize512_batchsize150.CSV",
+    "git_blob_sha1": "5b2d6dabc554850155ab157b16eff16c75813845",
+    "bytes": 17066683,
+    "aliases": [
+      "Single_Machine_Dataset/Reinforcment Learning/LayerSize/Single_machine_InputTypeSequance_Sequancelength250_LayerSize512_batchsize150.CSV"
+    ]
+  },
+  {
+    "recording_id": "R31",
+    "path": "sources/recording_31.csv",
+    "url": "https://raw.githubusercontent.com/Ahmed-Elsayed95/High-resolution-AI-Data-Center-Training-Workloads-Dataset/f7f8d62e806ce2b64e93c58fce2bb18604f067ad/Single_Machine_Dataset/Reinforcment%20Learning/Sequance%20Length/Single_machine_InputTypeSequance_Sequancelength150_LayerSize256_batchsize150.CSV",
+    "git_blob_sha1": "715cb4edf105758c10f64a09cdaec10303338e40",
+    "bytes": 16994069,
+    "aliases": [
+      "Single_Machine_Dataset/Reinforcment Learning/Sequance Length/Single_machine_InputTypeSequance_Sequancelength150_LayerSize256_batchsize150.CSV"
+    ]
+  },
+  {
+    "recording_id": "R32",
+    "path": "sources/recording_32.csv",
+    "url": "https://raw.githubusercontent.com/Ahmed-Elsayed95/High-resolution-AI-Data-Center-Training-Workloads-Dataset/f7f8d62e806ce2b64e93c58fce2bb18604f067ad/Single_Machine_Dataset/Reinforcment%20Learning/Sequance%20Length/Single_machine_InputTypeSequance_Sequancelength350_LayerSize256_batchsize150.CSV",
+    "git_blob_sha1": "7ad8855e13e353a912b50749bf9793326ac982b3",
+    "bytes": 17186246,
+    "aliases": [
+      "Single_Machine_Dataset/Reinforcment Learning/Sequance Length/Single_machine_InputTypeSequance_Sequancelength350_LayerSize256_batchsize150.CSV"
+    ]
+  },
+  {
+    "recording_id": "R33",
+    "path": "sources/recording_33.csv",
+    "url": "https://raw.githubusercontent.com/Ahmed-Elsayed95/High-resolution-AI-Data-Center-Training-Workloads-Dataset/f7f8d62e806ce2b64e93c58fce2bb18604f067ad/Single_Machine_Dataset/Text%20Generation/BatchSize/Single_machine_SeqLen100_EmbedDim100_batchsize128.CSV",
+    "git_blob_sha1": "281f42616977ca08b065432f50a5460c46518e4c",
+    "bytes": 17223569,
+    "aliases": [
+      "Single_Machine_Dataset/Text Generation/BatchSize/Single_machine_SeqLen100_EmbedDim100_batchsize128.CSV",
+      "Single_Machine_Dataset/Text Generation/Embedding Dimension/Single_machine_SeqLen100_EmbedDim100_batchsize128.CSV",
+      "Single_Machine_Dataset/Text Generation/Sequance Length/Single_machine_SeqLen100_EmbedDim100_batchsize128.CSV"
+    ]
+  },
+  {
+    "recording_id": "R34",
+    "path": "sources/recording_34.csv",
+    "url": "https://raw.githubusercontent.com/Ahmed-Elsayed95/High-resolution-AI-Data-Center-Training-Workloads-Dataset/f7f8d62e806ce2b64e93c58fce2bb18604f067ad/Single_Machine_Dataset/Text%20Generation/BatchSize/Single_machine_SeqLen100_EmbedDim100_batchsize32.CSV",
+    "git_blob_sha1": "91b11edc333a0ffe577a01a3489199bf9c7fe45f",
+    "bytes": 17077563,
+    "aliases": [
+      "Single_Machine_Dataset/Text Generation/BatchSize/Single_machine_SeqLen100_EmbedDim100_batchsize32.CSV"
+    ]
+  },
+  {
+    "recording_id": "R35",
+    "path": "sources/recording_35.csv",
+    "url": "https://raw.githubusercontent.com/Ahmed-Elsayed95/High-resolution-AI-Data-Center-Training-Workloads-Dataset/f7f8d62e806ce2b64e93c58fce2bb18604f067ad/Single_Machine_Dataset/Text%20Generation/BatchSize/Single_machine_SeqLen100_EmbedDim100_batchsize512.CSV",
+    "git_blob_sha1": "56071e47c20a2f053c3538c1d6756488ea567e92",
+    "bytes": 17240240,
+    "aliases": [
+      "Single_Machine_Dataset/Text Generation/BatchSize/Single_machine_SeqLen100_EmbedDim100_batchsize512.CSV"
+    ]
+  },
+  {
+    "recording_id": "R36",
+    "path": "sources/recording_36.csv",
+    "url": "https://raw.githubusercontent.com/Ahmed-Elsayed95/High-resolution-AI-Data-Center-Training-Workloads-Dataset/f7f8d62e806ce2b64e93c58fce2bb18604f067ad/Single_Machine_Dataset/Text%20Generation/Embedding%20Dimension/Single_machine_SeqLen100_EmbedDim1000_batchsize128.CSV",
+    "git_blob_sha1": "e3ba9acb8cfd681d4dfa475e5f692d706f8d765a",
+    "bytes": 17150845,
+    "aliases": [
+      "Single_Machine_Dataset/Text Generation/Embedding Dimension/Single_machine_SeqLen100_EmbedDim1000_batchsize128.CSV"
+    ]
+  },
+  {
+    "recording_id": "R37",
+    "path": "sources/recording_37.csv",
+    "url": "https://raw.githubusercontent.com/Ahmed-Elsayed95/High-resolution-AI-Data-Center-Training-Workloads-Dataset/f7f8d62e806ce2b64e93c58fce2bb18604f067ad/Single_Machine_Dataset/Text%20Generation/Embedding%20Dimension/Single_machine_SeqLen100_EmbedDim300_batchsize128.CSV",
+    "git_blob_sha1": "197a6d4087cef4cd8cd3cb8d245c48d7636e7e4a",
+    "bytes": 17117585,
+    "aliases": [
+      "Single_Machine_Dataset/Text Generation/Embedding Dimension/Single_machine_SeqLen100_EmbedDim300_batchsize128.CSV"
+    ]
+  },
+  {
+    "recording_id": "R38",
+    "path": "sources/recording_38.csv",
+    "url": "https://raw.githubusercontent.com/Ahmed-Elsayed95/High-resolution-AI-Data-Center-Training-Workloads-Dataset/f7f8d62e806ce2b64e93c58fce2bb18604f067ad/Single_Machine_Dataset/Text%20Generation/Sequance%20Length/Single_machine_SeqLen250_EmbedDim100_batchsize128.CSV",
+    "git_blob_sha1": "5738153f6977149bfda0a5e4f4ad836a9eb0cfde",
+    "bytes": 17113111,
+    "aliases": [
+      "Single_Machine_Dataset/Text Generation/Sequance Length/Single_machine_SeqLen250_EmbedDim100_batchsize128.CSV"
+    ]
+  },
+  {
+    "recording_id": "R39",
+    "path": "sources/recording_39.csv",
+    "url": "https://raw.githubusercontent.com/Ahmed-Elsayed95/High-resolution-AI-Data-Center-Training-Workloads-Dataset/f7f8d62e806ce2b64e93c58fce2bb18604f067ad/Single_Machine_Dataset/Text%20Generation/Sequance%20Length/Single_machine_SeqLen500_EmbedDim100_batchsize128.CSV",
+    "git_blob_sha1": "1040a926fdfe0f57d2f3831639f9c4e57c5ca15c",
+    "bytes": 17172070,
+    "aliases": [
+      "Single_Machine_Dataset/Text Generation/Sequance Length/Single_machine_SeqLen500_EmbedDim100_batchsize128.CSV"
+    ]
+  }
+]

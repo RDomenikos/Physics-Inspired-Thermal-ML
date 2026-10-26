@@ -1,0 +1,169 @@
+{
+  "scope": "Isolated original-source preparation plus saved-model replay; no prepared inputs or historical row predictions supplied",
+  "acquisition_download_tested": false,
+  "publisher_metadata_checked_online": true,
+  "date": "2026-10-26",
+  "new_model_selection": false,
+  "jetson": {
+    "prepared_rows": 4171,
+    "heldout_origins": 1457,
+    "reference_metric_rows": 1992,
+    "max_mae_difference_c": 4.235164736271502e-22,
+    "max_rmse_difference_c": 3.3881317890172014e-21,
+    "headline": [
+      {
+        "experiment_id": "neural_refined",
+        "method": "H1",
+        "mae_c": 0.2683997223600637,
+        "rmse_c": 0.4105800846626578
+      },
+      {
+        "experiment_id": "neural_refined",
+        "method": "H16",
+        "mae_c": 0.2914036757877428,
+        "rmse_c": 0.4533418046866975
+      },
+      {
+        "experiment_id": "neural_refined",
+        "method": "H2",
+        "mae_c": 0.2783225367385556,
+        "rmse_c": 0.4285049047794492
+      },
+      {
+        "experiment_id": "neural_refined",
+        "method": "H32",
+        "mae_c": 0.2925203920852038,
+        "rmse_c": 0.4555961222699896
+      },
+      {
+        "experiment_id": "neural_refined",
+        "method": "H4",
+        "mae_c": 0.2852153299431089,
+        "rmse_c": 0.4412922207512597
+      },
+      {
+        "experiment_id": "neural_refined",
+        "method": "H8",
+        "mae_c": 0.2892375736992693,
+        "rmse_c": 0.4490429493171788
+      },
+      {
+        "experiment_id": "neural_refined",
+        "method": "X_physics",
+        "mae_c": 0.2916152089583441,
+        "rmse_c": 0.401239517575022
+      },
+      {
+        "experiment_id": "neural_refined",
+        "method": "bounded",
+        "mae_c": 0.2829229901921031,
+        "rmse_c": 0.4099676384711689
+      },
+      {
+        "experiment_id": "ridge_original",
+        "method": "direct_joint",
+        "mae_c": 0.2529639583355745,
+        "rmse_c": 0.3794861844736142
+      },
+      {
+        "experiment_id": "ridge_original",
+        "method": "joint_generic_l1",
+        "mae_c": 0.2508910471465523,
+        "rmse_c": 0.37560321360225
+      },
+      {
+        "experiment_id": "ridge_original",
+        "method": "joint_generic_selected",
+        "mae_c": 0.3426896321584229,
+        "rmse_c": 0.4249115376891469
+      },
+      {
+        "experiment_id": "ridge_original",
+        "method": "persistence",
+        "mae_c": 0.6276345288809457,
+        "rmse_c": 0.7228022481532143
+      },
+      {
+        "experiment_id": "ridge_original",
+        "method": "sequential_base",
+        "mae_c": 0.3505465313875685,
+        "rmse_c": 0.4324643468557902
+      },
+      {
+        "experiment_id": "ridge_original",
+        "method": "sequential_thermal",
+        "mae_c": 0.2982998771716137,
+        "rmse_c": 0.3713032457487151
+      },
+      {
+        "experiment_id": "ridge_original",
+        "method": "telemetry_ridge",
+        "mae_c": 0.2591632785992637,
+        "rmse_c": 0.394594326099611
+      },
+      {
+        "experiment_id": "ridge_original",
+        "method": "temperature_ridge",
+        "mae_c": 0.2881731033142439,
+        "rmse_c": 0.36982753831406
+      },
+      {
+        "experiment_id": "ridge_original",
+        "method": "tuned_telemetry",
+        "mae_c": 0.3505465313875685,
+        "rmse_c": 0.4324643468557902
+      }
+    ],
+    "fixed_refitting": "not packaged or tested"
+  },
+  "intel": {
+    "prepared_rows": 30589,
+    "heldout_origins": 6035,
+    "reference_metric_rows": 1080,
+    "max_mae_difference_c": 0.0,
+    "max_rmse_difference_c": 0.0,
+    "headline": [
+      {
+        "method": "H2",
+        "mae_c": 4.0073207489599465,
+        "rmse_c": 5.444764453492923
+      },
+      {
+        "method": "H2_physics",
+        "mae_c": 3.9967647881844535,
+        "rmse_c": 5.421095226952224
+      },
+      {
+        "method": "H2_physics_bounded",
+        "mae_c": 4.003143961456006,
+        "rmse_c": 5.429946231302015
+      },
+      {
+        "method": "ridge_fixed",
+        "mae_c": 4.761378240009696,
+        "rmse_c": 6.427619897279528
+      },
+      {
+        "method": "ridge_physics",
+        "mae_c": 4.442719500216496,
+        "rmse_c": 5.969387298724166
+      }
+    ],
+    "fixed_refitting": {
+      "prediction_rows": 102595,
+      "max_prediction_error_c": null,
+      "reference_metrics_reproduced": true,
+      "independent_metrics_passed": true,
+      "max_refit_vs_frozen_difference_c": 0.0
+    }
+  },
+  "tests": {
+    "jetson_passed": 4,
+    "intel_passed": 3
+  },
+  "supplementary_raw_workflows": "not packaged; aggregate historical outcomes retained",
+  "scientific_tolerance_c": 1e-10,
+  "original_research_files_checked_unchanged": 272,
+  "frozen_model_subsets_exact": true,
+  "publication_payload_inspection": "All actual files inspected: no local/generated inputs, row-level tables, trace figures, personal filesystem paths or credential patterns."
+}
