@@ -131,4 +131,4 @@ We do not collect, own, mirror or redistribute the source recordings. The folder
 
 ## Citation
 
-If you use this implementation in research, please cite Rafael Domenikos, *Thermal ML: small physics-inspired corrections*. Machine-readable metadata is provided in `CITATION.cff`. A paper DOI, arXiv identifier and repository URL will be added when available. This citation request does not add conditions to the MIT License.
+If you use this implementation in research, please cite George-Rafael Domenikos, *Thermal ML: small physics-inspired corrections*. Machine-readable metadata is provided in `CITATION.cff`. A paper DOI, arXiv identifier and repository URL will be added when available. This citation request does not add conditions to the MIT License.
