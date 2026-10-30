@@ -1,0 +1,29 @@
+{
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "width": 2,
+  "network_lambda": 0.03,
+  "correction_lambda": 0.1,
+  "alpha": 0.25,
+  "k": 1,
+  "optimizer": {
+    "maxiter": 2000,
+    "gtol": 1e-06,
+    "ftol": 1e-10,
+    "maxls": 30
+  },
+  "continuation": {
+    "total_maxiter": 8000
+  },
+  "network_fit_budget": 30,
+  "correction_fit_budget": 15,
+  "grouping": "Union naive recording dates traversed by raw captures and overlapping captures; all same-date captures together",
+  "gap_rule": "Original 30s history and exact 60s target, plus no >2s interval anywhere from history start to target",
+  "source_project": "Publisher source obtained locally; see root README.md",
+  "selection": "None; fixed settings; all unresolved fits retained and flagged"
+}

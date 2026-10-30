@@ -1,0 +1,120 @@
+{
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "jetson_policy": "fixed_configuration_authorized",
+  "jetson_ridge_config": {
+    "version": 1,
+    "target": "temperature_cpu_c",
+    "horizons_s": [
+      10,
+      30,
+      60
+    ],
+    "history_s": 30,
+    "max_history_interval_s": 2,
+    "timestamp_tolerance_s": 0,
+    "development_groups": [
+      "wall_date_2024-10-22",
+      "wall_date_2024-10-23"
+    ],
+    "heldout_groups": [
+      "wall_date_2024-10-25"
+    ],
+    "development_windows": [
+      "depth_15W",
+      "depth_30W",
+      "phi_30W",
+      "resnet_30W",
+      "resnet_50W"
+    ],
+    "heldout_windows": [
+      "phi_15W",
+      "phi_50W",
+      "phi_maxn",
+      "resnet_15W",
+      "resnet_maxn"
+    ],
+    "temperature_features": [
+      "cpu_current_c",
+      "cpu_history_mean_c",
+      "cpu_history_slope_c_per_s",
+      "cpu_history_std_c"
+    ],
+    "telemetry_extra_features": [
+      "power_VDD_GPU_SOC_mean_mw",
+      "power_VDD_CPU_CV_mean_mw",
+      "power_VIN_SYS_5V0_mean_mw",
+      "power_VDDQ_VDD2_1V8AO_mean_mw",
+      "gpu_mean_pct",
+      "cpu_active_mean_pct",
+      "active_core_count"
+    ],
+    "ridge_lambda": 1.0,
+    "constant_std_threshold": 1e-12,
+    "scaling": "equal-window-weighted development mean and population std",
+    "training_weight": "1 / (number_of_development_windows * eligible_rows_in_window)",
+    "objective": "weighted_mean_squared_error + lambda * squared_l2_norm_of_standardized_coefficients",
+    "intercept_penalized": false,
+    "methods": [
+      "persistence",
+      "local_trend",
+      "temperature_ridge",
+      "telemetry_ridge"
+    ],
+    "analyses": {
+      "main": {
+        "exclude_development_windows": []
+      },
+      "without_resnet_50W": {
+        "exclude_development_windows": [
+          "resnet_50W"
+        ]
+      }
+    },
+    "rejection_precedence": [
+      "history_before_window",
+      "history_start_missing",
+      "history_gap",
+      "nonfinite_features",
+      "target_after_window",
+      "target_timestamp_missing",
+      "nonfinite_target"
+    ],
+    "mean_convention": "observed-sample arithmetic mean; CPU active-core means computed per sample first",
+    "std_ddof": 0,
+    "error_sign": "prediction_minus_observed",
+    "headline": "arithmetic mean of held-out per-window MAE per horizon",
+    "timing": {
+      "warmup": 100,
+      "repetitions": 1000,
+      "horizon_s": 30,
+      "window": "depth_15W",
+      "origin": "first eligible",
+      "analysis": "main"
+    }
+  },
+  "settings": {
+    "ridge_lambda": 10.0,
+    "ridge_correction_lambda": 1.0,
+    "ridge_alpha": 1.0,
+    "H2_lambda": 0.03,
+    "H2_correction_lambda": 0.1,
+    "H2_alpha": 0.25,
+    "bound_k": 1
+  },
+  "metric_tolerance": 1e-10,
+  "interpretation": "Retrospective fixed-configuration robustness; not nested selection or prospective forecasting",
+  "planned_groups": 3,
+  "unique_fit_budget_per_dataset": {
+    "network": 30,
+    "ridge": 6,
+    "correction": 18
+  },
+  "jetson_evaluation_label": "three-fold grouped cross-validation with previously selected, fixed hyperparameters",
+  "jetson_authorization": "User explicitly authorized fixed settings, intact groups, fresh train-only fitting, group-excluded residuals and training-only bounds on 2026-10-28."
+}

@@ -1,0 +1,110 @@
+[
+  {
+    "dataset": "jetson_inference",
+    "fold": "G_2024-10-22",
+    "method": "Ridge_physics",
+    "status": "nested_procedure_infeasible",
+    "outer_training_groups": [
+      "G_2024-10-23",
+      "G_2024-10-24_to_2024-10-28"
+    ],
+    "reason": "Only two outer-training groups. A group-excluded residual producer has one group left; original hyperparameter reselection cannot split it into nonempty train/validation groups. Correction hyperparameter validation needs still deeper OOF construction. No groups were weakened and no in-sample residuals substituted.",
+    "fixed_configuration_alternative": "Explicitly authorized 2026-10-28; run separately as fixed-hyperparameter grouped CV. This record concerns only fully nested selection."
+  },
+  {
+    "dataset": "jetson_inference",
+    "fold": "G_2024-10-22",
+    "method": "H2_physics",
+    "status": "nested_procedure_infeasible",
+    "outer_training_groups": [
+      "G_2024-10-23",
+      "G_2024-10-24_to_2024-10-28"
+    ],
+    "reason": "Only two outer-training groups. A group-excluded residual producer has one group left; original hyperparameter reselection cannot split it into nonempty train/validation groups. Correction hyperparameter validation needs still deeper OOF construction. No groups were weakened and no in-sample residuals substituted.",
+    "fixed_configuration_alternative": "Explicitly authorized 2026-10-28; run separately as fixed-hyperparameter grouped CV. This record concerns only fully nested selection."
+  },
+  {
+    "dataset": "jetson_inference",
+    "fold": "G_2024-10-22",
+    "method": "H2_bounded",
+    "status": "nested_procedure_infeasible",
+    "outer_training_groups": [
+      "G_2024-10-23",
+      "G_2024-10-24_to_2024-10-28"
+    ],
+    "reason": "Only two outer-training groups. A group-excluded residual producer has one group left; original hyperparameter reselection cannot split it into nonempty train/validation groups. Correction hyperparameter validation needs still deeper OOF construction. No groups were weakened and no in-sample residuals substituted.",
+    "fixed_configuration_alternative": "Explicitly authorized 2026-10-28; run separately as fixed-hyperparameter grouped CV. This record concerns only fully nested selection."
+  },
+  {
+    "dataset": "jetson_inference",
+    "fold": "G_2024-10-23",
+    "method": "Ridge_physics",
+    "status": "nested_procedure_infeasible",
+    "outer_training_groups": [
+      "G_2024-10-22",
+      "G_2024-10-24_to_2024-10-28"
+    ],
+    "reason": "Only two outer-training groups. A group-excluded residual producer has one group left; original hyperparameter reselection cannot split it into nonempty train/validation groups. Correction hyperparameter validation needs still deeper OOF construction. No groups were weakened and no in-sample residuals substituted.",
+    "fixed_configuration_alternative": "Explicitly authorized 2026-10-28; run separately as fixed-hyperparameter grouped CV. This record concerns only fully nested selection."
+  },
+  {
+    "dataset": "jetson_inference",
+    "fold": "G_2024-10-23",
+    "method": "H2_physics",
+    "status": "nested_procedure_infeasible",
+    "outer_training_groups": [
+      "G_2024-10-22",
+      "G_2024-10-24_to_2024-10-28"
+    ],
+    "reason": "Only two outer-training groups. A group-excluded residual producer has one group left; original hyperparameter reselection cannot split it into nonempty train/validation groups. Correction hyperparameter validation needs still deeper OOF construction. No groups were weakened and no in-sample residuals substituted.",
+    "fixed_configuration_alternative": "Explicitly authorized 2026-10-28; run separately as fixed-hyperparameter grouped CV. This record concerns only fully nested selection."
+  },
+  {
+    "dataset": "jetson_inference",
+    "fold": "G_2024-10-23",
+    "method": "H2_bounded",
+    "status": "nested_procedure_infeasible",
+    "outer_training_groups": [
+      "G_2024-10-22",
+      "G_2024-10-24_to_2024-10-28"
+    ],
+    "reason": "Only two outer-training groups. A group-excluded residual producer has one group left; original hyperparameter reselection cannot split it into nonempty train/validation groups. Correction hyperparameter validation needs still deeper OOF construction. No groups were weakened and no in-sample residuals substituted.",
+    "fixed_configuration_alternative": "Explicitly authorized 2026-10-28; run separately as fixed-hyperparameter grouped CV. This record concerns only fully nested selection."
+  },
+  {
+    "dataset": "jetson_inference",
+    "fold": "G_2024-10-24_to_2024-10-28",
+    "method": "Ridge_physics",
+    "status": "nested_procedure_infeasible",
+    "outer_training_groups": [
+      "G_2024-10-22",
+      "G_2024-10-23"
+    ],
+    "reason": "Only two outer-training groups. A group-excluded residual producer has one group left; original hyperparameter reselection cannot split it into nonempty train/validation groups. Correction hyperparameter validation needs still deeper OOF construction. No groups were weakened and no in-sample residuals substituted.",
+    "fixed_configuration_alternative": "Explicitly authorized 2026-10-28; run separately as fixed-hyperparameter grouped CV. This record concerns only fully nested selection."
+  },
+  {
+    "dataset": "jetson_inference",
+    "fold": "G_2024-10-24_to_2024-10-28",
+    "method": "H2_physics",
+    "status": "nested_procedure_infeasible",
+    "outer_training_groups": [
+      "G_2024-10-22",
+      "G_2024-10-23"
+    ],
+    "reason": "Only two outer-training groups. A group-excluded residual producer has one group left; original hyperparameter reselection cannot split it into nonempty train/validation groups. Correction hyperparameter validation needs still deeper OOF construction. No groups were weakened and no in-sample residuals substituted.",
+    "fixed_configuration_alternative": "Explicitly authorized 2026-10-28; run separately as fixed-hyperparameter grouped CV. This record concerns only fully nested selection."
+  },
+  {
+    "dataset": "jetson_inference",
+    "fold": "G_2024-10-24_to_2024-10-28",
+    "method": "H2_bounded",
+    "status": "nested_procedure_infeasible",
+    "outer_training_groups": [
+      "G_2024-10-22",
+      "G_2024-10-23"
+    ],
+    "reason": "Only two outer-training groups. A group-excluded residual producer has one group left; original hyperparameter reselection cannot split it into nonempty train/validation groups. Correction hyperparameter validation needs still deeper OOF construction. No groups were weakened and no in-sample residuals substituted.",
+    "fixed_configuration_alternative": "Explicitly authorized 2026-10-28; run separately as fixed-hyperparameter grouped CV. This record concerns only fully nested selection."
+  }
+]

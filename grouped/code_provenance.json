@@ -1,0 +1,110 @@
+[
+  {
+    "source": "run.py",
+    "destination": "source/jetson_ridge.py",
+    "source_sha256": "e50b8214cc063f3c83405f3410dd576c40fa082136310f321aa6b048f11d4ad7",
+    "functions": [
+      "weights",
+      "fit_ridge",
+      "ridge_delta",
+      "radiation_feature",
+      "enrichment_inputs",
+      "feature_geometry",
+      "fit_centered_physics",
+      "centered_design",
+      "fit_controlled_ridge",
+      "controlled_delta"
+    ],
+    "function_text_sha256": {
+      "weights": "40cdb14facc8232ef04a97046ddd878894009e52aedec5313d5090f8deb62ff0",
+      "fit_ridge": "db69a92596531eb3abb86dcecd8fc197cb85376d37b29cb2d1cba85b29f2738a",
+      "ridge_delta": "2bd0b3780ce101c1c848baa65035d69fbf0c6cc4ada1d6918f4cb5126437084e",
+      "radiation_feature": "ebdaaf85c9c0604c0f7517445d4e1d90644deacfdda7c47d2a27969012de437c",
+      "enrichment_inputs": "2a12829972b5a0d4db85ba150bddeb96a47bed3632b3a64b1057be0d4af11848",
+      "feature_geometry": "38cc07ce23db093b9d707f518e1aad4713a1cbcd2203d5a4c1947ab79a954a9c",
+      "fit_centered_physics": "d4421b4ac51d7d5bee8c788899dea029a8a3bac3523bb91e874cb58f0eda014d",
+      "centered_design": "874907c9f85e7110ee50e06ab4da879b475c62f65e0ee016425933ed66516337",
+      "fit_controlled_ridge": "55e9473ed8ce7e9bc68ecedc2d1b0281dd76dddd731968de1e23d7aed52cf0e3",
+      "controlled_delta": "46afba9f7432acb87db0db696c81e8485b6b5472ad5fb39c58f83d58bf8cfb4d"
+    }
+  },
+  {
+    "source": "neural_capacity_refinement/run.py",
+    "destination": "source/jetson_neural.py",
+    "source_sha256": "2dc4562c112d1e7d3508371dd79a1372d35a41bce5b6ae9e8d0458a18ab1648f",
+    "functions": [
+      "weights",
+      "standardize_fit",
+      "unpack",
+      "objective",
+      "fit_network",
+      "prepare_network",
+      "network_delta",
+      "raw_physics",
+      "fit_physics_scaling",
+      "physics_design",
+      "fit_correction",
+      "diagnose"
+    ],
+    "function_text_sha256": {
+      "weights": "81364cd940325a6fabd37cd1f51b96593811ad016d6db359aff6a6cbbb0f44a6",
+      "standardize_fit": "f555878c0e5e2d3e1f4d24f3f01f7b8041a8c19fdbbcced0d7dc6299fda1ed7d",
+      "unpack": "2aa44a277ab61223e2df05bae99db9fc23806c3f5b53653b770946a56f941580",
+      "objective": "3be6b453acf7b8e330a1ef2d0fa8d810385b297d321ac32df618b601acfe6001",
+      "fit_network": "8836297c907e5381a7bed8ffdfb17c0f295529e477eee4131a189d066b85f309",
+      "prepare_network": "4c9787c0e09cc84955c56ec049d0321506dacbe42a14f3ae168bb8f3e7dd220f",
+      "network_delta": "b70faf67cb6b53264883fa2b87823f6fc532eff08adcf17b54efffa4496f077d",
+      "raw_physics": "06f57712a727728e91083d2ef4dd8224fd1eb54f242dcf2109cde361a17a5eae",
+      "fit_physics_scaling": "9b877b9c9e0b3acdac24a38bea7e4fe99b08c5054980d419e5bdc97aba9a8388",
+      "physics_design": "a8ebb3450c0d81ebb9ac084854c23e190f7ea98009b72bd43722ec6ae56b57b4",
+      "fit_correction": "b13a6581c7e6a16da53bb4accd7c5a3ec8dcc128265a1f86bdeb34440d8927b1",
+      "diagnose": "79d3063278175f43c75a3118db739d8a723d33e4ca21b1fcd7c1b5db5fe548d8"
+    }
+  },
+  {
+    "source": "intel_12700_replication/run.py",
+    "destination": "source/intel.py",
+    "source_sha256": "691ca57ca79a6a3b14fc9a92b4b11a63fff3ff3ccb21fd112ad8d68e81d9f56f",
+    "functions": [
+      "weights",
+      "scaler",
+      "fit_ridge",
+      "unpack",
+      "objective",
+      "fit_network",
+      "baseline",
+      "raw_terms",
+      "design",
+      "fit_correction",
+      "quantile",
+      "metric"
+    ],
+    "function_text_sha256": {
+      "weights": "13f9b993086013efe0dcaebad09bb3ef88c1d6c6e0ebcc6c43d1706c690385ec",
+      "scaler": "cf509d22c3bf0f3adca76775cde69c288793f3b3c513a5f13d6f8f42d03b5d4c",
+      "fit_ridge": "872cbc6dfbb7a8ebd0b400080437ec9707018ce69005e051119998c7a16211aa",
+      "unpack": "02ab070d5014840df9ff22b29cca1360bd708f58e732efc6931d0f9b6a3b401c",
+      "objective": "fc94fefb7827589186e9503f4443d49176d7a0c0d61b436808373ed4afead763",
+      "fit_network": "0abe223db61255db2ee2f99629ca34b828d34a27714622d2fb4c6a8eab7abd58",
+      "baseline": "3ec451406d3d502850798397b2f8c23601d5412d98eba1c038685ff8eab12a47",
+      "raw_terms": "3070ca16b329de2c585bddb6393da5f64a0526a1b42d0766cdbbdb6222035922",
+      "design": "0a3251cc1979b23b4766042cef392cb8522b19c67697e7255683aecc727f1165",
+      "fit_correction": "04d9797d192e4deae521b383e1c01a2183169a4807eda501a401b192d1890364",
+      "quantile": "b0c018f5bc43e8ff7c96fc47a9b50c79072fe93dd6410df653b302236045cbd6",
+      "metric": "097573c4cea2f657bfcaf5ffed1f6df806365491d5ff5d778d768ac94b60c703"
+    }
+  },
+  {
+    "source": "bounded_physics_correction/run.py",
+    "destination": "source/scoring.py",
+    "source_sha256": "0b1318ba347437628b319dc5b78eb464e43a1a82c8f3c0bd5aa602bc29b84664",
+    "functions": [
+      "weighted_quantile",
+      "error_stats"
+    ],
+    "function_text_sha256": {
+      "weighted_quantile": "0550bce971b29480cc187101b61c47fbf842c7eabcdeb18eea7ac100889268ec",
+      "error_stats": "dad9ef9190973b45a59837e2e2f1e8652df556f48565af657289db836b7292cc"
+    }
+  }
+]

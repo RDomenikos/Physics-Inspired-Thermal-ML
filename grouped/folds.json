@@ -1,0 +1,341 @@
+[
+  {
+    "dataset": "intel",
+    "fold": "2025-09-29",
+    "train_groups": [
+      "2025-09-30",
+      "2025-10-01"
+    ],
+    "test_groups": [
+      "2025-09-29"
+    ],
+    "train_recordings": [
+      "R09",
+      "R10",
+      "R11",
+      "R12",
+      "R13",
+      "R14",
+      "R15",
+      "R22",
+      "R23",
+      "R24",
+      "R25",
+      "R27",
+      "R28",
+      "R29",
+      "R30",
+      "R31",
+      "R32",
+      "R33",
+      "R34",
+      "R35",
+      "R36",
+      "R37",
+      "R38",
+      "R39"
+    ],
+    "test_recordings": [
+      "R00",
+      "R01",
+      "R02",
+      "R04",
+      "R05",
+      "R06",
+      "R07",
+      "R08",
+      "R16",
+      "R17",
+      "R18",
+      "R20"
+    ],
+    "train_origins": 20484,
+    "test_origins": 10105
+  },
+  {
+    "dataset": "intel",
+    "fold": "2025-09-30",
+    "train_groups": [
+      "2025-09-29",
+      "2025-10-01"
+    ],
+    "test_groups": [
+      "2025-09-30"
+    ],
+    "train_recordings": [
+      "R00",
+      "R01",
+      "R02",
+      "R04",
+      "R05",
+      "R06",
+      "R07",
+      "R08",
+      "R09",
+      "R10",
+      "R11",
+      "R12",
+      "R13",
+      "R14",
+      "R15",
+      "R16",
+      "R17",
+      "R18",
+      "R20"
+    ],
+    "test_recordings": [
+      "R22",
+      "R23",
+      "R24",
+      "R25",
+      "R27",
+      "R28",
+      "R29",
+      "R30",
+      "R31",
+      "R32",
+      "R33",
+      "R34",
+      "R35",
+      "R36",
+      "R37",
+      "R38",
+      "R39"
+    ],
+    "train_origins": 16140,
+    "test_origins": 14449
+  },
+  {
+    "dataset": "intel",
+    "fold": "2025-10-01",
+    "train_groups": [
+      "2025-09-29",
+      "2025-09-30"
+    ],
+    "test_groups": [
+      "2025-10-01"
+    ],
+    "train_recordings": [
+      "R00",
+      "R01",
+      "R02",
+      "R04",
+      "R05",
+      "R06",
+      "R07",
+      "R08",
+      "R16",
+      "R17",
+      "R18",
+      "R20",
+      "R22",
+      "R23",
+      "R24",
+      "R25",
+      "R27",
+      "R28",
+      "R29",
+      "R30",
+      "R31",
+      "R32",
+      "R33",
+      "R34",
+      "R35",
+      "R36",
+      "R37",
+      "R38",
+      "R39"
+    ],
+    "test_recordings": [
+      "R09",
+      "R10",
+      "R11",
+      "R12",
+      "R13",
+      "R14",
+      "R15"
+    ],
+    "train_origins": 24554,
+    "test_origins": 6035
+  },
+  {
+    "dataset": "jetson_inference",
+    "fold": "G_2024-10-22",
+    "train_groups": [
+      "G_2024-10-23",
+      "G_2024-10-24_to_2024-10-28"
+    ],
+    "test_groups": [
+      "G_2024-10-22"
+    ],
+    "train_recordings": [
+      "phi_15W",
+      "phi_30W",
+      "phi_50W",
+      "phi_maxn",
+      "resnet_15W",
+      "resnet_maxn"
+    ],
+    "test_recordings": [
+      "depth_15W",
+      "depth_30W",
+      "resnet_30W",
+      "resnet_50W"
+    ],
+    "train_origins": 1496,
+    "test_origins": 2675
+  },
+  {
+    "dataset": "jetson_inference",
+    "fold": "G_2024-10-23",
+    "train_groups": [
+      "G_2024-10-22",
+      "G_2024-10-24_to_2024-10-28"
+    ],
+    "test_groups": [
+      "G_2024-10-23"
+    ],
+    "train_recordings": [
+      "depth_15W",
+      "depth_30W",
+      "phi_15W",
+      "phi_50W",
+      "phi_maxn",
+      "resnet_15W",
+      "resnet_30W",
+      "resnet_50W",
+      "resnet_maxn"
+    ],
+    "test_recordings": [
+      "phi_30W"
+    ],
+    "train_origins": 4132,
+    "test_origins": 39
+  },
+  {
+    "dataset": "jetson_inference",
+    "fold": "G_2024-10-24_to_2024-10-28",
+    "train_groups": [
+      "G_2024-10-22",
+      "G_2024-10-23"
+    ],
+    "test_groups": [
+      "G_2024-10-24_to_2024-10-28"
+    ],
+    "train_recordings": [
+      "depth_15W",
+      "depth_30W",
+      "phi_30W",
+      "resnet_30W",
+      "resnet_50W"
+    ],
+    "test_recordings": [
+      "phi_15W",
+      "phi_50W",
+      "phi_maxn",
+      "resnet_15W",
+      "resnet_maxn"
+    ],
+    "train_origins": 2714,
+    "test_origins": 1457
+  },
+  {
+    "dataset": "jetson_supplementary",
+    "fold": "G_2024-10-22",
+    "train_groups": [
+      "G_2024-10-23",
+      "G_2024-10-24_to_2024-10-28"
+    ],
+    "test_groups": [
+      "G_2024-10-22"
+    ],
+    "train_recordings": [
+      "phi_15W",
+      "phi_30W",
+      "phi_50W",
+      "phi_maxn",
+      "resnet_15W",
+      "resnet_maxn",
+      "resnet_training",
+      "resnet_training_15W",
+      "resnet_training_30W",
+      "resnet_training_50W",
+      "resnet_training_maxnS"
+    ],
+    "test_recordings": [
+      "depth_15W",
+      "depth_30W",
+      "resnet_30W",
+      "resnet_50W"
+    ],
+    "train_origins": 12001,
+    "test_origins": 2675,
+    "status": "reused_existing_fixed_configuration_fit"
+  },
+  {
+    "dataset": "jetson_supplementary",
+    "fold": "G_2024-10-23",
+    "train_groups": [
+      "G_2024-10-22",
+      "G_2024-10-24_to_2024-10-28"
+    ],
+    "test_groups": [
+      "G_2024-10-23"
+    ],
+    "train_recordings": [
+      "depth_15W",
+      "depth_30W",
+      "phi_15W",
+      "phi_50W",
+      "phi_maxn",
+      "resnet_15W",
+      "resnet_30W",
+      "resnet_50W",
+      "resnet_maxn",
+      "resnet_training",
+      "resnet_training_15W",
+      "resnet_training_30W",
+      "resnet_training_50W",
+      "resnet_training_maxnS"
+    ],
+    "test_recordings": [
+      "phi_30W"
+    ],
+    "train_origins": 14637,
+    "test_origins": 39,
+    "status": "reused_existing_fixed_configuration_fit"
+  },
+  {
+    "dataset": "jetson_supplementary",
+    "fold": "G_2024-10-24_to_2024-10-28",
+    "train_groups": [
+      "G_2024-10-22",
+      "G_2024-10-23"
+    ],
+    "test_groups": [
+      "G_2024-10-24_to_2024-10-28"
+    ],
+    "train_recordings": [
+      "depth_15W",
+      "depth_30W",
+      "phi_30W",
+      "resnet_30W",
+      "resnet_50W"
+    ],
+    "test_recordings": [
+      "phi_15W",
+      "phi_50W",
+      "phi_maxn",
+      "resnet_15W",
+      "resnet_maxn",
+      "resnet_training",
+      "resnet_training_15W",
+      "resnet_training_30W",
+      "resnet_training_50W",
+      "resnet_training_maxnS"
+    ],
+    "train_origins": 2714,
+    "test_origins": 11962,
+    "status": "reused_existing_fixed_configuration_fit"
+  }
+]

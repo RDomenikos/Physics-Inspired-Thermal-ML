@@ -1,0 +1,131 @@
+{
+  "status": "passed",
+  "new_scientific_fits": 0,
+  "isolated_preparation": [
+    "Jetson: 4171 origins, original publisher-byte hash checks",
+    "Intel: 30589 origins, 4 invalid captures excluded"
+  ],
+  "fixed_replay": "all released methods/seeds and independent frozen aggregate references",
+  "grouped_replay": "all folds and seeds; saved coefficients; original group/scaling/residual checks; independent frozen seed/recording metrics",
+  "refinement": {
+    "label": "Retrospective intercept-removal refinement, evaluated on all three existing grouped folds without refitting.",
+    "generated_from": "saved states and prepared evaluation inputs",
+    "new_fits": 0,
+    "frozen_reference_rows_verified": 39,
+    "folds": [
+      {
+        "fold": "G_2024-10-22",
+        "alpha": 1.0,
+        "intercept_c": 0.01252089311963723,
+        "identity_max_abs_c": 1.1102230246251565e-16
+      },
+      {
+        "fold": "G_2024-10-23",
+        "alpha": 1.0,
+        "intercept_c": 0.06863942134578581,
+        "identity_max_abs_c": 1.1102230246251565e-16
+      },
+      {
+        "fold": "G_2024-10-24_to_2024-10-28",
+        "alpha": 1.0,
+        "intercept_c": -0.6434047320579136,
+        "identity_max_abs_c": 2.220446049250313e-16
+      }
+    ]
+  },
+  "seed_then_fold_summary_checked": true,
+  "fold_sd_ddof": 1,
+  "existing_tests": {
+    "fixed_root": 4,
+    "fixed_intel": 3,
+    "grouped": 4
+  },
+  "original_artifacts_unchanged": 196,
+  "original_scientific_python_files_unchanged": [
+    {
+      "file": "fixed/run.py",
+      "sha256": "dacc8132e6158a7a1b0bd5b33b2cec320a16695754c93d6efcec60f2ea0fd4b8"
+    },
+    {
+      "file": "fixed/test_run.py",
+      "sha256": "e3142908441776ab76ee53fecf26509f3c23d76348cc0dff887cc125954dbc28"
+    },
+    {
+      "file": "fixed/intel/run.py",
+      "sha256": "0d1ba16f782454468ec177cf5934047e3ad8c749bf0c9991c9c8b7c58523f252"
+    },
+    {
+      "file": "fixed/intel/test_run.py",
+      "sha256": "2142068221a25c36a67d77d41f59ba9a38252a2732a6c20c4bcdd35dc7b27bdc"
+    },
+    {
+      "file": "fixed/intel/prepare.py",
+      "sha256": "691ca57ca79a6a3b14fc9a92b4b11a63fff3ff3ccb21fd112ad8d68e81d9f56f"
+    },
+    {
+      "file": "fixed/jetson/run.py",
+      "sha256": "10728801a5ddee10fbda26a2ca89022816d3e28cc3dd42509562f99dd15ed10b"
+    },
+    {
+      "file": "fixed/jetson/scripts/audit.py",
+      "sha256": "df35608bcc90cdf78d65a6f71e412b23bf58b8c0dec6d5e51cbe2d17ea14e1a6"
+    },
+    {
+      "file": "fixed/jetson/scripts/acquire.py",
+      "sha256": "d08b285ca995d4d1fc38eb6054b3c5dc9e1c7846adebc3bac04de6bfda00fcf3"
+    },
+    {
+      "file": "fixed/jetson/scripts/diagnose_stage2.py",
+      "sha256": "62a7be807f5030c5866deb6f75bb1ad63296548d42b5a7b4f6625455413d703c"
+    },
+    {
+      "file": "fixed/jetson/scripts/stage3_core.py",
+      "sha256": "2ef2f8758b2c358bad12e692f63c433def74266bc40cbd8ad025f7839cb76c73"
+    },
+    {
+      "file": "fixed/jetson/scripts/prepare_stage2.py",
+      "sha256": "787f61b7518ef103aba4ebe65a09ddb6d7df93d02dfff7783bbd22a92da7cffa"
+    },
+    {
+      "file": "grouped/run.py",
+      "sha256": "da67583a4e127506295313fc6f92c7580ccbc7a27a332db08349a4f1ea7fafed"
+    },
+    {
+      "file": "grouped/present.py",
+      "sha256": "211df1e6aac8a7c91c481f43fa98d27c87bd6fb4990d46abf54b9f5487127c0e"
+    },
+    {
+      "file": "grouped/test_run.py",
+      "sha256": "7b82b1c65b0ac59e07f07273254c90b55fe73fa13d0f1be02e984e7104b768c5"
+    },
+    {
+      "file": "grouped/source/intel.py",
+      "sha256": "81a7ff310c2a6f9dc01c66818d5f637be860bb37616af2ed99afe5ae112db510"
+    },
+    {
+      "file": "grouped/source/jetson_neural.py",
+      "sha256": "e42c8614175acc952bdcba3e7cd02253c8a8e2e8a10580e2547825963db4dab6"
+    },
+    {
+      "file": "grouped/source/scoring.py",
+      "sha256": "66567955d20af2986a6a2c9e70de213d8be01e97bacdc418c5a6476570a218fb"
+    },
+    {
+      "file": "grouped/source/jetson_ridge.py",
+      "sha256": "ba9763fdd1059e4e9720caaa61b8d23c54378d6a53eb531fdd9d6f160641148c"
+    }
+  ],
+  "not_rerun": [
+    "network or Ridge fitting; unchanged existing verified routines",
+    "network download; available pinned publisher files used",
+    "supplementary raw preparation and fitting; previously verified saved evidence retained"
+  ],
+  "source_acquisition": "Pinned original files supplied to isolated copy; no prepared features or historical row predictions present at start",
+  "local_relocation_replay_passed": true,
+  "supplementary_local_saved_prediction_rescore": {
+    "reused": true,
+    "new_fits": 0,
+    "seed_metric_rows_checked": 270,
+    "all_existing_fits_converged": true
+  }
+}

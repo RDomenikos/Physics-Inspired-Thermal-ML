@@ -1,134 +1,110 @@
-# Thermal ML: small physics-inspired corrections
+# Thermal ML: compact temperature forecasting and correction
 
-Forecast CPU temperature 60 seconds ahead from 30 seconds of causal telemetry. A frozen Ridge or small neural predictor receives a learned, three-feature thermal correction. The features express superlinear temperature dependence, radiation-inspired curvature and temperature–power interaction; their fitted coefficients are predictive parameters, not measured material constants.
+Predict CPU temperature 60 seconds ahead from 30 seconds of causal telemetry. A frozen Ridge or small neural baseline receives three standardized physics-inspired residual features: superlinear temperature dependence, radiation-inspired curvature and temperature–power interaction. Their coefficients are effective predictive parameters, not identified heat-transfer constants.
 
-```mermaid
-flowchart LR
- A[Original publisher recordings obtained locally] --> B[Original parsers and causal features]
- B --> C[Frozen baseline plus saved physics correction]
- C --> D[Matched predictions and equal-recording metrics]
- D --> E[Check against frozen aggregate references]
-```
+**Workflow:** obtain publisher recordings → prepare locally → replay saved models → verify frozen references → generate report tables. Fitting is optional and separate.
 
-| Held-out comparison | Baseline MAE → corrected MAE (°C) | Baseline RMSE → corrected RMSE (°C) |
-|---|---:|---:|
-| Jetson sequential Ridge | 0.350547 → 0.298300 (**14.90% lower**) | 0.432464 → 0.371303 (**14.14% lower**) |
-| Jetson H2 neural network | 0.278323 → 0.291615 (**4.78% higher**) | 0.428505 → 0.401240 (**6.36% lower**) |
-| Intel fixed Ridge | 4.761378 → 4.442720 (**6.69% lower**) | 6.427620 → 5.969387 (**7.13% lower**) |
-| Intel H2 neural network | 4.007321 → 3.996765 (**0.26% lower**) | 5.444764 → 5.421095 (**0.43% lower**) |
+| Evidence scope | Comparison | MAE baseline → correction (°C) | RMSE baseline → correction (°C) |
+|---|---|---:|---:|
+| Original fixed split: Jetson | Ridge | .350547 → .298300 | .432464 → .371303 |
+| Original fixed split: Jetson | H2 neural | .278323 → .291615 | .428505 → .401240 |
+| Original fixed split: Intel | Ridge | 4.761378 → 4.442720 | 6.427620 → 5.969387 |
+| Original fixed split: Intel | H2 neural | 4.007321 → 3.996765 | 5.444764 → 5.421095 |
+| Jetson grouped, three folds | Ridge original correction | .391497 ± .037690 → .373550 ± .149162 | .453806 ± .021906 → .457705 ± .193723 |
+| Intel grouped, three dates | Ridge original correction | 4.122811 ± .634884 → 3.948181 ± .577410 | 5.625935 ± .753218 → 5.323949 ± .674343 |
+| Intel grouped, three dates | H2 neural correction | 3.554648 ± .439270 → 3.550943 ± .427297 | 4.762842 ± .690632 → 4.743524 ± .681034 |
+| Jetson supplementary grouped | H2 neural correction | .380114 ± .171089 → .487827 ± .365679 | .493108 ± .251819 → .685235 ± .599617 |
+| Jetson grouped, retrospective refinement | Ridge intercept removed | .391497 ± .037690 → .329744 ± .036439 | .453806 ± .021906 → .396679 ± .052060 |
 
-These are comparisons against each correction's exact frozen receiver. Jetson's original λ=1 telemetry Ridge has MAE 0.259163°C; the highlighted sequential receiver uses λ=10. The full original comparator context, bounded corrections and neural widths remain in the regenerated metrics. H2 means a two-hidden-unit neural network, not physics-enriched Ridge.
+![Every Jetson Ridge fold, original and retrospective correction](report_outputs/refinement_folds.png)
 
-![Jetson ridge forecasting improvements against the paired baseline](figures/ridge_gains.png)
+**Retrospective intercept-removal refinement, evaluated on all three existing grouped folds without refitting.** It removes the saved correction intercept at prediction time: original δ=α(c+γᵀφ), refined δ=αγᵀφ. The evaluated Ridge α is 1. It does not refit slopes, recenter features, alter the baseline or train a zero-intercept model. It was introduced after diagnosing the original grouped failure, not selected before that evaluation. Mean fold MAE/RMSE reductions are 15.77%/12.59% relative to baseline (reductions of mean errors, not means of fold percentages). Both metrics improve in two of three folds; late October remains slightly worse. It has not been independently confirmed or evaluated on Intel or neural models.
 
-## Setup
+The original correction remains visible. Full Intel grouped, all neural seeds, bounds, generic comparators, supplementary Jetson and adverse outcomes are in `report_outputs/` and frozen experiment tables. Original Jetson λ=1 telemetry Ridge is a different comparator from the sequential λ=10 receiver. H2 means a two-hidden-unit network, not physics-enriched Ridge.
 
-Python 3.9–3.11; one CPU numerical thread; no GPU needed. From this folder:
+## Setup and source acquisition
+
+Python 3.9–3.11; CPU only, one numerical thread. From this folder:
 
 ```sh
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
+mkdir -p local_sources
 ```
 
-On Windows activate `.venv\Scripts\activate`. Dependencies are pinned to the recorded numerical environment. No dataset is bundled or downloaded automatically.
+Obtain files directly under publisher terms; no data are bundled or downloaded automatically.
 
-## 1. Jetson: obtain recordings, prepare and evaluate
-
-Source: **BroncoSpace Lab / SCALES project contributors**, [original repository](https://github.com/BroncoSpace-Lab/scales-docs). Read its source terms before obtaining recordings. The tested snapshot is commit `f78280e6995e3c62488ea32f4dd7bfc5990370d8`, specifically its [docs/data directory](https://github.com/BroncoSpace-Lab/scales-docs/tree/f78280e6995e3c62488ea32f4dd7bfc5990370d8/docs/data).
-
-Obtain that revision yourself; for example, with Git:
+**Jetson:** BroncoSpace Lab / SCALES contributors, [repository](https://github.com/BroncoSpace-Lab/scales-docs), pinned commit `f78280e6995e3c62488ea32f4dd7bfc5990370d8`. No explicit license file was found at that pinned snapshot; public availability is not redistribution permission.
 
 ```sh
-mkdir -p local_sources
 git clone https://github.com/BroncoSpace-Lab/scales-docs.git local_sources/scales-docs
 git -C local_sources/scales-docs checkout f78280e6995e3c62488ea32f4dd7bfc5990370d8
-python -B run.py jetson --source-dir local_sources/scales-docs
+python -B run.py fixed jetson --source-dir local_sources/scales-docs
 ```
 
-Alternatively, use GitHub's download at that exact revision and pass the extracted repository root. Only the 20 source files listed with URLs, byte counts and hashes in `jetson/manifests/sources.json` are required: raw `.txt` recordings and corresponding author-selected `.csv` windows for the ten original recordings. Do not substitute CSV temperatures for the raw CPU-temperature target.
+The 20 required raw/window files and hashes are in `fixed/jetson/manifests/sources.json`. The original parser and author-window alignment produce 2,714 development and 1,457 held-out origins. The launcher checks bytes and replays original saved models.
 
-The launcher verifies source bytes; invokes the original canonical parser, author-window alignment and causal-feature functions; prepares **2,714 development and 1,457 held-out origins**; and evaluates released saved models. It requires no precomputed features, private paths or historical row-level reference predictions. Read `jetson/local/results/metrics.csv` and `verification.json`. Predictions and canonical telemetry are generated locally under the ignored `jetson/local/` directory.
-
-## 2. Intel: obtain recordings, prepare and evaluate
-
-Credit: **Ahmed Abd Elaziz Elsayed, Abdullah Azhar Al-Obaidi and Hany E. Z. Farag**, *Characterization of high-resolution AI data center training workloads on single and multiple GPU nodes*: [article](https://doi.org/10.1038/s41597-026-07496-6), [Figshare dataset, version 1](https://doi.org/10.6084/m9.figshare.31654879.v1), [authors' GitHub repository](https://github.com/Ahmed-Elsayed95/High-resolution-AI-Data-Center-Training-Workloads-Dataset).
-
-The recorded experiment used the **GitHub** snapshot below. Follow that source's terms for that route; the Figshare license is not a replacement for the GitHub notice.
+**Intel:** Ahmed Abd Elaziz Elsayed, Abdullah Azhar Al-Obaidi and Hany E. Z. Farag, [article](https://doi.org/10.1038/s41597-026-07496-6), [Figshare v1](https://doi.org/10.6084/m9.figshare.31654879.v1), [source repository](https://github.com/Ahmed-Elsayed95/High-resolution-AI-Data-Center-Training-Workloads-Dataset).
 
 ```sh
 git clone https://github.com/Ahmed-Elsayed95/High-resolution-AI-Data-Center-Training-Workloads-Dataset.git local_sources/intel-workloads
 git -C local_sources/intel-workloads checkout f7f8d62e806ce2b64e93c58fce2bb18604f067ad
-python -B run.py intel --source-dir local_sources/intel-workloads
+python -B run.py fixed intel --source-dir local_sources/intel-workloads
 ```
 
-Only the 40 unique single-machine source files in `intel/manifests/download_manifest.json` are needed; it provides exact URLs, aliases, byte counts and Git blob hashes. The launcher accepts either the publisher's repository layout or a directory of those files named `recording_00.csv` through `recording_39.csv`, as listed by the manifest. It uses only the Intel i7-12700 / RTX 3060 subset, not H100/B200 records. Duplicate aliases are not duplicate recordings.
+`fixed/intel/manifests/download_manifest.json` lists the 40 required single-machine sources and hashes. Original preparation excludes four invalid captures and produces 24,554 development and 6,035 held-out origins. Figshare lists CC BY 4.0; the tested GitHub snapshot has a separate CC BY-NC-ND 4.0 notice. These are not assumed interchangeable. Figshare archive layout/byte equivalence was not tested. Read the preserved notices in `fixed/reference/` and the full acquisition details in `fixed/README.md`.
 
-The **unchanged original audit and preparation functions** exclude four invalid timestamp captures and create **24,554 development and 6,035 held-out origins**. Read `intel/local/results/metrics.csv`, `summary.md`, `comparison.png` and `verification.json`. Local source copies, audit outputs, features and predictions are ignored by Git.
+## Saved-model replay: no fitting
 
-Figshare lists archive ID **62953543**, `High-resolution-AI-Data-Center-Training-Workloads-Dataset_FigShare.zip`, 209,685,111 bytes. Its extraction layout and equivalence to the pinned GitHub bytes were **not tested**; do not silently substitute it and bypass the manifest checks. It remains a separately attributed publisher deposit, not the tested acquisition route.
-
-## Repeat replay, optional fitting and tests
-
-After preparation, replay does not need source acquisition or any fitting:
+After preparation:
 
 ```sh
-python -B run.py jetson
-python -B run.py intel
+python -B run.py fixed jetson
+python -B run.py fixed intel
+python -B run.py grouped all
+python -B run.py refinement
+python -B run.py report
 ```
 
-Optional **Intel only**, fixed-procedure fitting from the locally generated development features:
+Grouped datasets can also be replayed separately: `python -B run.py grouped jetson_inference` or `python -B run.py grouped intel`. Refinement regenerates predictions from saved models, training-derived coordinates and prepared observations, never from a diagnostic predictions CSV. `report` requires both primary datasets plus refinement; supplementary aggregate evidence is reused and labelled separately.
+
+## Optional original fitting routes
 
 ```sh
-python -B run.py intel --refit-check
+python -B run.py fixed intel --refit-check
+python -B run.py grouped all --refit --output-dir grouped/local/refit_results
 ```
 
-This refits the existing λ=10 Ridge and λ=.03 H2 models, preserves the original date-excluded residual procedure and physics/bound settings, compares against released model predictions and aggregate references, and writes `intel/local/results/refit_verification.json`. It performs no model selection and never replaces released models. The complete Jetson nested selection/refitting experiment is not packaged or claimed as verified; it is unnecessary for saved-model reproduction.
+Use a new output directory for a fresh grouped refit. Existing scientific functions, seeds and budgets are unchanged. No grid search occurs. Complete original Jetson fixed-split nested selection is not supplied; its saved-model replay is. Supplementary Jetson raw preparation/refitting is not implemented in this publication package: its aggregate/per-recording/seed evidence and previous verification are retained, without inventing a new workflow.
 
-Tests, after the corresponding preparation commands:
+## Structure and verification
 
-```sh
-python -B -m unittest test_run.py
-python -B -m unittest discover -s intel -p test_run.py
-```
-
-The Jetson suite checks original counts and exact timestamps, paired rows, reconstruction, aggregate references, development-only scaling and causal feature invariance to future observations. The Intel suite reuses the original checks of references, metric calculations, paired origins, training groups and bounds. Each dataset is independently runnable; missing supplementary data never block these commands.
-
-Historical row-level reference predictions are optional: place them locally at `jetson/local/reference_predictions.parquet` or `intel/local/reference_predictions.parquet` if already available. Neither workflow requires them. Newly generated predictions are always checked against independently frozen **aggregate** references, never against a reference generated from the same run. Parquet byte identity is not required.
-
-## Package contents
-
-| Location | Purpose |
+| Directory | Purpose |
 |---|---|
-| `run.py`, `test_run.py` | Thin launcher and focused portability/causality checks |
-| `jetson/` | Existing parser/feature/prediction code, selected manifests, saved models and frozen metric references |
-| `intel/` | Existing audit/preparation and fitting/replay code, source manifest and saved models/reference metrics |
-| `reference/` | Compact supplementary outcomes, verification record and publisher license notice |
-| `figures/` | Two aggregate report figures; no measured-temperature traces |
-| `CODE_CHANGES.md` | Exact scope of portability changes and original-code hashes |
+| `fixed/` | Original portable source preparation/replay, models, original comparisons and notices |
+| `grouped/` | Existing grouped fitting/scoring code, configuration, groups/folds; `results/` is frozen reference evidence |
+| `refinement/reference/` | Independently frozen diagnostic metrics; original signs preserved |
+| `*/local/` | Regenerated observations, predictions and checks, ignored by Git |
+| `report_outputs/` | Aggregate/per-recording CSVs and PDF/PNG figures, no temperature traces |
+| `VERIFICATION.md`, `package_manifest.json` | What was rerun, limits and file hashes |
 
-The companion technical report and industry white paper are not bundled in this package, and public links are not yet available. The technical report includes measured-temperature traces; the industry white paper uses aggregate comparison charts. This package supports the numerical headline evidence in both documents.
+`fixed/README.md` and `grouped/README.md` preserve historical release documentation; use this root launcher's commands instead of the old companion-folder instructions. Original scientific code has not been refactored.
 
-## Verification and evidence scope
+Tests after preparation:
 
-Both raw-source preparation and saved-model replay routes were tested in an isolated copy using separate copies of the original publisher recordings, with no prepared features or historical predictions present. Intel fixed-procedure refitting was also tested separately. See `reference/verification.json` and `VERIFICATION.md` for exact results. Dataset downloading itself was **not** tested; publisher license metadata was checked online. The clone commands above are acquisition instructions; the preparation/evaluation commands were tested against the equivalent pinned original source bytes.
+```sh
+(cd fixed && python -B -m unittest test_run.py)
+(cd fixed && python -B -m unittest discover -s intel -p test_run.py)
+(cd grouped && python -B -m unittest test_run.py)
+```
 
-The task remains 60-second forecasting with original timestamps, gap rules, features, units, weights, splits and parameters. Jetson uses five original held-out recording windows; Intel uses seven recordings sharing one held-out date and workload family. Seed results are averaged after scoring each seed, not ensembled. Overlapping origins and seeds are not independent experimental replicates. These recordings were previously examined, so comparisons are exploratory.
+Grouped replay additionally checks excluded-group residuals, preprocessing, bounds, saved receiver hashes, identical origins and frozen seed/per-recording references. Summaries score seeds first, average within folds, then report equal-fold means and sample SD (ddof=1). Seed variability is separate from fold variability. Positive **improvement** means baseline minus method; historical fixed `minus_comparator`/`minus_paired` and refinement-reference `change_*` columns use the opposite sign.
 
-Supplementary Jetson transfer and conservative grouped refitting did **not** retain aggregate gains; `reference/supplementary_metrics.csv` preserves those outcomes. Their preparation/refitting workflows are outside this focused headline package. Generic joint enrichment was competitive on Jetson; the results do not identify physical heat-transfer mechanisms or establish superiority over all nonlinear alternatives. No measured energy savings or control benefit is claimed.
+Jetson is “three-fold grouped cross-validation with previously selected, fixed hyperparameters”: retrospective robustness assessment, not fully nested model-selection validation. Intel uses fixed-configuration leave-one-date-out evaluation. The 15-window supplementary inference/training-workload scope is separate from the 10-window inference-only scope. Dates/workloads and group sizes differ; overlapping origins and seeds are not independent replicates. No pooled Jetson/Intel scores, mechanism proof or measured energy savings are claimed.
 
-## Attribution, terms and publication
+## Credits and publication boundary
 
-Our original Python code is **MIT licensed**, as selected by the project owner; see `LICENSE`. The copied parsing, preparation and modeling scripts are from this project's own earlier research implementation, not publisher training code. Dependencies retain their own licenses. The MIT license does not relicense third-party data, notices or publications.
+Original code remains MIT under the existing contributor attribution in `LICENSE`; MIT does not relicense datasets, notices or publications. Source terms/citations and previously verified links are preserved. No repository URL, DOI or arXiv ID is invented for this software.
 
-Publisher terms checked 26 October 2026:
-
-- **Jetson:** no LICENSE/LICENCE/COPYING/NOTICE file was found in the pinned repository tree. This is not a grant of data redistribution rights. Obtain and use the source under applicable publisher terms; contact BroncoSpace if permission is unclear. A license on another BroncoSpace repository is not assumed to cover these recordings.
-- **Intel Figshare:** the article's metadata identifies **CC BY 4.0** for its deposited dataset/archive. This statement covers that Figshare deposit, not automatically the GitHub snapshot or paper.
-- **Intel GitHub:** the pinned repository's **CC BY-NC-ND 4.0** notice is preserved in `reference/intel_source_LICENSE.txt`. We record this separately and do not infer that it is interchangeable with Figshare terms or resolves scope for every repository item.
-
-We do not collect, own, mirror or redistribute the source recordings. The folder and ZIP exclude raw telemetry, extracted features/targets, row-level predictions, source archives and measured traces. `.gitignore` also excludes local downloads, generated results, caches and environments. Keep local files out of manual web uploads; do not force-add ignored data. The published file inventory is in `reference/package_manifest.json`. Nothing has been pushed or published.
-
-## Citation
-
-If you use this implementation in research, please cite George-Rafael Domenikos, *Thermal ML: small physics-inspired corrections*. Machine-readable metadata is provided in `CITATION.cff`. A paper DOI, arXiv identifier and repository URL will be added when available. This citation request does not add conditions to the MIT License.
+The public folder/ZIP excludes publisher recordings, archives, prepared observations/targets, row-level predictions and measured traces. Those are generated locally and must remain out of uploads. See the actual ZIP audit in `VERIFICATION.md`; `.gitignore` alone is not a redistribution check. Reports and white papers are not edited or bundled. Nothing has been pushed or published.

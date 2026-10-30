@@ -1,0 +1,18 @@
+{
+  "original_files_unchanged": 243,
+  "scientific_function_bodies_unchanged": true,
+  "intel_planned_folds": 3,
+  "intel_complete_folds": 3,
+  "jetson_inference_planned_folds": 3,
+  "jetson_inference_completed_folds": 3,
+  "jetson_inference_status": "Completed: three-fold grouped cross-validation with previously selected, fixed hyperparameters; explicitly authorized 2026-10-28; not fully nested model-selection validation",
+  "supplementary_reused_no_refits": true,
+  "fold_sd_ddof": 1,
+  "neural_seed_mean_before_fold_summary": true,
+  "primary_neural_requires_all_five_seeds": true,
+  "pooled_metrics_not_substituted": true,
+  "tests_passed": 4,
+  "intel_and_supplementary_fit_artifacts_unchanged": true,
+  "jetson_optimizer_failures": 0,
+  "publishing": "Nothing pushed or published"
+}

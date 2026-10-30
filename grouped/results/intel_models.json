@@ -1,0 +1,5481 @@
+{
+  "dataset": "intel",
+  "configuration": {
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "jetson_policy": "pending_user_decision",
+    "jetson_ridge_config": {
+      "version": 1,
+      "target": "temperature_cpu_c",
+      "horizons_s": [
+        10,
+        30,
+        60
+      ],
+      "history_s": 30,
+      "max_history_interval_s": 2,
+      "timestamp_tolerance_s": 0,
+      "development_groups": [
+        "wall_date_2024-10-22",
+        "wall_date_2024-10-23"
+      ],
+      "heldout_groups": [
+        "wall_date_2024-10-25"
+      ],
+      "development_windows": [
+        "depth_15W",
+        "depth_30W",
+        "phi_30W",
+        "resnet_30W",
+        "resnet_50W"
+      ],
+      "heldout_windows": [
+        "phi_15W",
+        "phi_50W",
+        "phi_maxn",
+        "resnet_15W",
+        "resnet_maxn"
+      ],
+      "temperature_features": [
+        "cpu_current_c",
+        "cpu_history_mean_c",
+        "cpu_history_slope_c_per_s",
+        "cpu_history_std_c"
+      ],
+      "telemetry_extra_features": [
+        "power_VDD_GPU_SOC_mean_mw",
+        "power_VDD_CPU_CV_mean_mw",
+        "power_VIN_SYS_5V0_mean_mw",
+        "power_VDDQ_VDD2_1V8AO_mean_mw",
+        "gpu_mean_pct",
+        "cpu_active_mean_pct",
+        "active_core_count"
+      ],
+      "ridge_lambda": 1.0,
+      "constant_std_threshold": 1e-12,
+      "scaling": "equal-window-weighted development mean and population std",
+      "training_weight": "1 / (number_of_development_windows * eligible_rows_in_window)",
+      "objective": "weighted_mean_squared_error + lambda * squared_l2_norm_of_standardized_coefficients",
+      "intercept_penalized": false,
+      "methods": [
+        "persistence",
+        "local_trend",
+        "temperature_ridge",
+        "telemetry_ridge"
+      ],
+      "analyses": {
+        "main": {
+          "exclude_development_windows": []
+        },
+        "without_resnet_50W": {
+          "exclude_development_windows": [
+            "resnet_50W"
+          ]
+        }
+      },
+      "rejection_precedence": [
+        "history_before_window",
+        "history_start_missing",
+        "history_gap",
+        "nonfinite_features",
+        "target_after_window",
+        "target_timestamp_missing",
+        "nonfinite_target"
+      ],
+      "mean_convention": "observed-sample arithmetic mean; CPU active-core means computed per sample first",
+      "std_ddof": 0,
+      "error_sign": "prediction_minus_observed",
+      "headline": "arithmetic mean of held-out per-window MAE per horizon",
+      "timing": {
+        "warmup": 100,
+        "repetitions": 1000,
+        "horizon_s": 30,
+        "window": "depth_15W",
+        "origin": "first eligible",
+        "analysis": "main"
+      }
+    },
+    "settings": {
+      "ridge_lambda": 10.0,
+      "ridge_correction_lambda": 1.0,
+      "ridge_alpha": 1.0,
+      "H2_lambda": 0.03,
+      "H2_correction_lambda": 0.1,
+      "H2_alpha": 0.25,
+      "bound_k": 1
+    },
+    "metric_tolerance": 1e-10,
+    "interpretation": "Retrospective fixed-configuration robustness; not nested selection or prospective forecasting",
+    "planned_groups": 3,
+    "unique_fit_budget_per_dataset": {
+      "network": 30,
+      "ridge": 6,
+      "correction": 18
+    }
+  },
+  "plan_sha256": "f0db40d4eaacc9bcd94e5de42656b8f6654fcc25b9db126fe5e48c1e48d7c7ae",
+  "fold_manifest_sha256": "3e4f434fa93e44a8b370859318035f29618b405f3b2045f705bc9cabacbb14cf",
+  "models": {
+    "Ridge|2025-09-30,2025-10-01|-1": {
+      "kind": "ridge",
+      "features": [
+        "temperature_current_c",
+        "temperature_mean_c",
+        "temperature_slope_c_s",
+        "temperature_std_c",
+        "cpu_package_power_mean_w",
+        "gpu_power_mean_w",
+        "cpu_utilization_mean_pct",
+        "gpu_utilization_mean_pct"
+      ],
+      "mean": [
+        64.07770636747236,
+        64.11224125814486,
+        0.0008290812170125752,
+        3.445123697613986,
+        43.66927603716037,
+        36.26722157666915,
+        15.50573514745926,
+        21.73129874585871
+      ],
+      "scale": [
+        8.992031007541582,
+        8.248193871412594,
+        0.1290198278232432,
+        1.1407922862494038,
+        9.50760217149816,
+        24.288670044969383,
+        4.187173082846845,
+        18.627859254043063
+      ],
+      "b": 0.11666902237450652,
+      "beta": [
+        -0.16908508510419462,
+        -0.03376154130723111,
+        -0.07985612389578044,
+        -0.03846185019896502,
+        -0.03965022789864665,
+        0.0073162779071148055,
+        -0.11317318060865907,
+        0.016953262026396607
+      ],
+      "lambda_value": 10.0,
+      "training_groups": [
+        "2025-09-30",
+        "2025-10-01"
+      ],
+      "training_recordings": [
+        "R09",
+        "R10",
+        "R11",
+        "R12",
+        "R13",
+        "R14",
+        "R15",
+        "R22",
+        "R23",
+        "R24",
+        "R25",
+        "R27",
+        "R28",
+        "R29",
+        "R30",
+        "R31",
+        "R32",
+        "R33",
+        "R34",
+        "R35",
+        "R36",
+        "R37",
+        "R38",
+        "R39"
+      ],
+      "fit_seconds": 0.006394624999999987,
+      "parameters": 9,
+      "training_origin_hash": "ea936043e9398cc87a49070a3091afd64a3df81d2f8ae671544b18ef87a4e12c"
+    },
+    "Ridge|2025-10-01|-1": {
+      "kind": "ridge",
+      "features": [
+        "temperature_current_c",
+        "temperature_mean_c",
+        "temperature_slope_c_s",
+        "temperature_std_c",
+        "cpu_package_power_mean_w",
+        "gpu_power_mean_w",
+        "cpu_utilization_mean_pct",
+        "gpu_utilization_mean_pct"
+      ],
+      "mean": [
+        69.42486439159944,
+        69.47989645741336,
+        0.00022713407531634814,
+        4.0067123108347715,
+        46.52969452527146,
+        49.480539930425365,
+        13.326684194335536,
+        29.76142317356019
+      ],
+      "scale": [
+        6.625618834908545,
+        5.2464301907305115,
+        0.10391619112435903,
+        1.2460674469847839,
+        6.8319642376621195,
+        6.334010551354029,
+        2.5086686945690064,
+        9.497500871125956
+      ],
+      "b": 0.20100288667708724,
+      "beta": [
+        -0.2801467490200124,
+        -0.060338312299414054,
+        -0.043952431607145216,
+        0.026401769456700173,
+        -0.06204421119021511,
+        0.030008685381579258,
+        -0.08097028585832847,
+        0.03264933536143439
+      ],
+      "lambda_value": 10.0,
+      "training_groups": [
+        "2025-10-01"
+      ],
+      "training_recordings": [
+        "R09",
+        "R10",
+        "R11",
+        "R12",
+        "R13",
+        "R14",
+        "R15"
+      ],
+      "fit_seconds": 0.0017014170000000384,
+      "parameters": 9,
+      "training_origin_hash": "16225f55172922be923203b80f6b7de599457e7453f50ce00f87ecef2b9ace1c"
+    },
+    "Ridge|2025-09-30|-1": {
+      "kind": "ridge",
+      "features": [
+        "temperature_current_c",
+        "temperature_mean_c",
+        "temperature_slope_c_s",
+        "temperature_std_c",
+        "cpu_package_power_mean_w",
+        "gpu_power_mean_w",
+        "cpu_utilization_mean_pct",
+        "gpu_utilization_mean_pct"
+      ],
+      "mean": [
+        61.87593541636142,
+        61.90203029374015,
+        0.0010769418047698466,
+        3.2138813274642466,
+        42.491456659702926,
+        30.826443431004833,
+        16.40299142227492,
+        18.424776922687467
+      ],
+      "scale": [
+        8.913670702753372,
+        8.244006857593153,
+        0.13803519992187985,
+        1.0072754873026795,
+        10.180374655281144,
+        26.736549542096913,
+        4.4045437802304805,
+        20.37771410985658
+      ],
+      "b": 0.08194331354402358,
+      "beta": [
+        -0.15641726527742858,
+        -0.03512120458587331,
+        -0.0905908935448685,
+        -0.07540738412051694,
+        -0.03400764483987944,
+        0.001984332211932486,
+        -0.12451373654057635,
+        0.011595285914510355
+      ],
+      "lambda_value": 10.0,
+      "training_groups": [
+        "2025-09-30"
+      ],
+      "training_recordings": [
+        "R22",
+        "R23",
+        "R24",
+        "R25",
+        "R27",
+        "R28",
+        "R29",
+        "R30",
+        "R31",
+        "R32",
+        "R33",
+        "R34",
+        "R35",
+        "R36",
+        "R37",
+        "R38",
+        "R39"
+      ],
+      "fit_seconds": 0.003383875000000036,
+      "parameters": 9,
+      "training_origin_hash": "868c37835cef4c4f598beecea0cdd0659fe9f5449bd26e4d6e2b397ff521557d"
+    },
+    "H2|2025-09-30,2025-10-01|0": {
+      "kind": "network",
+      "features": [
+        "temperature_current_c",
+        "temperature_mean_c",
+        "temperature_slope_c_s",
+        "temperature_std_c",
+        "cpu_package_power_mean_w",
+        "gpu_power_mean_w",
+        "cpu_utilization_mean_pct",
+        "gpu_utilization_mean_pct"
+      ],
+      "mean": [
+        64.07770636747236,
+        64.11224125814486,
+        0.0008290812170125752,
+        3.445123697613986,
+        43.66927603716037,
+        36.26722157666915,
+        15.50573514745926,
+        21.73129874585871
+      ],
+      "scale": [
+        8.992031007541582,
+        8.248193871412594,
+        0.1290198278232432,
+        1.1407922862494038,
+        9.50760217149816,
+        24.288670044969383,
+        4.187173082846845,
+        18.627859254043063
+      ],
+      "W": [
+        [
+          -1.2934735029494762,
+          1.6550496023683625
+        ],
+        [
+          0.0512542359559972,
+          -0.7282122673647412
+        ],
+        [
+          0.18145598407277228,
+          -0.023436104199813533
+        ],
+        [
+          -0.12339432304857909,
+          -0.013691136050673167
+        ],
+        [
+          0.5803507312849759,
+          -1.0940933410319287
+        ],
+        [
+          0.08487262692766502,
+          0.3732534741943347
+        ],
+        [
+          -1.0130622030439345,
+          0.4578606962230468
+        ],
+        [
+          -0.7439691685979891,
+          -0.4085285579923521
+        ]
+      ],
+      "a": [
+        1.5711714231957723,
+        -0.36335362602180377
+      ],
+      "v": [
+        3.3877467238611016,
+        -5.2312534466697755
+      ],
+      "b": -3.5290695425497565,
+      "seed": 0,
+      "lambda_value": 0.03,
+      "training_groups": [
+        "2025-09-30",
+        "2025-10-01"
+      ],
+      "training_recordings": [
+        "R09",
+        "R10",
+        "R11",
+        "R12",
+        "R13",
+        "R14",
+        "R15",
+        "R22",
+        "R23",
+        "R24",
+        "R25",
+        "R27",
+        "R28",
+        "R29",
+        "R30",
+        "R31",
+        "R32",
+        "R33",
+        "R34",
+        "R35",
+        "R36",
+        "R37",
+        "R38",
+        "R39"
+      ],
+      "success": true,
+      "phases": [
+        {
+          "stage": "initial",
+          "iterations": 113,
+          "evaluations": 121,
+          "gradient_evaluations": 121,
+          "objective": 21.662301828937373,
+          "gradient_inf": 8.54556922668722e-05,
+          "success": true,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "seconds": 0.08843058299999995
+        }
+      ],
+      "fit_seconds": 0.09239233300000005,
+      "parameters": 21,
+      "training_origin_hash": "ea936043e9398cc87a49070a3091afd64a3df81d2f8ae671544b18ef87a4e12c"
+    },
+    "H2|2025-10-01|0": {
+      "kind": "network",
+      "features": [
+        "temperature_current_c",
+        "temperature_mean_c",
+        "temperature_slope_c_s",
+        "temperature_std_c",
+        "cpu_package_power_mean_w",
+        "gpu_power_mean_w",
+        "cpu_utilization_mean_pct",
+        "gpu_utilization_mean_pct"
+      ],
+      "mean": [
+        69.42486439159944,
+        69.47989645741336,
+        0.00022713407531634814,
+        4.0067123108347715,
+        46.52969452527146,
+        49.480539930425365,
+        13.326684194335536,
+        29.76142317356019
+      ],
+      "scale": [
+        6.625618834908545,
+        5.2464301907305115,
+        0.10391619112435903,
+        1.2460674469847839,
+        6.8319642376621195,
+        6.334010551354029,
+        2.5086686945690064,
+        9.497500871125956
+      ],
+      "W": [
+        [
+          -1.0020626446248313,
+          1.2895242895067247
+        ],
+        [
+          -0.22938761048825027,
+          -0.7488014360537122
+        ],
+        [
+          -0.04766716533575359,
+          -0.19077926962206687
+        ],
+        [
+          0.5183600786040284,
+          0.15769488344985588
+        ],
+        [
+          -0.038461346135401295,
+          -0.5836546674118122
+        ],
+        [
+          -0.1968254187042398,
+          -0.4161348981896172
+        ],
+        [
+          0.22990378144352377,
+          0.4483405756109086
+        ],
+        [
+          -0.03623154459948362,
+          -0.12574994924852126
+        ]
+      ],
+      "a": [
+        0.4820827405877015,
+        -0.15149677548787138
+      ],
+      "v": [
+        3.7882222177156044,
+        -4.2230112859239775
+      ],
+      "b": -1.4025393588390103,
+      "seed": 0,
+      "lambda_value": 0.03,
+      "training_groups": [
+        "2025-10-01"
+      ],
+      "training_recordings": [
+        "R09",
+        "R10",
+        "R11",
+        "R12",
+        "R13",
+        "R14",
+        "R15"
+      ],
+      "success": true,
+      "phases": [
+        {
+          "stage": "initial",
+          "iterations": 146,
+          "evaluations": 165,
+          "gradient_evaluations": 165,
+          "objective": 25.809611963692923,
+          "gradient_inf": 0.00014947686241064198,
+          "success": true,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "seconds": 0.04004916699999994
+        }
+      ],
+      "fit_seconds": 0.04148066700000008,
+      "parameters": 21,
+      "training_origin_hash": "16225f55172922be923203b80f6b7de599457e7453f50ce00f87ecef2b9ace1c"
+    },
+    "H2|2025-09-30|0": {
+      "kind": "network",
+      "features": [
+        "temperature_current_c",
+        "temperature_mean_c",
+        "temperature_slope_c_s",
+        "temperature_std_c",
+        "cpu_package_power_mean_w",
+        "gpu_power_mean_w",
+        "cpu_utilization_mean_pct",
+        "gpu_utilization_mean_pct"
+      ],
+      "mean": [
+        61.87593541636142,
+        61.90203029374015,
+        0.0010769418047698466,
+        3.2138813274642466,
+        42.491456659702926,
+        30.826443431004833,
+        16.40299142227492,
+        18.424776922687467
+      ],
+      "scale": [
+        8.913670702753372,
+        8.244006857593153,
+        0.13803519992187985,
+        1.0072754873026795,
+        10.180374655281144,
+        26.736549542096913,
+        4.4045437802304805,
+        20.37771410985658
+      ],
+      "W": [
+        [
+          -1.1163615902502997,
+          1.6920333545366886
+        ],
+        [
+          1.0577332473712586,
+          -0.39854332774755197
+        ],
+        [
+          -0.028720029553596375,
+          -0.1257412895549585
+        ],
+        [
+          -0.1623108386225956,
+          0.12323416347313376
+        ],
+        [
+          0.565828843500732,
+          -0.9389934322331827
+        ],
+        [
+          -0.30460649848207916,
+          0.05406484178324168
+        ],
+        [
+          -0.8144409105485328,
+          0.0996163654369867
+        ],
+        [
+          0.09873229653199024,
+          -0.0864647099051866
+        ]
+      ],
+      "a": [
+        0.9069550478094726,
+        -0.383516639989118
+      ],
+      "v": [
+        4.085759783650342,
+        -4.538992038173587
+      ],
+      "b": -3.6190088681191455,
+      "seed": 0,
+      "lambda_value": 0.03,
+      "training_groups": [
+        "2025-09-30"
+      ],
+      "training_recordings": [
+        "R22",
+        "R23",
+        "R24",
+        "R25",
+        "R27",
+        "R28",
+        "R29",
+        "R30",
+        "R31",
+        "R32",
+        "R33",
+        "R34",
+        "R35",
+        "R36",
+        "R37",
+        "R38",
+        "R39"
+      ],
+      "success": true,
+      "phases": [
+        {
+          "stage": "initial",
+          "iterations": 161,
+          "evaluations": 182,
+          "gradient_evaluations": 182,
+          "objective": 19.063578872314043,
+          "gradient_inf": 4.4873499052462944e-05,
+          "success": true,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "seconds": 0.09836895799999978
+        }
+      ],
+      "fit_seconds": 0.1006752919999998,
+      "parameters": 21,
+      "training_origin_hash": "868c37835cef4c4f598beecea0cdd0659fe9f5449bd26e4d6e2b397ff521557d"
+    },
+    "H2|2025-09-30,2025-10-01|1": {
+      "kind": "network",
+      "features": [
+        "temperature_current_c",
+        "temperature_mean_c",
+        "temperature_slope_c_s",
+        "temperature_std_c",
+        "cpu_package_power_mean_w",
+        "gpu_power_mean_w",
+        "cpu_utilization_mean_pct",
+        "gpu_utilization_mean_pct"
+      ],
+      "mean": [
+        64.07770636747236,
+        64.11224125814486,
+        0.0008290812170125752,
+        3.445123697613986,
+        43.66927603716037,
+        36.26722157666915,
+        15.50573514745926,
+        21.73129874585871
+      ],
+      "scale": [
+        8.992031007541582,
+        8.248193871412594,
+        0.1290198278232432,
+        1.1407922862494038,
+        9.50760217149816,
+        24.288670044969383,
+        4.187173082846845,
+        18.627859254043063
+      ],
+      "W": [
+        [
+          1.6826870910225282,
+          1.153762996312241
+        ],
+        [
+          -0.5961737473879857,
+          -0.8915251756364033
+        ],
+        [
+          0.10981086932136705,
+          -0.24487710795105114
+        ],
+        [
+          -0.21701621621249487,
+          0.27685176249990384
+        ],
+        [
+          -0.6763946713101896,
+          -0.5299946838642873
+        ],
+        [
+          -0.09303646323124166,
+          0.38089359686475927
+        ],
+        [
+          0.16038488606681073,
+          0.6846909346915739
+        ],
+        [
+          -0.03545271193094286,
+          -0.15051566259942822
+        ]
+      ],
+      "a": [
+        -0.30151645612605144,
+        -0.7559594024106691
+      ],
+      "v": [
+        -4.359590002484964,
+        -3.806898032078065
+      ],
+      "b": -2.8702775349759926,
+      "seed": 1,
+      "lambda_value": 0.03,
+      "training_groups": [
+        "2025-09-30",
+        "2025-10-01"
+      ],
+      "training_recordings": [
+        "R09",
+        "R10",
+        "R11",
+        "R12",
+        "R13",
+        "R14",
+        "R15",
+        "R22",
+        "R23",
+        "R24",
+        "R25",
+        "R27",
+        "R28",
+        "R29",
+        "R30",
+        "R31",
+        "R32",
+        "R33",
+        "R34",
+        "R35",
+        "R36",
+        "R37",
+        "R38",
+        "R39"
+      ],
+      "success": true,
+      "phases": [
+        {
+          "stage": "initial",
+          "iterations": 136,
+          "evaluations": 145,
+          "gradient_evaluations": 145,
+          "objective": 21.707478966698744,
+          "gradient_inf": 6.430988355169819e-05,
+          "success": true,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "seconds": 0.1055703750000001
+        }
+      ],
+      "fit_seconds": 0.1087800000000001,
+      "parameters": 21,
+      "training_origin_hash": "ea936043e9398cc87a49070a3091afd64a3df81d2f8ae671544b18ef87a4e12c"
+    },
+    "H2|2025-10-01|1": {
+      "kind": "network",
+      "features": [
+        "temperature_current_c",
+        "temperature_mean_c",
+        "temperature_slope_c_s",
+        "temperature_std_c",
+        "cpu_package_power_mean_w",
+        "gpu_power_mean_w",
+        "cpu_utilization_mean_pct",
+        "gpu_utilization_mean_pct"
+      ],
+      "mean": [
+        69.42486439159944,
+        69.47989645741336,
+        0.00022713407531634814,
+        4.0067123108347715,
+        46.52969452527146,
+        49.480539930425365,
+        13.326684194335536,
+        29.76142317356019
+      ],
+      "scale": [
+        6.625618834908545,
+        5.2464301907305115,
+        0.10391619112435903,
+        1.2460674469847839,
+        6.8319642376621195,
+        6.334010551354029,
+        2.5086686945690064,
+        9.497500871125956
+      ],
+      "W": [
+        [
+          1.289545447149823,
+          1.0020652002306947
+        ],
+        [
+          -0.7488084472886261,
+          0.2295727017885864
+        ],
+        [
+          -0.19076019854926737,
+          0.047683049610580654
+        ],
+        [
+          0.15764832646301458,
+          -0.5183981595214017
+        ],
+        [
+          -0.5835236016891292,
+          0.0383899119807598
+        ],
+        [
+          -0.41609298062807504,
+          0.1968737926878489
+        ],
+        [
+          0.4481978125004349,
+          -0.22985390456600957
+        ],
+        [
+          -0.12570444761310345,
+          0.03622567048728287
+        ]
+      ],
+      "a": [
+        -0.15152046335364663,
+        -0.48227235394688805
+      ],
+      "v": [
+        -4.223494955084421,
+        -3.787679715485136
+      ],
+      "b": -1.4028373774672,
+      "seed": 1,
+      "lambda_value": 0.03,
+      "training_groups": [
+        "2025-10-01"
+      ],
+      "training_recordings": [
+        "R09",
+        "R10",
+        "R11",
+        "R12",
+        "R13",
+        "R14",
+        "R15"
+      ],
+      "success": true,
+      "phases": [
+        {
+          "stage": "initial",
+          "iterations": 111,
+          "evaluations": 117,
+          "gradient_evaluations": 117,
+          "objective": 25.809611964620952,
+          "gradient_inf": 0.00010292898645770498,
+          "success": true,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "seconds": 0.028327708000000174
+        }
+      ],
+      "fit_seconds": 0.029858916999999874,
+      "parameters": 21,
+      "training_origin_hash": "16225f55172922be923203b80f6b7de599457e7453f50ce00f87ecef2b9ace1c"
+    },
+    "H2|2025-09-30|1": {
+      "kind": "network",
+      "features": [
+        "temperature_current_c",
+        "temperature_mean_c",
+        "temperature_slope_c_s",
+        "temperature_std_c",
+        "cpu_package_power_mean_w",
+        "gpu_power_mean_w",
+        "cpu_utilization_mean_pct",
+        "gpu_utilization_mean_pct"
+      ],
+      "mean": [
+        61.87593541636142,
+        61.90203029374015,
+        0.0010769418047698466,
+        3.2138813274642466,
+        42.491456659702926,
+        30.826443431004833,
+        16.40299142227492,
+        18.424776922687467
+      ],
+      "scale": [
+        8.913670702753372,
+        8.244006857593153,
+        0.13803519992187985,
+        1.0072754873026795,
+        10.180374655281144,
+        26.736549542096913,
+        4.4045437802304805,
+        20.37771410985658
+      ],
+      "W": [
+        [
+          1.5790255432483946,
+          1.1949774729118328
+        ],
+        [
+          -0.44622465671253064,
+          -0.6804906191686608
+        ],
+        [
+          0.09696086137790424,
+          -0.240472357858315
+        ],
+        [
+          -0.09069797209751568,
+          0.3651762292104315
+        ],
+        [
+          -1.1330085968181094,
+          -0.5606124998434585
+        ],
+        [
+          0.14099011332762335,
+          0.027491938472199044
+        ],
+        [
+          0.3417770897907546,
+          0.5680525738393637
+        ],
+        [
+          -0.0729692973740971,
+          0.17094123729204408
+        ]
+      ],
+      "a": [
+        -0.24275758509197695,
+        -0.892270004783594
+      ],
+      "v": [
+        -4.352032407993439,
+        -4.139326307325267
+      ],
+      "b": -3.270491668686609,
+      "seed": 1,
+      "lambda_value": 0.03,
+      "training_groups": [
+        "2025-09-30"
+      ],
+      "training_recordings": [
+        "R22",
+        "R23",
+        "R24",
+        "R25",
+        "R27",
+        "R28",
+        "R29",
+        "R30",
+        "R31",
+        "R32",
+        "R33",
+        "R34",
+        "R35",
+        "R36",
+        "R37",
+        "R38",
+        "R39"
+      ],
+      "success": true,
+      "phases": [
+        {
+          "stage": "initial",
+          "iterations": 139,
+          "evaluations": 152,
+          "gradient_evaluations": 152,
+          "objective": 19.041541495459814,
+          "gradient_inf": 0.0001900566900990856,
+          "success": true,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "seconds": 0.07917375000000004
+        }
+      ],
+      "fit_seconds": 0.0813011250000002,
+      "parameters": 21,
+      "training_origin_hash": "868c37835cef4c4f598beecea0cdd0659fe9f5449bd26e4d6e2b397ff521557d"
+    },
+    "H2|2025-09-30,2025-10-01|2": {
+      "kind": "network",
+      "features": [
+        "temperature_current_c",
+        "temperature_mean_c",
+        "temperature_slope_c_s",
+        "temperature_std_c",
+        "cpu_package_power_mean_w",
+        "gpu_power_mean_w",
+        "cpu_utilization_mean_pct",
+        "gpu_utilization_mean_pct"
+      ],
+      "mean": [
+        64.07770636747236,
+        64.11224125814486,
+        0.0008290812170125752,
+        3.445123697613986,
+        43.66927603716037,
+        36.26722157666915,
+        15.50573514745926,
+        21.73129874585871
+      ],
+      "scale": [
+        8.992031007541582,
+        8.248193871412594,
+        0.1290198278232432,
+        1.1407922862494038,
+        9.50760217149816,
+        24.288670044969383,
+        4.187173082846845,
+        18.627859254043063
+      ],
+      "W": [
+        [
+          -1.6826707201539282,
+          -1.1537440678051563
+        ],
+        [
+          0.5962539113078421,
+          0.8914418156435415
+        ],
+        [
+          -0.10980575740899838,
+          0.2449106011995761
+        ],
+        [
+          0.21699005406820965,
+          -0.2768661588637195
+        ],
+        [
+          0.6764506575923454,
+          0.5299553821646671
+        ],
+        [
+          0.09289211000537516,
+          -0.3807216600468234
+        ],
+        [
+          -0.1604272269482558,
+          -0.6847308953864456
+        ],
+        [
+          0.0355286079159007,
+          0.15032473412747235
+        ]
+      ],
+      "a": [
+        0.3015407477671174,
+        0.7560253982909954
+      ],
+      "v": [
+        4.359822429821196,
+        3.8066535281881944
+      ],
+      "b": -2.8704372068810184,
+      "seed": 2,
+      "lambda_value": 0.03,
+      "training_groups": [
+        "2025-09-30",
+        "2025-10-01"
+      ],
+      "training_recordings": [
+        "R09",
+        "R10",
+        "R11",
+        "R12",
+        "R13",
+        "R14",
+        "R15",
+        "R22",
+        "R23",
+        "R24",
+        "R25",
+        "R27",
+        "R28",
+        "R29",
+        "R30",
+        "R31",
+        "R32",
+        "R33",
+        "R34",
+        "R35",
+        "R36",
+        "R37",
+        "R38",
+        "R39"
+      ],
+      "success": true,
+      "phases": [
+        {
+          "stage": "initial",
+          "iterations": 169,
+          "evaluations": 182,
+          "gradient_evaluations": 182,
+          "objective": 21.70747897732698,
+          "gradient_inf": 0.0003338275434364574,
+          "success": true,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "seconds": 0.131492583
+        }
+      ],
+      "fit_seconds": 0.13434108300000003,
+      "parameters": 21,
+      "training_origin_hash": "ea936043e9398cc87a49070a3091afd64a3df81d2f8ae671544b18ef87a4e12c"
+    },
+    "H2|2025-10-01|2": {
+      "kind": "network",
+      "features": [
+        "temperature_current_c",
+        "temperature_mean_c",
+        "temperature_slope_c_s",
+        "temperature_std_c",
+        "cpu_package_power_mean_w",
+        "gpu_power_mean_w",
+        "cpu_utilization_mean_pct",
+        "gpu_utilization_mean_pct"
+      ],
+      "mean": [
+        69.42486439159944,
+        69.47989645741336,
+        0.00022713407531634814,
+        4.0067123108347715,
+        46.52969452527146,
+        49.480539930425365,
+        13.326684194335536,
+        29.76142317356019
+      ],
+      "scale": [
+        6.625618834908545,
+        5.2464301907305115,
+        0.10391619112435903,
+        1.2460674469847839,
+        6.8319642376621195,
+        6.334010551354029,
+        2.5086686945690064,
+        9.497500871125956
+      ],
+      "W": [
+        [
+          -1.268086748957467,
+          -0.8740037269436881
+        ],
+        [
+          0.7953180601558651,
+          -1.7570520123820932
+        ],
+        [
+          0.18764007268120292,
+          -0.14984524420326745
+        ],
+        [
+          -0.04607610790284673,
+          0.10285028400378787
+        ],
+        [
+          0.46828624108018574,
+          0.05588344323981327
+        ],
+        [
+          0.21559172995600237,
+          0.099374869769605
+        ],
+        [
+          -0.31962244171360865,
+          0.15394432852730583
+        ],
+        [
+          0.10751790530030039,
+          -0.41692394584578074
+        ]
+      ],
+      "a": [
+        0.17972772994612507,
+        1.1597373244491278
+      ],
+      "v": [
+        5.241008444781399,
+        2.914826458171882
+      ],
+      "b": -1.2994362783372044,
+      "seed": 2,
+      "lambda_value": 0.03,
+      "training_groups": [
+        "2025-10-01"
+      ],
+      "training_recordings": [
+        "R09",
+        "R10",
+        "R11",
+        "R12",
+        "R13",
+        "R14",
+        "R15"
+      ],
+      "success": true,
+      "phases": [
+        {
+          "stage": "initial",
+          "iterations": 124,
+          "evaluations": 139,
+          "gradient_evaluations": 139,
+          "objective": 25.73246634867661,
+          "gradient_inf": 0.000119382477954697,
+          "success": true,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "seconds": 0.03353470799999991
+        }
+      ],
+      "fit_seconds": 0.034828042000000003,
+      "parameters": 21,
+      "training_origin_hash": "16225f55172922be923203b80f6b7de599457e7453f50ce00f87ecef2b9ace1c"
+    },
+    "H2|2025-09-30|2": {
+      "kind": "network",
+      "features": [
+        "temperature_current_c",
+        "temperature_mean_c",
+        "temperature_slope_c_s",
+        "temperature_std_c",
+        "cpu_package_power_mean_w",
+        "gpu_power_mean_w",
+        "cpu_utilization_mean_pct",
+        "gpu_utilization_mean_pct"
+      ],
+      "mean": [
+        61.87593541636142,
+        61.90203029374015,
+        0.0010769418047698466,
+        3.2138813274642466,
+        42.491456659702926,
+        30.826443431004833,
+        16.40299142227492,
+        18.424776922687467
+      ],
+      "scale": [
+        8.913670702753372,
+        8.244006857593153,
+        0.13803519992187985,
+        1.0072754873026795,
+        10.180374655281144,
+        26.736549542096913,
+        4.4045437802304805,
+        20.37771410985658
+      ],
+      "W": [
+        [
+          -1.1951107444141564,
+          -1.5791216220027688
+        ],
+        [
+          0.6804165856976644,
+          0.4464528932072423
+        ],
+        [
+          0.24048108679618996,
+          -0.09689937248967867
+        ],
+        [
+          -0.36526011133711583,
+          0.09067862042855025
+        ],
+        [
+          0.5607922650020243,
+          1.1328992254668921
+        ],
+        [
+          -0.027357075636233425,
+          -0.1409983907351432
+        ],
+        [
+          -0.5681074067334768,
+          -0.3418483910252438
+        ],
+        [
+          -0.1711550684819446,
+          0.07298669246799458
+        ]
+      ],
+      "a": [
+        0.8924236429764265,
+        0.24271895578303276
+      ],
+      "v": [
+        4.138826072131563,
+        4.352144039756473
+      ],
+      "b": -3.2703593540155587,
+      "seed": 2,
+      "lambda_value": 0.03,
+      "training_groups": [
+        "2025-09-30"
+      ],
+      "training_recordings": [
+        "R22",
+        "R23",
+        "R24",
+        "R25",
+        "R27",
+        "R28",
+        "R29",
+        "R30",
+        "R31",
+        "R32",
+        "R33",
+        "R34",
+        "R35",
+        "R36",
+        "R37",
+        "R38",
+        "R39"
+      ],
+      "success": true,
+      "phases": [
+        {
+          "stage": "initial",
+          "iterations": 152,
+          "evaluations": 170,
+          "gradient_evaluations": 170,
+          "objective": 19.041541501457203,
+          "gradient_inf": 8.36132105866659e-05,
+          "success": true,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "seconds": 0.08827616699999985
+        }
+      ],
+      "fit_seconds": 0.09046262500000002,
+      "parameters": 21,
+      "training_origin_hash": "868c37835cef4c4f598beecea0cdd0659fe9f5449bd26e4d6e2b397ff521557d"
+    },
+    "H2|2025-09-30,2025-10-01|3": {
+      "kind": "network",
+      "features": [
+        "temperature_current_c",
+        "temperature_mean_c",
+        "temperature_slope_c_s",
+        "temperature_std_c",
+        "cpu_package_power_mean_w",
+        "gpu_power_mean_w",
+        "cpu_utilization_mean_pct",
+        "gpu_utilization_mean_pct"
+      ],
+      "mean": [
+        64.07770636747236,
+        64.11224125814486,
+        0.0008290812170125752,
+        3.445123697613986,
+        43.66927603716037,
+        36.26722157666915,
+        15.50573514745926,
+        21.73129874585871
+      ],
+      "scale": [
+        8.992031007541582,
+        8.248193871412594,
+        0.1290198278232432,
+        1.1407922862494038,
+        9.50760217149816,
+        24.288670044969383,
+        4.187173082846845,
+        18.627859254043063
+      ],
+      "W": [
+        [
+          1.6826605315153618,
+          -1.1537180598088983
+        ],
+        [
+          -0.5962261588535229,
+          0.8914328773496131
+        ],
+        [
+          0.10981306898807772,
+          0.244877958681484
+        ],
+        [
+          -0.2170115610158481,
+          -0.27685250196776506
+        ],
+        [
+          -0.6764200434302264,
+          0.5299399914781633
+        ],
+        [
+          -0.09293130502364418,
+          -0.3807140624393528
+        ],
+        [
+          0.16039922155915315,
+          -0.6846488479929502
+        ],
+        [
+          -0.035510455920139274,
+          0.1503517131732363
+        ]
+      ],
+      "a": [
+        -0.3014637999213384,
+        0.755940735899331
+      ],
+      "v": [
+        -4.359529352935541,
+        3.8070249185764165
+      ],
+      "b": -2.8701634548086465,
+      "seed": 3,
+      "lambda_value": 0.03,
+      "training_groups": [
+        "2025-09-30",
+        "2025-10-01"
+      ],
+      "training_recordings": [
+        "R09",
+        "R10",
+        "R11",
+        "R12",
+        "R13",
+        "R14",
+        "R15",
+        "R22",
+        "R23",
+        "R24",
+        "R25",
+        "R27",
+        "R28",
+        "R29",
+        "R30",
+        "R31",
+        "R32",
+        "R33",
+        "R34",
+        "R35",
+        "R36",
+        "R37",
+        "R38",
+        "R39"
+      ],
+      "success": true,
+      "phases": [
+        {
+          "stage": "initial",
+          "iterations": 143,
+          "evaluations": 155,
+          "gradient_evaluations": 155,
+          "objective": 21.707478972048595,
+          "gradient_inf": 0.00030958702118629583,
+          "success": true,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "seconds": 0.11215645799999985
+        }
+      ],
+      "fit_seconds": 0.11504816600000001,
+      "parameters": 21,
+      "training_origin_hash": "ea936043e9398cc87a49070a3091afd64a3df81d2f8ae671544b18ef87a4e12c"
+    },
+    "H2|2025-10-01|3": {
+      "kind": "network",
+      "features": [
+        "temperature_current_c",
+        "temperature_mean_c",
+        "temperature_slope_c_s",
+        "temperature_std_c",
+        "cpu_package_power_mean_w",
+        "gpu_power_mean_w",
+        "cpu_utilization_mean_pct",
+        "gpu_utilization_mean_pct"
+      ],
+      "mean": [
+        69.42486439159944,
+        69.47989645741336,
+        0.00022713407531634814,
+        4.0067123108347715,
+        46.52969452527146,
+        49.480539930425365,
+        13.326684194335536,
+        29.76142317356019
+      ],
+      "scale": [
+        6.625618834908545,
+        5.2464301907305115,
+        0.10391619112435903,
+        1.2460674469847839,
+        6.8319642376621195,
+        6.334010551354029,
+        2.5086686945690064,
+        9.497500871125956
+      ],
+      "W": [
+        [
+          1.2895920646314047,
+          -1.0021161261107456
+        ],
+        [
+          -0.7486799838938026,
+          -0.2292751893108059
+        ],
+        [
+          -0.19079395950574993,
+          -0.047695657639404934
+        ],
+        [
+          0.1576712478446606,
+          0.5183986772177277
+        ],
+        [
+          -0.5838040859995972,
+          -0.038671313160724634
+        ],
+        [
+          -0.41605244766469535,
+          -0.1967593845061293
+        ],
+        [
+          0.4483049484829421,
+          0.2299384011598899
+        ],
+        [
+          -0.12578078893656167,
+          -0.036278482696956244
+        ]
+      ],
+      "a": [
+        -0.15151396318384158,
+        0.4822967914427412
+      ],
+      "v": [
+        -4.223022915867274,
+        3.788014637520219
+      ],
+      "b": -1.4030063586563208,
+      "seed": 3,
+      "lambda_value": 0.03,
+      "training_groups": [
+        "2025-10-01"
+      ],
+      "training_recordings": [
+        "R09",
+        "R10",
+        "R11",
+        "R12",
+        "R13",
+        "R14",
+        "R15"
+      ],
+      "success": true,
+      "phases": [
+        {
+          "stage": "initial",
+          "iterations": 124,
+          "evaluations": 132,
+          "gradient_evaluations": 132,
+          "objective": 25.809611965737997,
+          "gradient_inf": 0.00015291708022203976,
+          "success": true,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "seconds": 0.032219792000000025
+        }
+      ],
+      "fit_seconds": 0.03373274999999998,
+      "parameters": 21,
+      "training_origin_hash": "16225f55172922be923203b80f6b7de599457e7453f50ce00f87ecef2b9ace1c"
+    },
+    "H2|2025-09-30|3": {
+      "kind": "network",
+      "features": [
+        "temperature_current_c",
+        "temperature_mean_c",
+        "temperature_slope_c_s",
+        "temperature_std_c",
+        "cpu_package_power_mean_w",
+        "gpu_power_mean_w",
+        "cpu_utilization_mean_pct",
+        "gpu_utilization_mean_pct"
+      ],
+      "mean": [
+        61.87593541636142,
+        61.90203029374015,
+        0.0010769418047698466,
+        3.2138813274642466,
+        42.491456659702926,
+        30.826443431004833,
+        16.40299142227492,
+        18.424776922687467
+      ],
+      "scale": [
+        8.913670702753372,
+        8.244006857593153,
+        0.13803519992187985,
+        1.0072754873026795,
+        10.180374655281144,
+        26.736549542096913,
+        4.4045437802304805,
+        20.37771410985658
+      ],
+      "W": [
+        [
+          1.5790712909315243,
+          -1.1950132626024736
+        ],
+        [
+          -0.44629625517881827,
+          0.68041068643925
+        ],
+        [
+          0.09694986807468853,
+          0.24043858084575093
+        ],
+        [
+          -0.09069415330976985,
+          -0.36519037761241724
+        ],
+        [
+          -1.1329571016471423,
+          0.5607449152112818
+        ],
+        [
+          0.14104976180304235,
+          -0.02734885235008101
+        ],
+        [
+          0.34176717507800297,
+          -0.5680945035890942
+        ],
+        [
+          -0.07304985936233374,
+          -0.17111185921408814
+        ]
+      ],
+      "a": [
+        -0.2427276060860928,
+        0.892278150579474
+      ],
+      "v": [
+        -4.351839893106973,
+        4.139423644029784
+      ],
+      "b": -3.2703990310818445,
+      "seed": 3,
+      "lambda_value": 0.03,
+      "training_groups": [
+        "2025-09-30"
+      ],
+      "training_recordings": [
+        "R22",
+        "R23",
+        "R24",
+        "R25",
+        "R27",
+        "R28",
+        "R29",
+        "R30",
+        "R31",
+        "R32",
+        "R33",
+        "R34",
+        "R35",
+        "R36",
+        "R37",
+        "R38",
+        "R39"
+      ],
+      "success": true,
+      "phases": [
+        {
+          "stage": "initial",
+          "iterations": 147,
+          "evaluations": 159,
+          "gradient_evaluations": 159,
+          "objective": 19.041541494525944,
+          "gradient_inf": 0.00017317873761946156,
+          "success": true,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "seconds": 0.08603441700000003
+        }
+      ],
+      "fit_seconds": 0.08826287500000007,
+      "parameters": 21,
+      "training_origin_hash": "868c37835cef4c4f598beecea0cdd0659fe9f5449bd26e4d6e2b397ff521557d"
+    },
+    "H2|2025-09-30,2025-10-01|4": {
+      "kind": "network",
+      "features": [
+        "temperature_current_c",
+        "temperature_mean_c",
+        "temperature_slope_c_s",
+        "temperature_std_c",
+        "cpu_package_power_mean_w",
+        "gpu_power_mean_w",
+        "cpu_utilization_mean_pct",
+        "gpu_utilization_mean_pct"
+      ],
+      "mean": [
+        64.07770636747236,
+        64.11224125814486,
+        0.0008290812170125752,
+        3.445123697613986,
+        43.66927603716037,
+        36.26722157666915,
+        15.50573514745926,
+        21.73129874585871
+      ],
+      "scale": [
+        8.992031007541582,
+        8.248193871412594,
+        0.1290198278232432,
+        1.1407922862494038,
+        9.50760217149816,
+        24.288670044969383,
+        4.187173082846845,
+        18.627859254043063
+      ],
+      "W": [
+        [
+          1.2934158617149505,
+          -1.6549816792671306
+        ],
+        [
+          -0.05169559354334061,
+          0.7281429656546199
+        ],
+        [
+          -0.18145164679310105,
+          0.023420877637010395
+        ],
+        [
+          0.12338827019998543,
+          0.013713017499962343
+        ],
+        [
+          -0.5801403678149348,
+          1.0940795962040488
+        ],
+        [
+          -0.08492703234508833,
+          -0.3732940690550273
+        ],
+        [
+          1.012824448295426,
+          -0.4578242618038719
+        ],
+        [
+          0.7438518074419199,
+          0.4085988664879503
+        ]
+      ],
+      "a": [
+        -1.5707310927102673,
+        0.36329030138419616
+      ],
+      "v": [
+        -3.388195209432315,
+        5.230938043313013
+      ],
+      "b": -3.5289477421235387,
+      "seed": 4,
+      "lambda_value": 0.03,
+      "training_groups": [
+        "2025-09-30",
+        "2025-10-01"
+      ],
+      "training_recordings": [
+        "R09",
+        "R10",
+        "R11",
+        "R12",
+        "R13",
+        "R14",
+        "R15",
+        "R22",
+        "R23",
+        "R24",
+        "R25",
+        "R27",
+        "R28",
+        "R29",
+        "R30",
+        "R31",
+        "R32",
+        "R33",
+        "R34",
+        "R35",
+        "R36",
+        "R37",
+        "R38",
+        "R39"
+      ],
+      "success": true,
+      "phases": [
+        {
+          "stage": "initial",
+          "iterations": 150,
+          "evaluations": 170,
+          "gradient_evaluations": 170,
+          "objective": 21.662301837803316,
+          "gradient_inf": 5.4367904369180715e-05,
+          "success": true,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "seconds": 0.12373091700000005
+        }
+      ],
+      "fit_seconds": 0.12653487500000038,
+      "parameters": 21,
+      "training_origin_hash": "ea936043e9398cc87a49070a3091afd64a3df81d2f8ae671544b18ef87a4e12c"
+    },
+    "H2|2025-10-01|4": {
+      "kind": "network",
+      "features": [
+        "temperature_current_c",
+        "temperature_mean_c",
+        "temperature_slope_c_s",
+        "temperature_std_c",
+        "cpu_package_power_mean_w",
+        "gpu_power_mean_w",
+        "cpu_utilization_mean_pct",
+        "gpu_utilization_mean_pct"
+      ],
+      "mean": [
+        69.42486439159944,
+        69.47989645741336,
+        0.00022713407531634814,
+        4.0067123108347715,
+        46.52969452527146,
+        49.480539930425365,
+        13.326684194335536,
+        29.76142317356019
+      ],
+      "scale": [
+        6.625618834908545,
+        5.2464301907305115,
+        0.10391619112435903,
+        1.2460674469847839,
+        6.8319642376621195,
+        6.334010551354029,
+        2.5086686945690064,
+        9.497500871125956
+      ],
+      "W": [
+        [
+          0.8739199900047383,
+          -1.268043145937204
+        ],
+        [
+          1.7574168536248655,
+          0.7954011956758772
+        ],
+        [
+          0.1497948733359727,
+          0.18762893047140267
+        ],
+        [
+          -0.10262695751019368,
+          -0.04605024167869796
+        ],
+        [
+          -0.056375065797484726,
+          0.4680860551452633
+        ],
+        [
+          -0.0994705663090821,
+          0.21556682533373223
+        ],
+        [
+          -0.15365045354109708,
+          -0.31951852437232764
+        ],
+        [
+          0.4170185956585696,
+          0.10750480913810553
+        ]
+      ],
+      "a": [
+        -1.1597791155140094,
+        0.17969477060323544
+      ],
+      "v": [
+        -2.914814202932737,
+        5.241232218306642
+      ],
+      "b": -1.2992818488316038,
+      "seed": 4,
+      "lambda_value": 0.03,
+      "training_groups": [
+        "2025-10-01"
+      ],
+      "training_recordings": [
+        "R09",
+        "R10",
+        "R11",
+        "R12",
+        "R13",
+        "R14",
+        "R15"
+      ],
+      "success": true,
+      "phases": [
+        {
+          "stage": "initial",
+          "iterations": 145,
+          "evaluations": 164,
+          "gradient_evaluations": 164,
+          "objective": 25.732466329565877,
+          "gradient_inf": 7.044373201488957e-05,
+          "success": true,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "seconds": 0.03988212499999966
+        }
+      ],
+      "fit_seconds": 0.0413309169999998,
+      "parameters": 21,
+      "training_origin_hash": "16225f55172922be923203b80f6b7de599457e7453f50ce00f87ecef2b9ace1c"
+    },
+    "H2|2025-09-30|4": {
+      "kind": "network",
+      "features": [
+        "temperature_current_c",
+        "temperature_mean_c",
+        "temperature_slope_c_s",
+        "temperature_std_c",
+        "cpu_package_power_mean_w",
+        "gpu_power_mean_w",
+        "cpu_utilization_mean_pct",
+        "gpu_utilization_mean_pct"
+      ],
+      "mean": [
+        61.87593541636142,
+        61.90203029374015,
+        0.0010769418047698466,
+        3.2138813274642466,
+        42.491456659702926,
+        30.826443431004833,
+        16.40299142227492,
+        18.424776922687467
+      ],
+      "scale": [
+        8.913670702753372,
+        8.244006857593153,
+        0.13803519992187985,
+        1.0072754873026795,
+        10.180374655281144,
+        26.736549542096913,
+        4.4045437802304805,
+        20.37771410985658
+      ],
+      "W": [
+        [
+          1.5789681535323636,
+          -1.1951319049321119
+        ],
+        [
+          -0.446327847655115,
+          0.6803416156403592
+        ],
+        [
+          0.09695995776613098,
+          0.2404379672819668
+        ],
+        [
+          -0.09071546289451939,
+          -0.36517459082258236
+        ],
+        [
+          -1.1328192725423383,
+          0.5609622284169492
+        ],
+        [
+          0.14091207177008847,
+          -0.02761114329086695
+        ],
+        [
+          0.34174363638301086,
+          -0.5681049732739843
+        ],
+        [
+          -0.0729414893452097,
+          -0.1709013734396749
+        ]
+      ],
+      "a": [
+        -0.2427107993063059,
+        0.8921003130958489
+      ],
+      "v": [
+        -4.351485560673699,
+        4.1392712320672125
+      ],
+      "b": -3.269822527472113,
+      "seed": 4,
+      "lambda_value": 0.03,
+      "training_groups": [
+        "2025-09-30"
+      ],
+      "training_recordings": [
+        "R22",
+        "R23",
+        "R24",
+        "R25",
+        "R27",
+        "R28",
+        "R29",
+        "R30",
+        "R31",
+        "R32",
+        "R33",
+        "R34",
+        "R35",
+        "R36",
+        "R37",
+        "R38",
+        "R39"
+      ],
+      "success": true,
+      "phases": [
+        {
+          "stage": "initial",
+          "iterations": 132,
+          "evaluations": 145,
+          "gradient_evaluations": 145,
+          "objective": 19.04154150621303,
+          "gradient_inf": 9.498340675754419e-05,
+          "success": true,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "seconds": 0.07589308400000006
+        }
+      ],
+      "fit_seconds": 0.0781006660000001,
+      "parameters": 21,
+      "training_origin_hash": "868c37835cef4c4f598beecea0cdd0659fe9f5449bd26e4d6e2b397ff521557d"
+    },
+    "Ridge|2025-09-29,2025-10-01|-1": {
+      "kind": "ridge",
+      "features": [
+        "temperature_current_c",
+        "temperature_mean_c",
+        "temperature_slope_c_s",
+        "temperature_std_c",
+        "cpu_package_power_mean_w",
+        "gpu_power_mean_w",
+        "cpu_utilization_mean_pct",
+        "gpu_utilization_mean_pct"
+      ],
+      "mean": [
+        66.38510265848083,
+        66.33303267645407,
+        0.00467864641234852,
+        3.6138958937872983,
+        43.32759728861963,
+        60.75716794755401,
+        12.90597141402656,
+        36.62352292832729
+      ],
+      "scale": [
+        5.933245224244499,
+        4.74590547610995,
+        0.09545844921050974,
+        1.0441947683539732,
+        5.054108028131918,
+        21.71780945484123,
+        2.870119839742362,
+        15.382001912444926
+      ],
+      "b": 0.3493579248228039,
+      "beta": [
+        -0.2473898458098313,
+        -0.044136945809184355,
+        -0.04008776801332205,
+        0.007167831247460289,
+        -0.03593476283416901,
+        0.0022916766774969044,
+        -0.027066445314996745,
+        0.008448579054734033
+      ],
+      "lambda_value": 10.0,
+      "training_groups": [
+        "2025-09-29",
+        "2025-10-01"
+      ],
+      "training_recordings": [
+        "R00",
+        "R01",
+        "R02",
+        "R04",
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R09",
+        "R10",
+        "R11",
+        "R12",
+        "R13",
+        "R14",
+        "R15",
+        "R16",
+        "R17",
+        "R18",
+        "R20"
+      ],
+      "fit_seconds": 0.003414917000000184,
+      "parameters": 9,
+      "training_origin_hash": "afdd69ed7deccd6354da8a4ac500667f0d7d8754a64caec23d3c6d02ee1d0b1e"
+    },
+    "Ridge|2025-09-29|-1": {
+      "kind": "ridge",
+      "features": [
+        "temperature_current_c",
+        "temperature_mean_c",
+        "temperature_slope_c_s",
+        "temperature_std_c",
+        "cpu_package_power_mean_w",
+        "gpu_power_mean_w",
+        "cpu_utilization_mean_pct",
+        "gpu_utilization_mean_pct"
+      ],
+      "mean": [
+        64.61190831416178,
+        64.49736213756111,
+        0.007275361942283949,
+        3.384752983842938,
+        41.45970723390608,
+        67.33520095754571,
+        12.660555625512972,
+        40.62641445194148
+      ],
+      "scale": [
+        4.647231490892268,
+        3.2341672193429556,
+        0.0900575485593081,
+        0.8234840695284068,
+        1.935713859684121,
+        24.61601998655732,
+        3.0345029527882805,
+        16.688817204860495
+      ],
+      "b": 0.43589836374114393,
+      "beta": [
+        -0.2597226628905425,
+        -0.03996627775579954,
+        -0.036953916349642284,
+        -0.008214030128799765,
+        -0.015621919867977502,
+        0.0037103520273841744,
+        -0.0028878738782500903,
+        0.0070727855242066475
+      ],
+      "lambda_value": 10.0,
+      "training_groups": [
+        "2025-09-29"
+      ],
+      "training_recordings": [
+        "R00",
+        "R01",
+        "R02",
+        "R04",
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R16",
+        "R17",
+        "R18",
+        "R20"
+      ],
+      "fit_seconds": 0.002433207999999798,
+      "parameters": 9,
+      "training_origin_hash": "d2c69b0ed12308ff818691eaf9ebd5b65612cf1e0aa8257d0859f4ffe08233f7"
+    },
+    "H2|2025-09-29,2025-10-01|0": {
+      "kind": "network",
+      "features": [
+        "temperature_current_c",
+        "temperature_mean_c",
+        "temperature_slope_c_s",
+        "temperature_std_c",
+        "cpu_package_power_mean_w",
+        "gpu_power_mean_w",
+        "cpu_utilization_mean_pct",
+        "gpu_utilization_mean_pct"
+      ],
+      "mean": [
+        66.38510265848083,
+        66.33303267645407,
+        0.00467864641234852,
+        3.6138958937872983,
+        43.32759728861963,
+        60.75716794755401,
+        12.90597141402656,
+        36.62352292832729
+      ],
+      "scale": [
+        5.933245224244499,
+        4.74590547610995,
+        0.09545844921050974,
+        1.0441947683539732,
+        5.054108028131918,
+        21.71780945484123,
+        2.870119839742362,
+        15.382001912444926
+      ],
+      "W": [
+        [
+          1.1802773084195668,
+          1.3872660088029038
+        ],
+        [
+          -0.27041636454801526,
+          -0.8078686852078019
+        ],
+        [
+          -0.014680079828851663,
+          -0.11297894379001995
+        ],
+        [
+          -0.4814184824178072,
+          0.14576945360313878
+        ],
+        [
+          0.14067366672516934,
+          -0.4345793998222775
+        ],
+        [
+          -0.01744097477484399,
+          0.016840936357991207
+        ],
+        [
+          -0.0034228384755357697,
+          0.06423235764710397
+        ],
+        [
+          0.10351720920119759,
+          -0.12432191042185407
+        ]
+      ],
+      "a": [
+        -1.250763152849393,
+        -0.108706566231471
+      ],
+      "v": [
+        -3.3964084210966305,
+        -3.837559965224133
+      ],
+      "b": -2.4411753273327337,
+      "seed": 0,
+      "lambda_value": 0.03,
+      "training_groups": [
+        "2025-09-29",
+        "2025-10-01"
+      ],
+      "training_recordings": [
+        "R00",
+        "R01",
+        "R02",
+        "R04",
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R09",
+        "R10",
+        "R11",
+        "R12",
+        "R13",
+        "R14",
+        "R15",
+        "R16",
+        "R17",
+        "R18",
+        "R20"
+      ],
+      "success": true,
+      "phases": [
+        {
+          "stage": "initial",
+          "iterations": 129,
+          "evaluations": 145,
+          "gradient_evaluations": 145,
+          "objective": 19.374960002748928,
+          "gradient_inf": 7.968613545376868e-05,
+          "success": true,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "seconds": 0.08379825000000007
+        }
+      ],
+      "fit_seconds": 0.08609020899999997,
+      "parameters": 21,
+      "training_origin_hash": "afdd69ed7deccd6354da8a4ac500667f0d7d8754a64caec23d3c6d02ee1d0b1e"
+    },
+    "H2|2025-09-29|0": {
+      "kind": "network",
+      "features": [
+        "temperature_current_c",
+        "temperature_mean_c",
+        "temperature_slope_c_s",
+        "temperature_std_c",
+        "cpu_package_power_mean_w",
+        "gpu_power_mean_w",
+        "cpu_utilization_mean_pct",
+        "gpu_utilization_mean_pct"
+      ],
+      "mean": [
+        64.61190831416178,
+        64.49736213756111,
+        0.007275361942283949,
+        3.384752983842938,
+        41.45970723390608,
+        67.33520095754571,
+        12.660555625512972,
+        40.62641445194148
+      ],
+      "scale": [
+        4.647231490892268,
+        3.2341672193429556,
+        0.0900575485593081,
+        0.8234840695284068,
+        1.935713859684121,
+        24.61601998655732,
+        3.0345029527882805,
+        16.688817204860495
+      ],
+      "W": [
+        [
+          1.0749180251984944,
+          1.315542367463405
+        ],
+        [
+          -0.33914677919370734,
+          -0.5367002902655719
+        ],
+        [
+          -0.07462206244121486,
+          -0.09148352144056371
+        ],
+        [
+          0.058333228335561295,
+          0.17777087583012932
+        ],
+        [
+          -0.09450885695129725,
+          -0.1485492874180341
+        ],
+        [
+          -0.039748560833818426,
+          -0.06986096600378264
+        ],
+        [
+          0.023945063171698384,
+          0.04901669751299143
+        ],
+        [
+          -0.18507085813557841,
+          -0.17296010272180676
+        ]
+      ],
+      "a": [
+        -1.3368087094023606,
+        0.037422702423633734
+      ],
+      "v": [
+        -3.284964526770268,
+        -3.3437864175173266
+      ],
+      "b": -2.2441695168399813,
+      "seed": 0,
+      "lambda_value": 0.03,
+      "training_groups": [
+        "2025-09-29"
+      ],
+      "training_recordings": [
+        "R00",
+        "R01",
+        "R02",
+        "R04",
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R16",
+        "R17",
+        "R18",
+        "R20"
+      ],
+      "success": true,
+      "phases": [
+        {
+          "stage": "initial",
+          "iterations": 91,
+          "evaluations": 99,
+          "gradient_evaluations": 99,
+          "objective": 14.411956456571263,
+          "gradient_inf": 8.777436294435175e-05,
+          "success": true,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "seconds": 0.037622541000000176
+        }
+      ],
+      "fit_seconds": 0.03929733400000002,
+      "parameters": 21,
+      "training_origin_hash": "d2c69b0ed12308ff818691eaf9ebd5b65612cf1e0aa8257d0859f4ffe08233f7"
+    },
+    "H2|2025-09-29,2025-10-01|1": {
+      "kind": "network",
+      "features": [
+        "temperature_current_c",
+        "temperature_mean_c",
+        "temperature_slope_c_s",
+        "temperature_std_c",
+        "cpu_package_power_mean_w",
+        "gpu_power_mean_w",
+        "cpu_utilization_mean_pct",
+        "gpu_utilization_mean_pct"
+      ],
+      "mean": [
+        66.38510265848083,
+        66.33303267645407,
+        0.00467864641234852,
+        3.6138958937872983,
+        43.32759728861963,
+        60.75716794755401,
+        12.90597141402656,
+        36.62352292832729
+      ],
+      "scale": [
+        5.933245224244499,
+        4.74590547610995,
+        0.09545844921050974,
+        1.0441947683539732,
+        5.054108028131918,
+        21.71780945484123,
+        2.870119839742362,
+        15.382001912444926
+      ],
+      "W": [
+        [
+          1.3872148983180854,
+          1.180253510344369
+        ],
+        [
+          -0.8078362576301625,
+          -0.27048128803243293
+        ],
+        [
+          -0.11297747584272864,
+          -0.014692504124209336
+        ],
+        [
+          0.1457563782372412,
+          -0.4813680731824511
+        ],
+        [
+          -0.4345540700741603,
+          0.14070444940646085
+        ],
+        [
+          0.016850291839029953,
+          -0.017467364583974538
+        ],
+        [
+          0.0642180863943404,
+          -0.003433128518449036
+        ],
+        [
+          -0.12434011936460218,
+          0.10355507081319076
+        ]
+      ],
+      "a": [
+        -0.10865174441087429,
+        -1.2506066157387352
+      ],
+      "v": [
+        -3.8375429653928226,
+        -3.3963440840445345
+      ],
+      "b": -2.4408288826258078,
+      "seed": 1,
+      "lambda_value": 0.03,
+      "training_groups": [
+        "2025-09-29",
+        "2025-10-01"
+      ],
+      "training_recordings": [
+        "R00",
+        "R01",
+        "R02",
+        "R04",
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R09",
+        "R10",
+        "R11",
+        "R12",
+        "R13",
+        "R14",
+        "R15",
+        "R16",
+        "R17",
+        "R18",
+        "R20"
+      ],
+      "success": true,
+      "phases": [
+        {
+          "stage": "initial",
+          "iterations": 91,
+          "evaluations": 98,
+          "gradient_evaluations": 98,
+          "objective": 19.374960013767655,
+          "gradient_inf": 5.58571654621174e-05,
+          "success": true,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "seconds": 0.056814957999999915
+        }
+      ],
+      "fit_seconds": 0.059095707999999636,
+      "parameters": 21,
+      "training_origin_hash": "afdd69ed7deccd6354da8a4ac500667f0d7d8754a64caec23d3c6d02ee1d0b1e"
+    },
+    "H2|2025-09-29|1": {
+      "kind": "network",
+      "features": [
+        "temperature_current_c",
+        "temperature_mean_c",
+        "temperature_slope_c_s",
+        "temperature_std_c",
+        "cpu_package_power_mean_w",
+        "gpu_power_mean_w",
+        "cpu_utilization_mean_pct",
+        "gpu_utilization_mean_pct"
+      ],
+      "mean": [
+        64.61190831416178,
+        64.49736213756111,
+        0.007275361942283949,
+        3.384752983842938,
+        41.45970723390608,
+        67.33520095754571,
+        12.660555625512972,
+        40.62641445194148
+      ],
+      "scale": [
+        4.647231490892268,
+        3.2341672193429556,
+        0.0900575485593081,
+        0.8234840695284068,
+        1.935713859684121,
+        24.61601998655732,
+        3.0345029527882805,
+        16.688817204860495
+      ],
+      "W": [
+        [
+          1.3156932795030405,
+          1.0750833384100729
+        ],
+        [
+          -0.5367411824734456,
+          -0.3391960985032346
+        ],
+        [
+          -0.0914958064200062,
+          -0.07462209417289054
+        ],
+        [
+          0.17778704947262375,
+          0.058312795608413286
+        ],
+        [
+          -0.14859265078614006,
+          -0.0945403022436906
+        ],
+        [
+          -0.06988894921933397,
+          -0.03980970438606143
+        ],
+        [
+          0.04906928012451883,
+          0.023951776779357996
+        ],
+        [
+          -0.17294902121952246,
+          -0.1850378155837609
+        ]
+      ],
+      "a": [
+        0.03735541733263865,
+        -1.3372056430285078
+      ],
+      "v": [
+        -3.3439901243077474,
+        -3.284612483143852
+      ],
+      "b": -2.2444170593628505,
+      "seed": 1,
+      "lambda_value": 0.03,
+      "training_groups": [
+        "2025-09-29"
+      ],
+      "training_recordings": [
+        "R00",
+        "R01",
+        "R02",
+        "R04",
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R16",
+        "R17",
+        "R18",
+        "R20"
+      ],
+      "success": true,
+      "phases": [
+        {
+          "stage": "initial",
+          "iterations": 91,
+          "evaluations": 99,
+          "gradient_evaluations": 99,
+          "objective": 14.411956424164687,
+          "gradient_inf": 0.00011770046607225901,
+          "success": true,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "seconds": 0.03769137500000008
+        }
+      ],
+      "fit_seconds": 0.03941591599999983,
+      "parameters": 21,
+      "training_origin_hash": "d2c69b0ed12308ff818691eaf9ebd5b65612cf1e0aa8257d0859f4ffe08233f7"
+    },
+    "H2|2025-09-29,2025-10-01|2": {
+      "kind": "network",
+      "features": [
+        "temperature_current_c",
+        "temperature_mean_c",
+        "temperature_slope_c_s",
+        "temperature_std_c",
+        "cpu_package_power_mean_w",
+        "gpu_power_mean_w",
+        "cpu_utilization_mean_pct",
+        "gpu_utilization_mean_pct"
+      ],
+      "mean": [
+        66.38510265848083,
+        66.33303267645407,
+        0.00467864641234852,
+        3.6138958937872983,
+        43.32759728861963,
+        60.75716794755401,
+        12.90597141402656,
+        36.62352292832729
+      ],
+      "scale": [
+        5.933245224244499,
+        4.74590547610995,
+        0.09545844921050974,
+        1.0441947683539732,
+        5.054108028131918,
+        21.71780945484123,
+        2.870119839742362,
+        15.382001912444926
+      ],
+      "W": [
+        [
+          -1.387234590693359,
+          1.1802276816501482
+        ],
+        [
+          0.8078443359532218,
+          -0.27044926774987105
+        ],
+        [
+          0.1129799856067041,
+          -0.014679363395126913
+        ],
+        [
+          -0.14577111850236016,
+          -0.48140191236609764
+        ],
+        [
+          0.434580865162563,
+          0.14071774629201567
+        ],
+        [
+          -0.016833651031764072,
+          -0.0174432378485465
+        ],
+        [
+          -0.0642300412024306,
+          -0.003441974416166802
+        ],
+        [
+          0.12431837792904543,
+          0.10352207337412263
+        ]
+      ],
+      "a": [
+        0.10868350432439411,
+        -1.250687234003295
+      ],
+      "v": [
+        3.8376115177937753,
+        -3.396479417328854
+      ],
+      "b": -2.44111525703591,
+      "seed": 2,
+      "lambda_value": 0.03,
+      "training_groups": [
+        "2025-09-29",
+        "2025-10-01"
+      ],
+      "training_recordings": [
+        "R00",
+        "R01",
+        "R02",
+        "R04",
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R09",
+        "R10",
+        "R11",
+        "R12",
+        "R13",
+        "R14",
+        "R15",
+        "R16",
+        "R17",
+        "R18",
+        "R20"
+      ],
+      "success": true,
+      "phases": [
+        {
+          "stage": "initial",
+          "iterations": 155,
+          "evaluations": 178,
+          "gradient_evaluations": 178,
+          "objective": 19.374960004863983,
+          "gradient_inf": 4.550170782190513e-05,
+          "success": true,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "seconds": 0.10532258400000005
+        }
+      ],
+      "fit_seconds": 0.107521792,
+      "parameters": 21,
+      "training_origin_hash": "afdd69ed7deccd6354da8a4ac500667f0d7d8754a64caec23d3c6d02ee1d0b1e"
+    },
+    "H2|2025-09-29|2": {
+      "kind": "network",
+      "features": [
+        "temperature_current_c",
+        "temperature_mean_c",
+        "temperature_slope_c_s",
+        "temperature_std_c",
+        "cpu_package_power_mean_w",
+        "gpu_power_mean_w",
+        "cpu_utilization_mean_pct",
+        "gpu_utilization_mean_pct"
+      ],
+      "mean": [
+        64.61190831416178,
+        64.49736213756111,
+        0.007275361942283949,
+        3.384752983842938,
+        41.45970723390608,
+        67.33520095754571,
+        12.660555625512972,
+        40.62641445194148
+      ],
+      "scale": [
+        4.647231490892268,
+        3.2341672193429556,
+        0.0900575485593081,
+        0.8234840695284068,
+        1.935713859684121,
+        24.61601998655732,
+        3.0345029527882805,
+        16.688817204860495
+      ],
+      "W": [
+        [
+          -1.3157267649511986,
+          -1.0751531986033316
+        ],
+        [
+          0.5367716596359884,
+          0.33916599511423307
+        ],
+        [
+          0.09149673614106218,
+          0.07462492542959125
+        ],
+        [
+          -0.1777803916029226,
+          -0.05836222635220158
+        ],
+        [
+          0.14857281088855415,
+          0.09460995847465693
+        ],
+        [
+          0.06987814671791696,
+          0.039806542513621146
+        ],
+        [
+          -0.04903792636747337,
+          -0.02401636509470442
+        ],
+        [
+          0.17296994037232327,
+          0.18506582007428246
+        ]
+      ],
+      "a": [
+        -0.03737059177332502,
+        1.3373328746027533
+      ],
+      "v": [
+        3.3440306025813302,
+        3.2845515559883722
+      ],
+      "b": -2.2444343901522856,
+      "seed": 2,
+      "lambda_value": 0.03,
+      "training_groups": [
+        "2025-09-29"
+      ],
+      "training_recordings": [
+        "R00",
+        "R01",
+        "R02",
+        "R04",
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R16",
+        "R17",
+        "R18",
+        "R20"
+      ],
+      "success": true,
+      "phases": [
+        {
+          "stage": "initial",
+          "iterations": 121,
+          "evaluations": 134,
+          "gradient_evaluations": 134,
+          "objective": 14.411956419327458,
+          "gradient_inf": 6.023768639282917e-05,
+          "success": true,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "seconds": 0.05150662500000003
+        }
+      ],
+      "fit_seconds": 0.05321016599999995,
+      "parameters": 21,
+      "training_origin_hash": "d2c69b0ed12308ff818691eaf9ebd5b65612cf1e0aa8257d0859f4ffe08233f7"
+    },
+    "H2|2025-09-29,2025-10-01|3": {
+      "kind": "network",
+      "features": [
+        "temperature_current_c",
+        "temperature_mean_c",
+        "temperature_slope_c_s",
+        "temperature_std_c",
+        "cpu_package_power_mean_w",
+        "gpu_power_mean_w",
+        "cpu_utilization_mean_pct",
+        "gpu_utilization_mean_pct"
+      ],
+      "mean": [
+        66.38510265848083,
+        66.33303267645407,
+        0.00467864641234852,
+        3.6138958937872983,
+        43.32759728861963,
+        60.75716794755401,
+        12.90597141402656,
+        36.62352292832729
+      ],
+      "scale": [
+        5.933245224244499,
+        4.74590547610995,
+        0.09545844921050974,
+        1.0441947683539732,
+        5.054108028131918,
+        21.71780945484123,
+        2.870119839742362,
+        15.382001912444926
+      ],
+      "W": [
+        [
+          1.3871497303084537,
+          -1.1800954113782918
+        ],
+        [
+          -0.8078102756352696,
+          0.2703290502370625
+        ],
+        [
+          -0.11297388697356033,
+          0.014677955802303431
+        ],
+        [
+          0.14579874761191494,
+          0.48136025109615566
+        ],
+        [
+          -0.4345939861370753,
+          -0.14063326451656133
+        ],
+        [
+          0.016827349942400475,
+          0.01739707307206653
+        ],
+        [
+          0.06423567931554287,
+          0.0034222731694528823
+        ],
+        [
+          -0.12433099882659886,
+          -0.1035077594015182
+        ]
+      ],
+      "a": [
+        -0.10875356168920727,
+        1.2505668816396278
+      ],
+      "v": [
+        -3.837540343151274,
+        3.3967992068065636
+      ],
+      "b": -2.4414373442930017,
+      "seed": 3,
+      "lambda_value": 0.03,
+      "training_groups": [
+        "2025-09-29",
+        "2025-10-01"
+      ],
+      "training_recordings": [
+        "R00",
+        "R01",
+        "R02",
+        "R04",
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R09",
+        "R10",
+        "R11",
+        "R12",
+        "R13",
+        "R14",
+        "R15",
+        "R16",
+        "R17",
+        "R18",
+        "R20"
+      ],
+      "success": true,
+      "phases": [
+        {
+          "stage": "initial",
+          "iterations": 107,
+          "evaluations": 111,
+          "gradient_evaluations": 111,
+          "objective": 19.374960019275584,
+          "gradient_inf": 6.406193367694546e-05,
+          "success": true,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "seconds": 0.06540162500000024
+        }
+      ],
+      "fit_seconds": 0.06769154199999994,
+      "parameters": 21,
+      "training_origin_hash": "afdd69ed7deccd6354da8a4ac500667f0d7d8754a64caec23d3c6d02ee1d0b1e"
+    },
+    "H2|2025-09-29|3": {
+      "kind": "network",
+      "features": [
+        "temperature_current_c",
+        "temperature_mean_c",
+        "temperature_slope_c_s",
+        "temperature_std_c",
+        "cpu_package_power_mean_w",
+        "gpu_power_mean_w",
+        "cpu_utilization_mean_pct",
+        "gpu_utilization_mean_pct"
+      ],
+      "mean": [
+        64.61190831416178,
+        64.49736213756111,
+        0.007275361942283949,
+        3.384752983842938,
+        41.45970723390608,
+        67.33520095754571,
+        12.660555625512972,
+        40.62641445194148
+      ],
+      "scale": [
+        4.647231490892268,
+        3.2341672193429556,
+        0.0900575485593081,
+        0.8234840695284068,
+        1.935713859684121,
+        24.61601998655732,
+        3.0345029527882805,
+        16.688817204860495
+      ],
+      "W": [
+        [
+          0.9507665388123501,
+          -0.8698884349077687
+        ],
+        [
+          -0.4499893672433667,
+          0.21246863268216498
+        ],
+        [
+          0.024290346213907372,
+          0.15758879601949458
+        ],
+        [
+          0.14564843266413616,
+          -0.06381870914303299
+        ],
+        [
+          0.004611926548792754,
+          0.21227340985871826
+        ],
+        [
+          -0.07161818126795344,
+          0.018529068437234432
+        ],
+        [
+          0.015138941515698626,
+          -0.03924730466288276
+        ],
+        [
+          -0.2901165204936757,
+          -0.006360121908305221
+        ]
+      ],
+      "a": [
+        -0.38121278078359877,
+        0.4980636989442761
+      ],
+      "v": [
+        -3.319007252089862,
+        3.2405673282284297
+      ],
+      "b": -1.9080146007646006,
+      "seed": 3,
+      "lambda_value": 0.03,
+      "training_groups": [
+        "2025-09-29"
+      ],
+      "training_recordings": [
+        "R00",
+        "R01",
+        "R02",
+        "R04",
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R16",
+        "R17",
+        "R18",
+        "R20"
+      ],
+      "success": true,
+      "phases": [
+        {
+          "stage": "initial",
+          "iterations": 102,
+          "evaluations": 112,
+          "gradient_evaluations": 112,
+          "objective": 14.434849822902521,
+          "gradient_inf": 0.00012687786590828958,
+          "success": true,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "seconds": 0.04263420799999995
+        }
+      ],
+      "fit_seconds": 0.04429454099999974,
+      "parameters": 21,
+      "training_origin_hash": "d2c69b0ed12308ff818691eaf9ebd5b65612cf1e0aa8257d0859f4ffe08233f7"
+    },
+    "H2|2025-09-29,2025-10-01|4": {
+      "kind": "network",
+      "features": [
+        "temperature_current_c",
+        "temperature_mean_c",
+        "temperature_slope_c_s",
+        "temperature_std_c",
+        "cpu_package_power_mean_w",
+        "gpu_power_mean_w",
+        "cpu_utilization_mean_pct",
+        "gpu_utilization_mean_pct"
+      ],
+      "mean": [
+        66.38510265848083,
+        66.33303267645407,
+        0.00467864641234852,
+        3.6138958937872983,
+        43.32759728861963,
+        60.75716794755401,
+        12.90597141402656,
+        36.62352292832729
+      ],
+      "scale": [
+        5.933245224244499,
+        4.74590547610995,
+        0.09545844921050974,
+        1.0441947683539732,
+        5.054108028131918,
+        21.71780945484123,
+        2.870119839742362,
+        15.382001912444926
+      ],
+      "W": [
+        [
+          1.1801772250763707,
+          -1.3872775045314134
+        ],
+        [
+          -0.2704597066673637,
+          0.807918109634618
+        ],
+        [
+          -0.014685568153800255,
+          0.11298535045772894
+        ],
+        [
+          -0.4813523417462952,
+          -0.1458180674705528
+        ],
+        [
+          0.1406820310928186,
+          0.43459334326366217
+        ],
+        [
+          -0.01749388980849444,
+          -0.016876682331890443
+        ],
+        [
+          -0.003470514099676739,
+          -0.0642368210455481
+        ],
+        [
+          0.10353662286991705,
+          0.12436347111636992
+        ]
+      ],
+      "a": [
+        -1.2504541123059063,
+        0.10865646770027941
+      ],
+      "v": [
+        -3.39668708443909,
+        3.837212796737105
+      ],
+      "b": -2.4409658502002602,
+      "seed": 4,
+      "lambda_value": 0.03,
+      "training_groups": [
+        "2025-09-29",
+        "2025-10-01"
+      ],
+      "training_recordings": [
+        "R00",
+        "R01",
+        "R02",
+        "R04",
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R09",
+        "R10",
+        "R11",
+        "R12",
+        "R13",
+        "R14",
+        "R15",
+        "R16",
+        "R17",
+        "R18",
+        "R20"
+      ],
+      "success": true,
+      "phases": [
+        {
+          "stage": "initial",
+          "iterations": 107,
+          "evaluations": 114,
+          "gradient_evaluations": 114,
+          "objective": 19.374960016401083,
+          "gradient_inf": 0.00017673578306821847,
+          "success": true,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "seconds": 0.06830900000000018
+        }
+      ],
+      "fit_seconds": 0.07051883400000003,
+      "parameters": 21,
+      "training_origin_hash": "afdd69ed7deccd6354da8a4ac500667f0d7d8754a64caec23d3c6d02ee1d0b1e"
+    },
+    "H2|2025-09-29|4": {
+      "kind": "network",
+      "features": [
+        "temperature_current_c",
+        "temperature_mean_c",
+        "temperature_slope_c_s",
+        "temperature_std_c",
+        "cpu_package_power_mean_w",
+        "gpu_power_mean_w",
+        "cpu_utilization_mean_pct",
+        "gpu_utilization_mean_pct"
+      ],
+      "mean": [
+        64.61190831416178,
+        64.49736213756111,
+        0.007275361942283949,
+        3.384752983842938,
+        41.45970723390608,
+        67.33520095754571,
+        12.660555625512972,
+        40.62641445194148
+      ],
+      "scale": [
+        4.647231490892268,
+        3.2341672193429556,
+        0.0900575485593081,
+        0.8234840695284068,
+        1.935713859684121,
+        24.61601998655732,
+        3.0345029527882805,
+        16.688817204860495
+      ],
+      "W": [
+        [
+          0.8699895298090462,
+          -0.9507338665176732
+        ],
+        [
+          -0.21247702445687783,
+          0.44997205983029187
+        ],
+        [
+          -0.15767261021266527,
+          -0.024349462441794752
+        ],
+        [
+          0.06389014873241264,
+          -0.14558094522755516
+        ],
+        [
+          -0.21240837800704765,
+          -0.004692714001751275
+        ],
+        [
+          -0.018630870204975242,
+          0.0715677043621299
+        ],
+        [
+          0.03928241473679902,
+          -0.015123645844024322
+        ],
+        [
+          0.006415403369462937,
+          0.2901071620621332
+        ]
+      ],
+      "a": [
+        -0.49793099136394214,
+        0.3812045430086775
+      ],
+      "v": [
+        -3.240021547909091,
+        3.3192729672636867
+      ],
+      "b": -1.9075380212881887,
+      "seed": 4,
+      "lambda_value": 0.03,
+      "training_groups": [
+        "2025-09-29"
+      ],
+      "training_recordings": [
+        "R00",
+        "R01",
+        "R02",
+        "R04",
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R16",
+        "R17",
+        "R18",
+        "R20"
+      ],
+      "success": true,
+      "phases": [
+        {
+          "stage": "initial",
+          "iterations": 101,
+          "evaluations": 110,
+          "gradient_evaluations": 110,
+          "objective": 14.434849809923163,
+          "gradient_inf": 4.6329761941067e-05,
+          "success": true,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "seconds": 0.04284324999999978
+        }
+      ],
+      "fit_seconds": 0.04452341600000009,
+      "parameters": 21,
+      "training_origin_hash": "d2c69b0ed12308ff818691eaf9ebd5b65612cf1e0aa8257d0859f4ffe08233f7"
+    },
+    "Ridge|2025-09-29,2025-09-30|-1": {
+      "kind": "ridge",
+      "features": [
+        "temperature_current_c",
+        "temperature_mean_c",
+        "temperature_slope_c_s",
+        "temperature_std_c",
+        "cpu_package_power_mean_w",
+        "gpu_power_mean_w",
+        "cpu_utilization_mean_pct",
+        "gpu_utilization_mean_pct"
+      ],
+      "mean": [
+        63.008062132692494,
+        62.97596071187294,
+        0.003641805309948091,
+        3.2845868404485334,
+        42.06452586282151,
+        45.93351551095273,
+        14.854397299476867,
+        27.611661417551197
+      ],
+      "scale": [
+        7.571562072530461,
+        6.767780118393325,
+        0.12056015689050052,
+        0.9393902137259346,
+        7.9096898040841594,
+        31.513489722043897,
+        4.310461763831134,
+        21.868617365614643
+      ],
+      "b": 0.22840747224631344,
+      "beta": [
+        -0.17322421957629613,
+        -0.030528763025967916,
+        -0.07226787607841378,
+        -0.0512993982025928,
+        -0.027601433199825484,
+        0.010304157004763915,
+        -0.08308447724940826,
+        0.015807158988733774
+      ],
+      "lambda_value": 10.0,
+      "training_groups": [
+        "2025-09-29",
+        "2025-09-30"
+      ],
+      "training_recordings": [
+        "R00",
+        "R01",
+        "R02",
+        "R04",
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R16",
+        "R17",
+        "R18",
+        "R20",
+        "R22",
+        "R23",
+        "R24",
+        "R25",
+        "R27",
+        "R28",
+        "R29",
+        "R30",
+        "R31",
+        "R32",
+        "R33",
+        "R34",
+        "R35",
+        "R36",
+        "R37",
+        "R38",
+        "R39"
+      ],
+      "fit_seconds": 0.004808249999999958,
+      "parameters": 9,
+      "training_origin_hash": "269526a8ffc2510f5cac4db9113b904f44cfdce5c8010f2181af8ea72ac56f11"
+    },
+    "H2|2025-09-29,2025-09-30|0": {
+      "kind": "network",
+      "features": [
+        "temperature_current_c",
+        "temperature_mean_c",
+        "temperature_slope_c_s",
+        "temperature_std_c",
+        "cpu_package_power_mean_w",
+        "gpu_power_mean_w",
+        "cpu_utilization_mean_pct",
+        "gpu_utilization_mean_pct"
+      ],
+      "mean": [
+        63.008062132692494,
+        62.97596071187294,
+        0.003641805309948091,
+        3.2845868404485334,
+        42.06452586282151,
+        45.93351551095273,
+        14.854397299476867,
+        27.611661417551197
+      ],
+      "scale": [
+        7.571562072530461,
+        6.767780118393325,
+        0.12056015689050052,
+        0.9393902137259346,
+        7.9096898040841594,
+        31.513489722043897,
+        4.310461763831134,
+        21.868617365614643
+      ],
+      "W": [
+        [
+          1.6273882093441567,
+          1.1293135409657935
+        ],
+        [
+          -0.5752058846945926,
+          -0.9487412100845769
+        ],
+        [
+          -0.1237786481945596,
+          0.023671651401616343
+        ],
+        [
+          0.09517392449354761,
+          0.20685113187908893
+        ],
+        [
+          -0.5122759600571701,
+          -0.6034954898281806
+        ],
+        [
+          -0.15629895638903954,
+          0.23829402016364762
+        ],
+        [
+          -0.01868526692795424,
+          0.8719147972189634
+        ],
+        [
+          -0.08344254156809536,
+          0.062411772577812656
+        ]
+      ],
+      "a": [
+        -0.3328088363556114,
+        -1.062103090919734
+      ],
+      "v": [
+        -4.1712106793751875,
+        -3.81814640053612
+      ],
+      "b": -3.3654001006215264,
+      "seed": 0,
+      "lambda_value": 0.03,
+      "training_groups": [
+        "2025-09-29",
+        "2025-09-30"
+      ],
+      "training_recordings": [
+        "R00",
+        "R01",
+        "R02",
+        "R04",
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R16",
+        "R17",
+        "R18",
+        "R20",
+        "R22",
+        "R23",
+        "R24",
+        "R25",
+        "R27",
+        "R28",
+        "R29",
+        "R30",
+        "R31",
+        "R32",
+        "R33",
+        "R34",
+        "R35",
+        "R36",
+        "R37",
+        "R38",
+        "R39"
+      ],
+      "success": true,
+      "phases": [
+        {
+          "stage": "initial",
+          "iterations": 158,
+          "evaluations": 177,
+          "gradient_evaluations": 177,
+          "objective": 17.446543204596413,
+          "gradient_inf": 9.650840183375586e-05,
+          "success": true,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "seconds": 0.15515783399999972
+        }
+      ],
+      "fit_seconds": 0.1581459999999999,
+      "parameters": 21,
+      "training_origin_hash": "269526a8ffc2510f5cac4db9113b904f44cfdce5c8010f2181af8ea72ac56f11"
+    },
+    "H2|2025-09-29,2025-09-30|1": {
+      "kind": "network",
+      "features": [
+        "temperature_current_c",
+        "temperature_mean_c",
+        "temperature_slope_c_s",
+        "temperature_std_c",
+        "cpu_package_power_mean_w",
+        "gpu_power_mean_w",
+        "cpu_utilization_mean_pct",
+        "gpu_utilization_mean_pct"
+      ],
+      "mean": [
+        63.008062132692494,
+        62.97596071187294,
+        0.003641805309948091,
+        3.2845868404485334,
+        42.06452586282151,
+        45.93351551095273,
+        14.854397299476867,
+        27.611661417551197
+      ],
+      "scale": [
+        7.571562072530461,
+        6.767780118393325,
+        0.12056015689050052,
+        0.9393902137259346,
+        7.9096898040841594,
+        31.513489722043897,
+        4.310461763831134,
+        21.868617365614643
+      ],
+      "W": [
+        [
+          1.627453370474489,
+          1.1292826997597423
+        ],
+        [
+          -0.5751466435959767,
+          -0.9487519710035824
+        ],
+        [
+          -0.12377864163116101,
+          0.023675246566142446
+        ],
+        [
+          0.09518782277063176,
+          0.20682949093928854
+        ],
+        [
+          -0.5123373512243778,
+          -0.6034790131580039
+        ],
+        [
+          -0.15631762388507822,
+          0.23830651873180864
+        ],
+        [
+          -0.018725557649363647,
+          0.8719619003204483
+        ],
+        [
+          -0.08348295524906808,
+          0.06244003120808351
+        ]
+      ],
+      "a": [
+        -0.3329156698186175,
+        -1.0622302238864187
+      ],
+      "v": [
+        -4.171216282933051,
+        -3.8184661633099974
+      ],
+      "b": -3.3660766096347565,
+      "seed": 1,
+      "lambda_value": 0.03,
+      "training_groups": [
+        "2025-09-29",
+        "2025-09-30"
+      ],
+      "training_recordings": [
+        "R00",
+        "R01",
+        "R02",
+        "R04",
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R16",
+        "R17",
+        "R18",
+        "R20",
+        "R22",
+        "R23",
+        "R24",
+        "R25",
+        "R27",
+        "R28",
+        "R29",
+        "R30",
+        "R31",
+        "R32",
+        "R33",
+        "R34",
+        "R35",
+        "R36",
+        "R37",
+        "R38",
+        "R39"
+      ],
+      "success": true,
+      "phases": [
+        {
+          "stage": "initial",
+          "iterations": 107,
+          "evaluations": 116,
+          "gradient_evaluations": 116,
+          "objective": 17.446543201354118,
+          "gradient_inf": 4.5161910240406266e-05,
+          "success": true,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "seconds": 0.10148083400000019
+        }
+      ],
+      "fit_seconds": 0.10459437500000002,
+      "parameters": 21,
+      "training_origin_hash": "269526a8ffc2510f5cac4db9113b904f44cfdce5c8010f2181af8ea72ac56f11"
+    },
+    "H2|2025-09-29,2025-09-30|2": {
+      "kind": "network",
+      "features": [
+        "temperature_current_c",
+        "temperature_mean_c",
+        "temperature_slope_c_s",
+        "temperature_std_c",
+        "cpu_package_power_mean_w",
+        "gpu_power_mean_w",
+        "cpu_utilization_mean_pct",
+        "gpu_utilization_mean_pct"
+      ],
+      "mean": [
+        63.008062132692494,
+        62.97596071187294,
+        0.003641805309948091,
+        3.2845868404485334,
+        42.06452586282151,
+        45.93351551095273,
+        14.854397299476867,
+        27.611661417551197
+      ],
+      "scale": [
+        7.571562072530461,
+        6.767780118393325,
+        0.12056015689050052,
+        0.9393902137259346,
+        7.9096898040841594,
+        31.513489722043897,
+        4.310461763831134,
+        21.868617365614643
+      ],
+      "W": [
+        [
+          -1.1292079325294218,
+          -1.6274091924185208
+        ],
+        [
+          0.948571922871109,
+          0.5752721979185602
+        ],
+        [
+          -0.02367655940069718,
+          0.12377802420057644
+        ],
+        [
+          -0.20682173069791088,
+          -0.09518039897814819
+        ],
+        [
+          0.6035462744316431,
+          0.5122090815513591
+        ],
+        [
+          -0.23827707811701673,
+          0.15631191940508618
+        ],
+        [
+          -0.8719414956780797,
+          0.01874174107911743
+        ],
+        [
+          -0.062439934242253976,
+          0.08345125209582535
+        ]
+      ],
+      "a": [
+        1.0620591293596173,
+        0.33289605040017
+      ],
+      "v": [
+        3.818155002759714,
+        4.171255793000123
+      ],
+      "b": -3.3656275154384416,
+      "seed": 2,
+      "lambda_value": 0.03,
+      "training_groups": [
+        "2025-09-29",
+        "2025-09-30"
+      ],
+      "training_recordings": [
+        "R00",
+        "R01",
+        "R02",
+        "R04",
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R16",
+        "R17",
+        "R18",
+        "R20",
+        "R22",
+        "R23",
+        "R24",
+        "R25",
+        "R27",
+        "R28",
+        "R29",
+        "R30",
+        "R31",
+        "R32",
+        "R33",
+        "R34",
+        "R35",
+        "R36",
+        "R37",
+        "R38",
+        "R39"
+      ],
+      "success": true,
+      "phases": [
+        {
+          "stage": "initial",
+          "iterations": 143,
+          "evaluations": 157,
+          "gradient_evaluations": 157,
+          "objective": 17.446543211941098,
+          "gradient_inf": 6.596782729014682e-05,
+          "success": true,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "seconds": 0.13540716700000033
+        }
+      ],
+      "fit_seconds": 0.1386211669999997,
+      "parameters": 21,
+      "training_origin_hash": "269526a8ffc2510f5cac4db9113b904f44cfdce5c8010f2181af8ea72ac56f11"
+    },
+    "H2|2025-09-29,2025-09-30|3": {
+      "kind": "network",
+      "features": [
+        "temperature_current_c",
+        "temperature_mean_c",
+        "temperature_slope_c_s",
+        "temperature_std_c",
+        "cpu_package_power_mean_w",
+        "gpu_power_mean_w",
+        "cpu_utilization_mean_pct",
+        "gpu_utilization_mean_pct"
+      ],
+      "mean": [
+        63.008062132692494,
+        62.97596071187294,
+        0.003641805309948091,
+        3.2845868404485334,
+        42.06452586282151,
+        45.93351551095273,
+        14.854397299476867,
+        27.611661417551197
+      ],
+      "scale": [
+        7.571562072530461,
+        6.767780118393325,
+        0.12056015689050052,
+        0.9393902137259346,
+        7.9096898040841594,
+        31.513489722043897,
+        4.310461763831134,
+        21.868617365614643
+      ],
+      "W": [
+        [
+          1.6273567576920742,
+          -1.1291886043390735
+        ],
+        [
+          -0.5751811507554938,
+          0.9486755124323822
+        ],
+        [
+          -0.12377781539323919,
+          -0.023679306484781983
+        ],
+        [
+          0.09519091625537215,
+          -0.2068075488603503
+        ],
+        [
+          -0.5122792701933043,
+          0.6034361017832908
+        ],
+        [
+          -0.15628570443107698,
+          -0.2382687398422592
+        ],
+        [
+          -0.018692012213223114,
+          -0.8719025856512513
+        ],
+        [
+          -0.08345279607965132,
+          -0.06243717520192247
+        ]
+      ],
+      "a": [
+        -0.3329166839189496,
+        1.0621357289043607
+      ],
+      "v": [
+        -4.171521569766885,
+        3.818255856486038
+      ],
+      "b": -3.3659625245349094,
+      "seed": 3,
+      "lambda_value": 0.03,
+      "training_groups": [
+        "2025-09-29",
+        "2025-09-30"
+      ],
+      "training_recordings": [
+        "R00",
+        "R01",
+        "R02",
+        "R04",
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R16",
+        "R17",
+        "R18",
+        "R20",
+        "R22",
+        "R23",
+        "R24",
+        "R25",
+        "R27",
+        "R28",
+        "R29",
+        "R30",
+        "R31",
+        "R32",
+        "R33",
+        "R34",
+        "R35",
+        "R36",
+        "R37",
+        "R38",
+        "R39"
+      ],
+      "success": true,
+      "phases": [
+        {
+          "stage": "initial",
+          "iterations": 118,
+          "evaluations": 128,
+          "gradient_evaluations": 128,
+          "objective": 17.44654320961484,
+          "gradient_inf": 6.88374054798619e-05,
+          "success": true,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "seconds": 0.11040099999999997
+        }
+      ],
+      "fit_seconds": 0.11351233300000008,
+      "parameters": 21,
+      "training_origin_hash": "269526a8ffc2510f5cac4db9113b904f44cfdce5c8010f2181af8ea72ac56f11"
+    },
+    "H2|2025-09-29,2025-09-30|4": {
+      "kind": "network",
+      "features": [
+        "temperature_current_c",
+        "temperature_mean_c",
+        "temperature_slope_c_s",
+        "temperature_std_c",
+        "cpu_package_power_mean_w",
+        "gpu_power_mean_w",
+        "cpu_utilization_mean_pct",
+        "gpu_utilization_mean_pct"
+      ],
+      "mean": [
+        63.008062132692494,
+        62.97596071187294,
+        0.003641805309948091,
+        3.2845868404485334,
+        42.06452586282151,
+        45.93351551095273,
+        14.854397299476867,
+        27.611661417551197
+      ],
+      "scale": [
+        7.571562072530461,
+        6.767780118393325,
+        0.12056015689050052,
+        0.9393902137259346,
+        7.9096898040841594,
+        31.513489722043897,
+        4.310461763831134,
+        21.868617365614643
+      ],
+      "W": [
+        [
+          1.627305278265596,
+          -1.1293070149398436
+        ],
+        [
+          -0.5750628272810522,
+          0.9488754928319285
+        ],
+        [
+          -0.12373352559253062,
+          -0.02362093959993641
+        ],
+        [
+          0.09516597317488235,
+          -0.20685135582043546
+        ],
+        [
+          -0.5123454115187754,
+          0.60334371742064
+        ],
+        [
+          -0.15631654550155838,
+          -0.23834585625057297
+        ],
+        [
+          -0.018695729172306823,
+          -0.8719033530363834
+        ],
+        [
+          -0.08346372403238117,
+          -0.06239386910894085
+        ]
+      ],
+      "a": [
+        -0.33278237266494926,
+        1.0620837025589915
+      ],
+      "v": [
+        -4.171236652656604,
+        3.818279600507262
+      ],
+      "b": -3.3653807167765977,
+      "seed": 4,
+      "lambda_value": 0.03,
+      "training_groups": [
+        "2025-09-29",
+        "2025-09-30"
+      ],
+      "training_recordings": [
+        "R00",
+        "R01",
+        "R02",
+        "R04",
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R16",
+        "R17",
+        "R18",
+        "R20",
+        "R22",
+        "R23",
+        "R24",
+        "R25",
+        "R27",
+        "R28",
+        "R29",
+        "R30",
+        "R31",
+        "R32",
+        "R33",
+        "R34",
+        "R35",
+        "R36",
+        "R37",
+        "R38",
+        "R39"
+      ],
+      "success": true,
+      "phases": [
+        {
+          "stage": "initial",
+          "iterations": 106,
+          "evaluations": 120,
+          "gradient_evaluations": 120,
+          "objective": 17.44654320907135,
+          "gradient_inf": 0.00018296924198805704,
+          "success": true,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "seconds": 0.1035734580000005
+        }
+      ],
+      "fit_seconds": 0.10661395800000051,
+      "parameters": 21,
+      "training_origin_hash": "269526a8ffc2510f5cac4db9113b904f44cfdce5c8010f2181af8ea72ac56f11"
+    }
+  },
+  "fold_states": [
+    {
+      "dataset": "intel",
+      "fold": "2025-09-29",
+      "family": "Ridge",
+      "seed": -1,
+      "receiver_key": "Ridge|2025-09-30,2025-10-01|-1",
+      "receiver_hash": "fdbab5b4683d33fc77963f51e7f9e7e13c78f4283b042fdebf922aff6f2117a8",
+      "training_groups": [
+        "2025-09-30",
+        "2025-10-01"
+      ],
+      "test_groups": [
+        "2025-09-29"
+      ],
+      "correction": {
+        "T": 337.2277063674728,
+        "sT": 8.992031007541629,
+        "P": 43.669276037160515,
+        "sP": 9.507602171498156,
+        "family": "physics",
+        "mean": [
+          0.0003990398291027662,
+          0.040032715075628604,
+          0.8447627828202114
+        ],
+        "scale": [
+          1.073908650219376,
+          0.042128901143389796,
+          0.8833294205291278
+        ],
+        "kept": [
+          true,
+          true,
+          true
+        ],
+        "c": -0.1492311825863506,
+        "gamma": [
+          -0.7863825674602705,
+          -0.546058598254164,
+          0.12365506963308465
+        ],
+        "lambda_value": 1.0,
+        "training_groups": [
+          "2025-09-30",
+          "2025-10-01"
+        ],
+        "parameters": 4,
+        "fit_seconds": 0.003606667000000008,
+        "training_origin_hash": "ea936043e9398cc87a49070a3091afd64a3df81d2f8ae671544b18ef87a4e12c"
+      },
+      "alpha": 1.0,
+      "bound_s_c": null,
+      "residual_sources": [
+        {
+          "excluded_group": "2025-09-30",
+          "training_groups": [
+            "2025-10-01"
+          ],
+          "fit_key": "Ridge|2025-10-01|-1",
+          "residual_origins": 14449,
+          "residual_origin_hash": "868c37835cef4c4f598beecea0cdd0659fe9f5449bd26e4d6e2b397ff521557d"
+        },
+        {
+          "excluded_group": "2025-10-01",
+          "training_groups": [
+            "2025-09-30"
+          ],
+          "fit_key": "Ridge|2025-09-30|-1",
+          "residual_origins": 6035,
+          "residual_origin_hash": "16225f55172922be923203b80f6b7de599457e7453f50ce00f87ecef2b9ace1c"
+        }
+      ],
+      "receiver_valid": true,
+      "correction_valid": true,
+      "residual_hash": "0e7061b8a74e256534c03179e50441d635da2c6aacf682c10a1e7ad4e622d0a2"
+    },
+    {
+      "dataset": "intel",
+      "fold": "2025-09-29",
+      "family": "H2",
+      "seed": 0,
+      "receiver_key": "H2|2025-09-30,2025-10-01|0",
+      "receiver_hash": "3b50ac0b6817c71c49f2570d1c2003eb22cd7c7c598788f86eddae600c9975fe",
+      "training_groups": [
+        "2025-09-30",
+        "2025-10-01"
+      ],
+      "test_groups": [
+        "2025-09-29"
+      ],
+      "correction": {
+        "T": 337.2277063674728,
+        "sT": 8.992031007541629,
+        "P": 43.669276037160515,
+        "sP": 9.507602171498156,
+        "family": "physics",
+        "mean": [
+          0.0003990398291027662,
+          0.040032715075628604,
+          0.8447627828202114
+        ],
+        "scale": [
+          1.073908650219376,
+          0.042128901143389796,
+          0.8833294205291278
+        ],
+        "kept": [
+          true,
+          true,
+          true
+        ],
+        "c": 1.2667736874641866,
+        "gamma": [
+          -1.1448651473957083,
+          -0.36460061687034734,
+          0.51201101034655
+        ],
+        "lambda_value": 0.1,
+        "training_groups": [
+          "2025-09-30",
+          "2025-10-01"
+        ],
+        "parameters": 4,
+        "fit_seconds": 0.003788208999999876,
+        "training_origin_hash": "ea936043e9398cc87a49070a3091afd64a3df81d2f8ae671544b18ef87a4e12c"
+      },
+      "alpha": 0.25,
+      "bound_s_c": 0.8650929688126563,
+      "residual_sources": [
+        {
+          "excluded_group": "2025-09-30",
+          "training_groups": [
+            "2025-10-01"
+          ],
+          "fit_key": "H2|2025-10-01|0",
+          "residual_origins": 14449,
+          "residual_origin_hash": "868c37835cef4c4f598beecea0cdd0659fe9f5449bd26e4d6e2b397ff521557d"
+        },
+        {
+          "excluded_group": "2025-10-01",
+          "training_groups": [
+            "2025-09-30"
+          ],
+          "fit_key": "H2|2025-09-30|0",
+          "residual_origins": 6035,
+          "residual_origin_hash": "16225f55172922be923203b80f6b7de599457e7453f50ce00f87ecef2b9ace1c"
+        }
+      ],
+      "receiver_valid": true,
+      "correction_valid": true,
+      "residual_hash": "459b5d51a54f7de2cbcac79553a77f2d9eb65a17be88c57992725d59ce729f33"
+    },
+    {
+      "dataset": "intel",
+      "fold": "2025-09-29",
+      "family": "H2",
+      "seed": 1,
+      "receiver_key": "H2|2025-09-30,2025-10-01|1",
+      "receiver_hash": "492cad94d33712d8f5a5ee3f44dd3434864d9b40f214d30968d9ad405077d2f4",
+      "training_groups": [
+        "2025-09-30",
+        "2025-10-01"
+      ],
+      "test_groups": [
+        "2025-09-29"
+      ],
+      "correction": {
+        "T": 337.2277063674728,
+        "sT": 8.992031007541629,
+        "P": 43.669276037160515,
+        "sP": 9.507602171498156,
+        "family": "physics",
+        "mean": [
+          0.0003990398291027662,
+          0.040032715075628604,
+          0.8447627828202114
+        ],
+        "scale": [
+          1.073908650219376,
+          0.042128901143389796,
+          0.8833294205291278
+        ],
+        "kept": [
+          true,
+          true,
+          true
+        ],
+        "c": 1.2815166688696444,
+        "gamma": [
+          -1.0588451755176211,
+          0.03469815941323613,
+          0.29083328026148103
+        ],
+        "lambda_value": 0.1,
+        "training_groups": [
+          "2025-09-30",
+          "2025-10-01"
+        ],
+        "parameters": 4,
+        "fit_seconds": 0.0035102920000000815,
+        "training_origin_hash": "ea936043e9398cc87a49070a3091afd64a3df81d2f8ae671544b18ef87a4e12c"
+      },
+      "alpha": 0.25,
+      "bound_s_c": 0.8748097930575858,
+      "residual_sources": [
+        {
+          "excluded_group": "2025-09-30",
+          "training_groups": [
+            "2025-10-01"
+          ],
+          "fit_key": "H2|2025-10-01|1",
+          "residual_origins": 14449,
+          "residual_origin_hash": "868c37835cef4c4f598beecea0cdd0659fe9f5449bd26e4d6e2b397ff521557d"
+        },
+        {
+          "excluded_group": "2025-10-01",
+          "training_groups": [
+            "2025-09-30"
+          ],
+          "fit_key": "H2|2025-09-30|1",
+          "residual_origins": 6035,
+          "residual_origin_hash": "16225f55172922be923203b80f6b7de599457e7453f50ce00f87ecef2b9ace1c"
+        }
+      ],
+      "receiver_valid": true,
+      "correction_valid": true,
+      "residual_hash": "673c56680d3e90f1ba7b3a48b01b0585bafdd6493861fd0c9e1306294706dcae"
+    },
+    {
+      "dataset": "intel",
+      "fold": "2025-09-29",
+      "family": "H2",
+      "seed": 2,
+      "receiver_key": "H2|2025-09-30,2025-10-01|2",
+      "receiver_hash": "05208de7a51a8e329ba19951043450718f778177d5c4f684e9c44e674fba3777",
+      "training_groups": [
+        "2025-09-30",
+        "2025-10-01"
+      ],
+      "test_groups": [
+        "2025-09-29"
+      ],
+      "correction": {
+        "T": 337.2277063674728,
+        "sT": 8.992031007541629,
+        "P": 43.669276037160515,
+        "sP": 9.507602171498156,
+        "family": "physics",
+        "mean": [
+          0.0003990398291027662,
+          0.040032715075628604,
+          0.8447627828202114
+        ],
+        "scale": [
+          1.073908650219376,
+          0.042128901143389796,
+          0.8833294205291278
+        ],
+        "kept": [
+          true,
+          true,
+          true
+        ],
+        "c": 1.6917654233942647,
+        "gamma": [
+          -1.3825870864598249,
+          0.09530802251182455,
+          0.4090064664266805
+        ],
+        "lambda_value": 0.1,
+        "training_groups": [
+          "2025-09-30",
+          "2025-10-01"
+        ],
+        "parameters": 4,
+        "fit_seconds": 0.003454832999999935,
+        "training_origin_hash": "ea936043e9398cc87a49070a3091afd64a3df81d2f8ae671544b18ef87a4e12c"
+      },
+      "alpha": 0.25,
+      "bound_s_c": 1.1744897543420474,
+      "residual_sources": [
+        {
+          "excluded_group": "2025-09-30",
+          "training_groups": [
+            "2025-10-01"
+          ],
+          "fit_key": "H2|2025-10-01|2",
+          "residual_origins": 14449,
+          "residual_origin_hash": "868c37835cef4c4f598beecea0cdd0659fe9f5449bd26e4d6e2b397ff521557d"
+        },
+        {
+          "excluded_group": "2025-10-01",
+          "training_groups": [
+            "2025-09-30"
+          ],
+          "fit_key": "H2|2025-09-30|2",
+          "residual_origins": 6035,
+          "residual_origin_hash": "16225f55172922be923203b80f6b7de599457e7453f50ce00f87ecef2b9ace1c"
+        }
+      ],
+      "receiver_valid": true,
+      "correction_valid": true,
+      "residual_hash": "3e4dadcc805bdf9818eff17d700fa93d8e7aedbad6eccbbee3cbc0105649bb5d"
+    },
+    {
+      "dataset": "intel",
+      "fold": "2025-09-29",
+      "family": "H2",
+      "seed": 3,
+      "receiver_key": "H2|2025-09-30,2025-10-01|3",
+      "receiver_hash": "19c6f96482d2e589b21b2401a59fb590ba5b9b574b36c6fcac4cd3aa2d750d2f",
+      "training_groups": [
+        "2025-09-30",
+        "2025-10-01"
+      ],
+      "test_groups": [
+        "2025-09-29"
+      ],
+      "correction": {
+        "T": 337.2277063674728,
+        "sT": 8.992031007541629,
+        "P": 43.669276037160515,
+        "sP": 9.507602171498156,
+        "family": "physics",
+        "mean": [
+          0.0003990398291027662,
+          0.040032715075628604,
+          0.8447627828202114
+        ],
+        "scale": [
+          1.073908650219376,
+          0.042128901143389796,
+          0.8833294205291278
+        ],
+        "kept": [
+          true,
+          true,
+          true
+        ],
+        "c": 1.2813284722706204,
+        "gamma": [
+          -1.0585447379729656,
+          0.034681556249355726,
+          0.29089032317452385
+        ],
+        "lambda_value": 0.1,
+        "training_groups": [
+          "2025-09-30",
+          "2025-10-01"
+        ],
+        "parameters": 4,
+        "fit_seconds": 0.00365083300000002,
+        "training_origin_hash": "ea936043e9398cc87a49070a3091afd64a3df81d2f8ae671544b18ef87a4e12c"
+      },
+      "alpha": 0.25,
+      "bound_s_c": 0.87465661216511,
+      "residual_sources": [
+        {
+          "excluded_group": "2025-09-30",
+          "training_groups": [
+            "2025-10-01"
+          ],
+          "fit_key": "H2|2025-10-01|3",
+          "residual_origins": 14449,
+          "residual_origin_hash": "868c37835cef4c4f598beecea0cdd0659fe9f5449bd26e4d6e2b397ff521557d"
+        },
+        {
+          "excluded_group": "2025-10-01",
+          "training_groups": [
+            "2025-09-30"
+          ],
+          "fit_key": "H2|2025-09-30|3",
+          "residual_origins": 6035,
+          "residual_origin_hash": "16225f55172922be923203b80f6b7de599457e7453f50ce00f87ecef2b9ace1c"
+        }
+      ],
+      "receiver_valid": true,
+      "correction_valid": true,
+      "residual_hash": "c5c9228de07762053c99b4940ab4f37cdb0d63e0d030c501736ab4476396a0d5"
+    },
+    {
+      "dataset": "intel",
+      "fold": "2025-09-29",
+      "family": "H2",
+      "seed": 4,
+      "receiver_key": "H2|2025-09-30,2025-10-01|4",
+      "receiver_hash": "921c64bc2749680d7e2b24c446bcba9967cc3cf3287a5757aa6d01d98ccc3292",
+      "training_groups": [
+        "2025-09-30",
+        "2025-10-01"
+      ],
+      "test_groups": [
+        "2025-09-29"
+      ],
+      "correction": {
+        "T": 337.2277063674728,
+        "sT": 8.992031007541629,
+        "P": 43.669276037160515,
+        "sP": 9.507602171498156,
+        "family": "physics",
+        "mean": [
+          0.0003990398291027662,
+          0.040032715075628604,
+          0.8447627828202114
+        ],
+        "scale": [
+          1.073908650219376,
+          0.042128901143389796,
+          0.8833294205291278
+        ],
+        "kept": [
+          true,
+          true,
+          true
+        ],
+        "c": 1.6916322978600198,
+        "gamma": [
+          -1.382583238488495,
+          0.09532787865468406,
+          0.40903635520064713
+        ],
+        "lambda_value": 0.1,
+        "training_groups": [
+          "2025-09-30",
+          "2025-10-01"
+        ],
+        "parameters": 4,
+        "fit_seconds": 0.003495250000000283,
+        "training_origin_hash": "ea936043e9398cc87a49070a3091afd64a3df81d2f8ae671544b18ef87a4e12c"
+      },
+      "alpha": 0.25,
+      "bound_s_c": 1.1744728561039215,
+      "residual_sources": [
+        {
+          "excluded_group": "2025-09-30",
+          "training_groups": [
+            "2025-10-01"
+          ],
+          "fit_key": "H2|2025-10-01|4",
+          "residual_origins": 14449,
+          "residual_origin_hash": "868c37835cef4c4f598beecea0cdd0659fe9f5449bd26e4d6e2b397ff521557d"
+        },
+        {
+          "excluded_group": "2025-10-01",
+          "training_groups": [
+            "2025-09-30"
+          ],
+          "fit_key": "H2|2025-09-30|4",
+          "residual_origins": 6035,
+          "residual_origin_hash": "16225f55172922be923203b80f6b7de599457e7453f50ce00f87ecef2b9ace1c"
+        }
+      ],
+      "receiver_valid": true,
+      "correction_valid": true,
+      "residual_hash": "2c0c185defebf7fa9faea6795de71cc8f07574523badc474cd131510b96c421b"
+    },
+    {
+      "dataset": "intel",
+      "fold": "2025-09-30",
+      "family": "Ridge",
+      "seed": -1,
+      "receiver_key": "Ridge|2025-09-29,2025-10-01|-1",
+      "receiver_hash": "7daaa0ee8edcf00811306adda9fb20ad2545ddf5d310391be578288d5904385e",
+      "training_groups": [
+        "2025-09-29",
+        "2025-10-01"
+      ],
+      "test_groups": [
+        "2025-09-30"
+      ],
+      "correction": {
+        "T": 339.53510265847365,
+        "sT": 5.9332452242444464,
+        "P": 43.32759728861958,
+        "sP": 5.054108028131911,
+        "family": "physics",
+        "mean": [
+          0.041599377602318695,
+          0.026419051414845313,
+          0.6520846048905176
+        ],
+        "scale": [
+          1.1201857662055856,
+          0.04122511330912529,
+          1.2564816309843705
+        ],
+        "kept": [
+          true,
+          true,
+          true
+        ],
+        "c": -0.07137306388599218,
+        "gamma": [
+          -1.0845704213104552,
+          -0.6498094759477305,
+          0.14714451800547562
+        ],
+        "lambda_value": 1.0,
+        "training_groups": [
+          "2025-09-29",
+          "2025-10-01"
+        ],
+        "parameters": 4,
+        "fit_seconds": 0.0029324159999997157,
+        "training_origin_hash": "afdd69ed7deccd6354da8a4ac500667f0d7d8754a64caec23d3c6d02ee1d0b1e"
+      },
+      "alpha": 1.0,
+      "bound_s_c": null,
+      "residual_sources": [
+        {
+          "excluded_group": "2025-09-29",
+          "training_groups": [
+            "2025-10-01"
+          ],
+          "fit_key": "Ridge|2025-10-01|-1",
+          "residual_origins": 10105,
+          "residual_origin_hash": "d2c69b0ed12308ff818691eaf9ebd5b65612cf1e0aa8257d0859f4ffe08233f7"
+        },
+        {
+          "excluded_group": "2025-10-01",
+          "training_groups": [
+            "2025-09-29"
+          ],
+          "fit_key": "Ridge|2025-09-29|-1",
+          "residual_origins": 6035,
+          "residual_origin_hash": "16225f55172922be923203b80f6b7de599457e7453f50ce00f87ecef2b9ace1c"
+        }
+      ],
+      "receiver_valid": true,
+      "correction_valid": true,
+      "residual_hash": "d0167c849d9ff8d23f0519a5e08a3255ef332f22768f716ac386dd6035d5de5c"
+    },
+    {
+      "dataset": "intel",
+      "fold": "2025-09-30",
+      "family": "H2",
+      "seed": 0,
+      "receiver_key": "H2|2025-09-29,2025-10-01|0",
+      "receiver_hash": "7cfd386d49e4b653c661ecceb091c8badc34f82734c2184f1854015518fbc61e",
+      "training_groups": [
+        "2025-09-29",
+        "2025-10-01"
+      ],
+      "test_groups": [
+        "2025-09-30"
+      ],
+      "correction": {
+        "T": 339.53510265847365,
+        "sT": 5.9332452242444464,
+        "P": 43.32759728861958,
+        "sP": 5.054108028131911,
+        "family": "physics",
+        "mean": [
+          0.041599377602318695,
+          0.026419051414845313,
+          0.6520846048905176
+        ],
+        "scale": [
+          1.1201857662055856,
+          0.04122511330912529,
+          1.2564816309843705
+        ],
+        "kept": [
+          true,
+          true,
+          true
+        ],
+        "c": 0.022958406086097168,
+        "gamma": [
+          -0.11140661796034423,
+          -0.5886868089459913,
+          0.4349180812779348
+        ],
+        "lambda_value": 0.1,
+        "training_groups": [
+          "2025-09-29",
+          "2025-10-01"
+        ],
+        "parameters": 4,
+        "fit_seconds": 0.002853583999999909,
+        "training_origin_hash": "afdd69ed7deccd6354da8a4ac500667f0d7d8754a64caec23d3c6d02ee1d0b1e"
+      },
+      "alpha": 0.25,
+      "bound_s_c": 0.23294835112461013,
+      "residual_sources": [
+        {
+          "excluded_group": "2025-09-29",
+          "training_groups": [
+            "2025-10-01"
+          ],
+          "fit_key": "H2|2025-10-01|0",
+          "residual_origins": 10105,
+          "residual_origin_hash": "d2c69b0ed12308ff818691eaf9ebd5b65612cf1e0aa8257d0859f4ffe08233f7"
+        },
+        {
+          "excluded_group": "2025-10-01",
+          "training_groups": [
+            "2025-09-29"
+          ],
+          "fit_key": "H2|2025-09-29|0",
+          "residual_origins": 6035,
+          "residual_origin_hash": "16225f55172922be923203b80f6b7de599457e7453f50ce00f87ecef2b9ace1c"
+        }
+      ],
+      "receiver_valid": true,
+      "correction_valid": true,
+      "residual_hash": "150518803ce8aee4b6918b7a786d1e5999c81b18b120342862769b32cbaea143"
+    },
+    {
+      "dataset": "intel",
+      "fold": "2025-09-30",
+      "family": "H2",
+      "seed": 1,
+      "receiver_key": "H2|2025-09-29,2025-10-01|1",
+      "receiver_hash": "5590c4ec3407e399c79223f7f0471b9d442ab3f94bd9ad7f7531ae0d4a77bdca",
+      "training_groups": [
+        "2025-09-29",
+        "2025-10-01"
+      ],
+      "test_groups": [
+        "2025-09-30"
+      ],
+      "correction": {
+        "T": 339.53510265847365,
+        "sT": 5.9332452242444464,
+        "P": 43.32759728861958,
+        "sP": 5.054108028131911,
+        "family": "physics",
+        "mean": [
+          0.041599377602318695,
+          0.026419051414845313,
+          0.6520846048905176
+        ],
+        "scale": [
+          1.1201857662055856,
+          0.04122511330912529,
+          1.2564816309843705
+        ],
+        "kept": [
+          true,
+          true,
+          true
+        ],
+        "c": 0.022752997358734286,
+        "gamma": [
+          -0.1115457469398059,
+          -0.5885591157915132,
+          0.4348658097057778
+        ],
+        "lambda_value": 0.1,
+        "training_groups": [
+          "2025-09-29",
+          "2025-10-01"
+        ],
+        "parameters": 4,
+        "fit_seconds": 0.0028800829999999777,
+        "training_origin_hash": "afdd69ed7deccd6354da8a4ac500667f0d7d8754a64caec23d3c6d02ee1d0b1e"
+      },
+      "alpha": 0.25,
+      "bound_s_c": 0.2330135688053598,
+      "residual_sources": [
+        {
+          "excluded_group": "2025-09-29",
+          "training_groups": [
+            "2025-10-01"
+          ],
+          "fit_key": "H2|2025-10-01|1",
+          "residual_origins": 10105,
+          "residual_origin_hash": "d2c69b0ed12308ff818691eaf9ebd5b65612cf1e0aa8257d0859f4ffe08233f7"
+        },
+        {
+          "excluded_group": "2025-10-01",
+          "training_groups": [
+            "2025-09-29"
+          ],
+          "fit_key": "H2|2025-09-29|1",
+          "residual_origins": 6035,
+          "residual_origin_hash": "16225f55172922be923203b80f6b7de599457e7453f50ce00f87ecef2b9ace1c"
+        }
+      ],
+      "receiver_valid": true,
+      "correction_valid": true,
+      "residual_hash": "9ab59dcf5a8a092efec8cfed17c56be438025425d693b961cd1ef38ade5dc46b"
+    },
+    {
+      "dataset": "intel",
+      "fold": "2025-09-30",
+      "family": "H2",
+      "seed": 2,
+      "receiver_key": "H2|2025-09-29,2025-10-01|2",
+      "receiver_hash": "9fda74e4d382ec757327d518090a88d2819fcf3a65d0de1bfd59504fd35ea9ca",
+      "training_groups": [
+        "2025-09-29",
+        "2025-10-01"
+      ],
+      "test_groups": [
+        "2025-09-30"
+      ],
+      "correction": {
+        "T": 339.53510265847365,
+        "sT": 5.9332452242444464,
+        "P": 43.32759728861958,
+        "sP": 5.054108028131911,
+        "family": "physics",
+        "mean": [
+          0.041599377602318695,
+          0.026419051414845313,
+          0.6520846048905176
+        ],
+        "scale": [
+          1.1201857662055856,
+          0.04122511330912529,
+          1.2564816309843705
+        ],
+        "kept": [
+          true,
+          true,
+          true
+        ],
+        "c": -1.2143443497859414,
+        "gamma": [
+          -0.34141353958279425,
+          -0.27742775981342055,
+          0.8489596051521102
+        ],
+        "lambda_value": 0.1,
+        "training_groups": [
+          "2025-09-29",
+          "2025-10-01"
+        ],
+        "parameters": 4,
+        "fit_seconds": 0.0028476249999997982,
+        "training_origin_hash": "afdd69ed7deccd6354da8a4ac500667f0d7d8754a64caec23d3c6d02ee1d0b1e"
+      },
+      "alpha": 0.25,
+      "bound_s_c": 0.5509829594383986,
+      "residual_sources": [
+        {
+          "excluded_group": "2025-09-29",
+          "training_groups": [
+            "2025-10-01"
+          ],
+          "fit_key": "H2|2025-10-01|2",
+          "residual_origins": 10105,
+          "residual_origin_hash": "d2c69b0ed12308ff818691eaf9ebd5b65612cf1e0aa8257d0859f4ffe08233f7"
+        },
+        {
+          "excluded_group": "2025-10-01",
+          "training_groups": [
+            "2025-09-29"
+          ],
+          "fit_key": "H2|2025-09-29|2",
+          "residual_origins": 6035,
+          "residual_origin_hash": "16225f55172922be923203b80f6b7de599457e7453f50ce00f87ecef2b9ace1c"
+        }
+      ],
+      "receiver_valid": true,
+      "correction_valid": true,
+      "residual_hash": "e1e08c557e43f1d6258ea4b90414bb6f8cf0ebcc85b7c9ba0e2f86354955f65a"
+    },
+    {
+      "dataset": "intel",
+      "fold": "2025-09-30",
+      "family": "H2",
+      "seed": 3,
+      "receiver_key": "H2|2025-09-29,2025-10-01|3",
+      "receiver_hash": "abab49d66ba56a7e1bce7bc4b57ba99aac06998e17f6684395a2e931084b72c5",
+      "training_groups": [
+        "2025-09-29",
+        "2025-10-01"
+      ],
+      "test_groups": [
+        "2025-09-30"
+      ],
+      "correction": {
+        "T": 339.53510265847365,
+        "sT": 5.9332452242444464,
+        "P": 43.32759728861958,
+        "sP": 5.054108028131911,
+        "family": "physics",
+        "mean": [
+          0.041599377602318695,
+          0.026419051414845313,
+          0.6520846048905176
+        ],
+        "scale": [
+          1.1201857662055856,
+          0.04122511330912529,
+          1.2564816309843705
+        ],
+        "kept": [
+          true,
+          true,
+          true
+        ],
+        "c": 0.008753511162698121,
+        "gamma": [
+          -0.14391813817512078,
+          -0.6881217136636246,
+          0.40236797321177925
+        ],
+        "lambda_value": 0.1,
+        "training_groups": [
+          "2025-09-29",
+          "2025-10-01"
+        ],
+        "parameters": 4,
+        "fit_seconds": 0.0027974590000003907,
+        "training_origin_hash": "afdd69ed7deccd6354da8a4ac500667f0d7d8754a64caec23d3c6d02ee1d0b1e"
+      },
+      "alpha": 0.25,
+      "bound_s_c": 0.28291141564759137,
+      "residual_sources": [
+        {
+          "excluded_group": "2025-09-29",
+          "training_groups": [
+            "2025-10-01"
+          ],
+          "fit_key": "H2|2025-10-01|3",
+          "residual_origins": 10105,
+          "residual_origin_hash": "d2c69b0ed12308ff818691eaf9ebd5b65612cf1e0aa8257d0859f4ffe08233f7"
+        },
+        {
+          "excluded_group": "2025-10-01",
+          "training_groups": [
+            "2025-09-29"
+          ],
+          "fit_key": "H2|2025-09-29|3",
+          "residual_origins": 6035,
+          "residual_origin_hash": "16225f55172922be923203b80f6b7de599457e7453f50ce00f87ecef2b9ace1c"
+        }
+      ],
+      "receiver_valid": true,
+      "correction_valid": true,
+      "residual_hash": "dc4bf8336493614639f6b5fe1f27b610a9d48ae9ef2692b891590d09d5151ef6"
+    },
+    {
+      "dataset": "intel",
+      "fold": "2025-09-30",
+      "family": "H2",
+      "seed": 4,
+      "receiver_key": "H2|2025-09-29,2025-10-01|4",
+      "receiver_hash": "5b3bd807b5f70852eb03fd8fb3198d00aa863a3678b516166b680a5644ebc69f",
+      "training_groups": [
+        "2025-09-29",
+        "2025-10-01"
+      ],
+      "test_groups": [
+        "2025-09-30"
+      ],
+      "correction": {
+        "T": 339.53510265847365,
+        "sT": 5.9332452242444464,
+        "P": 43.32759728861958,
+        "sP": 5.054108028131911,
+        "family": "physics",
+        "mean": [
+          0.041599377602318695,
+          0.026419051414845313,
+          0.6520846048905176
+        ],
+        "scale": [
+          1.1201857662055856,
+          0.04122511330912529,
+          1.2564816309843705
+        ],
+        "kept": [
+          true,
+          true,
+          true
+        ],
+        "c": -1.2283622083523917,
+        "gamma": [
+          -0.37405093830108577,
+          -0.3771084019704615,
+          0.8167495841688766
+        ],
+        "lambda_value": 0.1,
+        "training_groups": [
+          "2025-09-29",
+          "2025-10-01"
+        ],
+        "parameters": 4,
+        "fit_seconds": 0.0029111250000002364,
+        "training_origin_hash": "afdd69ed7deccd6354da8a4ac500667f0d7d8754a64caec23d3c6d02ee1d0b1e"
+      },
+      "alpha": 0.25,
+      "bound_s_c": 0.5842563312295783,
+      "residual_sources": [
+        {
+          "excluded_group": "2025-09-29",
+          "training_groups": [
+            "2025-10-01"
+          ],
+          "fit_key": "H2|2025-10-01|4",
+          "residual_origins": 10105,
+          "residual_origin_hash": "d2c69b0ed12308ff818691eaf9ebd5b65612cf1e0aa8257d0859f4ffe08233f7"
+        },
+        {
+          "excluded_group": "2025-10-01",
+          "training_groups": [
+            "2025-09-29"
+          ],
+          "fit_key": "H2|2025-09-29|4",
+          "residual_origins": 6035,
+          "residual_origin_hash": "16225f55172922be923203b80f6b7de599457e7453f50ce00f87ecef2b9ace1c"
+        }
+      ],
+      "receiver_valid": true,
+      "correction_valid": true,
+      "residual_hash": "d8aa04608f8ac79f46da2165025ba6ca01ccde1068f74620ecbaa3cda2d9c003"
+    },
+    {
+      "dataset": "intel",
+      "fold": "2025-10-01",
+      "family": "Ridge",
+      "seed": -1,
+      "receiver_key": "Ridge|2025-09-29,2025-09-30|-1",
+      "receiver_hash": "280cd6c35076b37559664641956ee0d3363b80ae60b0921433aea1ab91c0baea",
+      "training_groups": [
+        "2025-09-29",
+        "2025-09-30"
+      ],
+      "test_groups": [
+        "2025-10-01"
+      ],
+      "correction": {
+        "T": 336.1580621326871,
+        "sT": 7.571562072530501,
+        "P": 42.06452586282141,
+        "sP": 7.909689804084167,
+        "family": "physics",
+        "mean": [
+          -0.002092023296045442,
+          0.033820981865270064,
+          0.7917269671692384
+        ],
+        "scale": [
+          1.1004293085941508,
+          0.04299215156256386,
+          1.2187602172166647
+        ],
+        "kept": [
+          true,
+          true,
+          true
+        ],
+        "c": -0.17637665487170315,
+        "gamma": [
+          -0.7522975646278942,
+          -0.48477862010619255,
+          0.22916704956044387
+        ],
+        "lambda_value": 1.0,
+        "training_groups": [
+          "2025-09-29",
+          "2025-09-30"
+        ],
+        "parameters": 4,
+        "fit_seconds": 0.004267167000000072,
+        "training_origin_hash": "269526a8ffc2510f5cac4db9113b904f44cfdce5c8010f2181af8ea72ac56f11"
+      },
+      "alpha": 1.0,
+      "bound_s_c": null,
+      "residual_sources": [
+        {
+          "excluded_group": "2025-09-29",
+          "training_groups": [
+            "2025-09-30"
+          ],
+          "fit_key": "Ridge|2025-09-30|-1",
+          "residual_origins": 10105,
+          "residual_origin_hash": "d2c69b0ed12308ff818691eaf9ebd5b65612cf1e0aa8257d0859f4ffe08233f7"
+        },
+        {
+          "excluded_group": "2025-09-30",
+          "training_groups": [
+            "2025-09-29"
+          ],
+          "fit_key": "Ridge|2025-09-29|-1",
+          "residual_origins": 14449,
+          "residual_origin_hash": "868c37835cef4c4f598beecea0cdd0659fe9f5449bd26e4d6e2b397ff521557d"
+        }
+      ],
+      "receiver_valid": true,
+      "correction_valid": true,
+      "residual_hash": "042d3235eaa8381d1786795612dc8189da06a5fe1ec58d7ff43c6f74278d3947"
+    },
+    {
+      "dataset": "intel",
+      "fold": "2025-10-01",
+      "family": "H2",
+      "seed": 0,
+      "receiver_key": "H2|2025-09-29,2025-09-30|0",
+      "receiver_hash": "ecfa5611883c142c3e53321f0ea5e5d150d7ca039f4f708dbc2a052035f08ca2",
+      "training_groups": [
+        "2025-09-29",
+        "2025-09-30"
+      ],
+      "test_groups": [
+        "2025-10-01"
+      ],
+      "correction": {
+        "T": 336.1580621326871,
+        "sT": 7.571562072530501,
+        "P": 42.06452586282141,
+        "sP": 7.909689804084167,
+        "family": "physics",
+        "mean": [
+          -0.002092023296045442,
+          0.033820981865270064,
+          0.7917269671692384
+        ],
+        "scale": [
+          1.1004293085941508,
+          0.04299215156256386,
+          1.2187602172166647
+        ],
+        "kept": [
+          true,
+          true,
+          true
+        ],
+        "c": 0.16200083585399058,
+        "gamma": [
+          -0.05654089915770444,
+          -0.4669285748989527,
+          0.331068625524944
+        ],
+        "lambda_value": 0.1,
+        "training_groups": [
+          "2025-09-29",
+          "2025-09-30"
+        ],
+        "parameters": 4,
+        "fit_seconds": 0.004083082999999821,
+        "training_origin_hash": "269526a8ffc2510f5cac4db9113b904f44cfdce5c8010f2181af8ea72ac56f11"
+      },
+      "alpha": 0.25,
+      "bound_s_c": 0.12169899347188984,
+      "residual_sources": [
+        {
+          "excluded_group": "2025-09-29",
+          "training_groups": [
+            "2025-09-30"
+          ],
+          "fit_key": "H2|2025-09-30|0",
+          "residual_origins": 10105,
+          "residual_origin_hash": "d2c69b0ed12308ff818691eaf9ebd5b65612cf1e0aa8257d0859f4ffe08233f7"
+        },
+        {
+          "excluded_group": "2025-09-30",
+          "training_groups": [
+            "2025-09-29"
+          ],
+          "fit_key": "H2|2025-09-29|0",
+          "residual_origins": 14449,
+          "residual_origin_hash": "868c37835cef4c4f598beecea0cdd0659fe9f5449bd26e4d6e2b397ff521557d"
+        }
+      ],
+      "receiver_valid": true,
+      "correction_valid": true,
+      "residual_hash": "0ebc810f9a70fda58eb12521e522100bee8d52c8198508641da4f0006cdcdece"
+    },
+    {
+      "dataset": "intel",
+      "fold": "2025-10-01",
+      "family": "H2",
+      "seed": 1,
+      "receiver_key": "H2|2025-09-29,2025-09-30|1",
+      "receiver_hash": "da46de6b80dfc448b099e885d039780d4b640331d101686cf45b8324cc45a93d",
+      "training_groups": [
+        "2025-09-29",
+        "2025-09-30"
+      ],
+      "test_groups": [
+        "2025-10-01"
+      ],
+      "correction": {
+        "T": 336.1580621326871,
+        "sT": 7.571562072530501,
+        "P": 42.06452586282141,
+        "sP": 7.909689804084167,
+        "family": "physics",
+        "mean": [
+          -0.002092023296045442,
+          0.033820981865270064,
+          0.7917269671692384
+        ],
+        "scale": [
+          1.1004293085941508,
+          0.04299215156256386,
+          1.2187602172166647
+        ],
+        "kept": [
+          true,
+          true,
+          true
+        ],
+        "c": 0.23292262314942738,
+        "gamma": [
+          0.020567333507397256,
+          -0.33857238232502535,
+          0.197296663449278
+        ],
+        "lambda_value": 0.1,
+        "training_groups": [
+          "2025-09-29",
+          "2025-09-30"
+        ],
+        "parameters": 4,
+        "fit_seconds": 0.004090458999999935,
+        "training_origin_hash": "269526a8ffc2510f5cac4db9113b904f44cfdce5c8010f2181af8ea72ac56f11"
+      },
+      "alpha": 0.25,
+      "bound_s_c": 0.10827472710442836,
+      "residual_sources": [
+        {
+          "excluded_group": "2025-09-29",
+          "training_groups": [
+            "2025-09-30"
+          ],
+          "fit_key": "H2|2025-09-30|1",
+          "residual_origins": 10105,
+          "residual_origin_hash": "d2c69b0ed12308ff818691eaf9ebd5b65612cf1e0aa8257d0859f4ffe08233f7"
+        },
+        {
+          "excluded_group": "2025-09-30",
+          "training_groups": [
+            "2025-09-29"
+          ],
+          "fit_key": "H2|2025-09-29|1",
+          "residual_origins": 14449,
+          "residual_origin_hash": "868c37835cef4c4f598beecea0cdd0659fe9f5449bd26e4d6e2b397ff521557d"
+        }
+      ],
+      "receiver_valid": true,
+      "correction_valid": true,
+      "residual_hash": "5cedb6d84d0acd745181761585eb40dfbec21544ef4c2acfb9a455fb726237f9"
+    },
+    {
+      "dataset": "intel",
+      "fold": "2025-10-01",
+      "family": "H2",
+      "seed": 2,
+      "receiver_key": "H2|2025-09-29,2025-09-30|2",
+      "receiver_hash": "3bebb773cf307487146c86c56013bf6d8d01c47570da9375801c3bcef2fc360f",
+      "training_groups": [
+        "2025-09-29",
+        "2025-09-30"
+      ],
+      "test_groups": [
+        "2025-10-01"
+      ],
+      "correction": {
+        "T": 336.1580621326871,
+        "sT": 7.571562072530501,
+        "P": 42.06452586282141,
+        "sP": 7.909689804084167,
+        "family": "physics",
+        "mean": [
+          -0.002092023296045442,
+          0.033820981865270064,
+          0.7917269671692384
+        ],
+        "scale": [
+          1.1004293085941508,
+          0.04299215156256386,
+          1.2187602172166647
+        ],
+        "kept": [
+          true,
+          true,
+          true
+        ],
+        "c": 0.23283274140608443,
+        "gamma": [
+          0.020532634013296802,
+          -0.33853449606840974,
+          0.1972244296994832
+        ],
+        "lambda_value": 0.1,
+        "training_groups": [
+          "2025-09-29",
+          "2025-09-30"
+        ],
+        "parameters": 4,
+        "fit_seconds": 0.004113875000000267,
+        "training_origin_hash": "269526a8ffc2510f5cac4db9113b904f44cfdce5c8010f2181af8ea72ac56f11"
+      },
+      "alpha": 0.25,
+      "bound_s_c": 0.10822588032967409,
+      "residual_sources": [
+        {
+          "excluded_group": "2025-09-29",
+          "training_groups": [
+            "2025-09-30"
+          ],
+          "fit_key": "H2|2025-09-30|2",
+          "residual_origins": 10105,
+          "residual_origin_hash": "d2c69b0ed12308ff818691eaf9ebd5b65612cf1e0aa8257d0859f4ffe08233f7"
+        },
+        {
+          "excluded_group": "2025-09-30",
+          "training_groups": [
+            "2025-09-29"
+          ],
+          "fit_key": "H2|2025-09-29|2",
+          "residual_origins": 14449,
+          "residual_origin_hash": "868c37835cef4c4f598beecea0cdd0659fe9f5449bd26e4d6e2b397ff521557d"
+        }
+      ],
+      "receiver_valid": true,
+      "correction_valid": true,
+      "residual_hash": "99f6cfbde911298b449a09ba37e643a6b3c697a2feda09c46f98e01954a755e8"
+    },
+    {
+      "dataset": "intel",
+      "fold": "2025-10-01",
+      "family": "H2",
+      "seed": 3,
+      "receiver_key": "H2|2025-09-29,2025-09-30|3",
+      "receiver_hash": "9858bbfaf50bc3ed53ce3486f784c0d08b1d2de930d3e30128b1a2ac13f09b51",
+      "training_groups": [
+        "2025-09-29",
+        "2025-09-30"
+      ],
+      "test_groups": [
+        "2025-10-01"
+      ],
+      "correction": {
+        "T": 336.1580621326871,
+        "sT": 7.571562072530501,
+        "P": 42.06452586282141,
+        "sP": 7.909689804084167,
+        "family": "physics",
+        "mean": [
+          -0.002092023296045442,
+          0.033820981865270064,
+          0.7917269671692384
+        ],
+        "scale": [
+          1.1004293085941508,
+          0.04299215156256386,
+          1.2187602172166647
+        ],
+        "kept": [
+          true,
+          true,
+          true
+        ],
+        "c": 0.2740958944167835,
+        "gamma": [
+          0.01049204763932332,
+          -0.5701406977924536,
+          0.23820096986097916
+        ],
+        "lambda_value": 0.1,
+        "training_groups": [
+          "2025-09-29",
+          "2025-09-30"
+        ],
+        "parameters": 4,
+        "fit_seconds": 0.004144083999999992,
+        "training_origin_hash": "269526a8ffc2510f5cac4db9113b904f44cfdce5c8010f2181af8ea72ac56f11"
+      },
+      "alpha": 0.25,
+      "bound_s_c": 0.15047242313169146,
+      "residual_sources": [
+        {
+          "excluded_group": "2025-09-29",
+          "training_groups": [
+            "2025-09-30"
+          ],
+          "fit_key": "H2|2025-09-30|3",
+          "residual_origins": 10105,
+          "residual_origin_hash": "d2c69b0ed12308ff818691eaf9ebd5b65612cf1e0aa8257d0859f4ffe08233f7"
+        },
+        {
+          "excluded_group": "2025-09-30",
+          "training_groups": [
+            "2025-09-29"
+          ],
+          "fit_key": "H2|2025-09-29|3",
+          "residual_origins": 14449,
+          "residual_origin_hash": "868c37835cef4c4f598beecea0cdd0659fe9f5449bd26e4d6e2b397ff521557d"
+        }
+      ],
+      "receiver_valid": true,
+      "correction_valid": true,
+      "residual_hash": "82844e1d49a6fc9aceecd64327bcd8b73059cff6ae0f242fd9ed5dbf498fe1d1"
+    },
+    {
+      "dataset": "intel",
+      "fold": "2025-10-01",
+      "family": "H2",
+      "seed": 4,
+      "receiver_key": "H2|2025-09-29,2025-09-30|4",
+      "receiver_hash": "9411b35314c616c71a85a7091a4b185f240ab695b8eef44dc645b09636a420b8",
+      "training_groups": [
+        "2025-09-29",
+        "2025-09-30"
+      ],
+      "test_groups": [
+        "2025-10-01"
+      ],
+      "correction": {
+        "T": 336.1580621326871,
+        "sT": 7.571562072530501,
+        "P": 42.06452586282141,
+        "sP": 7.909689804084167,
+        "family": "physics",
+        "mean": [
+          -0.002092023296045442,
+          0.033820981865270064,
+          0.7917269671692384
+        ],
+        "scale": [
+          1.1004293085941508,
+          0.04299215156256386,
+          1.2187602172166647
+        ],
+        "kept": [
+          true,
+          true,
+          true
+        ],
+        "c": 0.27416042960158293,
+        "gamma": [
+          0.010583627120559047,
+          -0.570298349600565,
+          0.2382889418480662
+        ],
+        "lambda_value": 0.1,
+        "training_groups": [
+          "2025-09-29",
+          "2025-09-30"
+        ],
+        "parameters": 4,
+        "fit_seconds": 0.004085375000000724,
+        "training_origin_hash": "269526a8ffc2510f5cac4db9113b904f44cfdce5c8010f2181af8ea72ac56f11"
+      },
+      "alpha": 0.25,
+      "bound_s_c": 0.15051364977303566,
+      "residual_sources": [
+        {
+          "excluded_group": "2025-09-29",
+          "training_groups": [
+            "2025-09-30"
+          ],
+          "fit_key": "H2|2025-09-30|4",
+          "residual_origins": 10105,
+          "residual_origin_hash": "d2c69b0ed12308ff818691eaf9ebd5b65612cf1e0aa8257d0859f4ffe08233f7"
+        },
+        {
+          "excluded_group": "2025-09-30",
+          "training_groups": [
+            "2025-09-29"
+          ],
+          "fit_key": "H2|2025-09-29|4",
+          "residual_origins": 14449,
+          "residual_origin_hash": "868c37835cef4c4f598beecea0cdd0659fe9f5449bd26e4d6e2b397ff521557d"
+        }
+      ],
+      "receiver_valid": true,
+      "correction_valid": true,
+      "residual_hash": "76c6a0037b358a855d7dd6149eb99750bef5014cc6e8fd98fd228fe1814c2433"
+    }
+  ],
+  "failures": [],
+  "wall_seconds": 3.4284275839999996
+}

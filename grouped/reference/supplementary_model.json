@@ -1,0 +1,5698 @@
+{
+  "plan_sha256": "cc7cdc904c79c29f0fc20f6e160e2bc0d805288f8be7751ada8d0642cf29aff1",
+  "networks": {
+    "G_2024-10-23|G_2024-10-24_to_2024-10-28::seed=0": {
+      "width": 2,
+      "lambda_value": 0.03,
+      "seed": 0,
+      "mean": [
+        49.98377221736684,
+        49.832200191764855,
+        0.010230947648194082,
+        0.21467858775502938,
+        11966.86552540393,
+        989.5698194665704,
+        6617.640169464964,
+        2981.981965272813,
+        74.08822309479756,
+        13.303765204138642,
+        9.09090909090899
+      ],
+      "scale": [
+        8.413488518182874,
+        8.443608993452525,
+        0.014058691098861055,
+        0.12327555183025135,
+        10701.605779130274,
+        725.9407725879068,
+        2462.923768418305,
+        1605.8128209951938,
+        23.394668203738085,
+        8.089539138272647,
+        3.4497574474565074
+      ],
+      "W": [
+        [
+          0.13678519799776162,
+          -0.42727178259235393
+        ],
+        [
+          0.09853761030681177,
+          -0.3547331776563425
+        ],
+        [
+          -0.10119251517849738,
+          0.09381254562999886
+        ],
+        [
+          -0.3031568554703633,
+          0.05025715768126589
+        ],
+        [
+          -0.13533325214874012,
+          0.12458309288059297
+        ],
+        [
+          -0.00993880098786664,
+          0.032850573263581505
+        ],
+        [
+          -0.13762707565040813,
+          0.21678535814792563
+        ],
+        [
+          -0.13715772143124258,
+          0.18861586261095667
+        ],
+        [
+          -0.089744033525418,
+          -0.12773235461662394
+        ],
+        [
+          -0.004867048559550677,
+          0.03125585311408196
+        ],
+        [
+          0.023020238565538705,
+          0.17558354410085614
+        ]
+      ],
+      "a": [
+        1.2138845123689777,
+        -0.15409348010552748
+      ],
+      "v": [
+        -0.6777314685130484,
+        0.8617797473723933
+      ],
+      "b": 1.143896185626509,
+      "training_windows": [
+        "phi_15W__author",
+        "phi_30W__author",
+        "phi_50W__author",
+        "phi_maxn__author",
+        "resnet_15W__author",
+        "resnet_maxn__author",
+        "resnet_training_15W__author",
+        "resnet_training_30W__author",
+        "resnet_training_50W__author",
+        "resnet_training__author",
+        "resnet_training_maxnS__author"
+      ],
+      "training_n": 12001,
+      "fit_seconds": 0.06197512500000002,
+      "objective": 0.20787155439441862,
+      "gradient_inf": 2.9901153837420813e-06,
+      "success": true,
+      "status": 0,
+      "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+      "iterations": 90,
+      "evaluations": 101,
+      "gradient_evaluations": 101,
+      "postfit_check_objective_gradient_evaluations": 1,
+      "phases": [
+        {
+          "stage": "initial",
+          "allowance": 2000,
+          "iterations": 90,
+          "evaluations": 101,
+          "gradient_evaluations": 101,
+          "objective": 0.20787155439441862,
+          "gradient_inf": 2.9901153837420813e-06,
+          "success": true,
+          "status": 0,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "wall_seconds": 0.05716275000000026
+        }
+      ],
+      "continuation_seconds": 0,
+      "training_diagnostics": {
+        "training_prediction_mse": 0.1519413409158971,
+        "penalty": 0.055930213478521534,
+        "predicted_delta_mean_c": 0.49738484792223703,
+        "predicted_delta_std_c": 0.3929623892011958,
+        "W_frobenius": 0.8138526727178402,
+        "v_l2": 1.0963504350316458,
+        "hidden_std_mean": 0.32554956073092245,
+        "hidden_std_max": 0.3929117221053836,
+        "hidden_std_by_unit": [
+          0.25818739935646134,
+          0.3929117221053836
+        ],
+        "hidden_saturation_fraction": 0.00048449612403100785,
+        "training_intercept_only_c": 0.4973842529015259,
+        "intercept_only_mse": 0.37847663235493173,
+        "rms_difference_from_intercept_c": 0.3929623892016467,
+        "within_window_prediction_std_min_c": 0.022668824207862735,
+        "within_window_prediction_std_max_c": 0.708335917141016,
+        "within_window_prediction_std_mean_c": 0.1970327549246898
+      },
+      "training_groups": [
+        "G_2024-10-23",
+        "G_2024-10-24_to_2024-10-28"
+      ],
+      "training_origin_hash": "067cc3d1f004159048a79636fd100917b6157e9174242b55f5b0e1cd2f6eb257"
+    },
+    "G_2024-10-24_to_2024-10-28::seed=0": {
+      "width": 2,
+      "lambda_value": 0.03,
+      "seed": 0,
+      "mean": [
+        50.646218669872965,
+        50.499755443916364,
+        0.009790642037797096,
+        0.21603577554664352,
+        12646.909806094332,
+        1016.4457978289962,
+        6733.204988727423,
+        3054.4748929828947,
+        75.20861143681142,
+        13.456176119369193,
+        9.199999999999982
+      ],
+      "scale": [
+        8.546034221488846,
+        8.5743175818138,
+        0.014622900382355752,
+        0.12895180574952286,
+        10994.933364154467,
+        756.0602356529336,
+        2554.447168550859,
+        1666.8667302581523,
+        24.24025383412602,
+        8.469217946981855,
+        3.599999999999956
+      ],
+      "W": [
+        [
+          0.16596772550052868,
+          -0.39677455525692684
+        ],
+        [
+          0.12210221423843423,
+          -0.3260404630669231
+        ],
+        [
+          -0.09928658471567686,
+          0.10670714852914338
+        ],
+        [
+          -0.3064325164699697,
+          0.052991500977019504
+        ],
+        [
+          -0.13473755697076373,
+          0.14343656940212476
+        ],
+        [
+          0.009486907536137821,
+          0.02551183866444936
+        ],
+        [
+          -0.14415966414854997,
+          0.19762831686930474
+        ],
+        [
+          -0.1418365122976955,
+          0.1634368479761622
+        ],
+        [
+          -0.12079716084702859,
+          -0.14537790995311742
+        ],
+        [
+          -0.004777940478985783,
+          0.06988791725386312
+        ],
+        [
+          0.022579445101585282,
+          0.21972549899534846
+        ]
+      ],
+      "a": [
+        1.1285169550114729,
+        -0.2555855642207558
+      ],
+      "v": [
+        -0.709855262910124,
+        0.8528577312307165
+      ],
+      "b": 1.1855252975848452,
+      "training_windows": [
+        "phi_15W__author",
+        "phi_50W__author",
+        "phi_maxn__author",
+        "resnet_15W__author",
+        "resnet_maxn__author",
+        "resnet_training_15W__author",
+        "resnet_training_30W__author",
+        "resnet_training_50W__author",
+        "resnet_training__author",
+        "resnet_training_maxnS__author"
+      ],
+      "training_n": 11962,
+      "fit_seconds": 0.04685658299999984,
+      "objective": 0.21445444011143924,
+      "gradient_inf": 5.523972212783004e-06,
+      "success": true,
+      "status": 0,
+      "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+      "iterations": 82,
+      "evaluations": 90,
+      "gradient_evaluations": 90,
+      "postfit_check_objective_gradient_evaluations": 1,
+      "phases": [
+        {
+          "stage": "initial",
+          "allowance": 2000,
+          "iterations": 82,
+          "evaluations": 90,
+          "gradient_evaluations": 90,
+          "objective": 0.21445444011143924,
+          "gradient_inf": 5.523972212783004e-06,
+          "success": true,
+          "status": 0,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "wall_seconds": 0.043595250000000085
+        }
+      ],
+      "continuation_seconds": 0,
+      "training_diagnostics": {
+        "training_prediction_mse": 0.15772561190246542,
+        "penalty": 0.05672882820897382,
+        "predicted_delta_mean_c": 0.4588074647999814,
+        "predicted_delta_std_c": 0.4045690010455705,
+        "W_frobenius": 0.8122192661454918,
+        "v_l2": 1.1096219193947128,
+        "hidden_std_mean": 0.3256361522922534,
+        "hidden_std_max": 0.39024010502823064,
+        "hidden_std_by_unit": [
+          0.2610321995562761,
+          0.39024010502823064
+        ],
+        "hidden_saturation_fraction": 0.0005329457364341085,
+        "training_intercept_only_c": 0.45880985767885635,
+        "intercept_only_mse": 0.3952785684711391,
+        "rms_difference_from_intercept_c": 0.4045690010526468,
+        "within_window_prediction_std_min_c": 0.02397796314323959,
+        "within_window_prediction_std_max_c": 0.7171699963078249,
+        "within_window_prediction_std_mean_c": 0.214630118395855
+      },
+      "training_groups": [
+        "G_2024-10-24_to_2024-10-28"
+      ],
+      "training_origin_hash": "50616b23d13785ec143408e6c338d59019e029c2705eb974e37677b0ef75f47b"
+    },
+    "G_2024-10-23::seed=0": {
+      "width": 2,
+      "lambda_value": 0.03,
+      "seed": 0,
+      "mean": [
+        43.35930769230769,
+        43.156647670250884,
+        0.014634003752163843,
+        0.20110670983888934,
+        5166.422718500138,
+        720.8100358422938,
+        5461.991976840363,
+        2257.0526881720434,
+        62.88433967466226,
+        11.779656051833468,
+        8.0
+      ],
+      "scale": [
+        0.1891747467624137,
+        0.1770300120960159,
+        0.0038074926476580765,
+        0.026022700700894994,
+        108.66159450526999,
+        34.12118963197462,
+        69.64187414856251,
+        49.611590432884654,
+        2.5370732159846763,
+        0.12390420631291466,
+        1.0
+      ],
+      "W": [
+        [
+          0.13806648164552612,
+          -0.13810613743542463
+        ],
+        [
+          -0.08761022332674959,
+          0.08760751218364025
+        ],
+        [
+          0.12803333981257584,
+          -0.1280558464133153
+        ],
+        [
+          0.14149978434395658,
+          -0.14150856283168073
+        ],
+        [
+          -0.008631543149210073,
+          0.008620676778306227
+        ],
+        [
+          -0.02079475502851438,
+          0.020803380667966893
+        ],
+        [
+          0.011275364541130848,
+          -0.011288003598109253
+        ],
+        [
+          -0.010719736450487231,
+          0.010708863857514258
+        ],
+        [
+          -0.018327779195711626,
+          0.018318882150362054
+        ],
+        [
+          0.033348101215441385,
+          -0.03334210234874396
+        ],
+        [
+          1.8262772357742388e-07,
+          -1.9415316247170616e-06
+        ]
+      ],
+      "a": [
+        0.04343388466420507,
+        -0.04349898035963841
+      ],
+      "v": [
+        -0.27100495341224295,
+        0.27102873405082073
+      ],
+      "b": 0.9046401158423675,
+      "training_windows": [
+        "phi_30W__author"
+      ],
+      "training_n": 39,
+      "fit_seconds": 0.003913999999999973,
+      "objective": 0.02081046537799027,
+      "gradient_inf": 2.9488040255709613e-06,
+      "success": true,
+      "status": 0,
+      "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+      "iterations": 58,
+      "evaluations": 65,
+      "gradient_evaluations": 65,
+      "postfit_check_objective_gradient_evaluations": 1,
+      "phases": [
+        {
+          "stage": "initial",
+          "allowance": 2000,
+          "iterations": 58,
+          "evaluations": 65,
+          "gradient_evaluations": 65,
+          "objective": 0.02081046537799027,
+          "gradient_inf": 2.9488040255709613e-06,
+          "success": true,
+          "status": 0,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "wall_seconds": 0.002909999999999968
+        }
+      ],
+      "continuation_seconds": 0,
+      "training_diagnostics": {
+        "training_prediction_mse": 0.012481934626608618,
+        "penalty": 0.008328530751381655,
+        "predicted_delta_mean_c": 0.8831268736296668,
+        "predicted_delta_std_c": 0.15963432234734493,
+        "W_frobenius": 0.3615486582156811,
+        "v_l2": 0.38327569640555414,
+        "hidden_std_mean": 0.29450996754836567,
+        "hidden_std_max": 0.294515236931842,
+        "hidden_std_by_unit": [
+          0.294515236931842,
+          0.29450469816488933
+        ],
+        "hidden_saturation_fraction": 0.0,
+        "training_intercept_only_c": 0.8831282051282043,
+        "intercept_only_mse": 0.046779034845496385,
+        "rms_difference_from_intercept_c": 0.1596343223528979,
+        "within_window_prediction_std_min_c": 0.15963432234734495,
+        "within_window_prediction_std_max_c": 0.15963432234734495,
+        "within_window_prediction_std_mean_c": 0.15963432234734495
+      },
+      "training_groups": [
+        "G_2024-10-23"
+      ],
+      "training_origin_hash": "4f56d707e93b3f7d23725c4510f99d544ec3c15c51cf3a11072a9cf0f067a772"
+    },
+    "G_2024-10-23|G_2024-10-24_to_2024-10-28::seed=1": {
+      "width": 2,
+      "lambda_value": 0.03,
+      "seed": 1,
+      "mean": [
+        49.98377221736684,
+        49.832200191764855,
+        0.010230947648194082,
+        0.21467858775502938,
+        11966.86552540393,
+        989.5698194665704,
+        6617.640169464964,
+        2981.981965272813,
+        74.08822309479756,
+        13.303765204138642,
+        9.09090909090899
+      ],
+      "scale": [
+        8.413488518182874,
+        8.443608993452525,
+        0.014058691098861055,
+        0.12327555183025135,
+        10701.605779130274,
+        725.9407725879068,
+        2462.923768418305,
+        1605.8128209951938,
+        23.394668203738085,
+        8.089539138272647,
+        3.4497574474565074
+      ],
+      "W": [
+        [
+          -0.4273041191368412,
+          -0.13670265049069932
+        ],
+        [
+          -0.3547240557652036,
+          -0.09849573200259452
+        ],
+        [
+          0.09375642506618358,
+          0.10125868755374678
+        ],
+        [
+          0.05031126171043874,
+          0.3031640331573612
+        ],
+        [
+          0.12458292948505545,
+          0.13535348609423908
+        ],
+        [
+          0.03284729072253271,
+          0.009931287251566365
+        ],
+        [
+          0.21680581129109874,
+          0.1375967808274513
+        ],
+        [
+          0.18862688188202092,
+          0.13714326659073092
+        ],
+        [
+          -0.12771463285406165,
+          0.08974893840581168
+        ],
+        [
+          0.03125084053513228,
+          0.004870921643930526
+        ],
+        [
+          0.17556121841539538,
+          -0.02299179320028233
+        ]
+      ],
+      "a": [
+        -0.15408423371134664,
+        -1.2142126463397376
+      ],
+      "v": [
+        0.8618485315248258,
+        0.6776510979550189
+      ],
+      "b": 1.1438939460086393,
+      "training_windows": [
+        "phi_15W__author",
+        "phi_30W__author",
+        "phi_50W__author",
+        "phi_maxn__author",
+        "resnet_15W__author",
+        "resnet_maxn__author",
+        "resnet_training_15W__author",
+        "resnet_training_30W__author",
+        "resnet_training_50W__author",
+        "resnet_training__author",
+        "resnet_training_maxnS__author"
+      ],
+      "training_n": 12001,
+      "fit_seconds": 0.05167350000000015,
+      "objective": 0.20787155426014275,
+      "gradient_inf": 8.792829054048157e-06,
+      "success": true,
+      "status": 0,
+      "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+      "iterations": 85,
+      "evaluations": 98,
+      "gradient_evaluations": 98,
+      "postfit_check_objective_gradient_evaluations": 1,
+      "phases": [
+        {
+          "stage": "initial",
+          "allowance": 2000,
+          "iterations": 85,
+          "evaluations": 98,
+          "gradient_evaluations": 98,
+          "objective": 0.20787155426014275,
+          "gradient_inf": 8.792829054048157e-06,
+          "success": true,
+          "status": 0,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "wall_seconds": 0.04836104100000016
+        }
+      ],
+      "continuation_seconds": 0,
+      "training_diagnostics": {
+        "training_prediction_mse": 0.1519411803621785,
+        "penalty": 0.05593037389796425,
+        "predicted_delta_mean_c": 0.4973823710008074,
+        "predicted_delta_std_c": 0.39295740340586993,
+        "W_frobenius": 0.8138500443863522,
+        "v_l2": 1.0963548247949388,
+        "hidden_std_mean": 0.32553601454236114,
+        "hidden_std_max": 0.3928809581949284,
+        "hidden_std_by_unit": [
+          0.3928809581949284,
+          0.2581910708897939
+        ],
+        "hidden_saturation_fraction": 0.00048449612403100785,
+        "training_intercept_only_c": 0.4973842529015259,
+        "intercept_only_mse": 0.37847663235493173,
+        "rms_difference_from_intercept_c": 0.3929574034103762,
+        "within_window_prediction_std_min_c": 0.022665595411838976,
+        "within_window_prediction_std_max_c": 0.7083378075718106,
+        "within_window_prediction_std_mean_c": 0.1970255282723409
+      },
+      "training_groups": [
+        "G_2024-10-23",
+        "G_2024-10-24_to_2024-10-28"
+      ],
+      "training_origin_hash": "067cc3d1f004159048a79636fd100917b6157e9174242b55f5b0e1cd2f6eb257"
+    },
+    "G_2024-10-24_to_2024-10-28::seed=1": {
+      "width": 2,
+      "lambda_value": 0.03,
+      "seed": 1,
+      "mean": [
+        50.646218669872965,
+        50.499755443916364,
+        0.009790642037797096,
+        0.21603577554664352,
+        12646.909806094332,
+        1016.4457978289962,
+        6733.204988727423,
+        3054.4748929828947,
+        75.20861143681142,
+        13.456176119369193,
+        9.199999999999982
+      ],
+      "scale": [
+        8.546034221488846,
+        8.5743175818138,
+        0.014622900382355752,
+        0.12895180574952286,
+        10994.933364154467,
+        756.0602356529336,
+        2554.447168550859,
+        1666.8667302581523,
+        24.24025383412602,
+        8.469217946981855,
+        3.599999999999956
+      ],
+      "W": [
+        [
+          -0.39678460883335354,
+          -0.16595264855637532
+        ],
+        [
+          -0.32603067166557237,
+          -0.12209749233340506
+        ],
+        [
+          0.10667352814464202,
+          0.0992949606867762
+        ],
+        [
+          0.05302573232334648,
+          0.3064149194904804
+        ],
+        [
+          0.14344148739814855,
+          0.1347286911894607
+        ],
+        [
+          0.025520300408443792,
+          -0.009528990925554
+        ],
+        [
+          0.1976307319854121,
+          0.1441559243407682
+        ],
+        [
+          0.1634259146037387,
+          0.14182415064579143
+        ],
+        [
+          -0.14537729857403422,
+          0.12078893037688167
+        ],
+        [
+          0.06988065470922417,
+          0.0047623907530393176
+        ],
+        [
+          0.2197121470562367,
+          -0.022593984302731906
+        ]
+      ],
+      "a": [
+        -0.2555774575161394,
+        -1.1284414724868217
+      ],
+      "v": [
+        0.852886269537246,
+        0.7098475073628052
+      ],
+      "b": 1.1855114108384546,
+      "training_windows": [
+        "phi_15W__author",
+        "phi_50W__author",
+        "phi_maxn__author",
+        "resnet_15W__author",
+        "resnet_maxn__author",
+        "resnet_training_15W__author",
+        "resnet_training_30W__author",
+        "resnet_training_50W__author",
+        "resnet_training__author",
+        "resnet_training_maxnS__author"
+      ],
+      "training_n": 11962,
+      "fit_seconds": 0.05392154199999988,
+      "objective": 0.21445444007975703,
+      "gradient_inf": 7.3759253509820405e-06,
+      "success": true,
+      "status": 0,
+      "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+      "iterations": 94,
+      "evaluations": 104,
+      "gradient_evaluations": 104,
+      "postfit_check_objective_gradient_evaluations": 1,
+      "phases": [
+        {
+          "stage": "initial",
+          "allowance": 2000,
+          "iterations": 94,
+          "evaluations": 104,
+          "gradient_evaluations": 104,
+          "objective": 0.21445444007975703,
+          "gradient_inf": 7.3759253509820405e-06,
+          "success": true,
+          "status": 0,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "wall_seconds": 0.050815167000000105
+        }
+      ],
+      "continuation_seconds": 0,
+      "training_diagnostics": {
+        "training_prediction_mse": 0.157725463412713,
+        "penalty": 0.056728976667044025,
+        "predicted_delta_mean_c": 0.4588099486562086,
+        "predicted_delta_std_c": 0.40456933562685715,
+        "W_frobenius": 0.8121991236310957,
+        "v_l2": 1.1096388928270078,
+        "hidden_std_mean": 0.32562652112299595,
+        "hidden_std_max": 0.39022962169212505,
+        "hidden_std_by_unit": [
+          0.39022962169212505,
+          0.2610234205538668
+        ],
+        "hidden_saturation_fraction": 0.0005329457364341085,
+        "training_intercept_only_c": 0.45880985767885635,
+        "intercept_only_mse": 0.3952785684711391,
+        "rms_difference_from_intercept_c": 0.4045693356268673,
+        "within_window_prediction_std_min_c": 0.023977367919706206,
+        "within_window_prediction_std_max_c": 0.7171696753405494,
+        "within_window_prediction_std_mean_c": 0.21463134750214002
+      },
+      "training_groups": [
+        "G_2024-10-24_to_2024-10-28"
+      ],
+      "training_origin_hash": "50616b23d13785ec143408e6c338d59019e029c2705eb974e37677b0ef75f47b"
+    },
+    "G_2024-10-23::seed=1": {
+      "width": 2,
+      "lambda_value": 0.03,
+      "seed": 1,
+      "mean": [
+        43.35930769230769,
+        43.156647670250884,
+        0.014634003752163843,
+        0.20110670983888934,
+        5166.422718500138,
+        720.8100358422938,
+        5461.991976840363,
+        2257.0526881720434,
+        62.88433967466226,
+        11.779656051833468,
+        8.0
+      ],
+      "scale": [
+        0.1891747467624137,
+        0.1770300120960159,
+        0.0038074926476580765,
+        0.026022700700894994,
+        108.66159450526999,
+        34.12118963197462,
+        69.64187414856251,
+        49.611590432884654,
+        2.5370732159846763,
+        0.12390420631291466,
+        1.0
+      ],
+      "W": [
+        [
+          -0.13809802201341284,
+          0.1380717513208077
+        ],
+        [
+          0.08760537869208429,
+          -0.087607281280625
+        ],
+        [
+          -0.12809283127466134,
+          0.12806269354699523
+        ],
+        [
+          -0.14150556204245318,
+          0.1414956356253061
+        ],
+        [
+          0.00860043566745545,
+          -0.008638051734184048
+        ],
+        [
+          0.020840777229596562,
+          -0.020780818404593927
+        ],
+        [
+          -0.011295589747554902,
+          0.011257058839638729
+        ],
+        [
+          0.010696119637706114,
+          -0.010728286576388281
+        ],
+        [
+          0.018312731468193937,
+          -0.01833683235712793
+        ],
+        [
+          -0.033346552700179714,
+          0.03338246720206869
+        ],
+        [
+          5.71965122146554e-09,
+          -1.9360323569142473e-07
+        ]
+      ],
+      "a": [
+        -0.043477730376223274,
+        0.043811027585750575
+      ],
+      "v": [
+        0.27102782402001174,
+        -0.27098173075933035
+      ],
+      "b": 0.9047259992282064,
+      "training_windows": [
+        "phi_30W__author"
+      ],
+      "training_n": 39,
+      "fit_seconds": 0.004017040999999999,
+      "objective": 0.020810465488229898,
+      "gradient_inf": 3.5907642431430922e-06,
+      "success": true,
+      "status": 0,
+      "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+      "iterations": 73,
+      "evaluations": 78,
+      "gradient_evaluations": 78,
+      "postfit_check_objective_gradient_evaluations": 1,
+      "phases": [
+        {
+          "stage": "initial",
+          "allowance": 2000,
+          "iterations": 73,
+          "evaluations": 78,
+          "gradient_evaluations": 78,
+          "objective": 0.020810465488229898,
+          "gradient_inf": 3.5907642431430922e-06,
+          "success": true,
+          "status": 0,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "wall_seconds": 0.003302750000000021
+        }
+      ],
+      "continuation_seconds": 0,
+      "training_diagnostics": {
+        "training_prediction_mse": 0.012481835130775172,
+        "penalty": 0.008328630357454726,
+        "predicted_delta_mean_c": 0.8831264097460828,
+        "predicted_delta_std_c": 0.15963793394478723,
+        "W_frobenius": 0.3615713375211217,
+        "v_l2": 0.38325863303824564,
+        "hidden_std_mean": 0.29452976050552926,
+        "hidden_std_max": 0.2945600210705322,
+        "hidden_std_by_unit": [
+          0.2944994999405263,
+          0.2945600210705322
+        ],
+        "hidden_saturation_fraction": 0.0,
+        "training_intercept_only_c": 0.8831282051282043,
+        "intercept_only_mse": 0.046779034845496385,
+        "rms_difference_from_intercept_c": 0.15963793395488318,
+        "within_window_prediction_std_min_c": 0.15963793394478723,
+        "within_window_prediction_std_max_c": 0.15963793394478723,
+        "within_window_prediction_std_mean_c": 0.15963793394478723
+      },
+      "training_groups": [
+        "G_2024-10-23"
+      ],
+      "training_origin_hash": "4f56d707e93b3f7d23725c4510f99d544ec3c15c51cf3a11072a9cf0f067a772"
+    },
+    "G_2024-10-23|G_2024-10-24_to_2024-10-28::seed=2": {
+      "width": 2,
+      "lambda_value": 0.03,
+      "seed": 2,
+      "mean": [
+        49.98377221736684,
+        49.832200191764855,
+        0.010230947648194082,
+        0.21467858775502938,
+        11966.86552540393,
+        989.5698194665704,
+        6617.640169464964,
+        2981.981965272813,
+        74.08822309479756,
+        13.303765204138642,
+        9.09090909090899
+      ],
+      "scale": [
+        8.413488518182874,
+        8.443608993452525,
+        0.014058691098861055,
+        0.12327555183025135,
+        10701.605779130274,
+        725.9407725879068,
+        2462.923768418305,
+        1605.8128209951938,
+        23.394668203738085,
+        8.089539138272647,
+        3.4497574474565074
+      ],
+      "W": [
+        [
+          -0.13676550548370436,
+          -0.42722440394448535
+        ],
+        [
+          -0.09850910896457815,
+          -0.354729093892415
+        ],
+        [
+          0.10120774800433313,
+          0.09384537964736944
+        ],
+        [
+          0.3032047860908173,
+          0.05024370302099653
+        ],
+        [
+          0.1353566670154003,
+          0.12452436307277652
+        ],
+        [
+          0.00993704833714459,
+          0.03284759994895419
+        ],
+        [
+          0.13762377752119612,
+          0.21677860851420497
+        ],
+        [
+          0.1371602009070978,
+          0.18861776543077075
+        ],
+        [
+          0.08970783342032661,
+          -0.1277309995650135
+        ],
+        [
+          0.00492042982909682,
+          0.03123815837367633
+        ],
+        [
+          -0.023023208761499936,
+          0.17558332890353492
+        ]
+      ],
+      "a": [
+        -1.213992361192118,
+        -0.15406186929592894
+      ],
+      "v": [
+        0.6776927222901947,
+        0.8617409434089066
+      ],
+      "b": 1.1438528826524872,
+      "training_windows": [
+        "phi_15W__author",
+        "phi_30W__author",
+        "phi_50W__author",
+        "phi_maxn__author",
+        "resnet_15W__author",
+        "resnet_maxn__author",
+        "resnet_training_15W__author",
+        "resnet_training_30W__author",
+        "resnet_training_50W__author",
+        "resnet_training__author",
+        "resnet_training_maxnS__author"
+      ],
+      "training_n": 12001,
+      "fit_seconds": 0.04927074999999981,
+      "objective": 0.20787155427941673,
+      "gradient_inf": 6.228266807552663e-06,
+      "success": true,
+      "status": 0,
+      "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+      "iterations": 87,
+      "evaluations": 97,
+      "gradient_evaluations": 97,
+      "postfit_check_objective_gradient_evaluations": 1,
+      "phases": [
+        {
+          "stage": "initial",
+          "allowance": 2000,
+          "iterations": 87,
+          "evaluations": 97,
+          "gradient_evaluations": 97,
+          "objective": 0.20787155427941673,
+          "gradient_inf": 6.228266807552663e-06,
+          "success": true,
+          "status": 0,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "wall_seconds": 0.046369582999999714
+        }
+      ],
+      "continuation_seconds": 0,
+      "training_diagnostics": {
+        "training_prediction_mse": 0.15194599527553532,
+        "penalty": 0.0559255590038814,
+        "predicted_delta_mean_c": 0.4973836403096512,
+        "predicted_delta_std_c": 0.392956645963191,
+        "W_frobenius": 0.8138307076640774,
+        "v_l2": 1.096295981654757,
+        "hidden_std_mean": 0.32556444357054054,
+        "hidden_std_max": 0.39292582747507787,
+        "hidden_std_by_unit": [
+          0.2582030596660032,
+          0.39292582747507787
+        ],
+        "hidden_saturation_fraction": 0.00048449612403100785,
+        "training_intercept_only_c": 0.4973842529015259,
+        "intercept_only_mse": 0.37847663235493173,
+        "rms_difference_from_intercept_c": 0.39295664596366786,
+        "within_window_prediction_std_min_c": 0.022669094351087195,
+        "within_window_prediction_std_max_c": 0.7083243124163204,
+        "within_window_prediction_std_mean_c": 0.19703024610537243
+      },
+      "training_groups": [
+        "G_2024-10-23",
+        "G_2024-10-24_to_2024-10-28"
+      ],
+      "training_origin_hash": "067cc3d1f004159048a79636fd100917b6157e9174242b55f5b0e1cd2f6eb257"
+    },
+    "G_2024-10-24_to_2024-10-28::seed=2": {
+      "width": 2,
+      "lambda_value": 0.03,
+      "seed": 2,
+      "mean": [
+        50.646218669872965,
+        50.499755443916364,
+        0.009790642037797096,
+        0.21603577554664352,
+        12646.909806094332,
+        1016.4457978289962,
+        6733.204988727423,
+        3054.4748929828947,
+        75.20861143681142,
+        13.456176119369193,
+        9.199999999999982
+      ],
+      "scale": [
+        8.546034221488846,
+        8.5743175818138,
+        0.014622900382355752,
+        0.12895180574952286,
+        10994.933364154467,
+        756.0602356529336,
+        2554.447168550859,
+        1666.8667302581523,
+        24.24025383412602,
+        8.469217946981855,
+        3.599999999999956
+      ],
+      "W": [
+        [
+          -0.165965630828787,
+          -0.3967978736793284
+        ],
+        [
+          -0.1221219535321832,
+          -0.3260257374323815
+        ],
+        [
+          0.09928914064622812,
+          0.10663646649543286
+        ],
+        [
+          0.3063815970830959,
+          0.05307329592612297
+        ],
+        [
+          0.13472404497882176,
+          0.14345312946866667
+        ],
+        [
+          -0.00949665230934726,
+          0.025491824578783892
+        ],
+        [
+          0.1441717295483293,
+          0.19762172880163342
+        ],
+        [
+          0.1418528895381573,
+          0.16342794847813913
+        ],
+        [
+          0.1207784372415046,
+          -0.14536828551689795
+        ],
+        [
+          0.0047637627756423806,
+          0.06988122396628514
+        ],
+        [
+          -0.02259932428307732,
+          0.21971401940226062
+        ]
+      ],
+      "a": [
+        -1.128392184464071,
+        -0.25555409903444876
+      ],
+      "v": [
+        0.7098317069690482,
+        0.8529133196055175
+      ],
+      "b": 1.1854759431674695,
+      "training_windows": [
+        "phi_15W__author",
+        "phi_50W__author",
+        "phi_maxn__author",
+        "resnet_15W__author",
+        "resnet_maxn__author",
+        "resnet_training_15W__author",
+        "resnet_training_30W__author",
+        "resnet_training_50W__author",
+        "resnet_training__author",
+        "resnet_training_maxnS__author"
+      ],
+      "training_n": 11962,
+      "fit_seconds": 0.042634624999999815,
+      "objective": 0.21445444018180204,
+      "gradient_inf": 1.0109979456981999e-05,
+      "success": true,
+      "status": 0,
+      "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+      "iterations": 76,
+      "evaluations": 84,
+      "gradient_evaluations": 84,
+      "postfit_check_objective_gradient_evaluations": 1,
+      "phases": [
+        {
+          "stage": "initial",
+          "allowance": 2000,
+          "iterations": 76,
+          "evaluations": 84,
+          "gradient_evaluations": 84,
+          "objective": 0.21445444018180204,
+          "gradient_inf": 1.0109979456981999e-05,
+          "success": true,
+          "status": 0,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "wall_seconds": 0.03971649999999993
+        }
+      ],
+      "continuation_seconds": 0,
+      "training_diagnostics": {
+        "training_prediction_mse": 0.15772478234789544,
+        "penalty": 0.056729657833906606,
+        "predicted_delta_mean_c": 0.45880480268912793,
+        "predicted_delta_std_c": 0.4045692246504627,
+        "W_frobenius": 0.8121985049755123,
+        "v_l2": 1.109649576658819,
+        "hidden_std_mean": 0.32561993145186124,
+        "hidden_std_max": 0.39021843314016014,
+        "hidden_std_by_unit": [
+          0.26102142976356235,
+          0.39021843314016014
+        ],
+        "hidden_saturation_fraction": 0.0005329457364341085,
+        "training_intercept_only_c": 0.45880985767885635,
+        "intercept_only_mse": 0.3952785684711391,
+        "rms_difference_from_intercept_c": 0.4045692246820429,
+        "within_window_prediction_std_min_c": 0.023977158849081814,
+        "within_window_prediction_std_max_c": 0.7171640122460609,
+        "within_window_prediction_std_mean_c": 0.21463193816288334
+      },
+      "training_groups": [
+        "G_2024-10-24_to_2024-10-28"
+      ],
+      "training_origin_hash": "50616b23d13785ec143408e6c338d59019e029c2705eb974e37677b0ef75f47b"
+    },
+    "G_2024-10-23::seed=2": {
+      "width": 2,
+      "lambda_value": 0.03,
+      "seed": 2,
+      "mean": [
+        43.35930769230769,
+        43.156647670250884,
+        0.014634003752163843,
+        0.20110670983888934,
+        5166.422718500138,
+        720.8100358422938,
+        5461.991976840363,
+        2257.0526881720434,
+        62.88433967466226,
+        11.779656051833468,
+        8.0
+      ],
+      "scale": [
+        0.1891747467624137,
+        0.1770300120960159,
+        0.0038074926476580765,
+        0.026022700700894994,
+        108.66159450526999,
+        34.12118963197462,
+        69.64187414856251,
+        49.611590432884654,
+        2.5370732159846763,
+        0.12390420631291466,
+        1.0
+      ],
+      "W": [
+        [
+          0.13808200809570415,
+          0.1380917969087783
+        ],
+        [
+          -0.08759637077857675,
+          -0.08760824893084818
+        ],
+        [
+          0.12806109822074227,
+          0.12806667961459645
+        ],
+        [
+          0.14148599673194934,
+          0.1414992205736348
+        ],
+        [
+          -0.00862006308436094,
+          -0.008628987417190457
+        ],
+        [
+          -0.020786302756501,
+          -0.02079482071780518
+        ],
+        [
+          0.011282984070934376,
+          0.011270323289522505
+        ],
+        [
+          -0.010706054086108047,
+          -0.010716120407603225
+        ],
+        [
+          -0.018314210563074158,
+          -0.01832709855581175
+        ],
+        [
+          0.0333442706867646,
+          0.03336337191918027
+        ],
+        [
+          3.7672034710877324e-06,
+          8.418252162828329e-07
+        ]
+      ],
+      "a": [
+        0.043431048700972356,
+        0.043484764833013216
+      ],
+      "v": [
+        -0.2709901917957594,
+        -0.2710422702106519
+      ],
+      "b": 0.9046379644699493,
+      "training_windows": [
+        "phi_30W__author"
+      ],
+      "training_n": 39,
+      "fit_seconds": 0.003982249999999965,
+      "objective": 0.020810465345010604,
+      "gradient_inf": 2.5789251787561307e-06,
+      "success": true,
+      "status": 0,
+      "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+      "iterations": 69,
+      "evaluations": 78,
+      "gradient_evaluations": 78,
+      "postfit_check_objective_gradient_evaluations": 1,
+      "phases": [
+        {
+          "stage": "initial",
+          "allowance": 2000,
+          "iterations": 69,
+          "evaluations": 78,
+          "gradient_evaluations": 78,
+          "objective": 0.020810465345010604,
+          "gradient_inf": 2.5789251787561307e-06,
+          "success": true,
+          "status": 0,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "wall_seconds": 0.0032635000000000858
+        }
+      ],
+      "continuation_seconds": 0,
+      "training_diagnostics": {
+        "training_prediction_mse": 0.012481918279253722,
+        "penalty": 0.00832854706575688,
+        "predicted_delta_mean_c": 0.8831290352665384,
+        "predicted_delta_std_c": 0.15963737589495824,
+        "W_frobenius": 0.361550327388571,
+        "v_l2": 0.3832748312770439,
+        "hidden_std_mean": 0.29451626323077773,
+        "hidden_std_max": 0.2945380338633135,
+        "hidden_std_by_unit": [
+          0.29449449259824195,
+          0.2945380338633135
+        ],
+        "hidden_saturation_fraction": 0.0,
+        "training_intercept_only_c": 0.8831282051282043,
+        "intercept_only_mse": 0.046779034845496385,
+        "rms_difference_from_intercept_c": 0.15963737589711663,
+        "within_window_prediction_std_min_c": 0.15963737589495824,
+        "within_window_prediction_std_max_c": 0.15963737589495824,
+        "within_window_prediction_std_mean_c": 0.15963737589495824
+      },
+      "training_groups": [
+        "G_2024-10-23"
+      ],
+      "training_origin_hash": "4f56d707e93b3f7d23725c4510f99d544ec3c15c51cf3a11072a9cf0f067a772"
+    },
+    "G_2024-10-23|G_2024-10-24_to_2024-10-28::seed=3": {
+      "width": 2,
+      "lambda_value": 0.03,
+      "seed": 3,
+      "mean": [
+        49.98377221736684,
+        49.832200191764855,
+        0.010230947648194082,
+        0.21467858775502938,
+        11966.86552540393,
+        989.5698194665704,
+        6617.640169464964,
+        2981.981965272813,
+        74.08822309479756,
+        13.303765204138642,
+        9.09090909090899
+      ],
+      "scale": [
+        8.413488518182874,
+        8.443608993452525,
+        0.014058691098861055,
+        0.12327555183025135,
+        10701.605779130274,
+        725.9407725879068,
+        2462.923768418305,
+        1605.8128209951938,
+        23.394668203738085,
+        8.089539138272647,
+        3.4497574474565074
+      ],
+      "W": [
+        [
+          0.1367424099117539,
+          0.4272455863175808
+        ],
+        [
+          0.09849752245082362,
+          0.3547176358314214
+        ],
+        [
+          -0.10121806539687389,
+          -0.0938389320752999
+        ],
+        [
+          -0.303215011412456,
+          -0.05023292391083742
+        ],
+        [
+          -0.13533919374871548,
+          -0.12454904641870654
+        ],
+        [
+          -0.009951942202729082,
+          -0.03285754706270606
+        ],
+        [
+          -0.13762841123196567,
+          -0.21678160582162562
+        ],
+        [
+          -0.1371539232638096,
+          -0.18861660892564605
+        ],
+        [
+          -0.08971950458941255,
+          0.12772265399063693
+        ],
+        [
+          -0.004885842186356746,
+          -0.031241291157123655
+        ],
+        [
+          0.023016004030893076,
+          -0.17556919572749052
+        ]
+      ],
+      "a": [
+        1.21416191281458,
+        0.1540401954672912
+      ],
+      "v": [
+        -0.6777211145424412,
+        -0.8617707889140529
+      ],
+      "b": 1.143894807589185,
+      "training_windows": [
+        "phi_15W__author",
+        "phi_30W__author",
+        "phi_50W__author",
+        "phi_maxn__author",
+        "resnet_15W__author",
+        "resnet_maxn__author",
+        "resnet_training_15W__author",
+        "resnet_training_30W__author",
+        "resnet_training_50W__author",
+        "resnet_training__author",
+        "resnet_training_maxnS__author"
+      ],
+      "training_n": 12001,
+      "fit_seconds": 0.060765999999999654,
+      "objective": 0.20787155406119978,
+      "gradient_inf": 8.359838687594517e-06,
+      "success": true,
+      "status": 0,
+      "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+      "iterations": 107,
+      "evaluations": 117,
+      "gradient_evaluations": 117,
+      "postfit_check_objective_gradient_evaluations": 1,
+      "phases": [
+        {
+          "stage": "initial",
+          "allowance": 2000,
+          "iterations": 107,
+          "evaluations": 117,
+          "gradient_evaluations": 117,
+          "objective": 0.20787155406119978,
+          "gradient_inf": 8.359838687594517e-06,
+          "success": true,
+          "status": 0,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "wall_seconds": 0.057519625000000296
+        }
+      ],
+      "continuation_seconds": 0,
+      "training_diagnostics": {
+        "training_prediction_mse": 0.15194315710146794,
+        "penalty": 0.05592839695973183,
+        "predicted_delta_mean_c": 0.4973839968889185,
+        "predicted_delta_std_c": 0.3929590494527258,
+        "W_frobenius": 0.813833580614323,
+        "v_l2": 1.0963369927728417,
+        "hidden_std_mean": 0.32555582070523004,
+        "hidden_std_max": 0.3929114871782276,
+        "hidden_std_by_unit": [
+          0.2582001542322325,
+          0.3929114871782276
+        ],
+        "hidden_saturation_fraction": 0.00048449612403100785,
+        "training_intercept_only_c": 0.4973842529015259,
+        "intercept_only_mse": 0.37847663235493173,
+        "rms_difference_from_intercept_c": 0.39295904945281007,
+        "within_window_prediction_std_min_c": 0.022668470274552918,
+        "within_window_prediction_std_max_c": 0.7083456628318577,
+        "within_window_prediction_std_mean_c": 0.19702947227135315
+      },
+      "training_groups": [
+        "G_2024-10-23",
+        "G_2024-10-24_to_2024-10-28"
+      ],
+      "training_origin_hash": "067cc3d1f004159048a79636fd100917b6157e9174242b55f5b0e1cd2f6eb257"
+    },
+    "G_2024-10-24_to_2024-10-28::seed=3": {
+      "width": 2,
+      "lambda_value": 0.03,
+      "seed": 3,
+      "mean": [
+        50.646218669872965,
+        50.499755443916364,
+        0.009790642037797096,
+        0.21603577554664352,
+        12646.909806094332,
+        1016.4457978289962,
+        6733.204988727423,
+        3054.4748929828947,
+        75.20861143681142,
+        13.456176119369193,
+        9.199999999999982
+      ],
+      "scale": [
+        8.546034221488846,
+        8.5743175818138,
+        0.014622900382355752,
+        0.12895180574952286,
+        10994.933364154467,
+        756.0602356529336,
+        2554.447168550859,
+        1666.8667302581523,
+        24.24025383412602,
+        8.469217946981855,
+        3.599999999999956
+      ],
+      "W": [
+        [
+          0.40740161452155044,
+          0.1572716299911131
+        ],
+        [
+          0.3234317597293407,
+          0.1295677398947541
+        ],
+        [
+          -0.013826854062286509,
+          -0.26293181078657507
+        ],
+        [
+          -0.15592203680732505,
+          -0.12080193125973539
+        ],
+        [
+          -0.15747284838876516,
+          -0.1395069169739447
+        ],
+        [
+          -0.010360946251330553,
+          0.019669040999246143
+        ],
+        [
+          -0.20567756358979353,
+          -0.14543010381715343
+        ],
+        [
+          -0.16733359692433622,
+          -0.145026416685677
+        ],
+        [
+          0.1485855152811027,
+          -0.12340547562719564
+        ],
+        [
+          -0.08556668513440277,
+          0.00017090684638004642
+        ],
+        [
+          -0.23338602747975376,
+          0.03589822023807461
+        ]
+      ],
+      "a": [
+        0.25652687247359296,
+        1.163411646938743
+      ],
+      "v": [
+        -0.8809683222039876,
+        -0.6942631568535819
+      ],
+      "b": 1.198274526256945,
+      "training_windows": [
+        "phi_15W__author",
+        "phi_50W__author",
+        "phi_maxn__author",
+        "resnet_15W__author",
+        "resnet_maxn__author",
+        "resnet_training_15W__author",
+        "resnet_training_30W__author",
+        "resnet_training_50W__author",
+        "resnet_training__author",
+        "resnet_training_maxnS__author"
+      ],
+      "training_n": 11962,
+      "fit_seconds": 0.059917499999999624,
+      "objective": 0.21431651679654695,
+      "gradient_inf": 4.0586707811905015e-06,
+      "success": true,
+      "status": 0,
+      "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+      "iterations": 106,
+      "evaluations": 121,
+      "gradient_evaluations": 121,
+      "postfit_check_objective_gradient_evaluations": 1,
+      "phases": [
+        {
+          "stage": "initial",
+          "allowance": 2000,
+          "iterations": 106,
+          "evaluations": 121,
+          "gradient_evaluations": 121,
+          "objective": 0.21431651679654695,
+          "gradient_inf": 4.0586707811905015e-06,
+          "success": true,
+          "status": 0,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "wall_seconds": 0.056977707999999794
+        }
+      ],
+      "continuation_seconds": 0,
+      "training_diagnostics": {
+        "training_prediction_mse": 0.1562344645648145,
+        "penalty": 0.05808205223173246,
+        "predicted_delta_mean_c": 0.45880782834346634,
+        "predicted_delta_std_c": 0.4044223899090608,
+        "W_frobenius": 0.8233844132804589,
+        "v_l2": 1.1216534739799142,
+        "hidden_std_mean": 0.30258515640743894,
+        "hidden_std_max": 0.36482664763639316,
+        "hidden_std_by_unit": [
+          0.36482664763639316,
+          0.24034366517848474
+        ],
+        "hidden_saturation_fraction": 0.0005329457364341085,
+        "training_intercept_only_c": 0.45880985767885635,
+        "intercept_only_mse": 0.3952785684711391,
+        "rms_difference_from_intercept_c": 0.40442238991415264,
+        "within_window_prediction_std_min_c": 0.022948752876202464,
+        "within_window_prediction_std_max_c": 0.7217799669453356,
+        "within_window_prediction_std_mean_c": 0.21573738651164107
+      },
+      "training_groups": [
+        "G_2024-10-24_to_2024-10-28"
+      ],
+      "training_origin_hash": "50616b23d13785ec143408e6c338d59019e029c2705eb974e37677b0ef75f47b"
+    },
+    "G_2024-10-23::seed=3": {
+      "width": 2,
+      "lambda_value": 0.03,
+      "seed": 3,
+      "mean": [
+        43.35930769230769,
+        43.156647670250884,
+        0.014634003752163843,
+        0.20110670983888934,
+        5166.422718500138,
+        720.8100358422938,
+        5461.991976840363,
+        2257.0526881720434,
+        62.88433967466226,
+        11.779656051833468,
+        8.0
+      ],
+      "scale": [
+        0.1891747467624137,
+        0.1770300120960159,
+        0.0038074926476580765,
+        0.026022700700894994,
+        108.66159450526999,
+        34.12118963197462,
+        69.64187414856251,
+        49.611590432884654,
+        2.5370732159846763,
+        0.12390420631291466,
+        1.0
+      ],
+      "W": [
+        [
+          -0.13806377504463976,
+          -0.13811826849779005
+        ],
+        [
+          0.08760232651912189,
+          0.08761170661872394
+        ],
+        [
+          -0.12802534346129407,
+          -0.12807510654899695
+        ],
+        [
+          -0.14148276028694184,
+          -0.14150149042646146
+        ],
+        [
+          0.008639773331770207,
+          0.008621382518577669
+        ],
+        [
+          0.02076191798752837,
+          0.02083471816775935
+        ],
+        [
+          -0.011256835100330901,
+          -0.011298100762029074
+        ],
+        [
+          0.010722194553369318,
+          0.010693928106847932
+        ],
+        [
+          0.018333719510372114,
+          0.01830901050368537
+        ],
+        [
+          -0.03336431438248567,
+          -0.033349707773219515
+        ],
+        [
+          1.602955153415699e-07,
+          1.0214039253706535e-05
+        ]
+      ],
+      "a": [
+        -0.043891983410741665,
+        -0.04365171609681166
+      ],
+      "v": [
+        0.27098640677914754,
+        0.27105652889738874
+      ],
+      "b": 0.9047904445155661,
+      "training_windows": [
+        "phi_30W__author"
+      ],
+      "training_n": 39,
+      "fit_seconds": 0.00297120900000003,
+      "objective": 0.020810465894438704,
+      "gradient_inf": 4.9275041985354096e-06,
+      "success": true,
+      "status": 0,
+      "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+      "iterations": 50,
+      "evaluations": 55,
+      "gradient_evaluations": 55,
+      "postfit_check_objective_gradient_evaluations": 1,
+      "phases": [
+        {
+          "stage": "initial",
+          "allowance": 2000,
+          "iterations": 50,
+          "evaluations": 55,
+          "gradient_evaluations": 55,
+          "objective": 0.020810465894438704,
+          "gradient_inf": 4.9275041985354096e-06,
+          "success": true,
+          "status": 0,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "wall_seconds": 0.002273375000000133
+        }
+      ],
+      "continuation_seconds": 0,
+      "training_diagnostics": {
+        "training_prediction_mse": 0.012481811552145632,
+        "penalty": 0.008328654342293074,
+        "predicted_delta_mean_c": 0.8831258772983731,
+        "predicted_delta_std_c": 0.15963222065724392,
+        "W_frobenius": 0.36154741997806394,
+        "v_l2": 0.38328223871838174,
+        "hidden_std_mean": 0.2945010794883085,
+        "hidden_std_max": 0.2945133666153318,
+        "hidden_std_by_unit": [
+          0.2945133666153318,
+          0.2944887923612853
+        ],
+        "hidden_saturation_fraction": 0.0,
+        "training_intercept_only_c": 0.8831282051282043,
+        "intercept_only_mse": 0.046779034845496385,
+        "rms_difference_from_intercept_c": 0.15963222067421667,
+        "within_window_prediction_std_min_c": 0.15963222065724392,
+        "within_window_prediction_std_max_c": 0.15963222065724392,
+        "within_window_prediction_std_mean_c": 0.15963222065724392
+      },
+      "training_groups": [
+        "G_2024-10-23"
+      ],
+      "training_origin_hash": "4f56d707e93b3f7d23725c4510f99d544ec3c15c51cf3a11072a9cf0f067a772"
+    },
+    "G_2024-10-23|G_2024-10-24_to_2024-10-28::seed=4": {
+      "width": 2,
+      "lambda_value": 0.03,
+      "seed": 4,
+      "mean": [
+        49.98377221736684,
+        49.832200191764855,
+        0.010230947648194082,
+        0.21467858775502938,
+        11966.86552540393,
+        989.5698194665704,
+        6617.640169464964,
+        2981.981965272813,
+        74.08822309479756,
+        13.303765204138642,
+        9.09090909090899
+      ],
+      "scale": [
+        8.413488518182874,
+        8.443608993452525,
+        0.014058691098861055,
+        0.12327555183025135,
+        10701.605779130274,
+        725.9407725879068,
+        2462.923768418305,
+        1605.8128209951938,
+        23.394668203738085,
+        8.089539138272647,
+        3.4497574474565074
+      ],
+      "W": [
+        [
+          -0.13674504368542198,
+          0.42724183158851237
+        ],
+        [
+          -0.09851208271364278,
+          0.3547214529610808
+        ],
+        [
+          0.10121469242838128,
+          -0.09382115921954344
+        ],
+        [
+          0.30320248075135764,
+          -0.050249848790697965
+        ],
+        [
+          0.13534265677487126,
+          -0.1245499617049508
+        ],
+        [
+          0.009987926639015215,
+          -0.0328482935898699
+        ],
+        [
+          0.13762891709207126,
+          -0.21678627995089864
+        ],
+        [
+          0.13716563786524386,
+          -0.1886199378716481
+        ],
+        [
+          0.08972979812108313,
+          0.12771866563852335
+        ],
+        [
+          0.004887898672968568,
+          -0.031236063229053243
+        ],
+        [
+          -0.022993963820493252,
+          -0.17554696113333434
+        ]
+      ],
+      "a": [
+        -1.2142886676576223,
+        0.1541079996015947
+      ],
+      "v": [
+        0.6777172342836031,
+        -0.8618173455407941
+      ],
+      "b": 1.1439690029302612,
+      "training_windows": [
+        "phi_15W__author",
+        "phi_30W__author",
+        "phi_50W__author",
+        "phi_maxn__author",
+        "resnet_15W__author",
+        "resnet_maxn__author",
+        "resnet_training_15W__author",
+        "resnet_training_30W__author",
+        "resnet_training_50W__author",
+        "resnet_training__author",
+        "resnet_training_maxnS__author"
+      ],
+      "training_n": 12001,
+      "fit_seconds": 0.0487970419999999,
+      "objective": 0.2078715544818484,
+      "gradient_inf": 1.3038108175532706e-05,
+      "success": true,
+      "status": 0,
+      "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+      "iterations": 86,
+      "evaluations": 96,
+      "gradient_evaluations": 96,
+      "postfit_check_objective_gradient_evaluations": 1,
+      "phases": [
+        {
+          "stage": "initial",
+          "allowance": 2000,
+          "iterations": 86,
+          "evaluations": 96,
+          "gradient_evaluations": 96,
+          "objective": 0.2078715544818484,
+          "gradient_inf": 1.3038108175532706e-05,
+          "success": true,
+          "status": 0,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "wall_seconds": 0.045736250000000034
+        }
+      ],
+      "continuation_seconds": 0,
+      "training_diagnostics": {
+        "training_prediction_mse": 0.15194112447780092,
+        "penalty": 0.05593043000404749,
+        "predicted_delta_mean_c": 0.497381668424753,
+        "predicted_delta_std_c": 0.3929596442787044,
+        "W_frobenius": 0.8138291467387897,
+        "v_l2": 1.096371190208862,
+        "hidden_std_mean": 0.3255416922437926,
+        "hidden_std_max": 0.39289121428872864,
+        "hidden_std_by_unit": [
+          0.2581921701988566,
+          0.39289121428872864
+        ],
+        "hidden_saturation_fraction": 0.00048449612403100785,
+        "training_intercept_only_c": 0.4973842529015259,
+        "intercept_only_mse": 0.37847663235493173,
+        "rms_difference_from_intercept_c": 0.39295964428720276,
+        "within_window_prediction_std_min_c": 0.02266658952395694,
+        "within_window_prediction_std_max_c": 0.7083614097759978,
+        "within_window_prediction_std_mean_c": 0.197029404419339
+      },
+      "training_groups": [
+        "G_2024-10-23",
+        "G_2024-10-24_to_2024-10-28"
+      ],
+      "training_origin_hash": "067cc3d1f004159048a79636fd100917b6157e9174242b55f5b0e1cd2f6eb257"
+    },
+    "G_2024-10-24_to_2024-10-28::seed=4": {
+      "width": 2,
+      "lambda_value": 0.03,
+      "seed": 4,
+      "mean": [
+        50.646218669872965,
+        50.499755443916364,
+        0.009790642037797096,
+        0.21603577554664352,
+        12646.909806094332,
+        1016.4457978289962,
+        6733.204988727423,
+        3054.4748929828947,
+        75.20861143681142,
+        13.456176119369193,
+        9.199999999999982
+      ],
+      "scale": [
+        8.546034221488846,
+        8.5743175818138,
+        0.014622900382355752,
+        0.12895180574952286,
+        10994.933364154467,
+        756.0602356529336,
+        2554.447168550859,
+        1666.8667302581523,
+        24.24025383412602,
+        8.469217946981855,
+        3.599999999999956
+      ],
+      "W": [
+        [
+          0.15730344352898956,
+          0.4074136069863604
+        ],
+        [
+          0.12957819194923842,
+          0.32344879676428756
+        ],
+        [
+          -0.2629335539022464,
+          -0.013815031634972422
+        ],
+        [
+          -0.1207881561417591,
+          -0.15590891357949294
+        ],
+        [
+          -0.13951861343595254,
+          -0.15751149864001693
+        ],
+        [
+          0.019704567992371608,
+          -0.010378715540361886
+        ],
+        [
+          -0.1454373782947598,
+          -0.20568390982793894
+        ],
+        [
+          -0.14502729161251918,
+          -0.16733713483043014
+        ],
+        [
+          -0.12339189304398838,
+          0.1485912767510316
+        ],
+        [
+          0.0001427445472316798,
+          -0.08556499113013917
+        ],
+        [
+          0.03586836997744607,
+          -0.23338573153095468
+        ]
+      ],
+      "a": [
+        1.1633529922606776,
+        0.25657303909727874
+      ],
+      "v": [
+        -0.6942600003921443,
+        -0.8809770918500403
+      ],
+      "b": 1.198297140072416,
+      "training_windows": [
+        "phi_15W__author",
+        "phi_50W__author",
+        "phi_maxn__author",
+        "resnet_15W__author",
+        "resnet_maxn__author",
+        "resnet_training_15W__author",
+        "resnet_training_30W__author",
+        "resnet_training_50W__author",
+        "resnet_training__author",
+        "resnet_training_maxnS__author"
+      ],
+      "training_n": 11962,
+      "fit_seconds": 0.046805667000000106,
+      "objective": 0.214316516776823,
+      "gradient_inf": 4.062855398079615e-06,
+      "success": true,
+      "status": 0,
+      "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+      "iterations": 81,
+      "evaluations": 93,
+      "gradient_evaluations": 93,
+      "postfit_check_objective_gradient_evaluations": 1,
+      "phases": [
+        {
+          "stage": "initial",
+          "allowance": 2000,
+          "iterations": 81,
+          "evaluations": 93,
+          "gradient_evaluations": 93,
+          "objective": 0.214316516776823,
+          "gradient_inf": 4.062855398079615e-06,
+          "success": true,
+          "status": 0,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "wall_seconds": 0.04384770900000001
+        }
+      ],
+      "continuation_seconds": 0,
+      "training_diagnostics": {
+        "training_prediction_mse": 0.156232757609784,
+        "penalty": 0.05808375916703901,
+        "predicted_delta_mean_c": 0.4588078262511571,
+        "predicted_delta_std_c": 0.4044217873763017,
+        "W_frobenius": 0.8234122424757315,
+        "v_l2": 1.121658408121231,
+        "hidden_std_mean": 0.3025773998638311,
+        "hidden_std_max": 0.3648166055281691,
+        "hidden_std_by_unit": [
+          0.24033819419949307,
+          0.3648166055281691
+        ],
+        "hidden_saturation_fraction": 0.0005329457364341085,
+        "training_intercept_only_c": 0.45880985767885635,
+        "intercept_only_mse": 0.3952785684711391,
+        "rms_difference_from_intercept_c": 0.4044217873814044,
+        "within_window_prediction_std_min_c": 0.022947899715773268,
+        "within_window_prediction_std_max_c": 0.7217712773763599,
+        "within_window_prediction_std_mean_c": 0.21573465934702324
+      },
+      "training_groups": [
+        "G_2024-10-24_to_2024-10-28"
+      ],
+      "training_origin_hash": "50616b23d13785ec143408e6c338d59019e029c2705eb974e37677b0ef75f47b"
+    },
+    "G_2024-10-23::seed=4": {
+      "width": 2,
+      "lambda_value": 0.03,
+      "seed": 4,
+      "mean": [
+        43.35930769230769,
+        43.156647670250884,
+        0.014634003752163843,
+        0.20110670983888934,
+        5166.422718500138,
+        720.8100358422938,
+        5461.991976840363,
+        2257.0526881720434,
+        62.88433967466226,
+        11.779656051833468,
+        8.0
+      ],
+      "scale": [
+        0.1891747467624137,
+        0.1770300120960159,
+        0.0038074926476580765,
+        0.026022700700894994,
+        108.66159450526999,
+        34.12118963197462,
+        69.64187414856251,
+        49.611590432884654,
+        2.5370732159846763,
+        0.12390420631291466,
+        1.0
+      ],
+      "W": [
+        [
+          -0.13804428614139,
+          -0.13811993917188264
+        ],
+        [
+          0.08757988217934966,
+          0.0876201658861345
+        ],
+        [
+          -0.12803935036660297,
+          -0.12808517365800692
+        ],
+        [
+          -0.14145752646054052,
+          -0.14152902159086042
+        ],
+        [
+          0.0085971850668932,
+          0.008654577986551705
+        ],
+        [
+          0.020801424023163716,
+          0.020781553388773986
+        ],
+        [
+          -0.011325534481680076,
+          -0.011238448502851531
+        ],
+        [
+          0.010676449347268822,
+          0.010744498883160264
+        ],
+        [
+          0.018284518801352935,
+          0.018361465488059402
+        ],
+        [
+          -0.03327182335591773,
+          -0.033420587444348684
+        ],
+        [
+          1.3275548464912574e-06,
+          1.359373338359181e-06
+        ]
+      ],
+      "a": [
+        -0.04333005395859508,
+        -0.04371805360737471
+      ],
+      "v": [
+        0.2709248853968434,
+        0.27109875391452204
+      ],
+      "b": 0.9046635760720412,
+      "training_windows": [
+        "phi_30W__author"
+      ],
+      "training_n": 39,
+      "fit_seconds": 0.0036349580000001325,
+      "objective": 0.020810465615923465,
+      "gradient_inf": 1.1908019443724986e-05,
+      "success": true,
+      "status": 0,
+      "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+      "iterations": 61,
+      "evaluations": 70,
+      "gradient_evaluations": 70,
+      "postfit_check_objective_gradient_evaluations": 1,
+      "phases": [
+        {
+          "stage": "initial",
+          "allowance": 2000,
+          "iterations": 61,
+          "evaluations": 70,
+          "gradient_evaluations": 70,
+          "objective": 0.020810465615923465,
+          "gradient_inf": 1.1908019443724986e-05,
+          "success": true,
+          "status": 0,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "wall_seconds": 0.0029412920000000398
+        }
+      ],
+      "continuation_seconds": 0,
+      "training_diagnostics": {
+        "training_prediction_mse": 0.012482193032844584,
+        "penalty": 0.008328272583078883,
+        "predicted_delta_mean_c": 0.8831222511184825,
+        "predicted_delta_std_c": 0.1596312083033336,
+        "W_frobenius": 0.36154426866060285,
+        "v_l2": 0.3832686106391956,
+        "hidden_std_mean": 0.2945096840322381,
+        "hidden_std_max": 0.29465311242802783,
+        "hidden_std_by_unit": [
+          0.2943662556364484,
+          0.29465311242802783
+        ],
+        "hidden_saturation_fraction": 0.0,
+        "training_intercept_only_c": 0.8831282051282043,
+        "intercept_only_mse": 0.046779034845496385,
+        "rms_difference_from_intercept_c": 0.15963120841437153,
+        "within_window_prediction_std_min_c": 0.15963120830333363,
+        "within_window_prediction_std_max_c": 0.15963120830333363,
+        "within_window_prediction_std_mean_c": 0.15963120830333363
+      },
+      "training_groups": [
+        "G_2024-10-23"
+      ],
+      "training_origin_hash": "4f56d707e93b3f7d23725c4510f99d544ec3c15c51cf3a11072a9cf0f067a772"
+    },
+    "G_2024-10-22|G_2024-10-24_to_2024-10-28::seed=0": {
+      "width": 2,
+      "lambda_value": 0.03,
+      "seed": 0,
+      "mean": [
+        49.5263033322277,
+        49.40665883015301,
+        0.008029124826239681,
+        0.19611881300024767,
+        10813.400334899914,
+        920.7927306680988,
+        6100.9746786525475,
+        2635.7358158155434,
+        75.44609918644143,
+        12.71277233895564,
+        8.857142857143039
+      ],
+      "scale": [
+        7.5202993039390895,
+        7.532930393618784,
+        0.012982690335113052,
+        0.11569439882786395,
+        9754.10549174468,
+        717.758679768255,
+        2382.900378631704,
+        1558.1020847251675,
+        22.984934485086274,
+        7.587722013824259,
+        3.4404555939406047
+      ],
+      "W": [
+        [
+          0.2860337518897144,
+          -0.19309883210364515
+        ],
+        [
+          0.24176613958304335,
+          -0.1492520988846301
+        ],
+        [
+          -0.2248065483711438,
+          0.05984453058940139
+        ],
+        [
+          -0.023818754766324682,
+          0.24089480662547444
+        ],
+        [
+          -0.12658696491989777,
+          0.10386525827604724
+        ],
+        [
+          0.05357240465133336,
+          0.07149986821594238
+        ],
+        [
+          -0.17496564144086596,
+          0.1023688895015213
+        ],
+        [
+          -0.1389597883672624,
+          0.09393692597402101
+        ],
+        [
+          0.14246466219456158,
+          0.06882689571970999
+        ],
+        [
+          -0.02343424837180014,
+          -0.04935834997460381
+        ],
+        [
+          -0.108791394626999,
+          0.05630219859463606
+        ]
+      ],
+      "a": [
+        0.5231477004605126,
+        -0.9102134291339723
+      ],
+      "v": [
+        -0.7243527473557377,
+        0.6245892693380612
+      ],
+      "b": 1.115596253766262,
+      "training_windows": [
+        "depth_15W__author",
+        "depth_30W__author",
+        "phi_15W__author",
+        "phi_50W__author",
+        "phi_maxn__author",
+        "resnet_15W__author",
+        "resnet_30W__author",
+        "resnet_50W__author",
+        "resnet_maxn__author",
+        "resnet_training_15W__author",
+        "resnet_training_30W__author",
+        "resnet_training_50W__author",
+        "resnet_training__author",
+        "resnet_training_maxnS__author"
+      ],
+      "training_n": 14637,
+      "fit_seconds": 0.06084420799999979,
+      "objective": 0.18876478926858234,
+      "gradient_inf": 4.601935237422139e-06,
+      "success": true,
+      "status": 0,
+      "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+      "iterations": 93,
+      "evaluations": 101,
+      "gradient_evaluations": 101,
+      "postfit_check_objective_gradient_evaluations": 1,
+      "phases": [
+        {
+          "stage": "initial",
+          "allowance": 2000,
+          "iterations": 93,
+          "evaluations": 101,
+          "gradient_evaluations": 101,
+          "objective": 0.18876478926858234,
+          "gradient_inf": 4.601935237422139e-06,
+          "success": true,
+          "status": 0,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "wall_seconds": 0.057268125000000225
+        }
+      ],
+      "continuation_seconds": 0,
+      "training_diagnostics": {
+        "training_prediction_mse": 0.14753308239589283,
+        "penalty": 0.04123170687268952,
+        "predicted_delta_mean_c": 0.3752624162210749,
+        "predicted_delta_std_c": 0.33938409096825817,
+        "W_frobenius": 0.6779318336791629,
+        "v_l2": 0.956451074532335,
+        "hidden_std_mean": 0.28508066284952205,
+        "hidden_std_max": 0.3331662614071832,
+        "hidden_std_by_unit": [
+          0.3331662614071832,
+          0.2369950642918609
+        ],
+        "hidden_saturation_fraction": 0.0007959579180509413,
+        "training_intercept_only_c": 0.3752632397007662,
+        "intercept_only_mse": 0.31760142137107766,
+        "rms_difference_from_intercept_c": 0.3393840909692572,
+        "within_window_prediction_std_min_c": 0.02405478175149519,
+        "within_window_prediction_std_max_c": 0.6571333503427657,
+        "within_window_prediction_std_mean_c": 0.1803031157736584
+      },
+      "training_groups": [
+        "G_2024-10-22",
+        "G_2024-10-24_to_2024-10-28"
+      ],
+      "training_origin_hash": "3ef46f988b37acbd2186a67a5b8a30cf5c8f2bdde3d7e7a2e5ca58bc7f48c65b"
+    },
+    "G_2024-10-22::seed=0": {
+      "width": 2,
+      "lambda_value": 0.03,
+      "seed": 0,
+      "mean": [
+        46.72651498811617,
+        46.6739172957449,
+        0.003625331797346131,
+        0.1463264066342583,
+        6229.62665691388,
+        681.6600627658364,
+        4520.398903465364,
+        1588.8881228971588,
+        76.03981856052056,
+        10.854262887921797,
+        8.000000000000016
+      ],
+      "scale": [
+        2.0930988283384457,
+        2.0869377822388353,
+        0.005310563053238188,
+        0.042494246445067434,
+        1167.1486689378467,
+        542.2134473610063,
+        251.47806036540905,
+        128.56711223122747,
+        19.48350527658282,
+        4.165636426963102,
+        2.8284271247461876
+      ],
+      "W": [
+        [
+          -0.13740638573740654,
+          0.13771626581683752
+        ],
+        [
+          -0.06945811504027885,
+          0.06961912053106516
+        ],
+        [
+          -0.00957290517293457,
+          0.009679552845269791
+        ],
+        [
+          0.03378585333964659,
+          -0.03379232387090357
+        ],
+        [
+          0.051538672563274775,
+          -0.05162440028697014
+        ],
+        [
+          0.025634988044924752,
+          -0.025704952207746334
+        ],
+        [
+          0.17092342321522988,
+          -0.1712400024657209
+        ],
+        [
+          0.06519884149730423,
+          -0.06530963799778187
+        ],
+        [
+          -0.008308858832912965,
+          0.008341202033138376
+        ],
+        [
+          -0.009157533431268874,
+          0.009171277413597124
+        ],
+        [
+          0.005509216437906941,
+          -0.0055225439840601775
+        ]
+      ],
+      "a": [
+        -0.11301712312016501,
+        0.11273923090918994
+      ],
+      "v": [
+        0.2546518455458378,
+        -0.2551705013298002
+      ],
+      "b": 0.22300374145779925,
+      "training_windows": [
+        "depth_15W__author",
+        "depth_30W__author",
+        "resnet_30W__author",
+        "resnet_50W__author"
+      ],
+      "training_n": 2675,
+      "fit_seconds": 0.00900416599999998,
+      "objective": 0.056044940341221594,
+      "gradient_inf": 2.4143521952100155e-06,
+      "success": true,
+      "status": 0,
+      "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+      "iterations": 49,
+      "evaluations": 55,
+      "gradient_evaluations": 55,
+      "postfit_check_objective_gradient_evaluations": 1,
+      "phases": [
+        {
+          "stage": "initial",
+          "allowance": 2000,
+          "iterations": 49,
+          "evaluations": 55,
+          "gradient_evaluations": 55,
+          "objective": 0.056044940341221594,
+          "gradient_inf": 2.4143521952100155e-06,
+          "success": true,
+          "status": 0,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "wall_seconds": 0.007866958999999785
+        }
+      ],
+      "continuation_seconds": 0,
+      "training_diagnostics": {
+        "training_prediction_mse": 0.04842474048640066,
+        "penalty": 0.007620199854820936,
+        "predicted_delta_mean_c": 0.16639585155562883,
+        "predicted_delta_std_c": 0.07817253627922219,
+        "W_frobenius": 0.35220322917111613,
+        "v_l2": 0.36049902522587046,
+        "hidden_std_mean": 0.15333281986244596,
+        "hidden_std_max": 0.15342299089021852,
+        "hidden_std_by_unit": [
+          0.15324264883467342,
+          0.15342299089021852
+        ],
+        "hidden_saturation_fraction": 0.0,
+        "training_intercept_only_c": 0.16639669475553961,
+        "intercept_only_mse": 0.06233322658462098,
+        "rms_difference_from_intercept_c": 0.07817253628376977,
+        "within_window_prediction_std_min_c": 0.02457647158679702,
+        "within_window_prediction_std_max_c": 0.07983854474495906,
+        "within_window_prediction_std_mean_c": 0.06286372198837037
+      },
+      "training_groups": [
+        "G_2024-10-22"
+      ],
+      "training_origin_hash": "6252d261587d9c4e074463c543b30315e8126aaf8a2a17750aca0b2f272dd809"
+    },
+    "G_2024-10-22|G_2024-10-24_to_2024-10-28::seed=1": {
+      "width": 2,
+      "lambda_value": 0.03,
+      "seed": 1,
+      "mean": [
+        49.5263033322277,
+        49.40665883015301,
+        0.008029124826239681,
+        0.19611881300024767,
+        10813.400334899914,
+        920.7927306680988,
+        6100.9746786525475,
+        2635.7358158155434,
+        75.44609918644143,
+        12.71277233895564,
+        8.857142857143039
+      ],
+      "scale": [
+        7.5202993039390895,
+        7.532930393618784,
+        0.012982690335113052,
+        0.11569439882786395,
+        9754.10549174468,
+        717.758679768255,
+        2382.900378631704,
+        1558.1020847251675,
+        22.984934485086274,
+        7.587722013824259,
+        3.4404555939406047
+      ],
+      "W": [
+        [
+          -0.2860604686811333,
+          -0.19301718090571424
+        ],
+        [
+          -0.2417879241249299,
+          -0.14920787909522548
+        ],
+        [
+          0.22478607666591896,
+          0.05987542745274338
+        ],
+        [
+          0.023850500840749245,
+          0.24093332244968382
+        ],
+        [
+          0.12655131846128223,
+          0.10386730889054452
+        ],
+        [
+          -0.05353202196274099,
+          0.07145498967379114
+        ],
+        [
+          0.17496515934520046,
+          0.10236228477484283
+        ],
+        [
+          0.13893686841884872,
+          0.09396379988129515
+        ],
+        [
+          -0.14243629873625924,
+          0.06882932801928095
+        ],
+        [
+          0.023408129308383718,
+          -0.04930794476268845
+        ],
+        [
+          0.10882353844476665,
+          0.05626541400387397
+        ]
+      ],
+      "a": [
+        -0.5230008325692813,
+        -0.9105206096020819
+      ],
+      "v": [
+        0.7243532725271324,
+        0.6245650414578744
+      ],
+      "b": 1.1155946794891407,
+      "training_windows": [
+        "depth_15W__author",
+        "depth_30W__author",
+        "phi_15W__author",
+        "phi_50W__author",
+        "phi_maxn__author",
+        "resnet_15W__author",
+        "resnet_30W__author",
+        "resnet_50W__author",
+        "resnet_maxn__author",
+        "resnet_training_15W__author",
+        "resnet_training_30W__author",
+        "resnet_training_50W__author",
+        "resnet_training__author",
+        "resnet_training_maxnS__author"
+      ],
+      "training_n": 14637,
+      "fit_seconds": 0.06407795799999993,
+      "objective": 0.1887647893807878,
+      "gradient_inf": 7.457250963025311e-06,
+      "success": true,
+      "status": 0,
+      "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+      "iterations": 96,
+      "evaluations": 104,
+      "gradient_evaluations": 104,
+      "postfit_check_objective_gradient_evaluations": 1,
+      "phases": [
+        {
+          "stage": "initial",
+          "allowance": 2000,
+          "iterations": 96,
+          "evaluations": 104,
+          "gradient_evaluations": 104,
+          "objective": 0.1887647893807878,
+          "gradient_inf": 7.457250963025311e-06,
+          "success": true,
+          "status": 0,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "wall_seconds": 0.06067766600000013
+        }
+      ],
+      "continuation_seconds": 0,
+      "training_diagnostics": {
+        "training_prediction_mse": 0.14753509583068206,
+        "penalty": 0.041229693550105743,
+        "predicted_delta_mean_c": 0.37526696832624684,
+        "predicted_delta_std_c": 0.33938309305162734,
+        "W_frobenius": 0.6779040963918243,
+        "v_l2": 0.9564356509624903,
+        "hidden_std_mean": 0.2850950620975739,
+        "hidden_std_max": 0.3332050845872301,
+        "hidden_std_by_unit": [
+          0.3332050845872301,
+          0.2369850396079177
+        ],
+        "hidden_saturation_fraction": 0.0007959579180509413,
+        "training_intercept_only_c": 0.3752632397007662,
+        "intercept_only_mse": 0.31760142137107766,
+        "rms_difference_from_intercept_c": 0.33938309307210907,
+        "within_window_prediction_std_min_c": 0.02405493524521467,
+        "within_window_prediction_std_max_c": 0.6571469468132941,
+        "within_window_prediction_std_mean_c": 0.18030300568980512
+      },
+      "training_groups": [
+        "G_2024-10-22",
+        "G_2024-10-24_to_2024-10-28"
+      ],
+      "training_origin_hash": "3ef46f988b37acbd2186a67a5b8a30cf5c8f2bdde3d7e7a2e5ca58bc7f48c65b"
+    },
+    "G_2024-10-22::seed=1": {
+      "width": 2,
+      "lambda_value": 0.03,
+      "seed": 1,
+      "mean": [
+        46.72651498811617,
+        46.6739172957449,
+        0.003625331797346131,
+        0.1463264066342583,
+        6229.62665691388,
+        681.6600627658364,
+        4520.398903465364,
+        1588.8881228971588,
+        76.03981856052056,
+        10.854262887921797,
+        8.000000000000016
+      ],
+      "scale": [
+        2.0930988283384457,
+        2.0869377822388353,
+        0.005310563053238188,
+        0.042494246445067434,
+        1167.1486689378467,
+        542.2134473610063,
+        251.47806036540905,
+        128.56711223122747,
+        19.48350527658282,
+        4.165636426963102,
+        2.8284271247461876
+      ],
+      "W": [
+        [
+          -0.1375795498556468,
+          -0.13757945472549044
+        ],
+        [
+          -0.06952299634944903,
+          -0.06951447949730999
+        ],
+        [
+          -0.009606711564030332,
+          -0.009643963212597119
+        ],
+        [
+          0.03378957645667173,
+          0.033793372915685994
+        ],
+        [
+          0.05159118699192557,
+          0.051586472519603535
+        ],
+        [
+          0.02566094676326492,
+          0.025670413071727297
+        ],
+        [
+          0.17108014976882058,
+          0.17107949817144325
+        ],
+        [
+          0.0652550838293441,
+          0.06524742018364105
+        ],
+        [
+          -0.008319870865504047,
+          -0.008328593876955417
+        ],
+        [
+          -0.009189235570081142,
+          -0.009147258454540667
+        ],
+        [
+          0.005503497460776711,
+          0.005523976774049934
+        ]
+      ],
+      "a": [
+        -0.11280321031438935,
+        -0.1126755758149763
+      ],
+      "v": [
+        0.2549186283585871,
+        0.25491198769588025
+      ],
+      "b": 0.22293685425708906,
+      "training_windows": [
+        "depth_15W__author",
+        "depth_30W__author",
+        "resnet_30W__author",
+        "resnet_50W__author"
+      ],
+      "training_n": 2675,
+      "fit_seconds": 0.011456790999999633,
+      "objective": 0.05604493963545884,
+      "gradient_inf": 4.315934161634727e-06,
+      "success": true,
+      "status": 0,
+      "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+      "iterations": 68,
+      "evaluations": 74,
+      "gradient_evaluations": 74,
+      "postfit_check_objective_gradient_evaluations": 1,
+      "phases": [
+        {
+          "stage": "initial",
+          "allowance": 2000,
+          "iterations": 68,
+          "evaluations": 74,
+          "gradient_evaluations": 74,
+          "objective": 0.05604493963545884,
+          "gradient_inf": 4.315934161634727e-06,
+          "success": true,
+          "status": 0,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "wall_seconds": 0.01035179100000061
+        }
+      ],
+      "continuation_seconds": 0,
+      "training_diagnostics": {
+        "training_prediction_mse": 0.04842450655894823,
+        "penalty": 0.007620433076510613,
+        "predicted_delta_mean_c": 0.1663961588234542,
+        "predicted_delta_std_c": 0.07817466915533311,
+        "W_frobenius": 0.35220847140351275,
+        "v_l2": 0.36050468589921,
+        "hidden_std_mean": 0.15333459574781372,
+        "hidden_std_max": 0.15334265407144992,
+        "hidden_std_by_unit": [
+          0.15334265407144992,
+          0.15332653742417748
+        ],
+        "hidden_saturation_fraction": 0.0,
+        "training_intercept_only_c": 0.16639669475553961,
+        "intercept_only_mse": 0.06233322658462098,
+        "rms_difference_from_intercept_c": 0.07817466915717004,
+        "within_window_prediction_std_min_c": 0.0245784153881718,
+        "within_window_prediction_std_max_c": 0.07983804106898176,
+        "within_window_prediction_std_mean_c": 0.0628647481839777
+      },
+      "training_groups": [
+        "G_2024-10-22"
+      ],
+      "training_origin_hash": "6252d261587d9c4e074463c543b30315e8126aaf8a2a17750aca0b2f272dd809"
+    },
+    "G_2024-10-22|G_2024-10-24_to_2024-10-28::seed=2": {
+      "width": 2,
+      "lambda_value": 0.03,
+      "seed": 2,
+      "mean": [
+        49.5263033322277,
+        49.40665883015301,
+        0.008029124826239681,
+        0.19611881300024767,
+        10813.400334899914,
+        920.7927306680988,
+        6100.9746786525475,
+        2635.7358158155434,
+        75.44609918644143,
+        12.71277233895564,
+        8.857142857143039
+      ],
+      "scale": [
+        7.5202993039390895,
+        7.532930393618784,
+        0.012982690335113052,
+        0.11569439882786395,
+        9754.10549174468,
+        717.758679768255,
+        2382.900378631704,
+        1558.1020847251675,
+        22.984934485086274,
+        7.587722013824259,
+        3.4404555939406047
+      ],
+      "W": [
+        [
+          -0.2859762708903543,
+          -0.19315597519703073
+        ],
+        [
+          -0.24173558018105148,
+          -0.14928446460276032
+        ],
+        [
+          0.22482196455094783,
+          0.059813880043116205
+        ],
+        [
+          0.023804716786533443,
+          0.24084708213175868
+        ],
+        [
+          0.1265990968655269,
+          0.10386931895754008
+        ],
+        [
+          -0.05362531471276129,
+          0.07150417717003699
+        ],
+        [
+          0.17498830434549825,
+          0.10233561452652604
+        ],
+        [
+          0.1389726639060118,
+          0.09391703610148068
+        ],
+        [
+          -0.14253282335872972,
+          0.06885446848651935
+        ],
+        [
+          0.023469110472213922,
+          -0.04937123441404883
+        ],
+        [
+          0.10877238478455764,
+          0.05635444221324961
+        ]
+      ],
+      "a": [
+        -0.5233035181554617,
+        -0.909865862582756
+      ],
+      "v": [
+        0.7243284543827031,
+        0.6246077569761136
+      ],
+      "b": 1.1155904804050727,
+      "training_windows": [
+        "depth_15W__author",
+        "depth_30W__author",
+        "phi_15W__author",
+        "phi_50W__author",
+        "phi_maxn__author",
+        "resnet_15W__author",
+        "resnet_30W__author",
+        "resnet_50W__author",
+        "resnet_maxn__author",
+        "resnet_training_15W__author",
+        "resnet_training_30W__author",
+        "resnet_training_50W__author",
+        "resnet_training__author",
+        "resnet_training_maxnS__author"
+      ],
+      "training_n": 14637,
+      "fit_seconds": 0.06113295799999996,
+      "objective": 0.18876478998468094,
+      "gradient_inf": 1.3531512188236922e-05,
+      "success": true,
+      "status": 0,
+      "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+      "iterations": 88,
+      "evaluations": 100,
+      "gradient_evaluations": 100,
+      "postfit_check_objective_gradient_evaluations": 1,
+      "phases": [
+        {
+          "stage": "initial",
+          "allowance": 2000,
+          "iterations": 88,
+          "evaluations": 100,
+          "gradient_evaluations": 100,
+          "objective": 0.18876478998468094,
+          "gradient_inf": 1.3531512188236922e-05,
+          "success": true,
+          "status": 0,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "wall_seconds": 0.05765837499999993
+        }
+      ],
+      "continuation_seconds": 0,
+      "training_diagnostics": {
+        "training_prediction_mse": 0.1475333642375355,
+        "penalty": 0.04123142574714545,
+        "predicted_delta_mean_c": 0.37527000545685946,
+        "predicted_delta_std_c": 0.3393763568933344,
+        "W_frobenius": 0.6779338451021711,
+        "v_l2": 0.9564447500525931,
+        "hidden_std_mean": 0.2850658766789898,
+        "hidden_std_max": 0.3331375526349984,
+        "hidden_std_by_unit": [
+          0.3331375526349984,
+          0.23699420072298122
+        ],
+        "hidden_saturation_fraction": 0.0007959579180509413,
+        "training_intercept_only_c": 0.3752632397007662,
+        "intercept_only_mse": 0.31760142137107766,
+        "rms_difference_from_intercept_c": 0.3393763569607755,
+        "within_window_prediction_std_min_c": 0.02405417127425253,
+        "within_window_prediction_std_max_c": 0.6570983139834103,
+        "within_window_prediction_std_mean_c": 0.18029730124920484
+      },
+      "training_groups": [
+        "G_2024-10-22",
+        "G_2024-10-24_to_2024-10-28"
+      ],
+      "training_origin_hash": "3ef46f988b37acbd2186a67a5b8a30cf5c8f2bdde3d7e7a2e5ca58bc7f48c65b"
+    },
+    "G_2024-10-22::seed=2": {
+      "width": 2,
+      "lambda_value": 0.03,
+      "seed": 2,
+      "mean": [
+        46.72651498811617,
+        46.6739172957449,
+        0.003625331797346131,
+        0.1463264066342583,
+        6229.62665691388,
+        681.6600627658364,
+        4520.398903465364,
+        1588.8881228971588,
+        76.03981856052056,
+        10.854262887921797,
+        8.000000000000016
+      ],
+      "scale": [
+        2.0930988283384457,
+        2.0869377822388353,
+        0.005310563053238188,
+        0.042494246445067434,
+        1167.1486689378467,
+        542.2134473610063,
+        251.47806036540905,
+        128.56711223122747,
+        19.48350527658282,
+        4.165636426963102,
+        2.8284271247461876
+      ],
+      "W": [
+        [
+          -0.13756448714953526,
+          0.13757693867640786
+        ],
+        [
+          -0.06952807883825637,
+          0.06952391053448351
+        ],
+        [
+          -0.00960998063574852,
+          0.00961332157578304
+        ],
+        [
+          0.03378190029549476,
+          -0.03378954222329647
+        ],
+        [
+          0.05159076519513677,
+          -0.05158291016251789
+        ],
+        [
+          0.02567735838623031,
+          -0.025681265118839187
+        ],
+        [
+          0.1710786234970976,
+          -0.1710803314569574
+        ],
+        [
+          0.06525663223779708,
+          -0.06524294289951209
+        ],
+        [
+          -0.008316082327664906,
+          0.008324599732560996
+        ],
+        [
+          -0.009173621465379927,
+          0.00915942773509944
+        ],
+        [
+          0.005513473158355131,
+          -0.005511792992574721
+        ]
+      ],
+      "a": [
+        -0.1128973339565087,
+        0.11271807801906088
+      ],
+      "v": [
+        0.2548981939270326,
+        -0.25491865974264816
+      ],
+      "b": 0.22296779992086196,
+      "training_windows": [
+        "depth_15W__author",
+        "depth_30W__author",
+        "resnet_30W__author",
+        "resnet_50W__author"
+      ],
+      "training_n": 2675,
+      "fit_seconds": 0.011073791999999472,
+      "objective": 0.056044939581849924,
+      "gradient_inf": 3.2436924446901244e-06,
+      "success": true,
+      "status": 0,
+      "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+      "iterations": 65,
+      "evaluations": 70,
+      "gradient_evaluations": 70,
+      "postfit_check_objective_gradient_evaluations": 1,
+      "phases": [
+        {
+          "stage": "initial",
+          "allowance": 2000,
+          "iterations": 65,
+          "evaluations": 70,
+          "gradient_evaluations": 70,
+          "objective": 0.056044939581849924,
+          "gradient_inf": 3.2436924446901244e-06,
+          "success": true,
+          "status": 0,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "wall_seconds": 0.009906458999999757
+        }
+      ],
+      "continuation_seconds": 0,
+      "training_diagnostics": {
+        "training_prediction_mse": 0.04842483615408765,
+        "penalty": 0.007620103427762273,
+        "predicted_delta_mean_c": 0.16639507290931743,
+        "predicted_delta_std_c": 0.07817468638062883,
+        "W_frobenius": 0.35220283252669143,
+        "v_l2": 0.3604949546834895,
+        "hidden_std_mean": 0.15333876641127445,
+        "hidden_std_max": 0.15334034061943608,
+        "hidden_std_by_unit": [
+          0.15334034061943608,
+          0.15333719220311282
+        ],
+        "hidden_saturation_fraction": 0.0,
+        "training_intercept_only_c": 0.16639669475553961,
+        "intercept_only_mse": 0.06233322658462098,
+        "rms_difference_from_intercept_c": 0.07817468639745263,
+        "within_window_prediction_std_min_c": 0.02457721805796381,
+        "within_window_prediction_std_max_c": 0.07984103796770894,
+        "within_window_prediction_std_mean_c": 0.0628649527340711
+      },
+      "training_groups": [
+        "G_2024-10-22"
+      ],
+      "training_origin_hash": "6252d261587d9c4e074463c543b30315e8126aaf8a2a17750aca0b2f272dd809"
+    },
+    "G_2024-10-22|G_2024-10-24_to_2024-10-28::seed=3": {
+      "width": 2,
+      "lambda_value": 0.03,
+      "seed": 3,
+      "mean": [
+        49.5263033322277,
+        49.40665883015301,
+        0.008029124826239681,
+        0.19611881300024767,
+        10813.400334899914,
+        920.7927306680988,
+        6100.9746786525475,
+        2635.7358158155434,
+        75.44609918644143,
+        12.71277233895564,
+        8.857142857143039
+      ],
+      "scale": [
+        7.5202993039390895,
+        7.532930393618784,
+        0.012982690335113052,
+        0.11569439882786395,
+        9754.10549174468,
+        717.758679768255,
+        2382.900378631704,
+        1558.1020847251675,
+        22.984934485086274,
+        7.587722013824259,
+        3.4404555939406047
+      ],
+      "W": [
+        [
+          0.1930817314407481,
+          0.28599523052910475
+        ],
+        [
+          0.14926220841946836,
+          0.24175426338850978
+        ],
+        [
+          -0.05983794410116831,
+          -0.2248274437632576
+        ],
+        [
+          -0.24088986683501754,
+          -0.023819063151722955
+        ],
+        [
+          -0.10384591955253031,
+          -0.12657294729253324
+        ],
+        [
+          -0.07151441080869243,
+          0.0535961491140381
+        ],
+        [
+          -0.1023530706033103,
+          -0.17495751870500031
+        ],
+        [
+          -0.09393846566452971,
+          -0.13895224558868138
+        ],
+        [
+          -0.06883769770954828,
+          0.14247380106144478
+        ],
+        [
+          0.04935598053666152,
+          -0.02344254765003436
+        ],
+        [
+          -0.0563293768362812,
+          -0.10879314509227353
+        ]
+      ],
+      "a": [
+        0.9101964207942334,
+        0.5231468899725734
+      ],
+      "v": [
+        -0.6245903681011404,
+        -0.7243414450273633
+      ],
+      "b": 1.1155866341689793,
+      "training_windows": [
+        "depth_15W__author",
+        "depth_30W__author",
+        "phi_15W__author",
+        "phi_50W__author",
+        "phi_maxn__author",
+        "resnet_15W__author",
+        "resnet_30W__author",
+        "resnet_50W__author",
+        "resnet_maxn__author",
+        "resnet_training_15W__author",
+        "resnet_training_30W__author",
+        "resnet_training_50W__author",
+        "resnet_training__author",
+        "resnet_training_maxnS__author"
+      ],
+      "training_n": 14637,
+      "fit_seconds": 0.06641037500000024,
+      "objective": 0.18876478916680356,
+      "gradient_inf": 1.8845354874796189e-06,
+      "success": true,
+      "status": 0,
+      "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+      "iterations": 100,
+      "evaluations": 109,
+      "gradient_evaluations": 109,
+      "postfit_check_objective_gradient_evaluations": 1,
+      "phases": [
+        {
+          "stage": "initial",
+          "allowance": 2000,
+          "iterations": 100,
+          "evaluations": 109,
+          "gradient_evaluations": 109,
+          "objective": 0.18876478916680356,
+          "gradient_inf": 1.8845354874796189e-06,
+          "success": true,
+          "status": 0,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "wall_seconds": 0.06275983399999951
+        }
+      ],
+      "continuation_seconds": 0,
+      "training_diagnostics": {
+        "training_prediction_mse": 0.14753438020762993,
+        "penalty": 0.04123040895917363,
+        "predicted_delta_mean_c": 0.375263408312061,
+        "predicted_delta_std_c": 0.339383910511268,
+        "W_frobenius": 0.6779109885499283,
+        "v_l2": 0.9564432324550406,
+        "hidden_std_mean": 0.2850833024281959,
+        "hidden_std_max": 0.33316916186704537,
+        "hidden_std_by_unit": [
+          0.2369974429893464,
+          0.33316916186704537
+        ],
+        "hidden_saturation_fraction": 0.0007959579180509413,
+        "training_intercept_only_c": 0.3752632397007662,
+        "intercept_only_mse": 0.31760142137107766,
+        "rms_difference_from_intercept_c": 0.3393839105113096,
+        "within_window_prediction_std_min_c": 0.024056021282640512,
+        "within_window_prediction_std_max_c": 0.6571282140324894,
+        "within_window_prediction_std_mean_c": 0.18030394835151245
+      },
+      "training_groups": [
+        "G_2024-10-22",
+        "G_2024-10-24_to_2024-10-28"
+      ],
+      "training_origin_hash": "3ef46f988b37acbd2186a67a5b8a30cf5c8f2bdde3d7e7a2e5ca58bc7f48c65b"
+    },
+    "G_2024-10-22::seed=3": {
+      "width": 2,
+      "lambda_value": 0.03,
+      "seed": 3,
+      "mean": [
+        46.72651498811617,
+        46.6739172957449,
+        0.003625331797346131,
+        0.1463264066342583,
+        6229.62665691388,
+        681.6600627658364,
+        4520.398903465364,
+        1588.8881228971588,
+        76.03981856052056,
+        10.854262887921797,
+        8.000000000000016
+      ],
+      "scale": [
+        2.0930988283384457,
+        2.0869377822388353,
+        0.005310563053238188,
+        0.042494246445067434,
+        1167.1486689378467,
+        542.2134473610063,
+        251.47806036540905,
+        128.56711223122747,
+        19.48350527658282,
+        4.165636426963102,
+        2.8284271247461876
+      ],
+      "W": [
+        [
+          0.1375735262418411,
+          0.13761214764550836
+        ],
+        [
+          0.06951943918285183,
+          0.06953298430733545
+        ],
+        [
+          0.009614719347654467,
+          0.009637596885338797
+        ],
+        [
+          -0.03377031971552548,
+          -0.033802024858385994
+        ],
+        [
+          -0.05158886319950514,
+          -0.05161805200206038
+        ],
+        [
+          -0.02567615880272872,
+          -0.025670197438318377
+        ],
+        [
+          -0.1710497675586039,
+          -0.17109960268395827
+        ],
+        [
+          -0.06524120371431881,
+          -0.06525543274826558
+        ],
+        [
+          0.00832863424700345,
+          0.008329185147845341
+        ],
+        [
+          0.009193710017528979,
+          0.009153039063907284
+        ],
+        [
+          -0.005502471684122603,
+          -0.005516702678177801
+        ]
+      ],
+      "a": [
+        0.11266162615708056,
+        0.1128237410911934
+      ],
+      "v": [
+        -0.25489866573591313,
+        -0.2549414523783165
+      ],
+      "b": 0.22293499550202678,
+      "training_windows": [
+        "depth_15W__author",
+        "depth_30W__author",
+        "resnet_30W__author",
+        "resnet_50W__author"
+      ],
+      "training_n": 2675,
+      "fit_seconds": 0.010843375000000322,
+      "objective": 0.05604493969830575,
+      "gradient_inf": 1.0218003485343297e-05,
+      "success": true,
+      "status": 0,
+      "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+      "iterations": 65,
+      "evaluations": 72,
+      "gradient_evaluations": 72,
+      "postfit_check_objective_gradient_evaluations": 1,
+      "phases": [
+        {
+          "stage": "initial",
+          "allowance": 2000,
+          "iterations": 65,
+          "evaluations": 72,
+          "gradient_evaluations": 72,
+          "objective": 0.05604493969830575,
+          "gradient_inf": 1.0218003485343297e-05,
+          "success": true,
+          "status": 0,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "wall_seconds": 0.009601416999999834
+        }
+      ],
+      "continuation_seconds": 0,
+      "training_diagnostics": {
+        "training_prediction_mse": 0.04842410646017029,
+        "penalty": 0.007620833238135453,
+        "predicted_delta_mean_c": 0.1663915857537974,
+        "predicted_delta_std_c": 0.07817314822530896,
+        "W_frobenius": 0.3522205284616456,
+        "v_l2": 0.36051140610903587,
+        "hidden_std_mean": 0.15332874933733076,
+        "hidden_std_max": 0.1533528108011417,
+        "hidden_std_by_unit": [
+          0.15330468787351986,
+          0.1533528108011417
+        ],
+        "hidden_saturation_fraction": 0.0,
+        "training_intercept_only_c": 0.16639669475553961,
+        "intercept_only_mse": 0.06233322658462098,
+        "rms_difference_from_intercept_c": 0.07817314839225821,
+        "within_window_prediction_std_min_c": 0.024579469846745108,
+        "within_window_prediction_std_max_c": 0.0798397245216397,
+        "within_window_prediction_std_mean_c": 0.06286586762593889
+      },
+      "training_groups": [
+        "G_2024-10-22"
+      ],
+      "training_origin_hash": "6252d261587d9c4e074463c543b30315e8126aaf8a2a17750aca0b2f272dd809"
+    },
+    "G_2024-10-22|G_2024-10-24_to_2024-10-28::seed=4": {
+      "width": 2,
+      "lambda_value": 0.03,
+      "seed": 4,
+      "mean": [
+        49.5263033322277,
+        49.40665883015301,
+        0.008029124826239681,
+        0.19611881300024767,
+        10813.400334899914,
+        920.7927306680988,
+        6100.9746786525475,
+        2635.7358158155434,
+        75.44609918644143,
+        12.71277233895564,
+        8.857142857143039
+      ],
+      "scale": [
+        7.5202993039390895,
+        7.532930393618784,
+        0.012982690335113052,
+        0.11569439882786395,
+        9754.10549174468,
+        717.758679768255,
+        2382.900378631704,
+        1558.1020847251675,
+        22.984934485086274,
+        7.587722013824259,
+        3.4404555939406047
+      ],
+      "W": [
+        [
+          0.2859885143442796,
+          0.19309628566670123
+        ],
+        [
+          0.24173569236390177,
+          0.14927689331973512
+        ],
+        [
+          -0.22483426875311366,
+          -0.059841577326802176
+        ],
+        [
+          -0.02380705757954324,
+          -0.24089641971724432
+        ],
+        [
+          -0.1265710510371438,
+          -0.10384810906689058
+        ],
+        [
+          0.053609418696704346,
+          -0.07151599617096191
+        ],
+        [
+          -0.1749623660916907,
+          -0.10233976053200791
+        ],
+        [
+          -0.1389503910831144,
+          -0.0939451525077203
+        ],
+        [
+          0.1424797256993351,
+          -0.06881669693988555
+        ],
+        [
+          -0.023451365633211322,
+          0.04935762771449004
+        ],
+        [
+          -0.10879456895138612,
+          -0.056329634541498454
+        ]
+      ],
+      "a": [
+        0.5232074739683961,
+        0.9101091601365183
+      ],
+      "v": [
+        -0.7243372110483854,
+        -0.6245890240500768
+      ],
+      "b": 1.115587532508282,
+      "training_windows": [
+        "depth_15W__author",
+        "depth_30W__author",
+        "phi_15W__author",
+        "phi_50W__author",
+        "phi_maxn__author",
+        "resnet_15W__author",
+        "resnet_30W__author",
+        "resnet_50W__author",
+        "resnet_maxn__author",
+        "resnet_training_15W__author",
+        "resnet_training_30W__author",
+        "resnet_training_50W__author",
+        "resnet_training__author",
+        "resnet_training_maxnS__author"
+      ],
+      "training_n": 14637,
+      "fit_seconds": 0.06568774999999949,
+      "objective": 0.18876478927558415,
+      "gradient_inf": 5.748542068107279e-06,
+      "success": true,
+      "status": 0,
+      "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+      "iterations": 92,
+      "evaluations": 102,
+      "gradient_evaluations": 102,
+      "postfit_check_objective_gradient_evaluations": 1,
+      "phases": [
+        {
+          "stage": "initial",
+          "allowance": 2000,
+          "iterations": 92,
+          "evaluations": 102,
+          "gradient_evaluations": 102,
+          "objective": 0.18876478927558415,
+          "gradient_inf": 5.748542068107279e-06,
+          "success": true,
+          "status": 0,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "wall_seconds": 0.061959042000000686
+        }
+      ],
+      "continuation_seconds": 0,
+      "training_diagnostics": {
+        "training_prediction_mse": 0.14753448502773164,
+        "penalty": 0.0412303042478525,
+        "predicted_delta_mean_c": 0.3752603654297331,
+        "predicted_delta_std_c": 0.3393852508814906,
+        "W_frobenius": 0.6779141764672252,
+        "v_l2": 0.9564391482332687,
+        "hidden_std_mean": 0.28508028022224147,
+        "hidden_std_max": 0.3331552070443898,
+        "hidden_std_by_unit": [
+          0.3331552070443898,
+          0.23700535340009318
+        ],
+        "hidden_saturation_fraction": 0.0007959579180509413,
+        "training_intercept_only_c": 0.3752632397007662,
+        "intercept_only_mse": 0.31760142137107766,
+        "rms_difference_from_intercept_c": 0.33938525089366167,
+        "within_window_prediction_std_min_c": 0.024055801424786905,
+        "within_window_prediction_std_max_c": 0.6571280045902722,
+        "within_window_prediction_std_mean_c": 0.18030547062186655
+      },
+      "training_groups": [
+        "G_2024-10-22",
+        "G_2024-10-24_to_2024-10-28"
+      ],
+      "training_origin_hash": "3ef46f988b37acbd2186a67a5b8a30cf5c8f2bdde3d7e7a2e5ca58bc7f48c65b"
+    },
+    "G_2024-10-22::seed=4": {
+      "width": 2,
+      "lambda_value": 0.03,
+      "seed": 4,
+      "mean": [
+        46.72651498811617,
+        46.6739172957449,
+        0.003625331797346131,
+        0.1463264066342583,
+        6229.62665691388,
+        681.6600627658364,
+        4520.398903465364,
+        1588.8881228971588,
+        76.03981856052056,
+        10.854262887921797,
+        8.000000000000016
+      ],
+      "scale": [
+        2.0930988283384457,
+        2.0869377822388353,
+        0.005310563053238188,
+        0.042494246445067434,
+        1167.1486689378467,
+        542.2134473610063,
+        251.47806036540905,
+        128.56711223122747,
+        19.48350527658282,
+        4.165636426963102,
+        2.8284271247461876
+      ],
+      "W": [
+        [
+          0.13762423687905362,
+          0.1375125392219408
+        ],
+        [
+          0.06956579368912967,
+          0.06950946283849865
+        ],
+        [
+          0.009618170504341331,
+          0.009618641455329497
+        ],
+        [
+          -0.03380343270314486,
+          -0.03377590906479274
+        ],
+        [
+          -0.051601874322918496,
+          -0.051567570589049684
+        ],
+        [
+          -0.025679150051009545,
+          -0.02568262414086675
+        ],
+        [
+          -0.17113560126169217,
+          -0.17102154572224226
+        ],
+        [
+          -0.0652732438602607,
+          -0.06524069962216489
+        ],
+        [
+          0.008322473700117836,
+          0.008333625544605275
+        ],
+        [
+          0.00918489031277506,
+          0.009173924162401842
+        ],
+        [
+          -0.0054872565488945195,
+          -0.005519398947382953
+        ]
+      ],
+      "a": [
+        0.11282671497658658,
+        0.11266293905969618
+      ],
+      "v": [
+        -0.25499332827271365,
+        -0.25482275138866023
+      ],
+      "b": 0.222934215256051,
+      "training_windows": [
+        "depth_15W__author",
+        "depth_30W__author",
+        "resnet_30W__author",
+        "resnet_50W__author"
+      ],
+      "training_n": 2675,
+      "fit_seconds": 0.010256167000000538,
+      "objective": 0.05604493968069892,
+      "gradient_inf": 8.503195377979403e-06,
+      "success": true,
+      "status": 0,
+      "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+      "iterations": 61,
+      "evaluations": 65,
+      "gradient_evaluations": 65,
+      "postfit_check_objective_gradient_evaluations": 1,
+      "phases": [
+        {
+          "stage": "initial",
+          "allowance": 2000,
+          "iterations": 61,
+          "evaluations": 65,
+          "gradient_evaluations": 65,
+          "objective": 0.05604493968069892,
+          "gradient_inf": 8.503195377979403e-06,
+          "success": true,
+          "status": 0,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "wall_seconds": 0.009129500000000235
+        }
+      ],
+      "continuation_seconds": 0,
+      "training_diagnostics": {
+        "training_prediction_mse": 0.048424719494313456,
+        "penalty": 0.007620220186385464,
+        "predicted_delta_mean_c": 0.16639244315785087,
+        "predicted_delta_std_c": 0.07817379098665415,
+        "W_frobenius": 0.3522088974703781,
+        "v_l2": 0.36049442726467057,
+        "hidden_std_mean": 0.15333722943622433,
+        "hidden_std_max": 0.15338186091029204,
+        "hidden_std_by_unit": [
+          0.15338186091029204,
+          0.1532925979621566
+        ],
+        "hidden_saturation_fraction": 0.0,
+        "training_intercept_only_c": 0.16639669475553961,
+        "intercept_only_mse": 0.06233322658462098,
+        "rms_difference_from_intercept_c": 0.07817379110226888,
+        "within_window_prediction_std_min_c": 0.024578578606079416,
+        "within_window_prediction_std_max_c": 0.07983948351617984,
+        "within_window_prediction_std_mean_c": 0.06286456328070686
+      },
+      "training_groups": [
+        "G_2024-10-22"
+      ],
+      "training_origin_hash": "6252d261587d9c4e074463c543b30315e8126aaf8a2a17750aca0b2f272dd809"
+    },
+    "G_2024-10-22|G_2024-10-23::seed=0": {
+      "width": 2,
+      "lambda_value": 0.03,
+      "seed": 0,
+      "mean": [
+        46.05307352895445,
+        45.97046337064607,
+        0.005827066188309673,
+        0.15728246727518458,
+        6016.985869231126,
+        689.4900573811279,
+        4708.717518140367,
+        1722.5210359521336,
+        73.40872278334892,
+        11.039341520704133,
+        8.000000000000004
+      ],
+      "scale": [
+        2.3078347377546917,
+        2.3387828179488874,
+        0.006697133813784466,
+        0.045389272236637405,
+        1128.2795305650768,
+        485.46310300409846,
+        439.7937841029013,
+        291.79939284596514,
+        18.23906769397384,
+        3.744610570544321,
+        2.5298221281347053
+      ],
+      "W": [
+        [
+          0.15136360630472823,
+          -0.15134337296406483
+        ],
+        [
+          0.0766773740431903,
+          -0.07665200852557444
+        ],
+        [
+          0.018624673582856348,
+          -0.0186668318857421
+        ],
+        [
+          -0.015991497960386153,
+          0.015922230876662596
+        ],
+        [
+          -0.06940448374485511,
+          0.06941024617219205
+        ],
+        [
+          -0.024683600164110638,
+          0.0246894355873528
+        ],
+        [
+          -0.21675399518565788,
+          0.21670340007742034
+        ],
+        [
+          -0.14897781819387643,
+          0.148927440382066
+        ],
+        [
+          0.010009982348273622,
+          -0.010004010844245584
+        ],
+        [
+          0.014043962827592392,
+          -0.014045123497696288
+        ],
+        [
+          -0.003902419615769462,
+          0.003909315839958834
+        ]
+      ],
+      "a": [
+        0.09470819332969807,
+        -0.0947268976646897
+      ],
+      "v": [
+        -0.3624922564777423,
+        0.3624115771350451
+      ],
+      "b": 0.38847481553827584,
+      "training_windows": [
+        "depth_15W__author",
+        "depth_30W__author",
+        "phi_30W__author",
+        "resnet_30W__author",
+        "resnet_50W__author"
+      ],
+      "training_n": 2714,
+      "fit_seconds": 0.011684333999999907,
+      "objective": 0.060853949898528846,
+      "gradient_inf": 2.5946498010110362e-06,
+      "success": true,
+      "status": 0,
+      "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+      "iterations": 68,
+      "evaluations": 74,
+      "gradient_evaluations": 74,
+      "postfit_check_objective_gradient_evaluations": 1,
+      "phases": [
+        {
+          "stage": "initial",
+          "allowance": 2000,
+          "iterations": 68,
+          "evaluations": 74,
+          "gradient_evaluations": 74,
+          "objective": 0.060853949898528846,
+          "gradient_inf": 2.5946498010110362e-06,
+          "success": true,
+          "status": 0,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "wall_seconds": 0.010375834000000417
+        }
+      ],
+      "continuation_seconds": 0,
+      "training_diagnostics": {
+        "training_prediction_mse": 0.04671454779202395,
+        "penalty": 0.014139402106504897,
+        "predicted_delta_mean_c": 0.30974340116861293,
+        "predicted_delta_std_c": 0.28095475967469563,
+        "W_frobenius": 0.4566953210865283,
+        "v_l2": 0.512584419630402,
+        "hidden_std_mean": 0.38757521023019254,
+        "hidden_std_max": 0.3876380547338714,
+        "hidden_std_by_unit": [
+          0.3876380547338714,
+          0.38751236572651365
+        ],
+        "hidden_saturation_fraction": 0.0,
+        "training_intercept_only_c": 0.3097429968300728,
+        "intercept_only_mse": 0.14141503751056908,
+        "rms_difference_from_intercept_c": 0.2809547596749864,
+        "within_window_prediction_std_min_c": 0.022826039763597986,
+        "within_window_prediction_std_max_c": 0.08367777319617829,
+        "within_window_prediction_std_mean_c": 0.05759531952612644
+      },
+      "training_groups": [
+        "G_2024-10-22",
+        "G_2024-10-23"
+      ],
+      "training_origin_hash": "cc1699befb9921a11261cb571abcabbac143db79fffc58b8ca6fc4223f127132"
+    },
+    "G_2024-10-22|G_2024-10-23::seed=1": {
+      "width": 2,
+      "lambda_value": 0.03,
+      "seed": 1,
+      "mean": [
+        46.05307352895445,
+        45.97046337064607,
+        0.005827066188309673,
+        0.15728246727518458,
+        6016.985869231126,
+        689.4900573811279,
+        4708.717518140367,
+        1722.5210359521336,
+        73.40872278334892,
+        11.039341520704133,
+        8.000000000000004
+      ],
+      "scale": [
+        2.3078347377546917,
+        2.3387828179488874,
+        0.006697133813784466,
+        0.045389272236637405,
+        1128.2795305650768,
+        485.46310300409846,
+        439.7937841029013,
+        291.79939284596514,
+        18.23906769397384,
+        3.744610570544321,
+        2.5298221281347053
+      ],
+      "W": [
+        [
+          -0.1513783996733302,
+          -0.15138163539740868
+        ],
+        [
+          -0.07665670251888992,
+          -0.0766644593668437
+        ],
+        [
+          -0.018676256764380145,
+          -0.018619413131437303
+        ],
+        [
+          0.015931838077202096,
+          0.015965453913874807
+        ],
+        [
+          0.06943316373466527,
+          0.0693974634441442
+        ],
+        [
+          0.02468579986887587,
+          0.024691517804678903
+        ],
+        [
+          0.21673970341228463,
+          0.21671437874210328
+        ],
+        [
+          0.1489564523442029,
+          0.14894130092566413
+        ],
+        [
+          -0.010000319496175638,
+          -0.010017912999808002
+        ],
+        [
+          -0.014049749657861994,
+          -0.014050414066859302
+        ],
+        [
+          0.003913893849440864,
+          0.003911877544289113
+        ]
+      ],
+      "a": [
+        -0.09482871615843869,
+        -0.09448722711830065
+      ],
+      "v": [
+        0.36249677497029203,
+        0.36242391534512447
+      ],
+      "b": 0.3884380526965179,
+      "training_windows": [
+        "depth_15W__author",
+        "depth_30W__author",
+        "phi_30W__author",
+        "resnet_30W__author",
+        "resnet_50W__author"
+      ],
+      "training_n": 2714,
+      "fit_seconds": 0.011409125000000131,
+      "objective": 0.06085395025271888,
+      "gradient_inf": 5.649214110180906e-06,
+      "success": true,
+      "status": 0,
+      "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+      "iterations": 65,
+      "evaluations": 73,
+      "gradient_evaluations": 73,
+      "postfit_check_objective_gradient_evaluations": 1,
+      "phases": [
+        {
+          "stage": "initial",
+          "allowance": 2000,
+          "iterations": 65,
+          "evaluations": 73,
+          "gradient_evaluations": 73,
+          "objective": 0.06085395025271888,
+          "gradient_inf": 5.649214110180906e-06,
+          "success": true,
+          "status": 0,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "wall_seconds": 0.010238124999999876
+        }
+      ],
+      "continuation_seconds": 0,
+      "training_diagnostics": {
+        "training_prediction_mse": 0.04671377113209122,
+        "penalty": 0.014140179120627655,
+        "predicted_delta_mean_c": 0.30974086198565154,
+        "predicted_delta_std_c": 0.2809557860263622,
+        "W_frobenius": 0.45671029958056486,
+        "v_l2": 0.512596338533502,
+        "hidden_std_mean": 0.3875676216274776,
+        "hidden_std_max": 0.38757111540686134,
+        "hidden_std_by_unit": [
+          0.38757111540686134,
+          0.3875641278480938
+        ],
+        "hidden_saturation_fraction": 0.0,
+        "training_intercept_only_c": 0.3097429968300728,
+        "intercept_only_mse": 0.14141503751056908,
+        "rms_difference_from_intercept_c": 0.2809557860344732,
+        "within_window_prediction_std_min_c": 0.022825671834422676,
+        "within_window_prediction_std_max_c": 0.08367998651482225,
+        "within_window_prediction_std_mean_c": 0.05759782067595687
+      },
+      "training_groups": [
+        "G_2024-10-22",
+        "G_2024-10-23"
+      ],
+      "training_origin_hash": "cc1699befb9921a11261cb571abcabbac143db79fffc58b8ca6fc4223f127132"
+    },
+    "G_2024-10-22|G_2024-10-23::seed=2": {
+      "width": 2,
+      "lambda_value": 0.03,
+      "seed": 2,
+      "mean": [
+        46.05307352895445,
+        45.97046337064607,
+        0.005827066188309673,
+        0.15728246727518458,
+        6016.985869231126,
+        689.4900573811279,
+        4708.717518140367,
+        1722.5210359521336,
+        73.40872278334892,
+        11.039341520704133,
+        8.000000000000004
+      ],
+      "scale": [
+        2.3078347377546917,
+        2.3387828179488874,
+        0.006697133813784466,
+        0.045389272236637405,
+        1128.2795305650768,
+        485.46310300409846,
+        439.7937841029013,
+        291.79939284596514,
+        18.23906769397384,
+        3.744610570544321,
+        2.5298221281347053
+      ],
+      "W": [
+        [
+          -0.15136422666797195,
+          -0.15135766864043315
+        ],
+        [
+          -0.07665033150135532,
+          -0.07663978937719101
+        ],
+        [
+          -0.018629065318399533,
+          -0.0186412942174265
+        ],
+        [
+          0.015955876888272578,
+          0.01593652242602797
+        ],
+        [
+          0.06939474938273937,
+          0.0694154369974821
+        ],
+        [
+          0.024686383175561773,
+          0.024682919410083628
+        ],
+        [
+          0.21671013134274006,
+          0.21673336382168354
+        ],
+        [
+          0.14894131994783016,
+          0.14895673075553773
+        ],
+        [
+          -0.010019913519085918,
+          -0.009998465175800438
+        ],
+        [
+          -0.014047301811080236,
+          -0.01404294072099476
+        ],
+        [
+          0.00390112797413866,
+          0.0038997923289880282
+        ]
+      ],
+      "a": [
+        -0.09451918037167654,
+        -0.09466930344785446
+      ],
+      "v": [
+        0.36244888062280345,
+        0.3624853046360966
+      ],
+      "b": 0.3883999344378083,
+      "training_windows": [
+        "depth_15W__author",
+        "depth_30W__author",
+        "phi_30W__author",
+        "resnet_30W__author",
+        "resnet_50W__author"
+      ],
+      "training_n": 2714,
+      "fit_seconds": 0.011737166999999715,
+      "objective": 0.06085395016862883,
+      "gradient_inf": 5.583540544615122e-06,
+      "success": true,
+      "status": 0,
+      "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+      "iterations": 67,
+      "evaluations": 75,
+      "gradient_evaluations": 75,
+      "postfit_check_objective_gradient_evaluations": 1,
+      "phases": [
+        {
+          "stage": "initial",
+          "allowance": 2000,
+          "iterations": 67,
+          "evaluations": 75,
+          "gradient_evaluations": 75,
+          "objective": 0.06085395016862883,
+          "gradient_inf": 5.583540544615122e-06,
+          "success": true,
+          "status": 0,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "wall_seconds": 0.010554792000000646
+        }
+      ],
+      "continuation_seconds": 0,
+      "training_diagnostics": {
+        "training_prediction_mse": 0.04671424594690929,
+        "penalty": 0.014139704221719541,
+        "predicted_delta_mean_c": 0.3097411607905422,
+        "predicted_delta_std_c": 0.28094989128535114,
+        "W_frobenius": 0.4566822603468095,
+        "v_l2": 0.5126058789575545,
+        "hidden_std_mean": 0.3875522740331984,
+        "hidden_std_max": 0.3875586392611391,
+        "hidden_std_by_unit": [
+          0.38754590880525774,
+          0.3875586392611391
+        ],
+        "hidden_saturation_fraction": 0.0,
+        "training_intercept_only_c": 0.3097429968300728,
+        "intercept_only_mse": 0.14141503751056908,
+        "rms_difference_from_intercept_c": 0.2809498912913505,
+        "within_window_prediction_std_min_c": 0.022824944097043557,
+        "within_window_prediction_std_max_c": 0.08368180154777612,
+        "within_window_prediction_std_mean_c": 0.05759784895113422
+      },
+      "training_groups": [
+        "G_2024-10-22",
+        "G_2024-10-23"
+      ],
+      "training_origin_hash": "cc1699befb9921a11261cb571abcabbac143db79fffc58b8ca6fc4223f127132"
+    },
+    "G_2024-10-22|G_2024-10-23::seed=3": {
+      "width": 2,
+      "lambda_value": 0.03,
+      "seed": 3,
+      "mean": [
+        46.05307352895445,
+        45.97046337064607,
+        0.005827066188309673,
+        0.15728246727518458,
+        6016.985869231126,
+        689.4900573811279,
+        4708.717518140367,
+        1722.5210359521336,
+        73.40872278334892,
+        11.039341520704133,
+        8.000000000000004
+      ],
+      "scale": [
+        2.3078347377546917,
+        2.3387828179488874,
+        0.006697133813784466,
+        0.045389272236637405,
+        1128.2795305650768,
+        485.46310300409846,
+        439.7937841029013,
+        291.79939284596514,
+        18.23906769397384,
+        3.744610570544321,
+        2.5298221281347053
+      ],
+      "W": [
+        [
+          0.15139408481637362,
+          0.15133532801741206
+        ],
+        [
+          0.07666471280640494,
+          0.07665961310551032
+        ],
+        [
+          0.01868148458235972,
+          0.01858498958573928
+        ],
+        [
+          -0.015938808976311253,
+          -0.015967703234099344
+        ],
+        [
+          -0.06942001496448201,
+          -0.06936636014350112
+        ],
+        [
+          -0.0246998693685825,
+          -0.024674628197459806
+        ],
+        [
+          -0.21673087183907738,
+          -0.21671081133332812
+        ],
+        [
+          -0.148952541355564,
+          -0.14895546965616138
+        ],
+        [
+          0.010018281601618547,
+          0.010006639615696039
+        ],
+        [
+          0.014064296861764648,
+          0.014052755760867177
+        ],
+        [
+          -0.003911288247590034,
+          -0.003889627483256177
+        ]
+      ],
+      "a": [
+        0.09469788135097626,
+        0.09470901831346586
+      ],
+      "v": [
+        -0.3625257286527697,
+        -0.3623788857345437
+      ],
+      "b": 0.38845743267279614,
+      "training_windows": [
+        "depth_15W__author",
+        "depth_30W__author",
+        "phi_30W__author",
+        "resnet_30W__author",
+        "resnet_50W__author"
+      ],
+      "training_n": 2714,
+      "fit_seconds": 0.012023124999999801,
+      "objective": 0.060853950391973916,
+      "gradient_inf": 1.9477069149154667e-05,
+      "success": true,
+      "status": 0,
+      "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+      "iterations": 71,
+      "evaluations": 77,
+      "gradient_evaluations": 77,
+      "postfit_check_objective_gradient_evaluations": 1,
+      "phases": [
+        {
+          "stage": "initial",
+          "allowance": 2000,
+          "iterations": 71,
+          "evaluations": 77,
+          "gradient_evaluations": 77,
+          "objective": 0.060853950391973916,
+          "gradient_inf": 1.9477069149154667e-05,
+          "success": true,
+          "status": 0,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "wall_seconds": 0.010886334000000275
+        }
+      ],
+      "continuation_seconds": 0,
+      "training_diagnostics": {
+        "training_prediction_mse": 0.04671465343985927,
+        "penalty": 0.014139296952114645,
+        "predicted_delta_mean_c": 0.30973325829549847,
+        "predicted_delta_std_c": 0.280958444413145,
+        "W_frobenius": 0.4566908556588257,
+        "v_l2": 0.5125849790634048,
+        "hidden_std_mean": 0.3875798865822315,
+        "hidden_std_max": 0.38759719090977474,
+        "hidden_std_by_unit": [
+          0.3875625822546883,
+          0.38759719090977474
+        ],
+        "hidden_saturation_fraction": 0.0,
+        "training_intercept_only_c": 0.3097429968300728,
+        "intercept_only_mse": 0.14141503751056908,
+        "rms_difference_from_intercept_c": 0.2809584445819226,
+        "within_window_prediction_std_min_c": 0.022823795038945917,
+        "within_window_prediction_std_max_c": 0.08368092883395871,
+        "within_window_prediction_std_mean_c": 0.05759543989088495
+      },
+      "training_groups": [
+        "G_2024-10-22",
+        "G_2024-10-23"
+      ],
+      "training_origin_hash": "cc1699befb9921a11261cb571abcabbac143db79fffc58b8ca6fc4223f127132"
+    },
+    "G_2024-10-22|G_2024-10-23::seed=4": {
+      "width": 2,
+      "lambda_value": 0.03,
+      "seed": 4,
+      "mean": [
+        46.05307352895445,
+        45.97046337064607,
+        0.005827066188309673,
+        0.15728246727518458,
+        6016.985869231126,
+        689.4900573811279,
+        4708.717518140367,
+        1722.5210359521336,
+        73.40872278334892,
+        11.039341520704133,
+        8.000000000000004
+      ],
+      "scale": [
+        2.3078347377546917,
+        2.3387828179488874,
+        0.006697133813784466,
+        0.045389272236637405,
+        1128.2795305650768,
+        485.46310300409846,
+        439.7937841029013,
+        291.79939284596514,
+        18.23906769397384,
+        3.744610570544321,
+        2.5298221281347053
+      ],
+      "W": [
+        [
+          0.15133418377651234,
+          -0.15136029686537758
+        ],
+        [
+          0.07665143416801973,
+          -0.07667414771942464
+        ],
+        [
+          0.01864982492692573,
+          -0.018645496081042264
+        ],
+        [
+          -0.015944069292186898,
+          0.01595145444662745
+        ],
+        [
+          -0.0693940841794646,
+          0.06941443763072301
+        ],
+        [
+          -0.024702898992364605,
+          0.024686069025315283
+        ],
+        [
+          -0.2167220285903594,
+          0.21674579206645794
+        ],
+        [
+          -0.1489364940716214,
+          0.14895664591389585
+        ],
+        [
+          0.010014284269473626,
+          -0.01000655950607178
+        ],
+        [
+          0.014047138555469482,
+          -0.014048075553612214
+        ],
+        [
+          -0.0039016796329884953,
+          0.003900470724814246
+        ]
+      ],
+      "a": [
+        0.094735225442998,
+        -0.09473668647689992
+      ],
+      "v": [
+        -0.36244006141660995,
+        0.36247663541081765
+      ],
+      "b": 0.38848614883614774,
+      "training_windows": [
+        "depth_15W__author",
+        "depth_30W__author",
+        "phi_30W__author",
+        "resnet_30W__author",
+        "resnet_50W__author"
+      ],
+      "training_n": 2714,
+      "fit_seconds": 0.011384083000000267,
+      "objective": 0.06085394987517164,
+      "gradient_inf": 1.3990600790034224e-06,
+      "success": true,
+      "status": 0,
+      "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+      "iterations": 64,
+      "evaluations": 73,
+      "gradient_evaluations": 73,
+      "postfit_check_objective_gradient_evaluations": 1,
+      "phases": [
+        {
+          "stage": "initial",
+          "allowance": 2000,
+          "iterations": 64,
+          "evaluations": 73,
+          "gradient_evaluations": 73,
+          "objective": 0.06085394987517164,
+          "gradient_inf": 1.3990600790034224e-06,
+          "success": true,
+          "status": 0,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH",
+          "wall_seconds": 0.010212749999999993
+        }
+      ],
+      "continuation_seconds": 0,
+      "training_diagnostics": {
+        "training_prediction_mse": 0.04671438034272162,
+        "penalty": 0.01413956953245002,
+        "predicted_delta_mean_c": 0.30974287755024216,
+        "predicted_delta_std_c": 0.2809562826546227,
+        "W_frobenius": 0.4566912250925978,
+        "v_l2": 0.5125935127744232,
+        "hidden_std_mean": 0.38757043842348404,
+        "hidden_std_max": 0.38759218562835157,
+        "hidden_std_by_unit": [
+          0.38754869121861657,
+          0.38759218562835157
+        ],
+        "hidden_saturation_fraction": 0.0,
+        "training_intercept_only_c": 0.3097429968300728,
+        "intercept_only_mse": 0.14141503751056908,
+        "rms_difference_from_intercept_c": 0.2809562826546481,
+        "within_window_prediction_std_min_c": 0.022828393650866682,
+        "within_window_prediction_std_max_c": 0.08367357535381229,
+        "within_window_prediction_std_mean_c": 0.05759343905406415
+      },
+      "training_groups": [
+        "G_2024-10-22",
+        "G_2024-10-23"
+      ],
+      "training_origin_hash": "cc1699befb9921a11261cb571abcabbac143db79fffc58b8ca6fc4223f127132"
+    }
+  },
+  "folds": [
+    {
+      "outer_group": "G_2024-10-22",
+      "seed": 0,
+      "receiver_key": "G_2024-10-23|G_2024-10-24_to_2024-10-28::seed=0",
+      "residual_keys": [
+        "G_2024-10-24_to_2024-10-28::seed=0",
+        "G_2024-10-23::seed=0"
+      ],
+      "correction": {
+        "temperature_reference_k": 323.13377221737187,
+        "temperature_scale_k": 8.413488518182856,
+        "power_mean_w": 0.9895698194665675,
+        "power_scale_w": 0.7259407725879059,
+        "mean": [
+          0.0777892977768788,
+          0.03969703712518486,
+          0.5343944288490035
+        ],
+        "scale": [
+          1.0815335043724221,
+          0.04787351500970991,
+          0.9564083317521314
+        ],
+        "kept": [
+          true,
+          true,
+          true
+        ],
+        "c": -0.1973097708287945,
+        "gamma": [
+          -0.0925816099467503,
+          0.022012315235822994,
+          0.0965049802303461
+        ],
+        "lambda_value": 0.1,
+        "training_windows": [
+          "phi_15W__author",
+          "phi_30W__author",
+          "phi_50W__author",
+          "phi_maxn__author",
+          "resnet_15W__author",
+          "resnet_maxn__author",
+          "resnet_training_15W__author",
+          "resnet_training_30W__author",
+          "resnet_training_50W__author",
+          "resnet_training__author",
+          "resnet_training_maxnS__author"
+        ],
+        "fit_seconds": 0.00394658399999992
+      },
+      "bound_s_c": 0.08509054269473973,
+      "q95_c": 0.08509054269473973,
+      "training_origin_hash": "067cc3d1f004159048a79636fd100917b6157e9174242b55f5b0e1cd2f6eb257",
+      "training_groups": [
+        "G_2024-10-23",
+        "G_2024-10-24_to_2024-10-28"
+      ],
+      "unresolved": [],
+      "receiver_hash": "262b8f95a5c99fe64092bc769611631fed501b208b03b9dcf2cd882572137a83",
+      "residual_generation_wall_seconds": 0.0660243330000001,
+      "oof_residual_sha256": "31849a187653b3d76143a02667a60dd7f917286a6c8328f82badc35e6182ba86"
+    },
+    {
+      "outer_group": "G_2024-10-22",
+      "seed": 1,
+      "receiver_key": "G_2024-10-23|G_2024-10-24_to_2024-10-28::seed=1",
+      "residual_keys": [
+        "G_2024-10-24_to_2024-10-28::seed=1",
+        "G_2024-10-23::seed=1"
+      ],
+      "correction": {
+        "temperature_reference_k": 323.13377221737187,
+        "temperature_scale_k": 8.413488518182856,
+        "power_mean_w": 0.9895698194665675,
+        "power_scale_w": 0.7259407725879059,
+        "mean": [
+          0.0777892977768788,
+          0.03969703712518486,
+          0.5343944288490035
+        ],
+        "scale": [
+          1.0815335043724221,
+          0.04787351500970991,
+          0.9564083317521314
+        ],
+        "kept": [
+          true,
+          true,
+          true
+        ],
+        "c": -0.1973960496907136,
+        "gamma": [
+          -0.09255508461735962,
+          0.021978558228540335,
+          0.09655209140519022
+        ],
+        "lambda_value": 0.1,
+        "training_windows": [
+          "phi_15W__author",
+          "phi_30W__author",
+          "phi_50W__author",
+          "phi_maxn__author",
+          "resnet_15W__author",
+          "resnet_maxn__author",
+          "resnet_training_15W__author",
+          "resnet_training_30W__author",
+          "resnet_training_50W__author",
+          "resnet_training__author",
+          "resnet_training_maxnS__author"
+        ],
+        "fit_seconds": 0.0035710419999999132
+      },
+      "bound_s_c": 0.08513664879043384,
+      "q95_c": 0.08513664879043384,
+      "training_origin_hash": "067cc3d1f004159048a79636fd100917b6157e9174242b55f5b0e1cd2f6eb257",
+      "training_groups": [
+        "G_2024-10-23",
+        "G_2024-10-24_to_2024-10-28"
+      ],
+      "unresolved": [],
+      "receiver_hash": "f81562116b584999176f83ae25c37792798b5e46e3498358cf70e921ce5e00eb",
+      "residual_generation_wall_seconds": 0.07207733299999974,
+      "oof_residual_sha256": "ca74e4ddf37a7eeb86cc5e2cef9d4150a21ae9878a64a51f12c881b5cab7e593"
+    },
+    {
+      "outer_group": "G_2024-10-22",
+      "seed": 2,
+      "receiver_key": "G_2024-10-23|G_2024-10-24_to_2024-10-28::seed=2",
+      "residual_keys": [
+        "G_2024-10-24_to_2024-10-28::seed=2",
+        "G_2024-10-23::seed=2"
+      ],
+      "correction": {
+        "temperature_reference_k": 323.13377221737187,
+        "temperature_scale_k": 8.413488518182856,
+        "power_mean_w": 0.9895698194665675,
+        "power_scale_w": 0.7259407725879059,
+        "mean": [
+          0.0777892977768788,
+          0.03969703712518486,
+          0.5343944288490035
+        ],
+        "scale": [
+          1.0815335043724221,
+          0.04787351500970991,
+          0.9564083317521314
+        ],
+        "kept": [
+          true,
+          true,
+          true
+        ],
+        "c": -0.19726162297972233,
+        "gamma": [
+          -0.09252083488794123,
+          0.022033106125247594,
+          0.0964542775294518
+        ],
+        "lambda_value": 0.1,
+        "training_windows": [
+          "phi_15W__author",
+          "phi_30W__author",
+          "phi_50W__author",
+          "phi_maxn__author",
+          "resnet_15W__author",
+          "resnet_maxn__author",
+          "resnet_training_15W__author",
+          "resnet_training_30W__author",
+          "resnet_training_50W__author",
+          "resnet_training__author",
+          "resnet_training_maxnS__author"
+        ],
+        "fit_seconds": 0.003692207999999919
+      },
+      "bound_s_c": 0.08506524225099057,
+      "q95_c": 0.08506524225099057,
+      "training_origin_hash": "067cc3d1f004159048a79636fd100917b6157e9174242b55f5b0e1cd2f6eb257",
+      "training_groups": [
+        "G_2024-10-23",
+        "G_2024-10-24_to_2024-10-28"
+      ],
+      "unresolved": [],
+      "receiver_hash": "bee29a39a153e2f5d049d13e2e1ce133e83844addd9f3b20d2cdc6ec1cf015c0",
+      "residual_generation_wall_seconds": 0.0606952500000002,
+      "oof_residual_sha256": "b6ce118bb926d0b92a9bfc72a8b3a7bbad3c70d9c3b225901ca26dbcb54244ec"
+    },
+    {
+      "outer_group": "G_2024-10-22",
+      "seed": 3,
+      "receiver_key": "G_2024-10-23|G_2024-10-24_to_2024-10-28::seed=3",
+      "residual_keys": [
+        "G_2024-10-24_to_2024-10-28::seed=3",
+        "G_2024-10-23::seed=3"
+      ],
+      "correction": {
+        "temperature_reference_k": 323.13377221737187,
+        "temperature_scale_k": 8.413488518182856,
+        "power_mean_w": 0.9895698194665675,
+        "power_scale_w": 0.7259407725879059,
+        "mean": [
+          0.0777892977768788,
+          0.03969703712518486,
+          0.5343944288490035
+        ],
+        "scale": [
+          1.0815335043724221,
+          0.04787351500970991,
+          0.9564083317521314
+        ],
+        "kept": [
+          true,
+          true,
+          true
+        ],
+        "c": -0.196747520831469,
+        "gamma": [
+          -0.09327777959728732,
+          0.022286465905994625,
+          0.09652318078079881
+        ],
+        "lambda_value": 0.1,
+        "training_windows": [
+          "phi_15W__author",
+          "phi_30W__author",
+          "phi_50W__author",
+          "phi_maxn__author",
+          "resnet_15W__author",
+          "resnet_maxn__author",
+          "resnet_training_15W__author",
+          "resnet_training_30W__author",
+          "resnet_training_50W__author",
+          "resnet_training__author",
+          "resnet_training_maxnS__author"
+        ],
+        "fit_seconds": 0.0035556669999996515
+      },
+      "bound_s_c": 0.08509086688363204,
+      "q95_c": 0.08509086688363204,
+      "training_origin_hash": "067cc3d1f004159048a79636fd100917b6157e9174242b55f5b0e1cd2f6eb257",
+      "training_groups": [
+        "G_2024-10-23",
+        "G_2024-10-24_to_2024-10-28"
+      ],
+      "unresolved": [],
+      "receiver_hash": "ec5fd2353c8a345afbbe7e4bc0bce7dc5ad93e913d11cc59124b6b71c4ea3c70",
+      "residual_generation_wall_seconds": 0.07645049999999998,
+      "oof_residual_sha256": "51c4fd06e2f468244da91ed3bf2f7bff48b068fc47188ded150f6f2ecf6e04fb"
+    },
+    {
+      "outer_group": "G_2024-10-22",
+      "seed": 4,
+      "receiver_key": "G_2024-10-23|G_2024-10-24_to_2024-10-28::seed=4",
+      "residual_keys": [
+        "G_2024-10-24_to_2024-10-28::seed=4",
+        "G_2024-10-23::seed=4"
+      ],
+      "correction": {
+        "temperature_reference_k": 323.13377221737187,
+        "temperature_scale_k": 8.413488518182856,
+        "power_mean_w": 0.9895698194665675,
+        "power_scale_w": 0.7259407725879059,
+        "mean": [
+          0.0777892977768788,
+          0.03969703712518486,
+          0.5343944288490035
+        ],
+        "scale": [
+          1.0815335043724221,
+          0.04787351500970991,
+          0.9564083317521314
+        ],
+        "kept": [
+          true,
+          true,
+          true
+        ],
+        "c": -0.19659471752790547,
+        "gamma": [
+          -0.09321248760346307,
+          0.0223231704291534,
+          0.09646485017507966
+        ],
+        "lambda_value": 0.1,
+        "training_windows": [
+          "phi_15W__author",
+          "phi_30W__author",
+          "phi_50W__author",
+          "phi_maxn__author",
+          "resnet_15W__author",
+          "resnet_maxn__author",
+          "resnet_training_15W__author",
+          "resnet_training_30W__author",
+          "resnet_training_50W__author",
+          "resnet_training__author",
+          "resnet_training_maxnS__author"
+        ],
+        "fit_seconds": 0.0036184580000000466
+      },
+      "bound_s_c": 0.0850344149534157,
+      "q95_c": 0.0850344149534157,
+      "training_origin_hash": "067cc3d1f004159048a79636fd100917b6157e9174242b55f5b0e1cd2f6eb257",
+      "training_groups": [
+        "G_2024-10-23",
+        "G_2024-10-24_to_2024-10-28"
+      ],
+      "unresolved": [],
+      "receiver_hash": "9e01bef43a9b1ba4fd79e2c682836b3e8aa4a096917b3192cbf0c6732c3242b7",
+      "residual_generation_wall_seconds": 0.06368312499999984,
+      "oof_residual_sha256": "432c9d375c86bbfd1343e43b710ef34c1918e9762feb0f853852eb6c04989c72"
+    },
+    {
+      "outer_group": "G_2024-10-23",
+      "seed": 0,
+      "receiver_key": "G_2024-10-22|G_2024-10-24_to_2024-10-28::seed=0",
+      "residual_keys": [
+        "G_2024-10-24_to_2024-10-28::seed=0",
+        "G_2024-10-22::seed=0"
+      ],
+      "correction": {
+        "temperature_reference_k": 322.67630333222894,
+        "temperature_scale_k": 7.520299303939057,
+        "power_mean_w": 0.9207927306680701,
+        "power_scale_w": 0.7177586797682598,
+        "mean": [
+          0.09077822393533556,
+          0.03562632781783312,
+          0.47078568965184864
+        ],
+        "scale": [
+          1.1154862393656084,
+          0.053821179128606594,
+          1.0829815508581424
+        ],
+        "kept": [
+          true,
+          true,
+          true
+        ],
+        "c": -0.0509250084334114,
+        "gamma": [
+          -0.21348194517973007,
+          -0.06365316466438208,
+          0.09805138488071805
+        ],
+        "lambda_value": 0.1,
+        "training_windows": [
+          "depth_15W__author",
+          "depth_30W__author",
+          "phi_15W__author",
+          "phi_50W__author",
+          "phi_maxn__author",
+          "resnet_15W__author",
+          "resnet_30W__author",
+          "resnet_50W__author",
+          "resnet_maxn__author",
+          "resnet_training_15W__author",
+          "resnet_training_30W__author",
+          "resnet_training_50W__author",
+          "resnet_training__author",
+          "resnet_training_maxnS__author"
+        ],
+        "fit_seconds": 0.004344957999999899
+      },
+      "bound_s_c": 0.12479656203443161,
+      "q95_c": 0.12479656203443161,
+      "training_origin_hash": "3ef46f988b37acbd2186a67a5b8a30cf5c8f2bdde3d7e7a2e5ca58bc7f48c65b",
+      "training_groups": [
+        "G_2024-10-22",
+        "G_2024-10-24_to_2024-10-28"
+      ],
+      "unresolved": [],
+      "receiver_hash": "6d9bfae17ac7256ea6328179eee45700bc8eed7c8021ff9f384d070a8136926d",
+      "residual_generation_wall_seconds": 0.015921834000000246,
+      "oof_residual_sha256": "a0719e15c185f35d19079d6851a83b46ed07dac3478b9c901f5c37cbfd83ea94"
+    },
+    {
+      "outer_group": "G_2024-10-23",
+      "seed": 1,
+      "receiver_key": "G_2024-10-22|G_2024-10-24_to_2024-10-28::seed=1",
+      "residual_keys": [
+        "G_2024-10-24_to_2024-10-28::seed=1",
+        "G_2024-10-22::seed=1"
+      ],
+      "correction": {
+        "temperature_reference_k": 322.67630333222894,
+        "temperature_scale_k": 7.520299303939057,
+        "power_mean_w": 0.9207927306680701,
+        "power_scale_w": 0.7177586797682598,
+        "mean": [
+          0.09077822393533556,
+          0.03562632781783312,
+          0.47078568965184864
+        ],
+        "scale": [
+          1.1154862393656084,
+          0.053821179128606594,
+          1.0829815508581424
+        ],
+        "kept": [
+          true,
+          true,
+          true
+        ],
+        "c": -0.050897046032245895,
+        "gamma": [
+          -0.21347364405649638,
+          -0.06364963748965848,
+          0.09805453579000095
+        ],
+        "lambda_value": 0.1,
+        "training_windows": [
+          "depth_15W__author",
+          "depth_30W__author",
+          "phi_15W__author",
+          "phi_50W__author",
+          "phi_maxn__author",
+          "resnet_15W__author",
+          "resnet_30W__author",
+          "resnet_50W__author",
+          "resnet_maxn__author",
+          "resnet_training_15W__author",
+          "resnet_training_30W__author",
+          "resnet_training_50W__author",
+          "resnet_training__author",
+          "resnet_training_maxnS__author"
+        ],
+        "fit_seconds": 0.004372667000000163
+      },
+      "bound_s_c": 0.12478070029817016,
+      "q95_c": 0.12478070029817016,
+      "training_origin_hash": "3ef46f988b37acbd2186a67a5b8a30cf5c8f2bdde3d7e7a2e5ca58bc7f48c65b",
+      "training_groups": [
+        "G_2024-10-22",
+        "G_2024-10-24_to_2024-10-28"
+      ],
+      "unresolved": [],
+      "receiver_hash": "31dda2986a7fbe1891c2f4d0ee9147d3c379c2f84f91e4c614e30f447f0aa715",
+      "residual_generation_wall_seconds": 0.018267834000000427,
+      "oof_residual_sha256": "27862a07f94f7295e7ba795b77b8ce6a2e88aa171c98446005c8cbec78559ea6"
+    },
+    {
+      "outer_group": "G_2024-10-23",
+      "seed": 2,
+      "receiver_key": "G_2024-10-22|G_2024-10-24_to_2024-10-28::seed=2",
+      "residual_keys": [
+        "G_2024-10-24_to_2024-10-28::seed=2",
+        "G_2024-10-22::seed=2"
+      ],
+      "correction": {
+        "temperature_reference_k": 322.67630333222894,
+        "temperature_scale_k": 7.520299303939057,
+        "power_mean_w": 0.9207927306680701,
+        "power_scale_w": 0.7177586797682598,
+        "mean": [
+          0.09077822393533556,
+          0.03562632781783312,
+          0.47078568965184864
+        ],
+        "scale": [
+          1.1154862393656084,
+          0.053821179128606594,
+          1.0829815508581424
+        ],
+        "kept": [
+          true,
+          true,
+          true
+        ],
+        "c": -0.05090257793397263,
+        "gamma": [
+          -0.2134728291847671,
+          -0.06365707628069173,
+          0.09805619919695144
+        ],
+        "lambda_value": 0.1,
+        "training_windows": [
+          "depth_15W__author",
+          "depth_30W__author",
+          "phi_15W__author",
+          "phi_50W__author",
+          "phi_maxn__author",
+          "resnet_15W__author",
+          "resnet_30W__author",
+          "resnet_50W__author",
+          "resnet_maxn__author",
+          "resnet_training_15W__author",
+          "resnet_training_30W__author",
+          "resnet_training_50W__author",
+          "resnet_training__author",
+          "resnet_training_maxnS__author"
+        ],
+        "fit_seconds": 0.004426624999999795
+      },
+      "bound_s_c": 0.1247855526210731,
+      "q95_c": 0.1247855526210731,
+      "training_origin_hash": "3ef46f988b37acbd2186a67a5b8a30cf5c8f2bdde3d7e7a2e5ca58bc7f48c65b",
+      "training_groups": [
+        "G_2024-10-22",
+        "G_2024-10-24_to_2024-10-28"
+      ],
+      "unresolved": [],
+      "receiver_hash": "90f82c7c5b35ff7cb028afd5c4b00fa62d6805058d84a71211a85ebfadffcbab",
+      "residual_generation_wall_seconds": 0.0180042079999998,
+      "oof_residual_sha256": "83042592a1cbe82f5b67c4adbecace0daa932dbc4921d72f9025675d69de0856"
+    },
+    {
+      "outer_group": "G_2024-10-23",
+      "seed": 3,
+      "receiver_key": "G_2024-10-22|G_2024-10-24_to_2024-10-28::seed=3",
+      "residual_keys": [
+        "G_2024-10-24_to_2024-10-28::seed=3",
+        "G_2024-10-22::seed=3"
+      ],
+      "correction": {
+        "temperature_reference_k": 322.67630333222894,
+        "temperature_scale_k": 7.520299303939057,
+        "power_mean_w": 0.9207927306680701,
+        "power_scale_w": 0.7177586797682598,
+        "mean": [
+          0.09077822393533556,
+          0.03562632781783312,
+          0.47078568965184864
+        ],
+        "scale": [
+          1.1154862393656084,
+          0.053821179128606594,
+          1.0829815508581424
+        ],
+        "kept": [
+          true,
+          true,
+          true
+        ],
+        "c": -0.05017590294846686,
+        "gamma": [
+          -0.21263977696414443,
+          -0.06615036910230883,
+          0.09975281591744241
+        ],
+        "lambda_value": 0.1,
+        "training_windows": [
+          "depth_15W__author",
+          "depth_30W__author",
+          "phi_15W__author",
+          "phi_50W__author",
+          "phi_maxn__author",
+          "resnet_15W__author",
+          "resnet_30W__author",
+          "resnet_50W__author",
+          "resnet_maxn__author",
+          "resnet_training_15W__author",
+          "resnet_training_30W__author",
+          "resnet_training_50W__author",
+          "resnet_training__author",
+          "resnet_training_maxnS__author"
+        ],
+        "fit_seconds": 0.004530082999999685
+      },
+      "bound_s_c": 0.12481300724501213,
+      "q95_c": 0.12481300724501213,
+      "training_origin_hash": "3ef46f988b37acbd2186a67a5b8a30cf5c8f2bdde3d7e7a2e5ca58bc7f48c65b",
+      "training_groups": [
+        "G_2024-10-22",
+        "G_2024-10-24_to_2024-10-28"
+      ],
+      "unresolved": [],
+      "receiver_hash": "e75bea1974a81e0e1882be98a28e57190259423ec541fd093997874c220e4343",
+      "residual_generation_wall_seconds": 0.018222167000000233,
+      "oof_residual_sha256": "83e9873a592d82e275b33f11b29f8c6cf57dcd8be44380090454aaf6e159277d"
+    },
+    {
+      "outer_group": "G_2024-10-23",
+      "seed": 4,
+      "receiver_key": "G_2024-10-22|G_2024-10-24_to_2024-10-28::seed=4",
+      "residual_keys": [
+        "G_2024-10-24_to_2024-10-28::seed=4",
+        "G_2024-10-22::seed=4"
+      ],
+      "correction": {
+        "temperature_reference_k": 322.67630333222894,
+        "temperature_scale_k": 7.520299303939057,
+        "power_mean_w": 0.9207927306680701,
+        "power_scale_w": 0.7177586797682598,
+        "mean": [
+          0.09077822393533556,
+          0.03562632781783312,
+          0.47078568965184864
+        ],
+        "scale": [
+          1.1154862393656084,
+          0.053821179128606594,
+          1.0829815508581424
+        ],
+        "kept": [
+          true,
+          true,
+          true
+        ],
+        "c": -0.05016702368612677,
+        "gamma": [
+          -0.2126330666932434,
+          -0.06615120551330113,
+          0.09975482326107028
+        ],
+        "lambda_value": 0.1,
+        "training_windows": [
+          "depth_15W__author",
+          "depth_30W__author",
+          "phi_15W__author",
+          "phi_50W__author",
+          "phi_maxn__author",
+          "resnet_15W__author",
+          "resnet_30W__author",
+          "resnet_50W__author",
+          "resnet_maxn__author",
+          "resnet_training_15W__author",
+          "resnet_training_30W__author",
+          "resnet_training_50W__author",
+          "resnet_training__author",
+          "resnet_training_maxnS__author"
+        ],
+        "fit_seconds": 0.0043755410000008155
+      },
+      "bound_s_c": 0.12480548652333423,
+      "q95_c": 0.12480548652333423,
+      "training_origin_hash": "3ef46f988b37acbd2186a67a5b8a30cf5c8f2bdde3d7e7a2e5ca58bc7f48c65b",
+      "training_groups": [
+        "G_2024-10-22",
+        "G_2024-10-24_to_2024-10-28"
+      ],
+      "unresolved": [],
+      "receiver_hash": "7f822ed5b090bff46be96ae1ed95eacb2ae6ed81717f7d4567128bf57bedc6c7",
+      "residual_generation_wall_seconds": 0.01712904200000054,
+      "oof_residual_sha256": "1c6086afc0ed07cfe0ef7cbbee0c5bea525a240eaaa497f17d9945ea6e71e2d5"
+    },
+    {
+      "outer_group": "G_2024-10-24_to_2024-10-28",
+      "seed": 0,
+      "receiver_key": "G_2024-10-22|G_2024-10-23::seed=0",
+      "residual_keys": [
+        "G_2024-10-23::seed=0",
+        "G_2024-10-22::seed=0"
+      ],
+      "correction": {
+        "temperature_reference_k": 319.20307352895384,
+        "temperature_scale_k": 2.3078347377546904,
+        "power_mean_w": 0.689490057381128,
+        "power_scale_w": 0.4854631030040972,
+        "mean": [
+          0.07545070487875173,
+          0.01089278672346125,
+          -0.39808341130810926
+        ],
+        "scale": [
+          1.1169654580954433,
+          0.014743873668602591,
+          0.6668311336390533
+        ],
+        "kept": [
+          true,
+          true,
+          true
+        ],
+        "c": -0.6525292911343148,
+        "gamma": [
+          -0.5063155705896064,
+          0.2680950599204103,
+          -0.0023305239163942493
+        ],
+        "lambda_value": 0.1,
+        "training_windows": [
+          "depth_15W__author",
+          "depth_30W__author",
+          "phi_30W__author",
+          "resnet_30W__author",
+          "resnet_50W__author"
+        ],
+        "fit_seconds": 0.0012736670000004224
+      },
+      "bound_s_c": 0.2784446512374302,
+      "q95_c": 0.2784446512374302,
+      "training_origin_hash": "cc1699befb9921a11261cb571abcabbac143db79fffc58b8ca6fc4223f127132",
+      "training_groups": [
+        "G_2024-10-22",
+        "G_2024-10-23"
+      ],
+      "unresolved": [],
+      "receiver_hash": "cb7add83a84f74070e44ec5fe245a3abd56e54d8f1b10d0cc9a9e446e4c30f08",
+      "residual_generation_wall_seconds": 0.0015586250000003687,
+      "oof_residual_sha256": "1d2c5be2cbf07d3f4830b5efd6096923c495c03592e98fe39555cb9a5e31731d"
+    },
+    {
+      "outer_group": "G_2024-10-24_to_2024-10-28",
+      "seed": 1,
+      "receiver_key": "G_2024-10-22|G_2024-10-23::seed=1",
+      "residual_keys": [
+        "G_2024-10-23::seed=1",
+        "G_2024-10-22::seed=1"
+      ],
+      "correction": {
+        "temperature_reference_k": 319.20307352895384,
+        "temperature_scale_k": 2.3078347377546904,
+        "power_mean_w": 0.689490057381128,
+        "power_scale_w": 0.4854631030040972,
+        "mean": [
+          0.07545070487875173,
+          0.01089278672346125,
+          -0.39808341130810926
+        ],
+        "scale": [
+          1.1169654580954433,
+          0.014743873668602591,
+          0.6668311336390533
+        ],
+        "kept": [
+          true,
+          true,
+          true
+        ],
+        "c": -0.6525619024546869,
+        "gamma": [
+          -0.5063627654790919,
+          0.2680936462970441,
+          -0.002303907675612904
+        ],
+        "lambda_value": 0.1,
+        "training_windows": [
+          "depth_15W__author",
+          "depth_30W__author",
+          "phi_30W__author",
+          "resnet_30W__author",
+          "resnet_50W__author"
+        ],
+        "fit_seconds": 0.001323750000000068
+      },
+      "bound_s_c": 0.278473630952605,
+      "q95_c": 0.278473630952605,
+      "training_origin_hash": "cc1699befb9921a11261cb571abcabbac143db79fffc58b8ca6fc4223f127132",
+      "training_groups": [
+        "G_2024-10-22",
+        "G_2024-10-23"
+      ],
+      "unresolved": [],
+      "receiver_hash": "c66b8806a6424ded0383d25b2c157292f921aae6cd290b35da321f2806e7f3b3",
+      "residual_generation_wall_seconds": 0.0012604589999991589,
+      "oof_residual_sha256": "af8573ad13fe367b19e4eafc2cea1c73669ec610d960a0c6b81228b60551c897"
+    },
+    {
+      "outer_group": "G_2024-10-24_to_2024-10-28",
+      "seed": 2,
+      "receiver_key": "G_2024-10-22|G_2024-10-23::seed=2",
+      "residual_keys": [
+        "G_2024-10-23::seed=2",
+        "G_2024-10-22::seed=2"
+      ],
+      "correction": {
+        "temperature_reference_k": 319.20307352895384,
+        "temperature_scale_k": 2.3078347377546904,
+        "power_mean_w": 0.689490057381128,
+        "power_scale_w": 0.4854631030040972,
+        "mean": [
+          0.07545070487875173,
+          0.01089278672346125,
+          -0.39808341130810926
+        ],
+        "scale": [
+          1.1169654580954433,
+          0.014743873668602591,
+          0.6668311336390533
+        ],
+        "kept": [
+          true,
+          true,
+          true
+        ],
+        "c": -0.6524952249106931,
+        "gamma": [
+          -0.5063349048157112,
+          0.2680623365711286,
+          -0.002343016136195519
+        ],
+        "lambda_value": 0.1,
+        "training_windows": [
+          "depth_15W__author",
+          "depth_30W__author",
+          "phi_30W__author",
+          "resnet_30W__author",
+          "resnet_50W__author"
+        ],
+        "fit_seconds": 0.0012804159999992848
+      },
+      "bound_s_c": 0.2784448952437447,
+      "q95_c": 0.2784448952437447,
+      "training_origin_hash": "cc1699befb9921a11261cb571abcabbac143db79fffc58b8ca6fc4223f127132",
+      "training_groups": [
+        "G_2024-10-22",
+        "G_2024-10-23"
+      ],
+      "unresolved": [],
+      "receiver_hash": "bc436654e015c5a37bb3e5daf663b900c732808a51a6f522a6656f7c252da168",
+      "residual_generation_wall_seconds": 0.0012563329999997208,
+      "oof_residual_sha256": "2519f98b82aaec3e08b02d6a4382cc554cde4c419e007c85efebd6d1dff27c2c"
+    },
+    {
+      "outer_group": "G_2024-10-24_to_2024-10-28",
+      "seed": 3,
+      "receiver_key": "G_2024-10-22|G_2024-10-23::seed=3",
+      "residual_keys": [
+        "G_2024-10-23::seed=3",
+        "G_2024-10-22::seed=3"
+      ],
+      "correction": {
+        "temperature_reference_k": 319.20307352895384,
+        "temperature_scale_k": 2.3078347377546904,
+        "power_mean_w": 0.689490057381128,
+        "power_scale_w": 0.4854631030040972,
+        "mean": [
+          0.07545070487875173,
+          0.01089278672346125,
+          -0.39808341130810926
+        ],
+        "scale": [
+          1.1169654580954433,
+          0.014743873668602591,
+          0.6668311336390533
+        ],
+        "kept": [
+          true,
+          true,
+          true
+        ],
+        "c": -0.6525719160487526,
+        "gamma": [
+          -0.5063781898296196,
+          0.26808306387409303,
+          -0.0023267465129793653
+        ],
+        "lambda_value": 0.1,
+        "training_windows": [
+          "depth_15W__author",
+          "depth_30W__author",
+          "phi_30W__author",
+          "resnet_30W__author",
+          "resnet_50W__author"
+        ],
+        "fit_seconds": 0.0012811670000001385
+      },
+      "bound_s_c": 0.27847782149883427,
+      "q95_c": 0.27847782149883427,
+      "training_origin_hash": "cc1699befb9921a11261cb571abcabbac143db79fffc58b8ca6fc4223f127132",
+      "training_groups": [
+        "G_2024-10-22",
+        "G_2024-10-23"
+      ],
+      "unresolved": [],
+      "receiver_hash": "91e34a7daf77cfc4bcb590f4747a81b3caa263da5a5b2f6c7bbed220ab122ad5",
+      "residual_generation_wall_seconds": 0.0012710000000000221,
+      "oof_residual_sha256": "6849cef910f87b323ee382a7298a1e74d850d345e3a4c56ba5296e308abfcbeb"
+    },
+    {
+      "outer_group": "G_2024-10-24_to_2024-10-28",
+      "seed": 4,
+      "receiver_key": "G_2024-10-22|G_2024-10-23::seed=4",
+      "residual_keys": [
+        "G_2024-10-23::seed=4",
+        "G_2024-10-22::seed=4"
+      ],
+      "correction": {
+        "temperature_reference_k": 319.20307352895384,
+        "temperature_scale_k": 2.3078347377546904,
+        "power_mean_w": 0.689490057381128,
+        "power_scale_w": 0.4854631030040972,
+        "mean": [
+          0.07545070487875173,
+          0.01089278672346125,
+          -0.39808341130810926
+        ],
+        "scale": [
+          1.1169654580954433,
+          0.014743873668602591,
+          0.6668311336390533
+        ],
+        "kept": [
+          true,
+          true,
+          true
+        ],
+        "c": -0.6525185854015318,
+        "gamma": [
+          -0.506340593695603,
+          0.26810394044423375,
+          -0.0023408758725837462
+        ],
+        "lambda_value": 0.1,
+        "training_windows": [
+          "depth_15W__author",
+          "depth_30W__author",
+          "phi_30W__author",
+          "resnet_30W__author",
+          "resnet_50W__author"
+        ],
+        "fit_seconds": 0.001273042000000224
+      },
+      "bound_s_c": 0.27844618921985553,
+      "q95_c": 0.27844618921985553,
+      "training_origin_hash": "cc1699befb9921a11261cb571abcabbac143db79fffc58b8ca6fc4223f127132",
+      "training_groups": [
+        "G_2024-10-22",
+        "G_2024-10-23"
+      ],
+      "unresolved": [],
+      "receiver_hash": "6b83424f2282e13b8f1fa83a74bcc7bd61b0e917e3c042f237656a61b87e774e",
+      "residual_generation_wall_seconds": 0.0013069579999998027,
+      "oof_residual_sha256": "99f3c0edde06f1a5b02d639884662141a1bb9596f6e0d215546f1ab90efb93c2"
+    }
+  ],
+  "residual_provenance": [
+    {
+      "outer_group": "G_2024-10-22",
+      "excluded_residual_group": "G_2024-10-23",
+      "seed": 0,
+      "fit_key": "G_2024-10-24_to_2024-10-28::seed=0",
+      "validation_origin_hash": "4f56d707e93b3f7d23725c4510f99d544ec3c15c51cf3a11072a9cf0f067a772",
+      "validation_n": 39,
+      "training_groups": [
+        "G_2024-10-24_to_2024-10-28"
+      ]
+    },
+    {
+      "outer_group": "G_2024-10-22",
+      "excluded_residual_group": "G_2024-10-24_to_2024-10-28",
+      "seed": 0,
+      "fit_key": "G_2024-10-23::seed=0",
+      "validation_origin_hash": "50616b23d13785ec143408e6c338d59019e029c2705eb974e37677b0ef75f47b",
+      "validation_n": 11962,
+      "training_groups": [
+        "G_2024-10-23"
+      ]
+    },
+    {
+      "outer_group": "G_2024-10-22",
+      "excluded_residual_group": "G_2024-10-23",
+      "seed": 1,
+      "fit_key": "G_2024-10-24_to_2024-10-28::seed=1",
+      "validation_origin_hash": "4f56d707e93b3f7d23725c4510f99d544ec3c15c51cf3a11072a9cf0f067a772",
+      "validation_n": 39,
+      "training_groups": [
+        "G_2024-10-24_to_2024-10-28"
+      ]
+    },
+    {
+      "outer_group": "G_2024-10-22",
+      "excluded_residual_group": "G_2024-10-24_to_2024-10-28",
+      "seed": 1,
+      "fit_key": "G_2024-10-23::seed=1",
+      "validation_origin_hash": "50616b23d13785ec143408e6c338d59019e029c2705eb974e37677b0ef75f47b",
+      "validation_n": 11962,
+      "training_groups": [
+        "G_2024-10-23"
+      ]
+    },
+    {
+      "outer_group": "G_2024-10-22",
+      "excluded_residual_group": "G_2024-10-23",
+      "seed": 2,
+      "fit_key": "G_2024-10-24_to_2024-10-28::seed=2",
+      "validation_origin_hash": "4f56d707e93b3f7d23725c4510f99d544ec3c15c51cf3a11072a9cf0f067a772",
+      "validation_n": 39,
+      "training_groups": [
+        "G_2024-10-24_to_2024-10-28"
+      ]
+    },
+    {
+      "outer_group": "G_2024-10-22",
+      "excluded_residual_group": "G_2024-10-24_to_2024-10-28",
+      "seed": 2,
+      "fit_key": "G_2024-10-23::seed=2",
+      "validation_origin_hash": "50616b23d13785ec143408e6c338d59019e029c2705eb974e37677b0ef75f47b",
+      "validation_n": 11962,
+      "training_groups": [
+        "G_2024-10-23"
+      ]
+    },
+    {
+      "outer_group": "G_2024-10-22",
+      "excluded_residual_group": "G_2024-10-23",
+      "seed": 3,
+      "fit_key": "G_2024-10-24_to_2024-10-28::seed=3",
+      "validation_origin_hash": "4f56d707e93b3f7d23725c4510f99d544ec3c15c51cf3a11072a9cf0f067a772",
+      "validation_n": 39,
+      "training_groups": [
+        "G_2024-10-24_to_2024-10-28"
+      ]
+    },
+    {
+      "outer_group": "G_2024-10-22",
+      "excluded_residual_group": "G_2024-10-24_to_2024-10-28",
+      "seed": 3,
+      "fit_key": "G_2024-10-23::seed=3",
+      "validation_origin_hash": "50616b23d13785ec143408e6c338d59019e029c2705eb974e37677b0ef75f47b",
+      "validation_n": 11962,
+      "training_groups": [
+        "G_2024-10-23"
+      ]
+    },
+    {
+      "outer_group": "G_2024-10-22",
+      "excluded_residual_group": "G_2024-10-23",
+      "seed": 4,
+      "fit_key": "G_2024-10-24_to_2024-10-28::seed=4",
+      "validation_origin_hash": "4f56d707e93b3f7d23725c4510f99d544ec3c15c51cf3a11072a9cf0f067a772",
+      "validation_n": 39,
+      "training_groups": [
+        "G_2024-10-24_to_2024-10-28"
+      ]
+    },
+    {
+      "outer_group": "G_2024-10-22",
+      "excluded_residual_group": "G_2024-10-24_to_2024-10-28",
+      "seed": 4,
+      "fit_key": "G_2024-10-23::seed=4",
+      "validation_origin_hash": "50616b23d13785ec143408e6c338d59019e029c2705eb974e37677b0ef75f47b",
+      "validation_n": 11962,
+      "training_groups": [
+        "G_2024-10-23"
+      ]
+    },
+    {
+      "outer_group": "G_2024-10-23",
+      "excluded_residual_group": "G_2024-10-22",
+      "seed": 0,
+      "fit_key": "G_2024-10-24_to_2024-10-28::seed=0",
+      "validation_origin_hash": "6252d261587d9c4e074463c543b30315e8126aaf8a2a17750aca0b2f272dd809",
+      "validation_n": 2675,
+      "training_groups": [
+        "G_2024-10-24_to_2024-10-28"
+      ]
+    },
+    {
+      "outer_group": "G_2024-10-23",
+      "excluded_residual_group": "G_2024-10-24_to_2024-10-28",
+      "seed": 0,
+      "fit_key": "G_2024-10-22::seed=0",
+      "validation_origin_hash": "50616b23d13785ec143408e6c338d59019e029c2705eb974e37677b0ef75f47b",
+      "validation_n": 11962,
+      "training_groups": [
+        "G_2024-10-22"
+      ]
+    },
+    {
+      "outer_group": "G_2024-10-23",
+      "excluded_residual_group": "G_2024-10-22",
+      "seed": 1,
+      "fit_key": "G_2024-10-24_to_2024-10-28::seed=1",
+      "validation_origin_hash": "6252d261587d9c4e074463c543b30315e8126aaf8a2a17750aca0b2f272dd809",
+      "validation_n": 2675,
+      "training_groups": [
+        "G_2024-10-24_to_2024-10-28"
+      ]
+    },
+    {
+      "outer_group": "G_2024-10-23",
+      "excluded_residual_group": "G_2024-10-24_to_2024-10-28",
+      "seed": 1,
+      "fit_key": "G_2024-10-22::seed=1",
+      "validation_origin_hash": "50616b23d13785ec143408e6c338d59019e029c2705eb974e37677b0ef75f47b",
+      "validation_n": 11962,
+      "training_groups": [
+        "G_2024-10-22"
+      ]
+    },
+    {
+      "outer_group": "G_2024-10-23",
+      "excluded_residual_group": "G_2024-10-22",
+      "seed": 2,
+      "fit_key": "G_2024-10-24_to_2024-10-28::seed=2",
+      "validation_origin_hash": "6252d261587d9c4e074463c543b30315e8126aaf8a2a17750aca0b2f272dd809",
+      "validation_n": 2675,
+      "training_groups": [
+        "G_2024-10-24_to_2024-10-28"
+      ]
+    },
+    {
+      "outer_group": "G_2024-10-23",
+      "excluded_residual_group": "G_2024-10-24_to_2024-10-28",
+      "seed": 2,
+      "fit_key": "G_2024-10-22::seed=2",
+      "validation_origin_hash": "50616b23d13785ec143408e6c338d59019e029c2705eb974e37677b0ef75f47b",
+      "validation_n": 11962,
+      "training_groups": [
+        "G_2024-10-22"
+      ]
+    },
+    {
+      "outer_group": "G_2024-10-23",
+      "excluded_residual_group": "G_2024-10-22",
+      "seed": 3,
+      "fit_key": "G_2024-10-24_to_2024-10-28::seed=3",
+      "validation_origin_hash": "6252d261587d9c4e074463c543b30315e8126aaf8a2a17750aca0b2f272dd809",
+      "validation_n": 2675,
+      "training_groups": [
+        "G_2024-10-24_to_2024-10-28"
+      ]
+    },
+    {
+      "outer_group": "G_2024-10-23",
+      "excluded_residual_group": "G_2024-10-24_to_2024-10-28",
+      "seed": 3,
+      "fit_key": "G_2024-10-22::seed=3",
+      "validation_origin_hash": "50616b23d13785ec143408e6c338d59019e029c2705eb974e37677b0ef75f47b",
+      "validation_n": 11962,
+      "training_groups": [
+        "G_2024-10-22"
+      ]
+    },
+    {
+      "outer_group": "G_2024-10-23",
+      "excluded_residual_group": "G_2024-10-22",
+      "seed": 4,
+      "fit_key": "G_2024-10-24_to_2024-10-28::seed=4",
+      "validation_origin_hash": "6252d261587d9c4e074463c543b30315e8126aaf8a2a17750aca0b2f272dd809",
+      "validation_n": 2675,
+      "training_groups": [
+        "G_2024-10-24_to_2024-10-28"
+      ]
+    },
+    {
+      "outer_group": "G_2024-10-23",
+      "excluded_residual_group": "G_2024-10-24_to_2024-10-28",
+      "seed": 4,
+      "fit_key": "G_2024-10-22::seed=4",
+      "validation_origin_hash": "50616b23d13785ec143408e6c338d59019e029c2705eb974e37677b0ef75f47b",
+      "validation_n": 11962,
+      "training_groups": [
+        "G_2024-10-22"
+      ]
+    },
+    {
+      "outer_group": "G_2024-10-24_to_2024-10-28",
+      "excluded_residual_group": "G_2024-10-22",
+      "seed": 0,
+      "fit_key": "G_2024-10-23::seed=0",
+      "validation_origin_hash": "6252d261587d9c4e074463c543b30315e8126aaf8a2a17750aca0b2f272dd809",
+      "validation_n": 2675,
+      "training_groups": [
+        "G_2024-10-23"
+      ]
+    },
+    {
+      "outer_group": "G_2024-10-24_to_2024-10-28",
+      "excluded_residual_group": "G_2024-10-23",
+      "seed": 0,
+      "fit_key": "G_2024-10-22::seed=0",
+      "validation_origin_hash": "4f56d707e93b3f7d23725c4510f99d544ec3c15c51cf3a11072a9cf0f067a772",
+      "validation_n": 39,
+      "training_groups": [
+        "G_2024-10-22"
+      ]
+    },
+    {
+      "outer_group": "G_2024-10-24_to_2024-10-28",
+      "excluded_residual_group": "G_2024-10-22",
+      "seed": 1,
+      "fit_key": "G_2024-10-23::seed=1",
+      "validation_origin_hash": "6252d261587d9c4e074463c543b30315e8126aaf8a2a17750aca0b2f272dd809",
+      "validation_n": 2675,
+      "training_groups": [
+        "G_2024-10-23"
+      ]
+    },
+    {
+      "outer_group": "G_2024-10-24_to_2024-10-28",
+      "excluded_residual_group": "G_2024-10-23",
+      "seed": 1,
+      "fit_key": "G_2024-10-22::seed=1",
+      "validation_origin_hash": "4f56d707e93b3f7d23725c4510f99d544ec3c15c51cf3a11072a9cf0f067a772",
+      "validation_n": 39,
+      "training_groups": [
+        "G_2024-10-22"
+      ]
+    },
+    {
+      "outer_group": "G_2024-10-24_to_2024-10-28",
+      "excluded_residual_group": "G_2024-10-22",
+      "seed": 2,
+      "fit_key": "G_2024-10-23::seed=2",
+      "validation_origin_hash": "6252d261587d9c4e074463c543b30315e8126aaf8a2a17750aca0b2f272dd809",
+      "validation_n": 2675,
+      "training_groups": [
+        "G_2024-10-23"
+      ]
+    },
+    {
+      "outer_group": "G_2024-10-24_to_2024-10-28",
+      "excluded_residual_group": "G_2024-10-23",
+      "seed": 2,
+      "fit_key": "G_2024-10-22::seed=2",
+      "validation_origin_hash": "4f56d707e93b3f7d23725c4510f99d544ec3c15c51cf3a11072a9cf0f067a772",
+      "validation_n": 39,
+      "training_groups": [
+        "G_2024-10-22"
+      ]
+    },
+    {
+      "outer_group": "G_2024-10-24_to_2024-10-28",
+      "excluded_residual_group": "G_2024-10-22",
+      "seed": 3,
+      "fit_key": "G_2024-10-23::seed=3",
+      "validation_origin_hash": "6252d261587d9c4e074463c543b30315e8126aaf8a2a17750aca0b2f272dd809",
+      "validation_n": 2675,
+      "training_groups": [
+        "G_2024-10-23"
+      ]
+    },
+    {
+      "outer_group": "G_2024-10-24_to_2024-10-28",
+      "excluded_residual_group": "G_2024-10-23",
+      "seed": 3,
+      "fit_key": "G_2024-10-22::seed=3",
+      "validation_origin_hash": "4f56d707e93b3f7d23725c4510f99d544ec3c15c51cf3a11072a9cf0f067a772",
+      "validation_n": 39,
+      "training_groups": [
+        "G_2024-10-22"
+      ]
+    },
+    {
+      "outer_group": "G_2024-10-24_to_2024-10-28",
+      "excluded_residual_group": "G_2024-10-22",
+      "seed": 4,
+      "fit_key": "G_2024-10-23::seed=4",
+      "validation_origin_hash": "6252d261587d9c4e074463c543b30315e8126aaf8a2a17750aca0b2f272dd809",
+      "validation_n": 2675,
+      "training_groups": [
+        "G_2024-10-23"
+      ]
+    },
+    {
+      "outer_group": "G_2024-10-24_to_2024-10-28",
+      "excluded_residual_group": "G_2024-10-23",
+      "seed": 4,
+      "fit_key": "G_2024-10-22::seed=4",
+      "validation_origin_hash": "4f56d707e93b3f7d23725c4510f99d544ec3c15c51cf3a11072a9cf0f067a772",
+      "validation_n": 39,
+      "training_groups": [
+        "G_2024-10-22"
+      ]
+    }
+  ],
+  "total_wall_seconds": 5.343894625,
+  "unique_network_fit_seconds": 0.9701631659999981,
+  "correction_fit_seconds": 0.046865874999999946,
+  "unresolved_fits": []
+}

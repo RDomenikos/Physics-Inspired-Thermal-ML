@@ -1,186 +1,126 @@
-"""Thin launcher for original preparation routines and frozen-model evaluation."""
-import argparse
-import hashlib
-import importlib.util
-import json
+"""Portable routes to existing Thermal ML code; saved replay is the default."""
 import os
 from pathlib import Path
-import shutil
-import sys
+ROOT=Path(__file__).resolve().parent
+for key in ['OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS','VECLIB_MAXIMUM_THREADS','NUMEXPR_NUM_THREADS']:
+    os.environ[key]='1'
+os.environ['MPLCONFIGDIR']=str(ROOT/'.cache')
+import argparse,subprocess,sys,importlib.util,json
 
-ROOT = Path(__file__).resolve().parent
-for key in ('OMP_NUM_THREADS', 'OPENBLAS_NUM_THREADS', 'MKL_NUM_THREADS',
-            'VECLIB_MAXIMUM_THREADS', 'NUMEXPR_NUM_THREADS'):
-    os.environ[key] = '1'
+def load_cv():
+    sys.path.insert(0,str(ROOT/'grouped/source'))
+    spec=importlib.util.spec_from_file_location('grouped_runner',ROOT/'grouped/run.py')
+    cv=importlib.util.module_from_spec(spec);spec.loader.exec_module(cv)
+    cv.OUT=ROOT/'grouped/local/results';cv.OUT.mkdir(parents=True,exist_ok=True)
+    return cv
 
-
-def load(name, path):
-    spec = importlib.util.spec_from_file_location(name, path)
-    module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
-    return module
-
-
-def read(path):
-    return json.loads(path.read_text())
-
-
-def stage_file(source, destination, entry, jetson=False):
-    if not source.is_file():
-        raise SystemExit('Missing source recording: ' + str(source) + '\nSee README.md for the pinned publisher download.')
-    b = source.read_bytes()
-    assert len(b) == entry['expected_bytes' if jetson else 'bytes'], source.name
-    assert hashlib.sha1(b'blob ' + str(len(b)).encode() + b'\0' + b).hexdigest() == entry['git_blob_sha1'], source.name
-    if jetson:
-        assert hashlib.sha256(b).hexdigest() == entry['sha256'], source.name
-    destination.parent.mkdir(parents=True, exist_ok=True)
-    shutil.copyfile(source, destination)
-
-
-def prepare_jetson(source):
-    import pandas as pd
-    base = ROOT / 'jetson'
-    local = base / 'local'
-    local.mkdir(exist_ok=True)
-    for item in read(base / 'manifests/sources.json'):
-        path = Path(item['local_path'])
-        stage_file(source / Path(*path.parts[2:]), local / path, item, True)
-    sys.path.insert(0, str(base / 'scripts'))
-    import prepare_stage2 as prep
-    import diagnose_stage2 as diagnose
-    import stage3_core as core
-    # Only IO roots change. Parser, selected windows and causal feature equations are original.
-    prep.ROOT = local
-    prep.DERIVED = local / 'derived'
-    diagnose.DERIVED = prep.DERIVED
-    cfg = read(base / 'manifests/config.json')
-    cfg['horizons_s'] = [60]  # Select the report's existing horizon; do not alter its extraction.
-    sources = {x['local_path']: x for x in read(base / 'manifests/sources.json')}
-    rows = []
-    for record in read(base / 'manifests/recordings.json'):
-        print('Prepare Jetson:', record['recording_id'], flush=True)
-        window, _ = prep.prepare_record(record, sources[record['raw_path']])
-        frame = diagnose.selected_frame(window)
-        got, _ = core.eligible_examples(window, core.arrays(frame), cfg)
-        rows.extend(got)
-    features = pd.DataFrame(rows)
-    assert features.groupby('split').size().to_dict() == {'development': 2714, 'heldout': 1457}
-    assert not features.duplicated(['recording_id', 'origin_timestamp']).any()
-    assert ((pd.to_datetime(features.target_timestamp) - pd.to_datetime(features.origin_timestamp)).dt.total_seconds() == 60).all()
-    features.to_parquet(local / 'features.parquet', index=False)
-    return features
-
-
-def evaluate_jetson(features):
+def replay(name):
     import numpy as np
     import pandas as pd
-    base = ROOT / 'jetson'
-    core = load('jetson_replay', base / 'run.py')
-    cfg = read(base / 'manifests/config.json')
-    names = cfg['temperature_features'] + cfg['telemetry_extra_features']
-    registry = read(base / 'models/registry.json')
-    references = pd.read_csv(base / 'results/reference/metrics.csv', dtype={'seed': str})
-    comparators = references.groupby(['experiment_id', 'method']).comparator.first().to_dict()
-    pieces = []
-    for mid, model in registry.items():
-        exp, split, window, seed, method = mid.split('/')
-        f = features.loc[features.window_id.eq(window) & features.split.eq(split)].copy()
-        assert len(f) and split == 'heldout'
-        p, b, o, a, terms, intercept = core.predict(model, f, names)
-        q = f[['recording_id', 'origin_timestamp', 'target_timestamp', 'cpu_current_c', 'observed_c']].copy()
-        q['origin_id'] = q.recording_id + '::' + q.origin_timestamp
-        for k, v in dict(experiment_id=exp, run_id=exp, split=split, group_id=f.group,
-                         workload_type='inference', seed=int(seed), method=method,
-                         comparator=comparators[(exp, method)], model_id=mid, dataset_id='original').items():
-            q[k] = v
-        q['predicted_temperature_c'] = p
-        q['baseline_prediction_c'] = b
-        q['original_physics_correction_c'] = o
-        q['applied_physics_correction_c'] = a
-        q['correction_intercept_c'] = intercept
-        for j, name in enumerate(['C', 'R', 'I']):
-            q['original_' + name + '_contribution_c'] = terms[:, j]
-        q['signed_error_c'] = p - q.observed_c
-        q['absolute_error_c'] = abs(q.signed_error_c)
-        q['squared_error_c'] = q.signed_error_c ** 2
-        lo, hi = model['temperature_range']
-        q['inside_training_temperature_range'] = q.cpu_current_c.between(lo, hi)
-        q['training_min_c'], q['training_max_c'] = lo, hi
-        pieces.append(q)
-    prediction = pd.concat(pieces, ignore_index=True)
-    out = base / 'local/results'
-    out.mkdir(exist_ok=True)
-    prediction.to_parquet(out / 'predictions.parquet', index=False)
-    metrics = core.metrics(prediction, out)  # Original metric equations and independent check.
-    optional = base / 'local/reference_predictions.parquet'
-    maximum = None
-    if optional.exists():
-        old = pd.read_parquet(optional)
-        old = old.loc[old.experiment_id.isin(['ridge_original', 'neural_refined']) & old.split.eq('heldout')]
-        keys = ['experiment_id', 'split', 'method', 'seed', 'origin_id']
-        j = old.merge(prediction, on=keys, suffixes=('_old', '_new'), validate='one_to_one')
-        assert len(j) == len(prediction) == len(old)
-        maximum = float(abs(j.predicted_temperature_c_old - j.predicted_temperature_c_new).max())
-        np.testing.assert_allclose(j.predicted_temperature_c_old, j.predicted_temperature_c_new, atol=1e-10, rtol=0)
-    summary = dict(dataset='jetson', raw_sources_verified=20, prepared_rows=len(features),
-                   development_rows=2714, heldout_origins=1457, prediction_rows=len(prediction),
-                   frozen_aggregate_reference_rows=len(references), aggregate_tolerance_c=1e-10,
-                   optional_historical_prediction_max_difference_c=maximum, new_fits=0,
-                   source='Original raw recordings and author-selected CSV windows; no prepared inputs used')
-    (out / 'verification.json').write_text(json.dumps(summary, indent=2) + '\n')
-    head = metrics.loc[metrics.seed.eq('SEED_MEAN') & metrics.scope.eq('aggregate') & metrics.stratum.eq('all')]
-    print(head[['experiment_id', 'method', 'mae_c', 'rmse_c']].to_string(index=False))
-    return summary
+    r=load_cv();device='jetson' if name=='jetson_inference' else 'intel'
+    path=ROOT/'fixed'/device/'local/features.parquet'
+    if not path.exists():raise SystemExit('Prepare '+device+' first: python -B run.py fixed '+device+' --source-dir PATH')
+    frame=r.dataset(name,path);a=r.read(ROOT/'grouped/results'/(name+'_models.json'));pieces=[]
+    for s in a['fold_states']:
+        f=frame.loc[frame.outer_group.eq(s['fold'])];m=a['models'][s['receiver_key']];c=s['correction'];family=s['family']
+        if name=='jetson_inference':
+            if family=='Ridge':base=r.jr.ridge_delta(m,f);delta=s['alpha']*r.jr.controlled_delta(c,f)
+            else:
+                x=f[r.jn.FEATURES].to_numpy(float)
+                base=r.jn.network_delta(r.jn.prepare_network(m),x)
+                delta=s['alpha']*(c['c']+r.jn.physics_design(c,x)@c['gamma'])
+        else:
+            base=r.it.baseline(m,f);delta=s['alpha']*(c['c']+r.it.design(c,f)@c['gamma'])
+        variants=[(family,np.zeros(len(f)),s['receiver_valid']),(family+'_physics',delta,s['correction_valid'])]
+        if family=='H2':variants.append(('H2_bounded',s['bound_s_c']*np.tanh(delta/s['bound_s_c']),s['correction_valid']))
+        for method,added,valid in variants:
+            p=f[['origin_id','recording_id','origin_timestamp','target_timestamp','observed_c','delta_target_c']].copy()
+            p['dataset']=name;p['fold']=s['fold'];p['method']=method;p['seed']=s['seed'];p['baseline_delta_c']=base;p['correction_c']=added;p['predicted_delta_c']=base+added;p['valid']=valid;p['bound_s_c']=s['bound_s_c'] if method=='H2_bounded' else np.nan
+            pieces.append(p)
+    pred=pd.concat(pieces,ignore_index=True)
+    pred.to_parquet(r.OUT/(name+'_predictions.parquet'),index=False)
+    r.verify(frame,pred,a) # Original scaling/group/residual checks; no coefficient fitting.
+    r.summarize()
+    fresh=pd.read_csv(r.OUT/'seed_metrics.csv');ref=pd.read_csv(ROOT/'grouped/results/seed_metrics.csv')
+    keys=['dataset','fold','method','seed','recording_id']
+    joined=fresh.loc[fresh.dataset.eq(name)].merge(ref.loc[ref.dataset.eq(name)],on=keys,suffixes=('_new','_ref'),validate='one_to_one')
+    assert len(joined)==len(ref.loc[ref.dataset.eq(name)])
+    for col in r.METRICS:np.testing.assert_allclose(joined[col+'_new'],joined[col+'_ref'],atol=1e-9,rtol=0,equal_nan=True)
+    print(name,': saved-state replay and frozen seed/per-recording references verified',flush=True)
+    return r,frame,a,pred
 
-
-def prepare_intel(source):
-    base = ROOT / 'intel'
-    local = base / 'local'
-    local.mkdir(exist_ok=True)
-    manifest = read(base / 'manifests/download_manifest.json')
-    for item in manifest:
-        # Accept the publisher repository layout or the original manifest-named downloads.
-        candidate = source / item['aliases'][0]
-        if not candidate.exists():
-            candidate = source / Path(item['path']).name
-        stage_file(candidate, local / item['path'], item)
-    (local / 'sources/download_manifest.json').write_text(json.dumps(manifest))
-    (local / 'sources/github_tree.json').write_text(json.dumps({'sha': 'f7f8d62e806ce2b64e93c58fce2bb18604f067ad'}))
-    prep = load('intel_preparation', base / 'prepare.py')
-    prep.ROOT = local  # Original audit and prepare routines; only output/source root changes.
-    prep.audit()
-    return prep.prepare()
-
+def refinement():
+    import numpy as np
+    import pandas as pd
+    r,frame,a,pred=replay('jetson_inference')
+    out=ROOT/'refinement/local';out.mkdir(parents=True,exist_ok=True)
+    parts=[];checks=[]
+    for s in a['fold_states']:
+        if s['family']!='Ridge':continue
+        assert s['alpha']==1
+        f=frame.loc[frame.outer_group.eq(s['fold'])];c=s['correction']
+        base=r.jr.ridge_delta(a['models'][s['receiver_key']],f)
+        _,phi=r.jr.centered_design(c,f)
+        original=s['alpha']*r.jr.controlled_delta(c,f)
+        removed=s['alpha']*(phi@np.asarray(c['gamma']))
+        np.testing.assert_allclose(removed,original-s['alpha']*c['intercept_delta_c'],atol=1e-12,rtol=0)
+        saved=pred.loc[pred.fold.eq(s['fold'])&pred.method.eq('Ridge')]
+        np.testing.assert_array_equal(base,saved.predicted_delta_c)
+        for method,added in [('baseline',np.zeros(len(f))),('original',original),('removed',removed)]:
+            p=f[['origin_id','recording_id','origin_timestamp','target_timestamp','observed_c','delta_target_c']].copy()
+            p['fold']=s['fold'];p['method']=method;p['predicted_delta_c']=base+added;p['error_c']=base+added-f.delta_target_c.to_numpy();p['correction_c']=added
+            p['fold_weight']=r.weights(f);parts.append(p)
+        checks.append(dict(fold=s['fold'],alpha=s['alpha'],intercept_c=c['intercept_delta_c'],identity_max_abs_c=float(np.max(abs((base+removed)-(base+original-s['alpha']*c['intercept_delta_c']))))))
+    p=pd.concat(parts,ignore_index=True);p.to_parquet(out/'predictions.parquet',index=False);rows=[]
+    for (fold,method),g in p.groupby(['fold','method']):
+        for rid in ['ALL']+sorted(g.recording_id.unique()):
+            v=g if rid=='ALL' else g.loc[g.recording_id.eq(rid)];w=r.weights(v);e=v.error_c.to_numpy()
+            row=dict(level='fold' if rid=='ALL' else 'recording',fold=fold,recording_id=rid,method=method,n=len(v),mae_c=float(w@abs(e)),rmse_c=float(np.sqrt(w@e**2)),bias_c=float(w@e),mean_correction_c=float(w@v.correction_c))
+            for ref in ['baseline','original']:
+                b=p.loc[p.fold.eq(fold)&p.method.eq(ref)].set_index('origin_id').loc[v.origin_id];be=b.error_c.to_numpy();change=abs(e)-abs(be)
+                row['mae_c_improvement_vs_'+ref]=float(w@(abs(be)-abs(e)))
+                row['rmse_c_improvement_vs_'+ref]=float(np.sqrt(w@be**2)-np.sqrt(w@e**2))
+                for label,mask in [('improved',change < -1e-10),('unchanged',abs(change)<=1e-10),('worsened',change>1e-10)]:row[label+'_fraction_vs_'+ref]=float(w@mask)
+            rows.append(row)
+    metrics=pd.DataFrame(rows);metrics.to_csv(out/'metrics.csv',index=False)
+    frozen=pd.read_csv(ROOT/'refinement/reference/metrics.csv');keys=['level','fold','recording_id','method']
+    j=metrics.merge(frozen.loc[frozen.level.isin(['fold','recording'])],on=keys,suffixes=('_new','_ref'),validate='one_to_one');assert len(j)==len(metrics)
+    for col in ['mae_c','rmse_c','bias_c','mean_correction_c']:np.testing.assert_allclose(j[col+'_new'],j[col+'_ref'],atol=1e-10,rtol=0)
+    summaries=[];paired=[]
+    for method,g in metrics.loc[metrics.level.eq('fold')].groupby('method'):
+        row=dict(method=method,folds=len(g))
+        for col in ['mae_c','rmse_c','bias_c','mean_correction_c']:row[col+'_mean']=g[col].mean();row[col+'_sd']=g[col].std(ddof=1)
+        summaries.append(row)
+        for ref in ['baseline','original']:
+            z=dict(method=method,reference=ref)
+            for metric in ['mae_c','rmse_c']:
+                d=g[metric+'_improvement_vs_'+ref];z[metric+'_improvement_mean']=d.mean();z[metric+'_improvement_sd']=d.std(ddof=1)
+                denominator=metrics.loc[metrics.level.eq('fold')&metrics.method.eq(ref),metric].mean()
+                z[metric+'_mean_error_reduction_pct']=100*d.mean()/denominator
+                for label,mask in [('wins',d>1e-10),('ties',abs(d)<=1e-10),('losses',d< -1e-10)]:z[metric+'_'+label]=int(mask.sum())
+            paired.append(z)
+    pd.DataFrame(summaries).to_csv(out/'summary.csv',index=False);pd.DataFrame(paired).to_csv(out/'paired_summary.csv',index=False)
+    r.save(out/'verification.json',dict(label='Retrospective intercept-removal refinement, evaluated on all three existing grouped folds without refitting.',generated_from='saved states and prepared evaluation inputs',new_fits=0,frozen_reference_rows_verified=len(j),folds=checks))
+    print('Refinement: saved coordinates/slopes/alpha and independent frozen references verified')
 
 def main():
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('dataset', choices=['jetson', 'intel'])
-    parser.add_argument('--source-dir', type=Path, help='Locally obtained publisher repository/root; prepare from original recordings.')
-    parser.add_argument('--refit-check', action='store_true', help='Intel only: separate fixed-procedure fitting verification.')
-    args = parser.parse_args()
-    if args.refit_check and args.dataset != 'intel':
-        parser.error('Only the existing Intel fixed-procedure refit check is packaged.')
-    if args.source_dir:
-        source = args.source_dir.resolve()
-        features = prepare_jetson(source) if args.dataset == 'jetson' else prepare_intel(source)
-    else:
-        import pandas as pd
-        path = ROOT / args.dataset / 'local/features.parquet'
-        if not path.exists():
-            parser.error('No local features. Supply --source-dir; see README.md for publisher downloads.')
-        features = pd.read_parquet(path)
-    if args.dataset == 'jetson':
-        evaluate_jetson(features)
-    else:
-        import subprocess
-        command = [sys.executable, '-B', str(ROOT / 'intel/run.py')]
-        if args.refit_check:
-            # Replay first, then independently check fixed-procedure fits.
-            subprocess.run(command, check=True)
-            command += ['--refit-check']
-        subprocess.run(command, check=True)
-    print('Results: ' + str(ROOT / args.dataset / 'local/results'))
-
-
-if __name__ == '__main__':
-    main()
+    p=argparse.ArgumentParser(description=__doc__);sub=p.add_subparsers(dest='route',required=True)
+    f=sub.add_parser('fixed');f.add_argument('device',choices=['jetson','intel']);f.add_argument('--source-dir',type=Path);f.add_argument('--refit-check',action='store_true')
+    g=sub.add_parser('grouped');g.add_argument('dataset',choices=['jetson_inference','intel','all']);g.add_argument('--refit',action='store_true');g.add_argument('--output-dir',type=Path)
+    sub.add_parser('refinement');sub.add_parser('report')
+    a=p.parse_args()
+    if a.route=='fixed':
+        cmd=[sys.executable,'-B',str(ROOT/'fixed/run.py'),a.device]
+        if a.source_dir:cmd+=['--source-dir',str(a.source_dir.resolve())]
+        if a.refit_check:cmd+=['--refit-check']
+        subprocess.run(cmd,check=True)
+    elif a.route=='grouped':
+        for name in (['jetson_inference','intel'] if a.dataset=='all' else [a.dataset]):
+            if a.refit:
+                if not a.output_dir:p.error('--refit requires a new --output-dir; released states are never overwritten')
+                device='jetson' if name=='jetson_inference' else 'intel'
+                subprocess.run([sys.executable,'-B',str(ROOT/'grouped/run.py'),'--dataset',name,'--features',str(ROOT/'fixed'/device/'local/features.parquet'),'--output-dir',str(a.output_dir.resolve())],check=True)
+            else:replay(name)
+    elif a.route=='refinement':refinement()
+    else:subprocess.run([sys.executable,'-B',str(ROOT/'report.py')],check=True)
+if __name__=='__main__':main()

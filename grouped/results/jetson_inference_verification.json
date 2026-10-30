@@ -1,0 +1,15 @@
+{
+  "outer_inner_exclusion": true,
+  "training_only_scaling": true,
+  "training_only_correction_scaling": true,
+  "training_only_bounds": true,
+  "group_excluded_residual_values_verified": true,
+  "fixed_hyperparameters_verified": true,
+  "baseline_frozen": true,
+  "alpha_zero_exact": true,
+  "identical_rows": true,
+  "each_origin_once_per_method_seed": true,
+  "planned_folds": 3,
+  "unique_baseline_fits": 36,
+  "unresolved_fits": 0
+}

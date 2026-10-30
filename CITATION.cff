@@ -1,9 +1,7 @@
 cff-version: 1.2.0
-message: "If you use this implementation in research, please cite it using this metadata."
+message: "Please credit Thermal ML contributors for the code and cite the original dataset publishers separately; see README.md."
+title: "Thermal ML: consolidated fixed-split and grouped forecasting experiments"
 type: software
-title: "Thermal ML: small physics-inspired corrections"
 authors:
-  - family-names: "Domenikos"
-    given-names: "George-Rafael"
+  - name: "Thermal ML contributors"
 license: MIT
-abstract: "Supporting implementation for CPU-temperature forecasting with compact physics-inspired residual corrections, evaluated on Jetson and Intel telemetry."

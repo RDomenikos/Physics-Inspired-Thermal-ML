@@ -1,30 +1,13 @@
-# Verification summary
+# Final package verification
 
-Both headline preparation/replay routes passed in an isolated copy using separate, hash-verified copies of the original publisher recordings. No original prepared feature table or historical row-level prediction file was supplied. Results were compared with frozen aggregate references from the completed research, not references generated during packaging.
+Independently rerun in an isolated copy: pinned-source byte verification, original Jetson and Intel preparation, all fixed-split saved-model replays, all primary grouped folds/seeds, and intercept removal from saved states and regenerated inputs. Jetson produced 4,171 origins; Intel 30,589. Frozen aggregate and per-recording/seed references matched. Existing tests: 4 fixed-root + 3 Intel + 4 grouped passed. Grouped replay also executed the original training-scaling, excluded-group residual, bound and frozen-receiver checks. No coefficients were fitted.
 
-| Check | Jetson | Intel |
-|---|---:|---:|
-| Prepared origins | 4,171 | 30,589 |
-| Held-out origins | 1,457 | 6,035 |
-| Frozen metric rows reproduced | 1,992 | 1,080 |
-| Maximum MAE/RMSE difference | < 1e-20 °C | 0 °C |
-| Focused/existing tests passed | 4 | 3 |
+Independent checks confirm seed means precede fold means, sample SD uses ddof=1, all grouped summary values match frozen references, and refined prediction equals original minus alpha*c (alpha=1). Read verification.json for numerical checks and byte hashes of unchanged scientific Python files. Original models, results, diagnostic reports, publication packages and report files were hash-checked unchanged.
 
-Scientific comparison tolerance: 1e-10 °C. Saved coefficients, scaling, split definitions, model settings and reference results were not retuned or overwritten. Source file identities were verified before parsing. Test coverage includes causal future-perturbation invariance, development-only scaling, timestamp/count constraints, complete paired rows, frozen references, baseline-plus-correction reconstruction and independent metrics. Intel tests also check training-group exclusion and training-derived bounds.
+Not rerun: expensive optional fitting (unchanged functions; prior verification retained), network acquisition, Figshare archive equivalence or supplementary raw preparation/fitting. The local consolidated copy additionally re-scored supplementary saved predictions and matched every existing seed metric. Supplementary aggregate/seed/recording evidence remains separately labelled and relies on its previous saved-prediction verification. Public saved replay requires publisher files, not unpublished development folders. Historical provenance hashes identify old artifacts but are not runtime dependencies.
 
-Intel fixed-procedure refitting was separately verified from the regenerated development features. It reproduced frozen prediction values exactly in this environment (maximum difference 0 °C); all aggregate reference checks passed. Refitted parameters were not promoted or saved over the released models. Jetson nested refitting and supplementary raw workflows are not packaged or claimed as tested.
+Packaging changes: nested the two working packages under fixed/ and grouped/; added a thin root launcher for unchanged preparation/refitting and new saved-state grouped replay; implemented only the already evaluated prediction-time intercept subtraction; added report-table/figure assembly, root documentation/citation metadata and manifests. No scientific function bodies were refactored. The supplementary config's obsolete source-root metadata was replaced by an acquisition pointer; numerical settings are unchanged. Historical subfolder README commands remain archival; use root commands.
 
-Tested commands, from the isolated package root (source directories contained publisher recordings only):
+Frozen references: fixed model/reference directories, grouped/results/, refinement/reference/. Regenerated outputs: ignored */local/ directories. Public report_outputs/ contains aggregate/per-recording evidence only. The local-only full project also carries prepared inputs, predictions, source copies and diagnostic evidence; do not upload it.
 
-```sh
-python -B run.py jetson --source-dir ../source_recordings/jetson
-python -B run.py intel --source-dir ../source_recordings/intel
-python -B run.py jetson
-python -B run.py intel --refit-check
-python -B -m unittest test_run.py
-python -B -m unittest discover -s intel -p test_run.py
-```
-
-The original-source download commands were not run: local copies of the exact pinned publisher bytes were used. Publisher metadata/license retrieval was checked online separately. Figshare archive extraction/equivalence is unverified; the verified Intel route uses the pinned GitHub byte identities. The environment used Python 3.9.12 and the pinned dependencies in `requirements.txt`, with one numerical thread.
-
-`reference/verification.json` contains full reproduced headline values and separate replay/refit status. `CODE_CHANGES.md` documents every copied script and portability change. The final publication folder and ZIP are inspected directly, not merely filtered by `.gitignore`. No third-party recordings, derived observations, row-level predictions, measured traces, private filesystem paths or credentials are included. Original research folders and the earlier publication attempts remain unchanged.
+The actual public ZIP is inspected for every member and content hash, not merely .gitignore. No source recordings, archives, Parquets, feature/target tables, row predictions, traces, caches, environments, private absolute paths or credential files are permitted. Public CSV schemas are checked for row-level observation/prediction columns. Only aggregate figures are included. ZIP member/hash verification is recorded in publication_audit.json beside the archives. No GitHub push or publication occurs.
